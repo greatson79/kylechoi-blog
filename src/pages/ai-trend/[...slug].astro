@@ -1,8 +1,9 @@
 ---
-// AI트렌드 상세 — insight 中 category='AI트렌드'만(공개 회사 콘텐츠). /ai-trend namespace.
-// 시대분석(격리)은 /insight로 분리 — 여기 빌드 안 함.
+// AI트렌드 상세 — insight 中 category='AI트렌드'만. /ai-trend namespace.
+// ★Codex FIX: InsightLayout 사용 — 조건부 면책(disclaimerRequired) 계약 유지(회귀 방지).
+//   시대분석(격리)은 /insight로 분리 — 여기 빌드 안 함.
 import { getCollection, render } from 'astro:content';
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import InsightLayout from '../../layouts/InsightLayout.astro';
 
 export async function getStaticPaths() {
   const posts = await getCollection('insight', ({ data }) => !data.draft && data.category === 'AI트렌드');
@@ -12,7 +13,7 @@ const { post } = Astro.props;
 const { Content } = await render(post);
 const d = post.data;
 ---
-<ArticleLayout title={d.title} description={d.description} category={d.category}
-  pubDate={d.pubDate} author={d.author} heroImage={d.heroImage} channel="insight">
+<InsightLayout title={d.title} description={d.description} category={d.category}
+  pubDate={d.pubDate} author={d.author} heroImage={d.heroImage} disclaimerRequired={d.disclaimerRequired}>
   <Content />
-</ArticleLayout>
+</InsightLayout>
