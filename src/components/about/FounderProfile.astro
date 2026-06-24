@@ -1,31 +1,64 @@
 ---
-// §B 창립자 소개 — 주인님 프로필 블록(사진 슬롯·약력·철학). ★텍스트=placeholder(CEO 초안 대기).
+// §B 창립자 소개 — 최종학(Kyle Choi). 헤드샷 + 정본 약력(About_소개_작성가이드 최종 반영).
+// ★보이스: 교육자·AI 강사 중심. '담임목사'는 직함에 1회(깊이 주는 독특 이력)만 — 반복 절제.
+const founder = {
+  name: '최종학',
+  enName: 'Kyle Choi',
+  tagline: 'AI로 개인과 공동체의 잠재력을 깨우는 교육자 — 신학의 깊이로 기술에 방향을 더합니다.',
+  titles: ['디딤교회 담임목사', 'DiA Ai Edu. Solution 대표', 'WAVE AI Networks 대표', '디딤청소년센터 대표'],
+  education: ['호서대학교 AI 콘텐츠융합학과 박사과정 (재학)', 'M.Div 목회학석사 ×2', 'Th.M Mission'],
+  credentials: ['한국기독AI작가협회 이사', '사회복지사 1급', '빅데이터분석기사', 'Anthropic · Google AI 인증 다수'],
+  vision: 'AI 시대를 준비하는 실질적이고 깊이 있는 교육과 콘텐츠로, 미래를 이끌 사람들에게 영감과 새로운 가능성을 엽니다.',
+  email: 'greatson79@dia-io.com',
+};
 ---
 <section class="founder section">
   <div class="container founder-grid">
-    <div class="founder-photo" aria-hidden="true">
-      {/* TODO: 창립자 사진 — public/founder.jpg 교체 */}
-      <div class="photo-slot"><span>창립자<br />사진</span></div>
-    </div>
+    <figure class="founder-photo">
+      <picture>
+        <source srcset="/founder.webp" type="image/webp" />
+        <img src="/founder.jpg" alt="창립자 최종학(Kyle Choi) 프로필 사진" width="600" height="860" loading="lazy" decoding="async" />
+      </picture>
+    </figure>
     <div class="founder-body">
       <span class="eyebrow">창립자</span>
-      <h2 data-placeholder>목사가 직접 운영하는 AI 회사</h2>
-      <p data-placeholder>
-        {/* TODO: CEO 초안 — 창립자(주인님) 약력·소명 채움 */}
-        신학의 깊이와 기술의 결합. 목회자가 직접 AI 멀티에이전트 시스템을 설계·운영하며,
-        교회와 시대를 위한 콘텐츠를 만듭니다. <em>(약력·철학 문구는 확정 후 교체됩니다.)</em>
-      </p>
-      <blockquote data-placeholder>"기술은 도구이고, 복음과 사람이 목적이다."</blockquote>
+      <h2>{founder.name} <span class="en">{founder.enName}</span></h2>
+      <p class="tagline">{founder.tagline}</p>
+      <p class="titles">{founder.titles.join(' · ')}</p>
+
+      <div class="meta-grid">
+        <div class="meta-col">
+          <h3>학력</h3>
+          <ul>{founder.education.map((e) => <li>{e}</li>)}</ul>
+        </div>
+        <div class="meta-col">
+          <h3>자격 · 활동</h3>
+          <ul>{founder.credentials.map((c) => <li>{c}</li>)}</ul>
+        </div>
+      </div>
+
+      <blockquote>{founder.vision}</blockquote>
+      <p class="contact"><a href={`mailto:${founder.email}`}>{founder.email}</a></p>
     </div>
   </div>
 </section>
 
 <style>
-  .founder-grid { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: clamp(1.5rem, 1rem + 3vw, 3.5rem); align-items: center; }
+  .founder-grid { display: grid; grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr); gap: clamp(1.5rem, 1rem + 3vw, 3.5rem); align-items: start; }
   @media (max-width: 720px) { .founder-grid { grid-template-columns: 1fr; } }
-  .photo-slot { aspect-ratio: 3 / 4; max-width: 320px; border-radius: var(--radius); background: linear-gradient(160deg, var(--surface-2), var(--surface)); border: 1px dashed var(--line); display: grid; place-items: center; color: var(--faint); text-align: center; font-size: 0.85rem; }
+  .founder-photo { margin: 0; position: sticky; top: 90px; }
+  @media (max-width: 720px) { .founder-photo { position: static; } }
+  .founder-photo img { width: 100%; max-width: 340px; height: auto; border-radius: var(--radius); box-shadow: var(--shadow-card); display: block; }
   .founder-body h2 { margin-top: 0.3em; }
-  .founder-body p { margin-top: 1rem; color: var(--muted); max-width: 52ch; }
-  .founder-body p em { color: var(--faint); font-size: 0.85em; }
-  blockquote { margin: 1.4rem 0 0; padding-left: 1.1rem; border-left: 3px solid var(--accent); font-size: 1.2rem; color: var(--ink); font-style: italic; }
+  .founder-body h2 .en { font-size: 0.6em; font-weight: 500; color: var(--muted); letter-spacing: 0.04em; }
+  .tagline { margin-top: 0.8rem; font-size: var(--text-h3); color: var(--ink); line-height: 1.5; max-width: 46ch; }
+  .titles { margin-top: 0.9rem; color: var(--accent-ink); font-weight: 600; font-size: 0.95rem; }
+  .meta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: var(--gap-grid); margin-top: 1.6rem; }
+  .meta-col h3 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); margin-bottom: 0.5rem; }
+  .meta-col ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.35rem; }
+  .meta-col li { font-size: 0.92rem; color: var(--ink); }
+  blockquote { margin: 1.8rem 0 0; padding-left: 1.1rem; border-left: 3px solid var(--accent); font-size: 1.15rem; color: var(--ink); font-style: italic; line-height: 1.55; max-width: 52ch; }
+  .contact { margin-top: 1.4rem; font-family: var(--mono, monospace); }
+  .contact a { color: var(--accent-ink); }
+  .contact a:hover { text-decoration: underline; }
 </style>

@@ -4,20 +4,22 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/nav/Header.astro';
 import Footer from '../components/nav/Footer.astro';
 import SystemStory from '../components/about/SystemStory.astro';
+import Services from '../components/about/Services.astro';
 import FounderProfile from '../components/about/FounderProfile.astro';
 ---
-<BaseLayout title="회사 소개 — DiA Ai Edu. Solution" description="DiA Ai Edu. Solution과 창립자 소개 — 신학의 깊이와 AI의 결합.">
+<BaseLayout title="회사 소개 — DiA Ai Edu. Solution" description="AI가 하나의 조직처럼 협업해 깊이 있는 콘텐츠를 만드는 회사. 교육·컨설팅·콘텐츠.">
   <Header slot="header" />
 
   <section class="about-hero section">
     <div class="container">
       <p class="eyebrow">About</p>
-      <h1>신학의 깊이와<br />AI의 결합</h1>
-      <p class="hero-lede">DiA Ai Edu. Solution — 목회자가 직접 운영하는 AI 멀티에이전트 콘텐츠 시스템.</p>
+      <h1>AI가 하나의 조직처럼<br />협업하는 회사</h1>
+      <p class="hero-lede">DiA Ai Edu. Solution — 여러 AI 에이전트가 협업하고 사람이 검증하는 콘텐츠·교육 회사.</p>
     </div>
   </section>
 
   <SystemStory />
+  <Services />
   <FounderProfile />
 
   <Footer slot="footer" />

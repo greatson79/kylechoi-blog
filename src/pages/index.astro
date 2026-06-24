@@ -12,21 +12,21 @@ const insight = (await getCollection('insight', ({ data }) => !data.draft))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
 const categories = [
-  { label: '목회', href: '/ministry/', desc: '설교·묵상 — 신학의 깊이로 전하는 말씀.' },
-  { label: '교육', href: '/ministry/', desc: 'AI 교육 — AI를 분별 있게 배우고 가르치기.' },
+  { label: '목회', href: '/ministry/', desc: '설교·묵상으로 전하는 말씀과 신앙.' },
+  { label: '교육', href: '/ministry/', desc: 'AI 교육 — AI를 분별 있게 배우고 활용하기.' },
   { label: '시대분석', href: '/insight/', desc: '시대를 읽는 분석. 시장·투자 정보는 정보 제공 목적.' },
   { label: 'AI트렌드', href: '/insight/', desc: 'AI의 흐름과 실천적 인사이트.' },
 ];
 ---
-<BaseLayout title="DiA Ai Edu. Solution" description="목회·교육(AI 교육)·시대분석·AI트렌드 — 신학의 깊이와 AI의 결합. AI 멀티에이전트 시스템이 검증을 거쳐 만드는 콘텐츠.">
+<BaseLayout title="DiA Ai Edu. Solution" description="여러 AI가 한 조직처럼 협업해 검증을 거쳐 만드는 콘텐츠 — 목회·교육·시대분석·AI트렌드.">
   <Header slot="header" />
 
   <!-- 히어로 -->
   <section class="hero">
     <div class="container hero-inner">
       <p class="eyebrow">DiA Ai Edu. Solution</p>
-      <h1>신학의 깊이와<br />AI의 결합</h1>
-      <p class="lede">목회 · 교육 · 시대분석 · AI트렌드. AI 멀티에이전트 시스템이 사실·품질 검증을 거쳐 만드는 콘텐츠.</p>
+      <h1>AI가 하나의 조직처럼<br />협업하는 콘텐츠 회사</h1>
+      <p class="lede">CEO·부서·검증 — 여러 AI가 한 회사처럼 일하며 <strong>목회·교육·시대분석·AI트렌드</strong> 콘텐츠를 만듭니다. 사람이 검증하고 승인합니다.</p>
       <div class="hero-cta">
         <a class="btn" href="/ministry/">목회·교육 보기</a>
         <a class="btn btn-ghost" href="/about/">회사 소개</a>
@@ -91,8 +91,8 @@ const categories = [
   <section class="section about-teaser">
     <div class="container teaser-inner">
       <p class="eyebrow">About</p>
-      <h2>목사가 직접 운영하는<br />AI 멀티에이전트 회사</h2>
-      <p class="teaser-lede">CEO·부서·검증 에이전트가 협업하고, 사람이 승인합니다. 신학의 깊이와 기술이 만나는 자리.</p>
+      <h2>여러 AI가 한 조직처럼<br />협업합니다</h2>
+      <p class="teaser-lede">CEO·부서·검증 에이전트가 협업하고, 사람이 검증·승인합니다. 교육과 컨설팅도 함께합니다.</p>
       <a class="btn btn-ghost" href="/about/">회사·창립자 소개 →</a>
     </div>
   </section>

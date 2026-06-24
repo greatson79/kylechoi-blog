@@ -1,0 +1,59 @@
+---
+// §서비스/제공 — 교육(WAVE Academy) + 컨설팅. About 페이지 블록.
+const services = [
+  {
+    label: '교육',
+    brand: 'WAVE Academy',
+    items: [
+      { t: '목회자 AI 교육', d: '사역 현장에 맞춘 실전 AI 활용 교육.' },
+      { t: 'AI 리터러시 교육', d: 'AI를 분별 있게 이해하고 다루는 기본기.' },
+    ],
+  },
+  {
+    label: '컨설팅',
+    brand: '',
+    items: [
+      { t: 'AI 목회 자동화 컨설팅', d: '콘텐츠·행정·사역 흐름의 AI 자동화 설계.' },
+      { t: '교육 컨설팅', d: '교육 과정·콘텐츠·도구 도입 설계.' },
+    ],
+  },
+];
+---
+<section class="services section">
+  <div class="container">
+    <span class="eyebrow">제공 서비스</span>
+    <h2>교육과 컨설팅</h2>
+    <div class="svc-grid">
+      {services.map((s) => (
+        <div class="svc-group">
+          <div class="svc-head">
+            <span class="svc-label">{s.label}</span>
+            {s.brand && <span class="svc-brand">{s.brand}</span>}
+          </div>
+          <ul>
+            {s.items.map((it) => (
+              <li>
+                <strong>{it.t}</strong>
+                <span>{it.d}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .services h2 { margin-top: 0.3em; }
+  .svc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: var(--gap-grid); margin-top: var(--space-block); }
+  .svc-group { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.5rem; }
+  .svc-head { display: flex; align-items: baseline; gap: 0.6rem; margin-bottom: 1rem; }
+  .svc-label { font-size: 1.2rem; font-weight: 700; color: var(--ink); }
+  .svc-brand { font-size: 0.82rem; font-weight: 600; color: var(--accent-ink); letter-spacing: 0.02em; }
+  .svc-group ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.9rem; }
+  .svc-group li { display: flex; flex-direction: column; gap: 0.25rem; padding-bottom: 0.9rem; border-bottom: 1px solid var(--line); }
+  .svc-group li:last-child { border-bottom: 0; padding-bottom: 0; }
+  .svc-group strong { font-size: 1.02rem; color: var(--ink); }
+  .svc-group span { font-size: 0.9rem; color: var(--muted); line-height: 1.5; }
+</style>

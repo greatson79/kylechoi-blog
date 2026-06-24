@@ -1,21 +1,25 @@
 ---
-// §A 회사 소개 — AI 멀티에이전트 시스템 스토리. ★텍스트=placeholder(CEO 초안 대기).
+// §A 회사 소개 — AI 멀티에이전트 시스템 + 운영 브랜드(정본 반영).
 const steps = [
-  { k: 'CEO', d: '전략·라우팅·승인 게이트' },
-  { k: '부서', d: '목회·교육·분석 콘텐츠 생산' },
-  { k: '검증', d: '사실·법적·품질 적대 검증' },
-  { k: '발행', d: '주인님 승인 후 공개' },
+  { k: 'CEO', d: '전략·라우팅·승인' },
+  { k: '부서', d: '교육·콘텐츠·분석 생산' },
+  { k: '검증', d: '사실·품질 적대 검증' },
+  { k: '발행', d: '사람 승인 후 공개' },
+];
+const brands = [
+  { name: 'WAVE AI Networks', desc: '디딤교회 AI project — 콘텐츠·사역을 위한 AI 시스템.' },
+  { name: 'WAVE Academy', desc: 'AI 교육 — 목회자 AI 교육 · AI 리터러시 교육.', href: '/ministry/' },
 ];
 ---
 <section class="system-story section">
   <div class="container">
     <span class="eyebrow">회사 소개</span>
-    <h2>AI 멀티에이전트 시스템이<br />검증을 거쳐 콘텐츠를 만듭니다</h2>
-    <p class="lead" data-placeholder>
-      {/* TODO: CEO 초안 — DiA Ai Edu. Solution 소개 본문 채움(About_소개_작성가이드.md) */}
-      DiA Ai Edu. Solution은 여러 AI 에이전트(CEO·부서·검증)가 협업하는 시스템입니다.
-      각 단계가 역할을 나눠 콘텐츠를 생산하고, 사실·법적·품질 검증을 거쳐 공개합니다.
-      <em>(소개 문구는 확정 후 교체됩니다.)</em>
+    <h2>AI가 하나의 조직처럼<br />협업해 콘텐츠를 만듭니다</h2>
+    <p class="lead">
+      DiA Ai Edu. Solution은 <strong>AI 에이전트들이 사람처럼 협업하는 콘텐츠·교육 회사</strong>입니다.
+      CEO와 각 부서, 그리고 품질을 검증하는 적대적 리뷰어 — 여러 AI가 하나의 회사 조직처럼 일하며,
+      <strong>목회 · 교육 · 시대분석 · AI 트렌드</strong> 콘텐츠를 만듭니다. 단순히 'AI가 쓴 글'이 아니라,
+      기획하고 만들고 <strong>검증하고 다듬는</strong> 협업 과정을 거친 콘텐츠를 지향합니다.
     </p>
     <ol class="flow">
       {steps.map((s, i) => (
@@ -27,18 +31,18 @@ const steps = [
       ))}
     </ol>
 
-    <!-- ★운영 브랜드 -->
     <div class="brands">
       <h3>운영 브랜드</h3>
       <div class="brand-cards">
-        <div class="brand-card">
-          <strong>WAVE AI Networks</strong>
-          <span>디딤교회 AI 자동화 허브 — 콘텐츠·사역·시스템 자동화의 본거지.</span>
-        </div>
-        <a class="brand-card" href="/ministry/">
-          <strong>WAVE Academy</strong>
-          <span>창립자(목사)가 직접 진행하는 분별 있는 AI 교육 →</span>
-        </a>
+        {brands.map((b) => {
+          const Tag = b.href ? 'a' : 'div';
+          return (
+            <Tag class="brand-card" href={b.href}>
+              <strong>{b.name}{b.href && <span class="arr"> →</span>}</strong>
+              <span>{b.desc}</span>
+            </Tag>
+          );
+        })}
       </div>
     </div>
   </div>
@@ -47,9 +51,9 @@ const steps = [
 <style>
   .system-story { background: var(--surface); }
   .system-story h2 { margin-top: 0.3em; }
-  .lead { max-width: var(--measure); margin-top: 1rem; color: var(--muted); font-size: var(--text-h3); line-height: 1.6; }
-  .lead em { color: var(--faint); font-size: 0.85em; }
-  .flow { list-style: none; padding: 0; margin: var(--space-block) 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: var(--gap-grid); }
+  .lead { max-width: var(--measure); margin-top: 1.1rem; color: var(--muted); font-size: 1.15rem; line-height: 1.7; }
+  .lead strong { color: var(--ink); font-weight: 600; }
+  .flow { list-style: none; padding: 0; margin: var(--space-block) 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 190px), 1fr)); gap: var(--gap-grid); }
   .flow-step { background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.3rem; display: flex; flex-direction: column; gap: 0.4rem; }
   .flow-num { width: 32px; height: 32px; display: grid; place-items: center; border-radius: 50%; background: var(--accent); color: #fff; font-weight: 700; font-size: 0.9rem; }
   .flow-step strong { font-size: 1.1rem; margin-top: 0.3rem; }
@@ -61,5 +65,6 @@ const steps = [
   .brand-card { display: flex; flex-direction: column; gap: 0.4rem; padding: 1.3rem 1.4rem; background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius); transition: transform var(--dur) var(--ease), border-color var(--dur) var(--ease); }
   a.brand-card:hover { transform: translateY(-3px); border-color: var(--accent); }
   .brand-card strong { font-size: 1.15rem; color: var(--ink); }
+  .brand-card .arr { color: var(--accent-ink); }
   .brand-card span { font-size: 0.92rem; color: var(--muted); line-height: 1.55; }
 </style>
