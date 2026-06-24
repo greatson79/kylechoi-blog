@@ -19,7 +19,7 @@ const posts = (await getCollection('insight', ({ data }) => !data.draft && data.
       {posts.length ? (
         <div class="card-grid" style="margin-top: var(--space-block)">
           {posts.map((p) => (
-            <ArticleCard href={`/insight/${p.id}/`} title={p.data.title} description={p.data.description}
+            <ArticleCard href={`/ai-trend/${p.id}/`} title={p.data.title} description={p.data.description}
               category={p.data.category} pubDate={p.data.pubDate} heroImage={p.data.heroImage} />
           ))}
         </div>

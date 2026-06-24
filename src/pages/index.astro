@@ -12,6 +12,10 @@ const ministry = (await getCollection('ministry', ({ data }) => !data.draft))
 const insight = (await getCollection('insight', ({ data }) => !data.draft && data.category === 'AI트렌드'))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
+// ministry 카테고리 → 트랙 namespace 라우트(상세 URL 분리)
+const ministryHref = (cat, id) =>
+  cat === '묵상' ? `/devotion/${id}/` : cat === '교육' ? `/education/${id}/` : `/ministry/${id}/`;
+
 const categories = [
   { label: '설교', href: '/ministry/', desc: '작성된 설교를 토대로 한 아티클.' },
   { label: '묵상', href: '/devotion/', desc: '발행하는 매일 묵상.' },
@@ -62,7 +66,7 @@ const categories = [
       {ministry.length ? (
         <div class="card-grid">
           {ministry.slice(0, 6).map((p) => (
-            <ArticleCard href={`/ministry/${p.id}/`} title={p.data.title} description={p.data.description}
+            <ArticleCard href={ministryHref(p.data.category, p.id)} title={p.data.title} description={p.data.description}
               category={p.data.category} pubDate={p.data.pubDate} heroImage={p.data.heroImage} />
           ))}
         </div>
@@ -80,7 +84,7 @@ const categories = [
       {insight.length ? (
         <div class="card-grid">
           {insight.slice(0, 3).map((p) => (
-            <ArticleCard href={`/insight/${p.id}/`} title={p.data.title} description={p.data.description}
+            <ArticleCard href={`/ai-trend/${p.id}/`} title={p.data.title} description={p.data.description}
               category={p.data.category} pubDate={p.data.pubDate} heroImage={p.data.heroImage} />
           ))}
         </div>
