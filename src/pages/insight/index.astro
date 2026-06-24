@@ -1,54 +1,53 @@
 ---
-// 시대분석 = ★투자 격리. 공개 글목록 대신 '뉴스레터 구독 게이트웨이'(구독자만 발송).
-// 시대분석 본문 글은 /insight/[slug]로 빌드되나 공개 내비 노출 0, 뉴스레터 링크로만 접근.
+// 시대분석 목록 — insight 中 category='시대분석' ★공개(주인님 2026-06-25 지시: 격리→공개).
+// 강면책(투자자문법) 상시 노출. AI트렌드는 /ai-trend로 분리.
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/nav/Header.astro';
 import Footer from '../../components/nav/Footer.astro';
-// ★이메일 수집 연동: 정식 제공자(Buttondown/ConvertKit/Mailchimp 등) 미연동. 폼은 스캐폴드 — 제공자 endpoint 연결은 별도 승인.
-const NEWSLETTER_ACTION = '#'; // TODO: 뉴스레터 제공자 form action 연결(주인님 승인 후)
+import ArticleCard from '../../components/article/ArticleCard.astro';
+import { getCollection } from 'astro:content';
+
+// ★agy HOLD#1 반영: factChecked(사람 검증·승인)된 글만 공개 — 미검증 노출 차단.
+const posts = (await getCollection('insight', ({ data }) => !data.draft && data.category === '시대분석' && data.factChecked))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
-<BaseLayout title="시대분석 뉴스레터 — DiA" description="시대·시장 분석을 구독자에게만 이메일로. 정보 제공 목적, 투자 자문 아님." channel="insight">
+<BaseLayout title="시대분석 — DiA" description="거시·사회·기술 등 시대 흐름을 정보 제공 목적으로 정리한 시대분석. 투자 자문 아님." channel="insight">
   <Header slot="header" />
   <section class="section">
     <div class="container narrow">
-      <p class="eyebrow">시대분석 · 뉴스레터</p>
-      <h1>시대를 읽는 분석,<br />구독자에게만</h1>
-      <p class="lede">금리·시장·거시 흐름을 정리한 분석을 <strong>이메일 뉴스레터로 구독자에게만</strong> 보냅니다. 공개 사이트에는 게시하지 않습니다.</p>
+      <p class="eyebrow">시대분석</p>
+      <h1>시대를 읽는 분석</h1>
+      <p class="lede">거시·사회·기술 등 <strong>시대 흐름을 정보 제공 목적</strong>으로 정리합니다. 출처·근거 기반의 분별.</p>
 
-      <!-- ★강면책(투자자문법) — 상시 -->
-      <aside class="disclaimer" role="note" aria-label="투자 관련 면책">
-        <strong>투자 자문 아님 · 정보 제공 목적</strong>
-        <p>본 뉴스레터의 모든 내용은 시장·거시 정보를 <b>정보 제공 목적</b>으로 다루며, 특정 종목·상품의 매매 권유나
-          투자 자문·자문업이 아닙니다. 투자 판단과 그 결과의 책임은 전적으로 구독자 본인에게 있으며, 작성 시점 기준 정보입니다.
+      <!-- ★면책(정보제공·비투자자문) — 상시 -->
+      <aside class="disclaimer" role="note" aria-label="정보 제공 목적 안내">
+        <strong>정보 제공 목적 · 투자 자문 아님</strong>
+        <p>시대분석은 거시·사회·기술 등 <b>시대 흐름을 정보 제공 목적</b>으로 정리합니다. 특정 종목·상품의
+          매매 신호나 투자 자문·권유가 아니며, 작성 시점 기준 정보입니다.
           본 콘텐츠는 자본시장법상 투자자문업·유사투자자문업에 해당하지 않습니다.</p>
       </aside>
+    </div>
 
-      <form class="subscribe" action={NEWSLETTER_ACTION} method="post">
-        <label for="email" class="sr-only">이메일</label>
-        <input id="email" name="email" type="email" required placeholder="이메일 주소" autocomplete="email" />
-        <button type="submit">구독 신청</button>
-      </form>
-      <p class="note">구독 신청 시 위 면책에 동의하는 것으로 간주합니다. 언제든 수신 거부할 수 있습니다.
-        <br />※ 이메일 발송 연동은 준비 중입니다(제공자 연결 후 활성화).</p>
+    <div class="container">
+      {posts.length ? (
+        <div class="card-grid" style="margin-top: var(--space-block)">
+          {posts.map((p) => (
+            <ArticleCard href={`/insight/${p.id}/`} title={p.data.title} description={p.data.description}
+              category={p.data.category} pubDate={p.data.pubDate} heroImage={p.data.heroImage} />
+          ))}
+        </div>
+      ) : <p class="empty">콘텐츠 준비 중입니다.</p>}
     </div>
   </section>
   <Footer slot="footer" />
 </BaseLayout>
 
 <style>
-  .narrow { max-width: 56ch; }
+  .narrow { max-width: 60ch; }
   .lede { margin-top: 1rem; font-size: var(--text-h3); color: var(--muted); line-height: 1.55; }
-  .disclaimer { margin: var(--space-block) 0; background: var(--surface); border: 1px solid var(--line);
+  .disclaimer { margin: var(--space-block) 0 0; background: var(--surface); border: 1px solid var(--line);
     border-left: 3px solid var(--accent); border-radius: var(--radius-sm); padding: 1rem 1.2rem; }
   .disclaimer strong { display: block; font-size: 0.92rem; color: var(--accent-ink); margin-bottom: 0.4rem; }
   .disclaimer p { font-size: 0.84rem; color: var(--muted); line-height: 1.6; margin: 0; }
-  .subscribe { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 0.5rem; }
-  .subscribe input { flex: 1 1 240px; min-width: 0; padding: 0.7rem 1rem; border: 1px solid var(--line);
-    border-radius: 9px; font: inherit; background: var(--bg); color: var(--ink); }
-  .subscribe input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
-  .subscribe button { padding: 0.7rem 1.4rem; border: 0; border-radius: 999px; background: var(--accent);
-    color: #fff; font-weight: 600; cursor: pointer; }
-  .subscribe button:hover { filter: brightness(1.05); }
-  .note { margin-top: 0.9rem; font-size: 0.82rem; color: var(--faint); line-height: 1.5; }
-  .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+  .empty { color: var(--faint); margin-top: var(--space-block); }
 </style>

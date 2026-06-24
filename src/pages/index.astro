@@ -1,5 +1,5 @@
 ---
-// 대문 랜딩페이지 — 히어로 + 4분류 소개 + 최신 콘텐츠 + 회사/창립자 티저 + CTA. 아임웹 클린.
+// 대문 랜딩페이지 — 히어로 + 4분류 소개 + 최신 콘텐츠 + 시대분석(공개·강면책) + 회사/대표 티저. 아임웹 클린.
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/nav/Header.astro';
 import Footer from '../components/nav/Footer.astro';
@@ -8,22 +8,27 @@ import { getCollection } from 'astro:content';
 
 const ministry = (await getCollection('ministry', ({ data }) => !data.draft))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
-// AI트렌드만(시대분석=격리, 공개 홈에 노출 안 함)
-const insight = (await getCollection('insight', ({ data }) => !data.draft && data.category === 'AI트렌드'))
+// AI트렌드(insight)
+const aitrend = (await getCollection('insight', ({ data }) => !data.draft && data.category === 'AI트렌드'))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+// ★시대분석(insight) — 격리→공개(주인님 2026-06-25 지시). 강면책 상시.
+// ★agy HOLD#1 반영: factChecked(사람 검증·승인)된 글만 공개 — 미검증 노출=자가당착·법적리스크 차단.
+const eraAnalysis = (await getCollection('insight', ({ data }) => !data.draft && data.category === '시대분석' && data.factChecked))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
-// ministry 카테고리 → 트랙 namespace 라우트(상세 URL 분리)
+// ministry 카테고리 → 트랙 namespace 라우트(상세 URL 분리 유지)
 const ministryHref = (cat, id) =>
   cat === '묵상' ? `/devotion/${id}/` : cat === '교육' ? `/education/${id}/` : `/ministry/${id}/`;
 
+// ★4분류(주인님 확정): 목회(설교+묵상 병합)·교육·AI트렌드·시대분석
 const categories = [
-  { label: '설교', href: '/ministry/', desc: '작성된 설교를 토대로 한 아티클.' },
-  { label: '묵상', href: '/devotion/', desc: '발행하는 매일 묵상.' },
+  { label: 'ministry', href: '/ministry/', desc: '설교·묵상 등 목회 콘텐츠.' },
   { label: '교육', href: '/education/', desc: 'AI 교육 — AI를 분별 있게 배우고 활용하기.' },
   { label: 'AI트렌드', href: '/ai-trend/', desc: 'AI의 흐름과 실천적 인사이트.' },
+  { label: '시대분석', href: '/insight/', desc: '거시·사회·기술 등 시대 흐름을 정보 제공 목적으로 정리.' },
 ];
 ---
-<BaseLayout title="DiA Ai Edu. Solution" description="여러 AI가 한 조직처럼 협업해 검증을 거쳐 만드는 콘텐츠 — 설교·묵상·교육·AI트렌드.">
+<BaseLayout title="DiA Ai Edu. Solution" description="여러 AI가 한 조직처럼 협업해 검증을 거쳐 만드는 콘텐츠 — 목회·교육·AI트렌드·시대분석.">
   <Header slot="header" />
 
   <!-- 히어로 -->
@@ -31,19 +36,15 @@ const categories = [
     <div class="container hero-inner">
       <p class="eyebrow">DiA Ai Edu. Solution</p>
       <h1>AI가 하나의 조직처럼<br />협업하는 콘텐츠 회사</h1>
-      <p class="lede">CEO·부서·검증 — 여러 AI가 한 회사처럼 일하며 <strong>설교·묵상·교육·AI트렌드</strong> 콘텐츠를 만듭니다. 사람이 검증하고 승인합니다.</p>
-      <div class="hero-cta">
-        <a class="btn" href="/ministry/">목회·교육 보기</a>
-        <a class="btn btn-ghost" href="/about/">회사 소개</a>
-      </div>
+      <p class="lede">CEO·부서·검증 — 여러 AI가 한 회사처럼 일하며 <strong>목회·교육·AI트렌드·시대분석</strong> 콘텐츠를 만듭니다. 사람이 검증하고 승인합니다.</p>
     </div>
   </section>
 
   <!-- 4분류 소개 -->
   <section class="section">
     <div class="container">
-      <p class="eyebrow">무엇을 다루나</p>
-      <h2>네 가지 이야기</h2>
+      <p class="eyebrow">콘텐츠</p>
+      <h2>네 가지 콘텐츠</h2>
       <div class="cat-grid">
         {categories.map((c) => (
           <a class="cat-card" href={c.href}>
@@ -74,16 +75,16 @@ const categories = [
     </div>
   </section>
 
-  <!-- 최신 시대분석·AI트렌드 -->
+  <!-- 최신 AI트렌드 -->
   <section class="section" data-channel="insight">
     <div class="container">
       <div class="row-head">
         <h2>AI트렌드</h2>
         <a class="more-link" href="/ai-trend/">전체 보기 →</a>
       </div>
-      {insight.length ? (
+      {aitrend.length ? (
         <div class="card-grid">
-          {insight.slice(0, 3).map((p) => (
+          {aitrend.slice(0, 3).map((p) => (
             <ArticleCard href={`/ai-trend/${p.id}/`} title={p.data.title} description={p.data.description}
               category={p.data.category} pubDate={p.data.pubDate} heroImage={p.data.heroImage} />
           ))}
@@ -92,13 +93,36 @@ const categories = [
     </div>
   </section>
 
-  <!-- 회사/창립자 티저 -->
+  <!-- ★시대분석 (격리→공개, 주인님 2026-06-25 지시) — 강면책 상시 -->
+  <section class="section section-alt" data-channel="insight">
+    <div class="container">
+      <div class="row-head">
+        <h2>시대분석</h2>
+        <a class="more-link" href="/insight/">전체 보기 →</a>
+      </div>
+      <aside class="disclaimer" role="note" aria-label="정보 제공 목적 안내">
+        <strong>정보 제공 목적 · 투자 자문 아님</strong>
+        <p>시대분석은 거시·사회·기술 등 <b>시대 흐름을 정보 제공 목적</b>으로 정리합니다. 특정 종목·상품의
+          매매 신호나 투자 자문·권유가 아니며, 자본시장법상 투자자문업·유사투자자문업에 해당하지 않습니다.</p>
+      </aside>
+      {eraAnalysis.length ? (
+        <div class="card-grid">
+          {eraAnalysis.slice(0, 3).map((p) => (
+            <ArticleCard href={`/insight/${p.id}/`} title={p.data.title} description={p.data.description}
+              category={p.data.category} pubDate={p.data.pubDate} heroImage={p.data.heroImage} />
+          ))}
+        </div>
+      ) : <p class="empty">콘텐츠 준비 중입니다.</p>}
+    </div>
+  </section>
+
+  <!-- 회사/대표 티저 -->
   <section class="section about-teaser">
     <div class="container teaser-inner">
       <p class="eyebrow">About</p>
       <h2>여러 AI가 한 조직처럼<br />협업합니다</h2>
       <p class="teaser-lede">CEO·부서·검증 에이전트가 협업하고, 사람이 검증·승인합니다. 교육과 컨설팅도 함께합니다.</p>
-      <a class="btn btn-ghost" href="/about/">회사·창립자 소개 →</a>
+      <a class="btn btn-ghost" href="/about/">회사·대표 소개 →</a>
     </div>
   </section>
 
@@ -125,6 +149,10 @@ const categories = [
 
   .section-alt { background: var(--surface); }
   .row-head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; margin-bottom: var(--space-block); flex-wrap: wrap; }
+  .disclaimer { margin: 0 0 var(--space-block); background: var(--bg); border: 1px solid var(--line);
+    border-left: 3px solid var(--accent); border-radius: var(--radius-sm); padding: 1rem 1.2rem; }
+  .disclaimer strong { display: block; font-size: 0.92rem; color: var(--accent-ink); margin-bottom: 0.4rem; }
+  .disclaimer p { font-size: 0.84rem; color: var(--muted); line-height: 1.6; margin: 0; }
   .more-link { color: var(--accent-ink); font-weight: 500; font-size: 0.95rem; }
   .empty { color: var(--faint); }
 

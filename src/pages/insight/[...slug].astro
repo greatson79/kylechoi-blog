@@ -1,10 +1,11 @@
 ---
-// 시대분석 상세 — insight 中 ★category='시대분석'만(격리·뉴스레터 전용·noindex). AI트렌드는 /ai-trend로 분리.
+// 시대분석 상세 — insight 中 ★category='시대분석'만(공개·강면책 InsightLayout). AI트렌드는 /ai-trend로 분리.
 import { getCollection, render } from 'astro:content';
 import InsightLayout from '../../layouts/InsightLayout.astro';
 
 export async function getStaticPaths() {
-  const posts = await getCollection('insight', ({ data }) => !data.draft && data.category === '시대분석');
+  // ★agy HOLD#1 반영: factChecked(사람 검증·승인)된 글만 상세 빌드 — 미검증 노출 차단.
+  const posts = await getCollection('insight', ({ data }) => !data.draft && data.category === '시대분석' && data.factChecked);
   return posts.map((post) => ({ params: { slug: post.id }, props: { post } }));
 }
 const { post } = Astro.props;
