@@ -17,7 +17,7 @@ const founder = {
     <figure class="founder-photo">
       <picture>
         <source srcset="/founder.webp" type="image/webp" />
-        <img src="/founder.jpg" alt="창립자 최종학(Kyle Choi) 프로필 사진" width="600" height="860" loading="lazy" decoding="async" />
+        <img src="/founder.jpg" alt="창립자 최종학(Kyle Choi) 프로필 사진" width="600" height="860" loading="eager" decoding="async" />
       </picture>
     </figure>
     <div class="founder-body">
@@ -46,8 +46,7 @@ const founder = {
 <style>
   .founder-grid { display: grid; grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr); gap: clamp(1.5rem, 1rem + 3vw, 3.5rem); align-items: start; }
   @media (max-width: 720px) { .founder-grid { grid-template-columns: 1fr; } }
-  .founder-photo { margin: 0; position: sticky; top: 90px; }
-  @media (max-width: 720px) { .founder-photo { position: static; } }
+  .founder-photo { margin: 0; }
   .founder-photo img { width: 100%; max-width: 340px; height: auto; border-radius: var(--radius); box-shadow: var(--shadow-card); display: block; }
   .founder-body h2 { margin-top: 0.3em; }
   .founder-body h2 .en { font-size: 0.6em; font-weight: 500; color: var(--muted); letter-spacing: 0.04em; }
