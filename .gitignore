@@ -1,0 +1,17 @@
+# deps & build
+node_modules/
+dist/
+.astro/
+*.log
+.DS_Store
+
+# ★시크릿·배포 자격증명 (CSO 보안 — 절대 커밋 금지)
+.env
+.env.*
+.vercel
+*.pem
+*.key
+
+# 검증 스크린샷(임시)
+_v_*.png
+_shots_build_*.png

@@ -1,0 +1,24 @@
+---
+// 목회·교육 아티클 상세 — content collection 'ministry' 렌더(draft 제외).
+import { getCollection, render } from 'astro:content';
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('ministry', ({ data }) => !data.draft);
+  return posts.map((post) => ({ params: { slug: post.id }, props: { post } }));
+}
+const { post } = Astro.props;
+const { Content } = await render(post);
+const d = post.data;
+---
+<ArticleLayout
+  title={d.title}
+  description={d.description}
+  category={d.category}
+  pubDate={d.pubDate}
+  author={d.author}
+  heroImage={d.heroImage}
+  channel="ministry"
+>
+  <Content />
+</ArticleLayout>

@@ -1,0 +1,30 @@
+---
+// /about — 회사·창립자 소개. Hero + SystemStory + FounderProfile. ★텍스트 placeholder(CEO 초안).
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/nav/Header.astro';
+import Footer from '../components/nav/Footer.astro';
+import SystemStory from '../components/about/SystemStory.astro';
+import FounderProfile from '../components/about/FounderProfile.astro';
+---
+<BaseLayout title="회사 소개 — DiA Ai Edu. Solution" description="DiA Ai Edu. Solution과 창립자 소개 — 신학의 깊이와 AI의 결합.">
+  <Header slot="header" />
+
+  <section class="about-hero section">
+    <div class="container">
+      <p class="eyebrow">About</p>
+      <h1>신학의 깊이와<br />AI의 결합</h1>
+      <p class="hero-lede">DiA Ai Edu. Solution — 목회자가 직접 운영하는 AI 멀티에이전트 콘텐츠 시스템.</p>
+    </div>
+  </section>
+
+  <SystemStory />
+  <FounderProfile />
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<style>
+  .about-hero { padding-block: var(--space-section); }
+  .about-hero h1 { margin-top: 0.2em; }
+  .hero-lede { max-width: 48ch; margin-top: 1.2rem; font-size: var(--text-h3); color: var(--muted); line-height: 1.5; }
+</style>

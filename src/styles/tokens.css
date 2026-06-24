@@ -1,0 +1,44 @@
+/* DiA 블로그 디자인 토큰 — ★아임웹 스타일(깔끔·모던·미니멀, 뉴트럴·클린) */
+:root {
+  /* ── 색: 뉴트럴 클린 베이스(라이트, 다크 금지) ── */
+  --bg:        oklch(99% 0 0);            /* 거의 순백, 클린 배경 */
+  --surface:   oklch(97.5% 0.003 250);   /* 옅은 그레이 카드/섹션 */
+  --surface-2: oklch(95% 0.004 250);
+  --ink:       oklch(22% 0.01 250);      /* 차분한 잉크(중성 다크그레이) */
+  --muted:     oklch(52% 0.012 250);     /* 보조 텍스트 */
+  --faint:     oklch(68% 0.01 250);
+  --line:      oklch(92% 0.004 250);     /* 옅은 구분선 */
+  --accent:    oklch(55% 0.10 235);      /* 절제된 모던 블루(메인 강조) */
+  --accent-ink: oklch(40% 0.10 235);     /* 강조 텍스트(대비 확보) */
+
+  /* ── 타이포 스케일 ── */
+  --font-sans: 'Pretendard Variable', Pretendard, -apple-system, 'Apple SD Gothic Neo',
+    system-ui, 'Segoe UI', Roboto, sans-serif;
+  --text-hero:  clamp(2.25rem, 1.4rem + 3.5vw, 4.25rem);
+  --text-h2:    clamp(1.5rem, 1.2rem + 1.2vw, 2.25rem);
+  --text-h3:    clamp(1.2rem, 1.05rem + 0.6vw, 1.5rem);
+  --text-body:  clamp(1.05rem, 1rem + 0.3vw, 1.2rem);
+  --text-small: 0.875rem;
+  --leading-body: 1.7;
+  --measure: 68ch;                       /* 본문 읽기 폭(60–75자) */
+
+  /* ── 간격(넉넉한 여백 리듬) ── */
+  --space-section: clamp(3.5rem, 2.5rem + 4vw, 7rem);
+  --space-block:   clamp(1.5rem, 1rem + 2vw, 3rem);
+  --gap-grid:      clamp(1.25rem, 1rem + 1vw, 2rem);
+  --container:     1120px;               /* 클린 콘텐츠 컨테이너 폭 */
+  --radius:        14px;
+  --radius-sm:     9px;
+
+  /* ── 모션 ── */
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur:  280ms;
+
+  --shadow-card: 0 1px 2px oklch(22% 0.01 250 / 0.04), 0 8px 24px oklch(22% 0.01 250 / 0.05);
+}
+
+/* ★채널 구분 = 강조색만 전환(베이스 동일). 투자·통찰 = 더 진한 슬레이트/네이비(분석적) */
+[data-channel='insight'] {
+  --accent:     oklch(45% 0.07 255);
+  --accent-ink: oklch(36% 0.07 255);
+}

@@ -1,0 +1,31 @@
+---
+// §B 창립자 소개 — 주인님 프로필 블록(사진 슬롯·약력·철학). ★텍스트=placeholder(CEO 초안 대기).
+---
+<section class="founder section">
+  <div class="container founder-grid">
+    <div class="founder-photo" aria-hidden="true">
+      {/* TODO: 창립자 사진 — public/founder.jpg 교체 */}
+      <div class="photo-slot"><span>창립자<br />사진</span></div>
+    </div>
+    <div class="founder-body">
+      <span class="eyebrow">창립자</span>
+      <h2 data-placeholder>목사가 직접 운영하는 AI 회사</h2>
+      <p data-placeholder>
+        {/* TODO: CEO 초안 — 창립자(주인님) 약력·소명 채움 */}
+        신학의 깊이와 기술의 결합. 목회자가 직접 AI 멀티에이전트 시스템을 설계·운영하며,
+        교회와 시대를 위한 콘텐츠를 만듭니다. <em>(약력·철학 문구는 확정 후 교체됩니다.)</em>
+      </p>
+      <blockquote data-placeholder>"기술은 도구이고, 복음과 사람이 목적이다."</blockquote>
+    </div>
+  </div>
+</section>
+
+<style>
+  .founder-grid { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: clamp(1.5rem, 1rem + 3vw, 3.5rem); align-items: center; }
+  @media (max-width: 720px) { .founder-grid { grid-template-columns: 1fr; } }
+  .photo-slot { aspect-ratio: 3 / 4; max-width: 320px; border-radius: var(--radius); background: linear-gradient(160deg, var(--surface-2), var(--surface)); border: 1px dashed var(--line); display: grid; place-items: center; color: var(--faint); text-align: center; font-size: 0.85rem; }
+  .founder-body h2 { margin-top: 0.3em; }
+  .founder-body p { margin-top: 1rem; color: var(--muted); max-width: 52ch; }
+  .founder-body p em { color: var(--faint); font-size: 0.85em; }
+  blockquote { margin: 1.4rem 0 0; padding-left: 1.1rem; border-left: 3px solid var(--accent); font-size: 1.2rem; color: var(--ink); font-style: italic; }
+</style>

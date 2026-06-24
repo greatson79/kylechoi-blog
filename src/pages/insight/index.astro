@@ -1,0 +1,35 @@
+---
+// 시대분석·AI트렌드 목록 — 분석 섹션(쿨 강조). 깨끗한 카드 그리드.
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/nav/Header.astro';
+import Footer from '../../components/nav/Footer.astro';
+import ArticleCard from '../../components/article/ArticleCard.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('insight', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+<BaseLayout title="시대분석·AI트렌드 — DiA" description="시대를 읽는 분석과 AI 트렌드 인사이트." channel="insight">
+  <Header slot="header" />
+  <section class="section">
+    <div class="container">
+      <p class="eyebrow">분석 섹션</p>
+      <h1>시대분석 · AI트렌드</h1>
+      <p class="sub">시대를 읽는 분석과 AI 인사이트. 투자·시장 관련 글은 정보 제공 목적입니다.</p>
+      {posts.length ? (
+        <div class="card-grid" style="margin-top: var(--space-block)">
+          {posts.map((p) => (
+            <ArticleCard href={`/insight/${p.id}/`} title={p.data.title} description={p.data.description}
+              category={p.data.category} pubDate={p.data.pubDate} heroImage={p.data.heroImage} />
+          ))}
+        </div>
+      ) : <p class="empty">아직 발행된 글이 없습니다.</p>}
+    </div>
+  </section>
+  <Footer slot="footer" />
+</BaseLayout>
+
+<style>
+  .sub { color: var(--muted); margin-top: 0.5rem; font-size: var(--text-h3); max-width: 50ch; }
+  .empty { color: var(--faint); margin-top: var(--space-block); }
+</style>

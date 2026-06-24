@@ -1,0 +1,24 @@
+---
+// 시대분석·AI트렌드 아티클 상세 — content collection 'insight' 렌더. ★조건부 면책 전달.
+import { getCollection, render } from 'astro:content';
+import InsightLayout from '../../layouts/InsightLayout.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('insight', ({ data }) => !data.draft);
+  return posts.map((post) => ({ params: { slug: post.id }, props: { post } }));
+}
+const { post } = Astro.props;
+const { Content } = await render(post);
+const d = post.data;
+---
+<InsightLayout
+  title={d.title}
+  description={d.description}
+  category={d.category}
+  pubDate={d.pubDate}
+  author={d.author}
+  heroImage={d.heroImage}
+  disclaimerRequired={d.disclaimerRequired}
+>
+  <Content />
+</InsightLayout>

@@ -1,0 +1,48 @@
+---
+// 글로벌 헤더 — 클린 내비(목회·교육·시대분석·AI트렌드·About). 아임웹 미니멀.
+const links = [
+  { href: '/ministry/', label: '목회' },
+  { href: '/ministry/?cat=교육', label: '교육' },
+  { href: '/insight/?cat=시대분석', label: '시대분석' },
+  { href: '/insight/?cat=AI트렌드', label: 'AI트렌드' },
+  { href: '/about/', label: '회사소개' },
+];
+const path = Astro.url.pathname;
+---
+<header class="site-header">
+  <div class="container bar">
+    <a class="brand" href="/" aria-label="DiA Ai Edu. Solution 홈">
+      <span class="brand-mark">DiA</span>
+      <span class="brand-sub">Ai Edu. Solution</span>
+    </a>
+    <nav class="nav" aria-label="주 메뉴">
+      {links.map((l) => (
+        <a href={l.href} class:list={['nav-link', { active: path.startsWith(l.href.split('?')[0]) && l.href !== '/' }]}>{l.label}</a>
+      ))}
+    </nav>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: sticky; top: 0; z-index: 50;
+    background: oklch(99% 0 0 / 0.85);
+    backdrop-filter: saturate(180%) blur(12px);
+    border-bottom: 1px solid var(--line);
+  }
+  .bar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 64px; flex-wrap: wrap; }
+  .brand { display: flex; align-items: baseline; gap: 0.5rem; }
+  .brand-mark { font-weight: 800; font-size: 1.35rem; letter-spacing: -0.03em; color: var(--ink); }
+  .brand-sub { font-size: 0.78rem; color: var(--muted); }
+  .nav { display: flex; flex-wrap: wrap; gap: clamp(0.6rem, 0.3rem + 1.2vw, 1.6rem); }
+  .nav-link {
+    font-size: 0.95rem; font-weight: 500; color: var(--muted);
+    padding: 0.3rem 0; position: relative; transition: color var(--dur) var(--ease);
+  }
+  .nav-link:hover { color: var(--ink); }
+  .nav-link.active { color: var(--accent-ink); }
+  .nav-link.active::after {
+    content: ''; position: absolute; left: 0; right: 0; bottom: -2px; height: 2px; background: var(--accent); border-radius: 2px;
+  }
+  @media (max-width: 480px) { .brand-sub { display: none; } }
+</style>

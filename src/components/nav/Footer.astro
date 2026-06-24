@@ -1,0 +1,35 @@
+---
+// 글로벌 푸터 — 브랜드·내비·About·면책. 클린.
+const year = new Date().getFullYear();
+---
+<footer class="site-footer">
+  <div class="container foot">
+    <div class="foot-brand">
+      <span class="brand-mark">DiA Ai Edu. Solution</span>
+      <p>신학의 깊이와 AI의 결합 — 목회·교육·시대분석·AI트렌드.</p>
+    </div>
+    <nav class="foot-nav" aria-label="푸터 메뉴">
+      <a href="/ministry/">목회·교육</a>
+      <a href="/insight/">시대분석·AI트렌드</a>
+      <a href="/about/">회사소개</a>
+    </nav>
+  </div>
+  <div class="container foot-base">
+    <p>© {year} DiA Ai Edu. Solution. AI 멀티에이전트 시스템이 검증을 거쳐 생산한 콘텐츠입니다.</p>
+    <p class="disclaimer">※ 투자·시장 관련 글은 정보 제공 목적이며 투자 자문이 아닙니다.</p>
+  </div>
+</footer>
+
+<style>
+  .site-footer { margin-top: var(--space-section); border-top: 1px solid var(--line); background: var(--surface); }
+  .foot { display: flex; flex-wrap: wrap; gap: 2rem; justify-content: space-between; padding-block: var(--space-block); }
+  .foot-brand { max-width: 38ch; }
+  .foot-brand .brand-mark { font-weight: 800; font-size: 1.1rem; color: var(--ink); }
+  .foot-brand p { margin-top: 0.5rem; font-size: 0.9rem; color: var(--muted); }
+  .foot-nav { display: flex; flex-wrap: wrap; gap: 1.2rem; align-content: start; }
+  .foot-nav a { font-size: 0.9rem; color: var(--muted); }
+  .foot-nav a:hover { color: var(--accent-ink); }
+  .foot-base { padding-bottom: var(--space-block); }
+  .foot-base p { font-size: 0.8rem; color: var(--faint); }
+  .foot-base .disclaimer { margin-top: 0.3rem; }
+</style>

@@ -1,0 +1,130 @@
+---
+// 대문 랜딩페이지 — 히어로 + 4분류 소개 + 최신 콘텐츠 + 회사/창립자 티저 + CTA. 아임웹 클린.
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/nav/Header.astro';
+import Footer from '../components/nav/Footer.astro';
+import ArticleCard from '../components/article/ArticleCard.astro';
+import { getCollection } from 'astro:content';
+
+const ministry = (await getCollection('ministry', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const insight = (await getCollection('insight', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const categories = [
+  { label: '목회', href: '/ministry/', desc: '설교·묵상 — 신학의 깊이로 전하는 말씀.' },
+  { label: '교육', href: '/ministry/', desc: 'AI 교육 — AI를 분별 있게 배우고 가르치기.' },
+  { label: '시대분석', href: '/insight/', desc: '시대를 읽는 분석. 시장·투자 정보는 정보 제공 목적.' },
+  { label: 'AI트렌드', href: '/insight/', desc: 'AI의 흐름과 실천적 인사이트.' },
+];
+---
+<BaseLayout title="DiA Ai Edu. Solution" description="목회·교육(AI 교육)·시대분석·AI트렌드 — 신학의 깊이와 AI의 결합. AI 멀티에이전트 시스템이 검증을 거쳐 만드는 콘텐츠.">
+  <Header slot="header" />
+
+  <!-- 히어로 -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <p class="eyebrow">DiA Ai Edu. Solution</p>
+      <h1>신학의 깊이와<br />AI의 결합</h1>
+      <p class="lede">목회 · 교육 · 시대분석 · AI트렌드. AI 멀티에이전트 시스템이 사실·품질 검증을 거쳐 만드는 콘텐츠.</p>
+      <div class="hero-cta">
+        <a class="btn" href="/ministry/">목회·교육 보기</a>
+        <a class="btn btn-ghost" href="/about/">회사 소개</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4분류 소개 -->
+  <section class="section">
+    <div class="container">
+      <p class="eyebrow">무엇을 다루나</p>
+      <h2>네 가지 이야기</h2>
+      <div class="cat-grid">
+        {categories.map((c) => (
+          <a class="cat-card" href={c.href}>
+            <span class="cat-label">{c.label}</span>
+            <span class="cat-desc">{c.desc}</span>
+            <span class="cat-arrow" aria-hidden="true">→</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 최신 목회·교육 -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="row-head">
+        <h2>목회 · 교육</h2>
+        <a class="more-link" href="/ministry/">전체 보기 →</a>
+      </div>
+      {ministry.length ? (
+        <div class="card-grid">
+          {ministry.slice(0, 6).map((p) => (
+            <ArticleCard href={`/ministry/${p.id}/`} title={p.data.title} description={p.data.description}
+              category={p.data.category} pubDate={p.data.pubDate} heroImage={p.data.heroImage} />
+          ))}
+        </div>
+      ) : <p class="empty">콘텐츠 준비 중입니다.</p>}
+    </div>
+  </section>
+
+  <!-- 최신 시대분석·AI트렌드 -->
+  <section class="section" data-channel="insight">
+    <div class="container">
+      <div class="row-head">
+        <h2>시대분석 · AI트렌드</h2>
+        <a class="more-link" href="/insight/">전체 보기 →</a>
+      </div>
+      {insight.length ? (
+        <div class="card-grid">
+          {insight.slice(0, 3).map((p) => (
+            <ArticleCard href={`/insight/${p.id}/`} title={p.data.title} description={p.data.description}
+              category={p.data.category} pubDate={p.data.pubDate} heroImage={p.data.heroImage} />
+          ))}
+        </div>
+      ) : <p class="empty">콘텐츠 준비 중입니다.</p>}
+    </div>
+  </section>
+
+  <!-- 회사/창립자 티저 -->
+  <section class="section about-teaser">
+    <div class="container teaser-inner">
+      <p class="eyebrow">About</p>
+      <h2>목사가 직접 운영하는<br />AI 멀티에이전트 회사</h2>
+      <p class="teaser-lede">CEO·부서·검증 에이전트가 협업하고, 사람이 승인합니다. 신학의 깊이와 기술이 만나는 자리.</p>
+      <a class="btn btn-ghost" href="/about/">회사·창립자 소개 →</a>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<style>
+  .hero { padding-block: var(--space-section); }
+  .hero-inner { max-width: 56ch; }
+  .hero h1 { margin-top: 0.2em; }
+  .lede { margin-top: 1.2rem; font-size: var(--text-h3); color: var(--muted); line-height: 1.55; }
+  .hero-cta { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 2rem; }
+  .btn { display: inline-block; padding: 0.7rem 1.4rem; border-radius: 999px; background: var(--accent); color: #fff; font-weight: 600; font-size: 0.95rem; transition: transform var(--dur) var(--ease); }
+  .btn:hover { transform: translateY(-2px); }
+  .btn-ghost { background: transparent; color: var(--accent-ink); border: 1px solid var(--line); }
+  .btn-ghost:hover { border-color: var(--accent); }
+
+  .cat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: var(--gap-grid); margin-top: var(--space-block); }
+  .cat-card { display: flex; flex-direction: column; gap: 0.5rem; padding: 1.4rem 1.5rem; background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius); transition: transform var(--dur) var(--ease), border-color var(--dur) var(--ease); position: relative; }
+  .cat-card:hover { transform: translateY(-4px); border-color: var(--accent); }
+  .cat-label { font-size: 1.2rem; font-weight: 700; color: var(--ink); }
+  .cat-desc { font-size: 0.92rem; color: var(--muted); line-height: 1.55; }
+  .cat-arrow { color: var(--accent-ink); font-weight: 700; margin-top: 0.3rem; }
+
+  .section-alt { background: var(--surface); }
+  .row-head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; margin-bottom: var(--space-block); flex-wrap: wrap; }
+  .more-link { color: var(--accent-ink); font-weight: 500; font-size: 0.95rem; }
+  .empty { color: var(--faint); }
+
+  .about-teaser { background: var(--surface); border-top: 1px solid var(--line); }
+  .teaser-inner { max-width: 60ch; }
+  .teaser-lede { margin-top: 1rem; font-size: var(--text-h3); color: var(--muted); line-height: 1.55; }
+  .about-teaser .btn-ghost { margin-top: 1.6rem; }
+</style>

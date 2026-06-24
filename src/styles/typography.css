@@ -1,0 +1,47 @@
+/* DiA 블로그 타이포그래피 — 모던 산스(Pretendard) 중심, 읽기 최적화 */
+
+h1, h2, h3, h4 {
+  margin: 0 0 0.4em;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  color: var(--ink);
+}
+h1 { font-size: var(--text-hero); font-weight: 800; }
+h2 { font-size: var(--text-h2); }
+h3 { font-size: var(--text-h3); }
+
+p, li { font-size: var(--text-body); line-height: var(--leading-body); }
+
+/* 본문 영역(아티클): 읽기 폭·리듬 */
+.prose {
+  max-width: var(--measure);
+  margin-inline: auto;
+  color: var(--ink);
+}
+.prose > * + * { margin-top: 1.1em; }
+.prose h2 { margin-top: 1.8em; }
+.prose h3 { margin-top: 1.4em; }
+.prose a { color: var(--accent-ink); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+.prose a:hover { text-decoration-thickness: 2px; }
+.prose img { width: 100%; height: auto; border-radius: var(--radius-sm); }
+.prose blockquote {
+  margin-inline: 0; padding: 0.4em 1.2em;
+  border-left: 3px solid var(--accent);
+  color: var(--muted); font-style: italic;
+}
+.prose code {
+  font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+  font-size: 0.9em; background: var(--surface-2);
+  padding: 0.15em 0.4em; border-radius: 5px;
+}
+.prose pre {
+  background: var(--surface-2); padding: 1rem 1.2rem;
+  border-radius: var(--radius-sm); overflow-x: auto;
+}
+.prose pre code { background: none; padding: 0; }
+
+.eyebrow {
+  font-size: var(--text-small); font-weight: 600; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--accent-ink);
+}

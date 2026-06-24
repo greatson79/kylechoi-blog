@@ -1,0 +1,20 @@
+---
+// 인사이트 레이아웃(시대분석·AI트렌드) — ArticleLayout + ★조건부 면책 배너 + insight 채널(쿨 강조).
+import ArticleLayout from './ArticleLayout.astro';
+import DisclaimerBanner from '../components/article/DisclaimerBanner.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  category?: string;
+  pubDate?: Date;
+  author?: string;
+  heroImage?: { src: string; alt: string };
+  disclaimerRequired?: boolean;
+}
+const { disclaimerRequired = false, ...rest } = Astro.props;
+---
+<ArticleLayout {...rest} channel="insight">
+  <DisclaimerBanner slot="before-body" required={disclaimerRequired} />
+  <slot />
+</ArticleLayout>

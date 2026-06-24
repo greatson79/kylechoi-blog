@@ -1,0 +1,47 @@
+---
+// 모든 페이지의 기반 레이아웃 — head 메타(SEO/OG) + 글로벌 스타일 + Pretendard
+import '../styles/global.css';
+// Pretendard 변수 폰트(동적 서브셋, 자체 호스팅 — 성능). 경로는 pretendard 패키지 기준.
+import 'pretendard/dist/web/variable/pretendardvariable-dynamic-subset.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  channel?: 'ministry' | 'insight';
+  ogImage?: string;
+}
+const {
+  title,
+  description = 'DiA Ai Edu. Solution — 목회·교육·시대분석·AI트렌드',
+  channel,
+  ogImage,
+} = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site ?? Astro.url).toString();
+---
+<!doctype html>
+<html lang="ko" data-channel={channel}>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <!-- ★프리뷰 단계: 검색 색인 차단(noindex). 최종 공개(production)는 주인님 승인 후 이 줄 제거. -->
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="canonical" href={canonical} />
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonical} />
+  {ogImage && <meta property="og:image" content={ogImage} />}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="generator" content={Astro.generator} />
+</head>
+<body>
+  <slot name="header" />
+  <main id="main">
+    <slot />
+  </main>
+  <slot name="footer" />
+</body>
+</html>
