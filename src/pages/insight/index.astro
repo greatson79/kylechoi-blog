@@ -6,16 +6,17 @@ import Footer from '../../components/nav/Footer.astro';
 import ArticleCard from '../../components/article/ArticleCard.astro';
 import { getCollection } from 'astro:content';
 
-const posts = (await getCollection('insight', ({ data }) => !data.draft))
+// ★시대분석 카테고리만 필터(AI트렌드와 분리)
+const posts = (await getCollection('insight', ({ data }) => !data.draft && data.category === '시대분석'))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
-<BaseLayout title="시대분석·AI트렌드 — DiA" description="시대를 읽는 분석과 AI 트렌드 인사이트." channel="insight">
+<BaseLayout title="시대분석 — DiA" description="시대를 읽는 분석. 투자·시장 정보는 정보 제공 목적." channel="insight">
   <Header slot="header" />
   <section class="section">
     <div class="container">
-      <p class="eyebrow">분석 섹션</p>
-      <h1>시대분석 · AI트렌드</h1>
-      <p class="sub">시대를 읽는 분석과 AI 인사이트. 투자·시장 관련 글은 정보 제공 목적입니다.</p>
+      <p class="eyebrow">시대분석</p>
+      <h1>시대분석</h1>
+      <p class="sub">시대를 읽는 분석. 투자·시장 관련 글은 정보 제공 목적입니다.</p>
       {posts.length ? (
         <div class="card-grid" style="margin-top: var(--space-block)">
           {posts.map((p) => (

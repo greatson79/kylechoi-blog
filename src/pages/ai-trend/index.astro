@@ -1,26 +1,25 @@
 ---
-// 목회·교육 목록 — 깨끗한 카드 그리드.
+// AI트렌드 목록 — insight 컬렉션 中 category=AI트렌드만 필터.
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/nav/Header.astro';
 import Footer from '../../components/nav/Footer.astro';
 import ArticleCard from '../../components/article/ArticleCard.astro';
 import { getCollection } from 'astro:content';
 
-// ★목회 카테고리만 필터(교육과 분리)
-const posts = (await getCollection('ministry', ({ data }) => !data.draft && data.category === '목회'))
+const posts = (await getCollection('insight', ({ data }) => !data.draft && data.category === 'AI트렌드'))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
-<BaseLayout title="목회 — DiA" description="설교·묵상 콘텐츠." channel="ministry">
+<BaseLayout title="AI트렌드 — DiA" description="AI의 흐름과 실천적 인사이트." channel="insight">
   <Header slot="header" />
   <section class="section">
     <div class="container">
-      <p class="eyebrow">목회</p>
-      <h1>목회</h1>
-      <p class="sub">설교·묵상으로 전하는 말씀과 신앙.</p>
+      <p class="eyebrow">AI트렌드</p>
+      <h1>AI트렌드</h1>
+      <p class="sub">AI의 흐름과 실천적 인사이트.</p>
       {posts.length ? (
         <div class="card-grid" style="margin-top: var(--space-block)">
           {posts.map((p) => (
-            <ArticleCard href={`/ministry/${p.id}/`} title={p.data.title} description={p.data.description}
+            <ArticleCard href={`/insight/${p.id}/`} title={p.data.title} description={p.data.description}
               category={p.data.category} pubDate={p.data.pubDate} heroImage={p.data.heroImage} />
           ))}
         </div>
@@ -31,6 +30,6 @@ const posts = (await getCollection('ministry', ({ data }) => !data.draft && data
 </BaseLayout>
 
 <style>
-  .sub { color: var(--muted); margin-top: 0.5rem; font-size: var(--text-h3); }
+  .sub { color: var(--muted); margin-top: 0.5rem; font-size: var(--text-h3); max-width: 50ch; }
   .empty { color: var(--faint); margin-top: var(--space-block); }
 </style>
