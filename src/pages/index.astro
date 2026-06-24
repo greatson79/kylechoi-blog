@@ -8,17 +8,18 @@ import { getCollection } from 'astro:content';
 
 const ministry = (await getCollection('ministry', ({ data }) => !data.draft))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
-const insight = (await getCollection('insight', ({ data }) => !data.draft))
+// AI트렌드만(시대분석=격리, 공개 홈에 노출 안 함)
+const insight = (await getCollection('insight', ({ data }) => !data.draft && data.category === 'AI트렌드'))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
 const categories = [
-  { label: '목회', href: '/ministry/', desc: '설교·묵상으로 전하는 말씀과 신앙.' },
+  { label: '설교', href: '/ministry/', desc: '작성된 설교를 토대로 한 아티클.' },
+  { label: '묵상', href: '/devotion/', desc: '발행하는 매일 묵상.' },
   { label: '교육', href: '/education/', desc: 'AI 교육 — AI를 분별 있게 배우고 활용하기.' },
-  { label: '시대분석', href: '/insight/', desc: '시대를 읽는 분석. 시장·투자 정보는 정보 제공 목적.' },
   { label: 'AI트렌드', href: '/ai-trend/', desc: 'AI의 흐름과 실천적 인사이트.' },
 ];
 ---
-<BaseLayout title="DiA Ai Edu. Solution" description="여러 AI가 한 조직처럼 협업해 검증을 거쳐 만드는 콘텐츠 — 목회·교육·시대분석·AI트렌드.">
+<BaseLayout title="DiA Ai Edu. Solution" description="여러 AI가 한 조직처럼 협업해 검증을 거쳐 만드는 콘텐츠 — 설교·묵상·교육·AI트렌드.">
   <Header slot="header" />
 
   <!-- 히어로 -->
@@ -26,7 +27,7 @@ const categories = [
     <div class="container hero-inner">
       <p class="eyebrow">DiA Ai Edu. Solution</p>
       <h1>AI가 하나의 조직처럼<br />협업하는 콘텐츠 회사</h1>
-      <p class="lede">CEO·부서·검증 — 여러 AI가 한 회사처럼 일하며 <strong>목회·교육·시대분석·AI트렌드</strong> 콘텐츠를 만듭니다. 사람이 검증하고 승인합니다.</p>
+      <p class="lede">CEO·부서·검증 — 여러 AI가 한 회사처럼 일하며 <strong>설교·묵상·교육·AI트렌드</strong> 콘텐츠를 만듭니다. 사람이 검증하고 승인합니다.</p>
       <div class="hero-cta">
         <a class="btn" href="/ministry/">목회·교육 보기</a>
         <a class="btn btn-ghost" href="/about/">회사 소개</a>
@@ -51,12 +52,12 @@ const categories = [
     </div>
   </section>
 
-  <!-- 최신 목회·교육 -->
+  <!-- 최신 Ministry (설교·묵상·교육) -->
   <section class="section section-alt">
     <div class="container">
       <div class="row-head">
-        <h2>목회 · 교육</h2>
-        <a class="more-link" href="/ministry/">전체 보기 →</a>
+        <h2>Ministry — 설교 · 묵상 · 교육</h2>
+        <a class="more-link" href="/ministry/">설교 보기 →</a>
       </div>
       {ministry.length ? (
         <div class="card-grid">
@@ -73,8 +74,8 @@ const categories = [
   <section class="section" data-channel="insight">
     <div class="container">
       <div class="row-head">
-        <h2>시대분석 · AI트렌드</h2>
-        <a class="more-link" href="/insight/">전체 보기 →</a>
+        <h2>AI트렌드</h2>
+        <a class="more-link" href="/ai-trend/">전체 보기 →</a>
       </div>
       {insight.length ? (
         <div class="card-grid">

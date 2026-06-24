@@ -15,12 +15,14 @@ const base = {
   sourcePath: z.string().optional(),          // output/ 원본 추적(SOT)
 };
 
-// ── 메인 채널: 목회·교육 ────────────────────────────────────────
+// ── 사역(Ministry) 채널: 설교·묵상·교육 (★주인님 확정, 청소년 제외) ──
 const ministry = defineCollection({
   loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: './src/content/ministry' }),
   schema: z.object({
     ...base,
-    category: z.enum(['목회', '교육']),       // 주인님 확정 4분류 中 메인 2
+    category: z.enum(['설교', '묵상', '교육']),
+    // 설교: 작성된 설교 원고 기반 아티클 / 묵상: 발행하는 묵상 / 교육: 교육 콘텐츠
+    scripture: z.string().optional(), // 묵상·설교 본문 구절(선택)
   }),
 });
 
