@@ -1,22 +1,22 @@
 ---
-// 목회·교육 목록 — 깨끗한 카드 그리드.
+// Ministry 목록 — 설교·묵상 통합 목회 아티클(★주인님 지시: ministry 단일).
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/nav/Header.astro';
 import Footer from '../../components/nav/Footer.astro';
 import ArticleCard from '../../components/article/ArticleCard.astro';
 import { getCollection } from 'astro:content';
 
-// ★설교 카테고리만(작성된 설교 기반 아티클)
-const posts = (await getCollection('ministry', ({ data }) => !data.draft && data.category === '설교'))
+// ★ministry 카테고리(설교·묵상 통합 목회 아티클)
+const posts = (await getCollection('ministry', ({ data }) => !data.draft && data.category === 'ministry'))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
-<BaseLayout title="설교 — DiA Ministry" description="작성된 설교를 토대로 한 아티클." channel="ministry">
+<BaseLayout title="Ministry — DiA" description="설교·묵상을 아우르는 목회 아티클." channel="ministry">
   <Header slot="header" />
   <section class="section">
     <div class="container">
-      <p class="eyebrow">Ministry · 설교</p>
-      <h1>설교</h1>
-      <p class="sub">작성된 설교를 토대로 다듬은 아티클.</p>
+      <p class="eyebrow">Ministry</p>
+      <h1>Ministry</h1>
+      <p class="sub">설교·묵상을 아우르는 목회 아티클.</p>
       {posts.length ? (
         <div class="card-grid" style="margin-top: var(--space-block)">
           {posts.map((p) => (

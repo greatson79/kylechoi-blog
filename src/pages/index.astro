@@ -6,7 +6,8 @@ import Footer from '../components/nav/Footer.astro';
 import ArticleCard from '../components/article/ArticleCard.astro';
 import { getCollection } from 'astro:content';
 
-const ministry = (await getCollection('ministry', ({ data }) => !data.draft))
+// Ministry 섹션 = category='ministry'(설교·묵상 통합). 교육은 /education 별도.
+const ministry = (await getCollection('ministry', ({ data }) => !data.draft && data.category === 'ministry'))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 // AI트렌드(insight)
 const aitrend = (await getCollection('insight', ({ data }) => !data.draft && data.category === 'AI트렌드'))
@@ -18,7 +19,7 @@ const eraAnalysis = (await getCollection('insight', ({ data }) => !data.draft &&
 
 // ministry 카테고리 → 트랙 namespace 라우트(상세 URL 분리 유지)
 const ministryHref = (cat, id) =>
-  cat === '묵상' ? `/devotion/${id}/` : cat === '교육' ? `/education/${id}/` : `/ministry/${id}/`;
+  cat === '교육' ? `/education/${id}/` : `/ministry/${id}/`;
 
 // ★4분류(주인님 확정): 목회(설교+묵상 병합)·교육·AI트렌드·시대분석
 const categories = [
@@ -57,12 +58,12 @@ const categories = [
     </div>
   </section>
 
-  <!-- 최신 Ministry (설교·묵상·교육) -->
+  <!-- 최신 Ministry (설교·묵상 통합 목회 아티클) -->
   <section class="section section-alt">
     <div class="container">
       <div class="row-head">
-        <h2>Ministry — 설교 · 묵상 · 교육</h2>
-        <a class="more-link" href="/ministry/">설교 보기 →</a>
+        <h2>Ministry</h2>
+        <a class="more-link" href="/ministry/">전체 보기 →</a>
       </div>
       {ministry.length ? (
         <div class="card-grid">
