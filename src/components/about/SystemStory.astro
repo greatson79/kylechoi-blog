@@ -1,26 +1,29 @@
 ---
-// §A 회사 소개 — AI 멀티에이전트 시스템 + 운영 브랜드(정본 반영).
+// §A 어떻게 일하나 — 1인칭 개인 여정(목회 은은히 1회) + 멀티에이전트 = '내가 만든 방식'.
 const steps = [
-  { k: 'CEO', d: '전략·라우팅·승인' },
-  { k: '부서', d: '교육·콘텐츠·분석 생산' },
-  { k: '검증', d: '사실·품질 적대 검증' },
-  { k: '발행', d: '사람 승인 후 공개' },
+  { k: '기획', d: '무엇을 다룰지 정합니다' },
+  { k: '협업 생산', d: '여러 AI가 한 조직처럼' },
+  { k: '적대적 검증', d: '사실·품질을 반박 검증' },
+  { k: '사람 승인', d: '제가 확인하고 공개' },
 ];
 const brands = [
-  { name: 'WAVE AI Networks', desc: 'AI 교육·솔루션 네트워크.' },
   { name: 'WAVE Academy', desc: 'AI 교육 — 목회자 AI 교육 · AI 리터러시 교육.', href: '/education/' },
+  { name: 'WAVE AI Networks', desc: 'AI 교육·솔루션 네트워크.' },
   { name: '디딤 AI project works', desc: '디딤교회를 위한 AI 프로젝트 — 콘텐츠·사역 자동화.' },
 ];
 ---
 <section class="system-story section">
   <div class="container">
-    <span class="eyebrow">회사 소개</span>
-    <h2>AI가 하나의 조직처럼<br />협업해 콘텐츠를 만듭니다</h2>
+    <span class="eyebrow">제가 일하는 방식</span>
+    <h2>어떻게 일하나</h2>
     <p class="lead">
-      DiA Ai Edu. Solution은 <strong>AI 에이전트들이 사람처럼 협업하는 콘텐츠·교육 회사</strong>입니다.
-      CEO와 각 부서, 그리고 품질을 검증하는 적대적 리뷰어 — 여러 AI가 하나의 회사 조직처럼 일하며,
-      <strong>목회 · 교육 · 시대분석 · AI 트렌드</strong> 콘텐츠를 만듭니다. 단순히 'AI가 쓴 글'이 아니라,
-      기획하고 만들고 <strong>검증하고 다듬는</strong> 협업 과정을 거친 콘텐츠를 지향합니다.
+      저는 목회와 교육 현장에서 <strong>사람을 세우는 일</strong>을 해왔습니다. 그 길에서 AI를 만났고,
+      그저 편리한 도구로 흘려보내는 대신 <strong>일과 삶에 실제로 적용하는 법</strong>을 파고들었습니다.
+    </p>
+    <p class="lead">
+      지금은 그 적용을 직접 만들고 검증합니다. 여러 AI가 한 조직처럼 협업하고
+      <strong>사람이 마지막에 검증·승인하는</strong> 시스템을 세워, 목회·교육·AI트렌드·시대분석 콘텐츠를 만듭니다.
+      신학에서 익힌 <strong>분별</strong>이 기술에 방향을 줍니다 — 두려움도 맹신도 없이. 이곳의 글은 모두 그 적용의 기록입니다.
     </p>
     <ol class="flow">
       {steps.map((s, i) => (
@@ -33,7 +36,7 @@ const brands = [
     </ol>
 
     <div class="brands">
-      <h3>운영 브랜드</h3>
+      <h3>제가 운영하는 것</h3>
       <div class="brand-cards">
         {brands.map((b) => {
           const Tag = b.href ? 'a' : 'div';

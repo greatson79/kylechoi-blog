@@ -1,13 +1,15 @@
 ---
 // §B 대표 소개 — 최종학(Kyle Choi). 헤드샷 + 정본 약력(About_소개_작성가이드 최종 반영).
-// ★보이스: 교육자·AI 강사 중심. '담임목사'는 직함에 1회(깊이 주는 독특 이력)만 — 반복 절제.
+// ★보이스: AI 교육자 전면. '담임목사'는 배경 직함에 1회(깊이 주는 독특 이력)만 — 반복 절제.
+// ★직함 재배치만(신규 사실 0): AI 전면 / 목회 배경 끝에 은은히 1회.
 const founder = {
   name: '최종학',
   enName: 'Kyle Choi',
-  tagline: 'AI로 개인과 공동체의 잠재력을 깨우는 교육자 — 신학의 깊이로 기술에 방향을 더합니다.',
-  titles: ['디딤교회 담임목사', 'DiA Ai Edu. Solution 대표', 'WAVE AI Networks 대표', '디딤청소년센터 대표'],
-  education: ['호서대학교 AI 콘텐츠융합학과 박사과정 (재학)', '숭실사이버대학교 청소년 코칭상담학', 'M.Div 목회학석사 ×2', 'Th.M Mission'],
-  credentials: ['한국기독AI작가협회 이사', '빅데이터분석기사', 'Anthropic · Google AI 인증 다수'],
+  tagline: 'AI를 일과 삶에 적용하는 법을 가르치고 실천하는 AI 교육자 — 신학의 깊이로 기술에 방향을 더합니다.',
+  titlesFront: ['DiA Ai Edu. Solution 대표', 'WAVE AI Networks 대표', '한국기독AI작가협회 이사'],
+  titlesBackground: ['디딤교회 담임목사', '디딤청소년센터 대표'],
+  education: ['호서대학교 AI 콘텐츠융합학과 박사과정 (재학)', 'M.Div 목회학석사 ×2', 'Th.M Mission', '숭실사이버대학교 청소년 코칭상담학'],
+  credentials: ['빅데이터분석기사', 'Anthropic · Google AI 인증 다수'],
   vision: 'AI 시대를 준비하는 실질적이고 깊이 있는 교육과 콘텐츠로, 미래를 이끌 사람들에게 영감과 새로운 가능성을 엽니다.',
   email: 'greatson79@dia-io.com',
 };
@@ -24,7 +26,8 @@ const founder = {
       <span class="eyebrow">대표</span>
       <h2>{founder.name} <span class="en">{founder.enName}</span></h2>
       <p class="tagline">{founder.tagline}</p>
-      <p class="titles">{founder.titles.join(' · ')}</p>
+      <p class="titles">{founder.titlesFront.join(' · ')}</p>
+      <p class="titles-bg">{founder.titlesBackground.join(' · ')}</p>
 
       <div class="meta-grid">
         <div class="meta-col">
@@ -52,6 +55,7 @@ const founder = {
   .founder-body h2 .en { font-size: 0.6em; font-weight: 500; color: var(--muted); letter-spacing: 0.04em; }
   .tagline { margin-top: 0.8rem; font-size: var(--text-h3); color: var(--ink); line-height: 1.5; max-width: 46ch; }
   .titles { margin-top: 0.9rem; color: var(--accent-ink); font-weight: 600; font-size: 0.95rem; }
+  .titles-bg { margin-top: 0.35rem; color: var(--muted); font-weight: 500; font-size: 0.88rem; }
   .meta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: var(--gap-grid); margin-top: 1.6rem; }
   .meta-col h3 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); margin-bottom: 0.5rem; }
   .meta-col ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.35rem; }

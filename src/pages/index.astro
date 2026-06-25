@@ -29,23 +29,37 @@ const categories = [
   { label: '시대분석', href: '/insight/', desc: '거시·사회·기술 등 시대 흐름을 정보 제공 목적으로 정리.' },
 ];
 ---
-<BaseLayout title="DiA Ai Edu. Solution" description="여러 AI가 한 조직처럼 협업해 검증을 거쳐 만드는 콘텐츠 — 목회·교육·AI트렌드·시대분석.">
-  <Header slot="header" variant="hero" />
+<BaseLayout title="Kyle Choi — AI를 일과 삶에 적용하는 법" description="두려움도 맹신도 없이, 분별 있게. AI를 일과 삶에 적용하는 법을 직접 만들고, 검증하고, 나눕니다 — 목회·교육·AI트렌드·시대분석.">
+  <Header slot="header" />
 
-  <!-- 히어로 — MERRYPAGE 스타일 초대형 임팩트 타이포 -->
+  <!-- 히어로 — 헤드샷 인물중심 split(텍스트 + 헤드샷). 블루는 패널·액센트로 절제. -->
   <section class="hero">
-    <div class="container hero-inner">
-      <p class="hero-kicker">DiA · Ai Edu. Solution</p>
-      <h1 class="impact" aria-label="WE ARE DiA">
-        <span class="impact-line outline">WE ARE</span>
-        <span class="impact-line solid">DiA<span class="dot">.</span></span>
-      </h1>
-      <p class="hero-lede">여러 AI가 한 조직처럼 협업해<br /><strong>목회 · 교육 · 콘텐츠</strong>를 만듭니다. 사람이 검증하고 승인합니다.</p>
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="hero-kicker">Kyle Choi · 최종학</p>
+        <h1 class="hero-title">
+          <span class="t-line">AI를</span>
+          <span class="t-line">일과 삶에</span>
+          <span class="t-line accent">적용하는 법</span>
+        </h1>
+        <p class="hero-lede">두려움도 맹신도 없이, 분별 있게 — 저는 AI를 일과 삶에 적용하는 법을 <strong>직접 만들고, 검증하고, 나눕니다.</strong></p>
+        <div class="hero-cta">
+          <a class="btn" href="#content">콘텐츠 보기 →</a>
+          <a class="btn btn-ghost" href="/about/">소개 보기 →</a>
+        </div>
+      </div>
+      <figure class="hero-photo">
+        <span class="photo-panel" aria-hidden="true"></span>
+        <picture>
+          <source srcset="/founder.webp" type="image/webp" />
+          <img src="/founder.jpg" alt="최종학(Kyle Choi) 프로필 사진" width="600" height="860" loading="eager" fetchpriority="high" decoding="async" />
+        </picture>
+      </figure>
     </div>
   </section>
 
   <!-- 4분류 소개 -->
-  <section class="section">
+  <section class="section" id="content">
     <div class="container">
       <p class="eyebrow">콘텐츠</p>
       <h2>네 가지 콘텐츠</h2>
@@ -123,10 +137,10 @@ const categories = [
   <!-- 회사/대표 티저 -->
   <section class="section about-teaser">
     <div class="container teaser-inner">
-      <p class="eyebrow">About</p>
-      <h2>여러 AI가 한 조직처럼<br />협업합니다</h2>
-      <p class="teaser-lede">CEO·부서·검증 에이전트가 협업하고, 사람이 검증·승인합니다. 교육과 컨설팅도 함께합니다.</p>
-      <a class="btn btn-ghost" href="/about/">회사·대표 소개 →</a>
+      <p class="eyebrow">About · Kyle Choi</p>
+      <h2>AI를 일과 삶에<br />적용하는 법을 만듭니다</h2>
+      <p class="teaser-lede">여러 AI가 한 조직처럼 협업하고 제가 마지막에 검증·승인합니다. 신학에서 익힌 분별이 기술에 방향을 줍니다.</p>
+      <a class="btn btn-ghost" href="/about/">소개 보기 →</a>
     </div>
   </section>
 
@@ -134,42 +148,64 @@ const categories = [
 </BaseLayout>
 
 <style>
-  /* ── 히어로: MERRYPAGE 스타일 초대형 임팩트 ── */
+  /* ── 히어로: 헤드샷 인물중심 split(텍스트 + 사진). 블루는 패널·액센트로 절제 ── */
   .hero {
-    position: relative; min-height: clamp(560px, 92vh, 1000px);
-    display: flex; align-items: flex-end; overflow: hidden;
-    padding-top: 88px; padding-bottom: clamp(2.5rem, 5vw, 5rem);
-    background: linear-gradient(158deg, var(--hero-bg), var(--hero-bg-2));
-    color: var(--hero-ink);
+    position: relative; overflow: hidden;
+    padding-block: clamp(2.5rem, 2rem + 5vw, 5.5rem);
+    background: var(--bg);
   }
-  .hero-inner { width: 100%; }
+  .hero-grid {
+    display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    gap: clamp(2rem, 1rem + 4vw, 4.5rem); align-items: center;
+  }
+  .hero-copy { min-width: 0; }
   .hero-kicker {
-    font-size: clamp(0.78rem, 0.7rem + 0.3vw, 0.98rem); font-weight: 700;
-    letter-spacing: 0.16em; color: rgba(255,255,255,0.78);
-    margin-bottom: clamp(1rem, 3vw, 2rem);
+    font-size: clamp(0.82rem, 0.74rem + 0.3vw, 0.98rem); font-weight: 700;
+    letter-spacing: 0.14em; color: var(--accent-ink); text-transform: uppercase;
+    margin-bottom: clamp(0.9rem, 2vw, 1.4rem);
   }
-  .impact {
-    margin: 0; font-weight: 900; line-height: 0.82; letter-spacing: -0.035em;
+  .hero-title {
+    margin: 0; font-weight: 800; line-height: 1.04; letter-spacing: -0.035em;
     display: flex; flex-direction: column;
   }
-  .impact-line { font-size: var(--text-impact); display: block; }
-  .impact-line.outline {
-    color: transparent; text-transform: uppercase; /* WE ARE 대문자 임팩트 */
-    -webkit-text-stroke: clamp(1.5px, 0.32vw, 4px) var(--hero-stroke);
-  }
-  .impact-line.solid { color: var(--hero-ink); text-transform: none; /* ★DiA 브랜드 소문자 i 유지 */ }
-  .impact .dot { color: rgba(255,255,255,0.5); }
+  .hero-title .t-line { font-size: var(--text-hero); color: var(--ink); display: block; }
+  .hero-title .t-line.accent { color: var(--accent-ink); }
   .hero-lede {
-    margin-top: clamp(1.5rem, 4vw, 2.5rem); max-width: 44ch;
-    font-size: var(--text-h3); color: rgba(255,255,255,0.9); line-height: 1.5;
+    margin-top: clamp(1.3rem, 3vw, 2rem); max-width: 42ch;
+    font-size: var(--text-h3); color: var(--muted); line-height: 1.6;
   }
-  .hero-lede strong { color: #fff; font-weight: 700; }
+  .hero-lede strong { color: var(--ink); font-weight: 700; }
+  .hero-cta { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: clamp(1.6rem, 3vw, 2.2rem); }
+
+  /* 헤드샷 — 블루 액센트 패널을 뒤로 오프셋해 깊이(layering) */
+  .hero-photo { position: relative; margin: 0; justify-self: end; width: min(100%, 400px); }
+  .hero-photo .photo-panel {
+    position: absolute; inset: 0; transform: translate(18px, 18px);
+    background: linear-gradient(158deg, var(--hero-bg), var(--hero-bg-2));
+    border-radius: var(--radius); z-index: 0;
+  }
+  .hero-photo picture { position: relative; z-index: 1; display: block; }
+  .hero-photo img {
+    width: 100%; height: auto; aspect-ratio: 600 / 860; object-fit: cover;
+    border-radius: var(--radius); box-shadow: var(--shadow-card); display: block;
+  }
+  @media (max-width: 760px) {
+    .hero-grid { grid-template-columns: 1fr; gap: clamp(2rem, 6vw, 3rem); }
+    .hero-photo { order: -1; justify-self: start; width: min(72%, 320px); }
+  }
+
   @keyframes heroReveal { from { opacity: 0; transform: translateY(0.35em); } to { opacity: 1; transform: none; } }
-  .hero-kicker, .impact-line, .hero-lede { animation: heroReveal 0.7s var(--ease) both; }
-  .hero-kicker { animation-delay: 0.05s; }
-  .impact-line.outline { animation-delay: 0.16s; }
-  .impact-line.solid { animation-delay: 0.3s; }
-  .hero-lede { animation-delay: 0.48s; }
+  .hero-kicker, .hero-title .t-line, .hero-lede, .hero-cta, .hero-photo { animation: heroReveal 0.7s var(--ease) both; }
+  .hero-kicker { animation-delay: 0.04s; }
+  .hero-title .t-line:nth-child(1) { animation-delay: 0.12s; }
+  .hero-title .t-line:nth-child(2) { animation-delay: 0.2s; }
+  .hero-title .t-line:nth-child(3) { animation-delay: 0.28s; }
+  .hero-lede { animation-delay: 0.38s; }
+  .hero-cta { animation-delay: 0.46s; }
+  .hero-photo { animation-delay: 0.16s; }
+  @media (prefers-reduced-motion: reduce) {
+    .hero-kicker, .hero-title .t-line, .hero-lede, .hero-cta, .hero-photo { animation: none; }
+  }
 
   .btn { display: inline-block; padding: 0.7rem 1.4rem; border-radius: 999px; background: var(--accent); color: #fff; font-weight: 600; font-size: 0.95rem; transition: transform var(--dur) var(--ease); }
   .btn:hover { transform: translateY(-2px); }
