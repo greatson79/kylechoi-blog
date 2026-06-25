@@ -11,6 +11,19 @@
   --accent:    oklch(55% 0.10 235);      /* 절제된 모던 블루(메인 강조) */
   --accent-ink: oklch(40% 0.10 235);     /* 강조 텍스트(대비 확보) */
 
+  /* ── 히어로(MERRYPAGE 스타일 임팩트) — 일렉트릭 블루 단색 ── */
+  --hero-bg:    oklch(53% 0.20 264);     /* 일렉트릭/코발트 블루(#2563EB 계열) */
+  --hero-bg-2:  oklch(47% 0.20 264);     /* 살짝 진한 하단(미묘 그라데이션) */
+  --hero-ink:   #ffffff;                 /* solid 타이포 */
+  --hero-stroke: rgba(255,255,255,0.9);  /* outline 타이포 stroke */
+  --text-impact: clamp(3.5rem, 1rem + 16vw, 13rem); /* 화면 가득 임팩트 타이포 */
+
+  /* ── 다크 푸터 ── */
+  --foot-bg:    oklch(20% 0.025 264);    /* 깊은 네이비/잉크 */
+  --foot-ink:   oklch(93% 0.01 264);
+  --foot-muted: oklch(70% 0.015 264);
+  --foot-line:  oklch(32% 0.02 264);
+
   /* ── 타이포 스케일 ── */
   --font-sans: 'Pretendard Variable', Pretendard, -apple-system, 'Apple SD Gothic Neo',
     system-ui, 'Segoe UI', Roboto, sans-serif;

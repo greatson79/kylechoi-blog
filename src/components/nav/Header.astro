@@ -1,16 +1,20 @@
 ---
-// 글로벌 헤더 — 클린 내비(회사소개·ministry·교육·AI트렌드·시대분석). 아임웹 미니멀.
-// ★주인님 GNB 지시: 회사소개 첫번째 / 설교·묵상→ministry 병합 / 시대분석 추가(HOLD#2 A경로 공개 확정).
+// 글로벌 헤더 — 미니멀 네비(영문). variant='hero'면 히어로(블루) 위 투명·흰 네비.
+// ★주인님 지시: 라벨 전부 영문(About·Ministry·Education·AI Trend·Insight), href 유지.
+interface Props {
+  variant?: 'solid' | 'hero';
+}
+const { variant = 'solid' } = Astro.props;
 const links = [
-  { href: '/about/', label: '회사소개' },
-  { href: '/ministry/', label: 'ministry' },
-  { href: '/education/', label: '교육' },
-  { href: '/ai-trend/', label: 'AI트렌드' },
-  { href: '/insight/', label: '시대분석' },
+  { href: '/about/', label: 'About' },
+  { href: '/ministry/', label: 'Ministry' },
+  { href: '/education/', label: 'Education' },
+  { href: '/ai-trend/', label: 'AI Trend' },
+  { href: '/insight/', label: 'Insight' },
 ];
 const path = Astro.url.pathname;
 ---
-<header class="site-header">
+<header class:list={['site-header', { hero: variant === 'hero' }]}>
   <div class="container bar">
     <a class="brand" href="/" aria-label="DiA Ai Edu. Solution 홈">
       <span class="brand-mark">DiA</span>
@@ -37,7 +41,7 @@ const path = Astro.url.pathname;
   .brand-sub { font-size: 0.78rem; color: var(--muted); }
   .nav { display: flex; flex-wrap: wrap; gap: clamp(0.6rem, 0.3rem + 1.2vw, 1.6rem); }
   .nav-link {
-    font-size: 0.95rem; font-weight: 500; color: var(--muted);
+    font-size: 0.95rem; font-weight: 600; color: var(--muted); letter-spacing: 0.01em;
     padding: 0.3rem 0; position: relative; transition: color var(--dur) var(--ease);
   }
   .nav-link:hover { color: var(--ink); }
@@ -45,5 +49,19 @@ const path = Astro.url.pathname;
   .nav-link.active::after {
     content: ''; position: absolute; left: 0; right: 0; bottom: -2px; height: 2px; background: var(--accent); border-radius: 2px;
   }
+
+  /* ── hero variant: 블루 히어로 위 투명 흰 네비 ── */
+  .site-header.hero {
+    position: absolute; top: 0; left: 0; right: 0;
+    background: transparent; backdrop-filter: none; border-bottom: 0;
+  }
+  .site-header.hero .brand-mark,
+  .site-header.hero .brand-sub { color: var(--hero-ink); }
+  .site-header.hero .brand-sub { opacity: 0.8; }
+  .site-header.hero .nav-link { color: rgba(255,255,255,0.82); }
+  .site-header.hero .nav-link:hover,
+  .site-header.hero .nav-link.active { color: #fff; }
+  .site-header.hero .nav-link.active::after { background: #fff; }
+
   @media (max-width: 480px) { .brand-sub { display: none; } }
 </style>

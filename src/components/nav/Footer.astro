@@ -1,37 +1,40 @@
 ---
-// 글로벌 푸터 — 브랜드·내비·About·면책. 클린.
+// 글로벌 푸터 — ★다크 배경 + 영문 내비(GNB와 동일). 브랜드·면책.
 const year = new Date().getFullYear();
+const links = [
+  { href: '/about/', label: 'About' },
+  { href: '/ministry/', label: 'Ministry' },
+  { href: '/education/', label: 'Education' },
+  { href: '/ai-trend/', label: 'AI Trend' },
+  { href: '/insight/', label: 'Insight' },
+];
 ---
 <footer class="site-footer">
   <div class="container foot">
     <div class="foot-brand">
       <span class="brand-mark">DiA Ai Edu. Solution</span>
-      <p>여러 AI가 협업해 만드는 콘텐츠 — 목회·교육·시대분석·AI트렌드.</p>
+      <p>여러 AI가 협업해 만드는 콘텐츠 — 목회·교육·AI트렌드·시대분석.</p>
     </div>
     <nav class="foot-nav" aria-label="푸터 메뉴">
-      <a href="/about/">회사소개</a>
-      <a href="/ministry/">ministry</a>
-      <a href="/education/">교육</a>
-      <a href="/ai-trend/">AI트렌드</a>
-      <a href="/insight/">시대분석</a>
+      {links.map((l) => <a href={l.href}>{l.label}</a>)}
     </nav>
   </div>
   <div class="container foot-base">
     <p>© {year} DiA Ai Edu. Solution. AI 멀티에이전트 시스템이 검증을 거쳐 생산한 콘텐츠입니다.</p>
-    <p class="disclaimer">※ 투자·시장 관련 글은 정보 제공 목적이며 투자 자문이 아닙니다.</p>
+    <p class="disclaimer">※ 시대분석 등 콘텐츠는 정보 제공 목적이며 투자 자문이 아닙니다.</p>
   </div>
 </footer>
 
 <style>
-  .site-footer { margin-top: var(--space-section); border-top: 1px solid var(--line); background: var(--surface); }
+  .site-footer { margin-top: var(--space-section); background: var(--foot-bg); color: var(--foot-ink); }
   .foot { display: flex; flex-wrap: wrap; gap: 2rem; justify-content: space-between; padding-block: var(--space-block); }
-  .foot-brand { max-width: 38ch; }
-  .foot-brand .brand-mark { font-weight: 800; font-size: 1.1rem; color: var(--ink); }
-  .foot-brand p { margin-top: 0.5rem; font-size: 0.9rem; color: var(--muted); }
-  .foot-nav { display: flex; flex-wrap: wrap; gap: 1.2rem; align-content: start; }
-  .foot-nav a { font-size: 0.9rem; color: var(--muted); }
-  .foot-nav a:hover { color: var(--accent-ink); }
-  .foot-base { padding-bottom: var(--space-block); }
-  .foot-base p { font-size: 0.8rem; color: var(--faint); }
-  .foot-base .disclaimer { margin-top: 0.3rem; }
+  .foot-brand { max-width: 40ch; }
+  .foot-brand .brand-mark { font-weight: 800; font-size: 1.15rem; letter-spacing: -0.02em; color: #fff; }
+  .foot-brand p { margin-top: 0.6rem; font-size: 0.9rem; color: var(--foot-muted); line-height: 1.6; }
+  .foot-nav { display: flex; flex-wrap: wrap; gap: 1.4rem; align-content: start; }
+  .foot-nav a { font-size: 0.9rem; font-weight: 600; color: var(--foot-muted); letter-spacing: 0.01em; transition: color var(--dur) var(--ease); }
+  .foot-nav a:hover { color: #fff; }
+  .foot-base { padding-bottom: var(--space-block); border-top: 1px solid var(--foot-line); padding-top: 1.4rem; }
+  .foot-base p { font-size: 0.8rem; color: var(--foot-muted); }
+  .foot-base .disclaimer { margin-top: 0.3rem; opacity: 0.85; }
 </style>
