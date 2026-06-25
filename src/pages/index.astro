@@ -10,7 +10,7 @@ import { getCollection } from 'astro:content';
 const ministry = (await getCollection('ministry', ({ data }) => !data.draft && data.category === 'ministry'))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 // AI트렌드(insight)
-const aitrend = (await getCollection('insight', ({ data }) => !data.draft && data.category === 'AI트렌드'))
+const aitrend = (await getCollection('insight', ({ data }) => !data.draft && data.category === 'AI트렌드' && data.factChecked))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 // ★시대분석(insight) — 격리→공개(주인님 2026-06-25 지시). 강면책 상시.
 // ★agy HOLD#1 반영: factChecked(사람 검증·승인)된 글만 공개 — 미검증 노출=자가당착·법적리스크 차단.
