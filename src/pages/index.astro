@@ -60,13 +60,11 @@ const collage = [
       </div>
 
       <div class="hero-collage">
-        <figure class="ccard ccard-photo">
-          <picture>
-            <source srcset="/founder.webp" type="image/webp" />
-            <img src="/founder.jpg" alt="최종학(Kyle Choi) 프로필 사진" width="600" height="860" loading="eager" fetchpriority="high" decoding="async" />
-          </picture>
-          <figcaption>Kyle Choi</figcaption>
-        </figure>
+        <!-- ★헤드샷은 About 섹션으로 이동. 콜라주 전면 = 새 이미지 placeholder(이미지 생성은 별도 단계·주인님 방향 확정 후 Codex gpt-image). 슬롯 치수 유지(CLS). -->
+        <div class="ccard ccard-placeholder" aria-hidden="true">
+          <span class="ph-mark">Kyle Choi</span>
+          <span class="ph-note">이미지 준비 중</span>
+        </div>
         {collage.map((c, i) => (
           <a class:list={['ccard', 'ccard-article', `pos-${i}`]} href={c.href}>
             <span class="cc-badge">{c.badge}</span>
@@ -157,10 +155,19 @@ const collage = [
   <!-- 회사/대표 티저 -->
   <section class="section about-teaser">
     <div class="container teaser-inner">
-      <p class="eyebrow">About · Kyle Choi</p>
-      <h2>AI를 일과 삶에<br />적용하는 법을 만듭니다</h2>
-      <p class="teaser-lede">여러 AI가 한 조직처럼 협업하고 제가 마지막에 검증·승인합니다. 신학에서 익힌 분별이 기술에 방향을 줍니다.</p>
-      <a class="btn btn-ghost" href="/about/">소개 보기 →</a>
+      <div class="teaser-text">
+        <p class="eyebrow">About · Kyle Choi</p>
+        <h2>AI를 일과 삶에<br />적용하는 법을 만듭니다</h2>
+        <p class="teaser-lede">여러 AI가 한 조직처럼 협업하고 제가 마지막에 검증·승인합니다. 신학에서 익힌 분별이 기술에 방향을 줍니다.</p>
+        <a class="btn btn-ghost" href="/about/">소개 보기 →</a>
+      </div>
+      <!-- ★헤드샷 = 히어로 콜라주에서 이동(주인님 지시). 본문 아래라 lazy. -->
+      <figure class="teaser-photo">
+        <picture>
+          <source srcset="/founder.webp" type="image/webp" />
+          <img src="/founder.jpg" alt="최종학(Kyle Choi) 프로필 사진" width="600" height="860" loading="lazy" decoding="async" />
+        </picture>
+      </figure>
     </div>
   </section>
 
@@ -222,13 +229,16 @@ const collage = [
     border-radius: var(--radius); box-shadow: 0 20px 50px rgba(0,0,0,0.45);
     transform: translate(var(--x, 0), var(--y, 0)) rotate(var(--r, 0deg));
   }
-  .ccard-photo { --x: -30%; --y: 7%; --r: -5deg; z-index: 3; width: clamp(168px, 20vw, 230px); background: #fff; padding: 10px 10px 8px; }
-  .ccard-photo picture { display: block; }
-  .ccard-photo img {
-    width: 100%; height: auto; aspect-ratio: 600 / 860; object-fit: cover;
-    border-radius: calc(var(--radius) - 6px); display: block;
+  /* ★전면 슬롯 = 새 이미지 placeholder(헤드샷 About로 이동). 치수=구 헤드샷 카드와 동일(CLS·콜라주 구도 보존). */
+  .ccard-placeholder {
+    --x: -30%; --y: 7%; --r: -5deg; z-index: 3;
+    width: clamp(168px, 20vw, 230px); aspect-ratio: 600 / 860;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.4rem; padding: 1rem;
+    background: linear-gradient(155deg, oklch(42% 0.08 258), oklch(26% 0.05 262));
+    border: 1px solid rgba(255,255,255,0.14);
   }
-  .ccard-photo figcaption { margin-top: 0.5rem; text-align: center; font-size: 0.8rem; font-weight: 700; color: var(--ink); letter-spacing: 0.02em; }
+  .ccard-placeholder .ph-mark { font-size: 1.05rem; font-weight: 800; color: #fff; letter-spacing: -0.01em; }
+  .ccard-placeholder .ph-note { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.06em; color: rgba(255,255,255,0.6); }
   .ccard-article {
     width: clamp(188px, 21vw, 250px); aspect-ratio: 5 / 6;
     background: #fff; color: var(--ink); padding: 1.1rem 1.2rem 1rem;
@@ -245,11 +255,11 @@ const collage = [
   @media (max-width: 860px) {
     .hero-inner { grid-template-columns: 1fr; gap: clamp(2.5rem, 8vw, 3.5rem); }
     .hero-collage { justify-self: center; min-height: clamp(320px, 66vw, 420px); }
-    .ccard-photo { --x: -28%; }
+    .ccard-placeholder { --x: -28%; }
     .ccard-article.pos-0 { --x: 27%; } .ccard-article.pos-1 { --x: -2%; }
   }
   @media (max-width: 480px) {
-    .ccard-photo { width: clamp(148px, 42vw, 188px); --x: -24%; --y: 5%; }
+    .ccard-placeholder { width: clamp(148px, 42vw, 188px); --x: -24%; --y: 5%; }
     .ccard-article { width: clamp(158px, 46vw, 208px); }
     .ccard-article.pos-0 { --x: 22%; --y: -11%; } .ccard-article.pos-1 { --x: 0%; --y: 22%; }
   }
@@ -289,8 +299,21 @@ const collage = [
   .empty { color: var(--faint); }
 
   .about-teaser { background: var(--surface); border-top: 1px solid var(--line); }
-  /* ★좌측 정렬: 표준 컨테이너(다른 섹션과 동일 좌측 거터) + lede만 가독폭 캡(가운데정렬 원인=60ch 컨테이너 margin auto 제거) */
-  .teaser-inner { text-align: left; }
+  /* ★좌측 정렬 텍스트 + 헤드샷(히어로에서 이동). 텍스트 좌측 거터 유지 */
+  .teaser-inner {
+    text-align: left; display: grid; grid-template-columns: minmax(0, 1fr) auto;
+    gap: clamp(1.5rem, 1rem + 3vw, 3.5rem); align-items: center;
+  }
+  .teaser-text { min-width: 0; }
   .teaser-lede { margin-top: 1rem; max-width: 58ch; font-size: var(--text-h3); color: var(--muted); line-height: 1.55; }
+  .teaser-photo { margin: 0; width: clamp(160px, 22vw, 220px); }
+  .teaser-photo img {
+    width: 100%; height: auto; aspect-ratio: 600 / 860; object-fit: cover;
+    border-radius: var(--radius); box-shadow: var(--shadow-card); display: block;
+  }
+  @media (max-width: 640px) {
+    .teaser-inner { grid-template-columns: 1fr; gap: clamp(1.5rem, 5vw, 2.2rem); }
+    .teaser-photo { width: min(60%, 200px); order: -1; }
+  }
   .about-teaser .btn-ghost { margin-top: 1.6rem; }
 </style>
