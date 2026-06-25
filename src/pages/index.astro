@@ -28,13 +28,22 @@ const categories = [
   { label: 'AI트렌드', href: '/ai-trend/', desc: 'AI의 흐름과 실천적 인사이트.' },
   { label: '시대분석', href: '/insight/', desc: '거시·사회·기술 등 시대 흐름을 정보 제공 목적으로 정리.' },
 ];
+
+// ★히어로 콜라주 카드 — 실제 최신 글 2장(텍스트 카드, 신규 이미지 0) + 헤드샷 카드(마크업).
+const pickCard = (arr, badge, hrefFn) =>
+  arr[0] ? { badge, title: arr[0].data.title, href: hrefFn(arr[0]) } : null;
+const collage = [
+  pickCard(aitrend, 'AI트렌드', (p) => `/ai-trend/${p.id}/`),
+  pickCard(ministry, 'Ministry', (p) => ministryHref(p.data.category, p.id)),
+  pickCard(eraAnalysis, '시대분석', (p) => `/insight/${p.id}/`),
+].filter(Boolean).slice(0, 2);
 ---
 <BaseLayout title="Kyle Choi — AI를 일과 삶에 적용하는 법" description="두려움도 맹신도 없이, 분별 있게. AI를 일과 삶에 적용하는 법을 직접 만들고, 검증하고, 나눕니다 — 목회·교육·AI트렌드·시대분석.">
-  <Header slot="header" />
+  <Header slot="header" variant="hero" />
 
-  <!-- 히어로 — 헤드샷 인물중심 split(텍스트 + 헤드샷). 블루는 패널·액센트로 절제. -->
+  <!-- 히어로 — 다크 에디토리얼 캔버스 + 초대형 타이포 + 콘텐츠 카드 콜라주(헤드샷 편입). 참조 스타일 차용·블루 액센트 보존·1인칭. -->
   <section class="hero">
-    <div class="container hero-grid">
+    <div class="container hero-inner">
       <div class="hero-copy">
         <p class="hero-kicker">Kyle Choi · 최종학</p>
         <h1 class="hero-title">
@@ -44,17 +53,27 @@ const categories = [
         </h1>
         <p class="hero-lede">두려움도 맹신도 없이, 분별 있게 — 저는 AI를 일과 삶에 적용하는 법을 <strong>직접 만들고, 검증하고, 나눕니다.</strong></p>
         <div class="hero-cta">
-          <a class="btn" href="#content">콘텐츠 보기 →</a>
-          <a class="btn btn-ghost" href="/about/">소개 보기 →</a>
+          <a class="btn-pill btn-fill" href="#content">콘텐츠 보기 →</a>
+          <a class="btn-pill btn-outline" href="/about/">소개 보기 →</a>
         </div>
       </div>
-      <figure class="hero-photo">
-        <span class="photo-panel" aria-hidden="true"></span>
-        <picture>
-          <source srcset="/founder.webp" type="image/webp" />
-          <img src="/founder.jpg" alt="최종학(Kyle Choi) 프로필 사진" width="600" height="860" loading="eager" fetchpriority="high" decoding="async" />
-        </picture>
-      </figure>
+
+      <div class="hero-collage">
+        <figure class="ccard ccard-photo">
+          <picture>
+            <source srcset="/founder.webp" type="image/webp" />
+            <img src="/founder.jpg" alt="최종학(Kyle Choi) 프로필 사진" width="600" height="860" loading="eager" fetchpriority="high" decoding="async" />
+          </picture>
+          <figcaption>Kyle Choi</figcaption>
+        </figure>
+        {collage.map((c, i) => (
+          <a class:list={['ccard', 'ccard-article', `pos-${i}`]} href={c.href}>
+            <span class="cc-badge">{c.badge}</span>
+            <span class="cc-title">{c.title}</span>
+            <span class="cc-go" aria-hidden="true">읽기 →</span>
+          </a>
+        ))}
+      </div>
     </div>
   </section>
 
@@ -148,63 +167,103 @@ const categories = [
 </BaseLayout>
 
 <style>
-  /* ── 히어로: 헤드샷 인물중심 split(텍스트 + 사진). 블루는 패널·액센트로 절제 ── */
+  /* ── 히어로: 다크 에디토리얼 캔버스 + 초대형 타이포 + 콘텐츠 카드 콜라주 ── */
   .hero {
-    position: relative; overflow: hidden;
-    padding-block: clamp(2.5rem, 2rem + 5vw, 5.5rem);
-    background: var(--bg);
+    position: relative; overflow: hidden; color: #fff;
+    padding-top: clamp(96px, 7rem + 4vw, 150px);
+    padding-bottom: clamp(3rem, 2rem + 5vw, 6rem);
+    background:
+      radial-gradient(115% 85% at 88% 8%, oklch(34% 0.09 262 / 0.65), transparent 58%),
+      linear-gradient(168deg, var(--foot-bg), oklch(15% 0.03 264));
   }
-  .hero-grid {
-    display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-    gap: clamp(2rem, 1rem + 4vw, 4.5rem); align-items: center;
+  .hero-inner {
+    display: grid; grid-template-columns: minmax(0, 1.02fr) minmax(0, 0.98fr);
+    gap: clamp(2rem, 1rem + 4vw, 5rem); align-items: center;
   }
   .hero-copy { min-width: 0; }
   .hero-kicker {
-    font-size: clamp(0.82rem, 0.74rem + 0.3vw, 0.98rem); font-weight: 700;
-    letter-spacing: 0.14em; color: var(--accent-ink); text-transform: uppercase;
-    margin-bottom: clamp(0.9rem, 2vw, 1.4rem);
+    font-size: clamp(0.82rem, 0.74rem + 0.3vw, 1rem); font-weight: 700;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    color: oklch(80% 0.09 252); margin-bottom: clamp(0.9rem, 2vw, 1.4rem);
   }
   .hero-title {
-    margin: 0; font-weight: 800; line-height: 1.04; letter-spacing: -0.035em;
+    margin: 0; font-weight: 900; line-height: 0.98; letter-spacing: -0.04em;
     display: flex; flex-direction: column;
   }
-  .hero-title .t-line { font-size: var(--text-hero); color: var(--ink); display: block; }
-  .hero-title .t-line.accent { color: var(--accent-ink); }
+  .hero-title .t-line { font-size: clamp(2.7rem, 1rem + 8vw, 6rem); color: #fff; display: block; }
+  .hero-title .t-line.accent { color: oklch(74% 0.14 252); }
   .hero-lede {
     margin-top: clamp(1.3rem, 3vw, 2rem); max-width: 42ch;
-    font-size: var(--text-h3); color: var(--muted); line-height: 1.6;
+    font-size: var(--text-h3); color: rgba(255,255,255,0.82); line-height: 1.6;
   }
-  .hero-lede strong { color: var(--ink); font-weight: 700; }
+  .hero-lede strong { color: #fff; font-weight: 700; }
   .hero-cta { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: clamp(1.6rem, 3vw, 2.2rem); }
 
-  /* 헤드샷 — 블루 액센트 패널을 뒤로 오프셋해 깊이(layering) */
-  .hero-photo { position: relative; margin: 0; justify-self: end; width: min(100%, 400px); }
-  .hero-photo .photo-panel {
-    position: absolute; inset: 0; transform: translate(18px, 18px);
-    background: linear-gradient(158deg, var(--hero-bg), var(--hero-bg-2));
-    border-radius: var(--radius); z-index: 0;
+  /* pill CTA */
+  .btn-pill {
+    display: inline-block; border-radius: 999px; padding: 0.8rem 1.6rem;
+    font-weight: 600; font-size: 0.98rem;
+    transition: transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease), background var(--dur) var(--ease), border-color var(--dur) var(--ease);
   }
-  .hero-photo picture { position: relative; z-index: 1; display: block; }
-  .hero-photo img {
+  .btn-fill { background: oklch(62% 0.16 255); color: #fff; box-shadow: 0 8px 24px oklch(55% 0.16 255 / 0.4); }
+  .btn-fill:hover { transform: translateY(-2px); background: oklch(67% 0.16 255); }
+  .btn-outline { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,0.42); }
+  .btn-outline:hover { transform: translateY(-2px); border-color: #fff; background: rgba(255,255,255,0.08); }
+
+  /* 콜라주 — 카드 회전·겹침(grid-stack). 헤드샷 + 실제 글카드. CLS 방어=aspect-ratio·width/height */
+  .hero-collage {
+    position: relative; display: grid; place-items: center;
+    justify-self: end; width: 100%;
+    min-height: clamp(340px, 38vw, 470px);
+  }
+  .hero-collage > * { grid-area: 1 / 1; }
+  .ccard {
+    border-radius: var(--radius); box-shadow: 0 20px 50px rgba(0,0,0,0.45);
+    transform: translate(var(--x, 0), var(--y, 0)) rotate(var(--r, 0deg));
+  }
+  .ccard-photo { --x: -30%; --y: 7%; --r: -5deg; z-index: 3; width: clamp(168px, 20vw, 230px); background: #fff; padding: 10px 10px 8px; }
+  .ccard-photo picture { display: block; }
+  .ccard-photo img {
     width: 100%; height: auto; aspect-ratio: 600 / 860; object-fit: cover;
-    border-radius: var(--radius); box-shadow: var(--shadow-card); display: block;
+    border-radius: calc(var(--radius) - 6px); display: block;
   }
-  @media (max-width: 760px) {
-    .hero-grid { grid-template-columns: 1fr; gap: clamp(2rem, 6vw, 3rem); }
-    .hero-photo { order: -1; justify-self: start; width: min(72%, 320px); }
+  .ccard-photo figcaption { margin-top: 0.5rem; text-align: center; font-size: 0.8rem; font-weight: 700; color: var(--ink); letter-spacing: 0.02em; }
+  .ccard-article {
+    width: clamp(188px, 21vw, 250px); aspect-ratio: 5 / 6;
+    background: #fff; color: var(--ink); padding: 1.1rem 1.2rem 1rem;
+    display: flex; flex-direction: column; gap: 0.5rem; text-align: left;
+    transition: transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
+  }
+  .ccard-article.pos-0 { --x: 30%; --y: -14%; --r: 4deg; z-index: 2; }
+  .ccard-article.pos-1 { --x: -4%; --y: 27%; --r: -9deg; z-index: 1; }
+  .ccard-article:hover { transform: translate(var(--x, 0), var(--y, 0)) rotate(var(--r, 0deg)) scale(1.04); box-shadow: 0 26px 64px rgba(0,0,0,0.55); z-index: 5; }
+  .cc-badge { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: var(--accent-ink); }
+  .cc-title { font-size: 1.02rem; font-weight: 700; line-height: 1.35; color: var(--ink); display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .cc-go { margin-top: auto; font-size: 0.82rem; font-weight: 600; color: var(--accent-ink); }
+
+  @media (max-width: 860px) {
+    .hero-inner { grid-template-columns: 1fr; gap: clamp(2.5rem, 8vw, 3.5rem); }
+    .hero-collage { justify-self: center; min-height: clamp(320px, 66vw, 420px); }
+    .ccard-photo { --x: -28%; }
+    .ccard-article.pos-0 { --x: 27%; } .ccard-article.pos-1 { --x: -2%; }
+  }
+  @media (max-width: 480px) {
+    .ccard-photo { width: clamp(148px, 42vw, 188px); --x: -24%; --y: 5%; }
+    .ccard-article { width: clamp(158px, 46vw, 208px); }
+    .ccard-article.pos-0 { --x: 22%; --y: -11%; } .ccard-article.pos-1 { --x: 0%; --y: 22%; }
   }
 
-  @keyframes heroReveal { from { opacity: 0; transform: translateY(0.35em); } to { opacity: 1; transform: none; } }
-  .hero-kicker, .hero-title .t-line, .hero-lede, .hero-cta, .hero-photo { animation: heroReveal 0.7s var(--ease) both; }
+  @keyframes heroReveal { from { opacity: 0; transform: translateY(0.4em); } to { opacity: 1; transform: none; } }
+  .hero-kicker, .hero-title .t-line, .hero-lede, .hero-cta, .hero-collage { animation: heroReveal 0.7s var(--ease) both; }
   .hero-kicker { animation-delay: 0.04s; }
   .hero-title .t-line:nth-child(1) { animation-delay: 0.12s; }
   .hero-title .t-line:nth-child(2) { animation-delay: 0.2s; }
   .hero-title .t-line:nth-child(3) { animation-delay: 0.28s; }
   .hero-lede { animation-delay: 0.38s; }
   .hero-cta { animation-delay: 0.46s; }
-  .hero-photo { animation-delay: 0.16s; }
+  .hero-collage { animation-delay: 0.2s; animation-duration: 0.85s; }
   @media (prefers-reduced-motion: reduce) {
-    .hero-kicker, .hero-title .t-line, .hero-lede, .hero-cta, .hero-photo { animation: none; }
+    .hero-kicker, .hero-title .t-line, .hero-lede, .hero-cta, .hero-collage { animation: none; }
   }
 
   .btn { display: inline-block; padding: 0.7rem 1.4rem; border-radius: 999px; background: var(--accent); color: #fff; font-weight: 600; font-size: 0.95rem; transition: transform var(--dur) var(--ease); }
