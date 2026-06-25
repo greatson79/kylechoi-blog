@@ -22,11 +22,12 @@ const ministryHref = (cat, id) =>
   cat === '교육' ? `/education/${id}/` : `/ministry/${id}/`;
 
 // ★4분류(주인님 확정): 목회(설교+묵상 병합)·교육·AI트렌드·시대분석
+// ★표시 라벨만 영문(네비 일치). 필터값(data.category)·href는 불변.
 const categories = [
-  { label: 'ministry', href: '/ministry/', desc: '설교·묵상 등 목회 콘텐츠.' },
-  { label: '교육', href: '/education/', desc: 'AI 교육 — AI를 분별 있게 배우고 활용하기.' },
-  { label: 'AI트렌드', href: '/ai-trend/', desc: 'AI의 흐름과 실천적 인사이트.' },
-  { label: '시대분석', href: '/insight/', desc: '거시·사회·기술 등 시대 흐름을 정보 제공 목적으로 정리.' },
+  { label: 'Ministry', href: '/ministry/', desc: '설교·묵상 등 목회 콘텐츠.' },
+  { label: 'Education', href: '/education/', desc: 'AI 교육 — AI를 분별 있게 배우고 활용하기.' },
+  { label: 'AI Trend', href: '/ai-trend/', desc: 'AI의 흐름과 실천적 인사이트.' },
+  { label: 'Insight', href: '/insight/', desc: '거시·사회·기술 등 시대 흐름을 정보 제공 목적으로 정리.' },
 ];
 
 // ★히어로 콜라주 카드 — 실제 최신 글 2장(텍스트 카드, 신규 이미지 0) + 헤드샷 카드(마크업).
@@ -116,7 +117,7 @@ const collage = [
   <section class="section" data-channel="insight">
     <div class="container">
       <div class="row-head">
-        <h2>AI트렌드</h2>
+        <h2>AI Trend</h2>
         <a class="more-link" href="/ai-trend/">전체 보기 →</a>
       </div>
       {aitrend.length ? (
@@ -134,7 +135,7 @@ const collage = [
   <section class="section section-alt" data-channel="insight">
     <div class="container">
       <div class="row-head">
-        <h2>시대분석</h2>
+        <h2>Insight</h2>
         <a class="more-link" href="/insight/">전체 보기 →</a>
       </div>
       <aside class="disclaimer" role="note" aria-label="정보 제공 목적 안내">
@@ -288,7 +289,8 @@ const collage = [
   .empty { color: var(--faint); }
 
   .about-teaser { background: var(--surface); border-top: 1px solid var(--line); }
-  .teaser-inner { max-width: 60ch; }
-  .teaser-lede { margin-top: 1rem; font-size: var(--text-h3); color: var(--muted); line-height: 1.55; }
+  /* ★좌측 정렬: 표준 컨테이너(다른 섹션과 동일 좌측 거터) + lede만 가독폭 캡(가운데정렬 원인=60ch 컨테이너 margin auto 제거) */
+  .teaser-inner { text-align: left; }
+  .teaser-lede { margin-top: 1rem; max-width: 58ch; font-size: var(--text-h3); color: var(--muted); line-height: 1.55; }
   .about-teaser .btn-ghost { margin-top: 1.6rem; }
 </style>
