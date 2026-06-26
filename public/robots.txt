@@ -1,3 +1,5 @@
-# ★프리뷰 단계 — 전체 색인 차단. 최종 공개(production) 승인 시 교체.
+# ★완전공개(production) — 검색 색인 허용 (2026-06-26 주인님 승인).
 User-agent: *
-Disallow: /
+Allow: /
+
+Sitemap: https://dia-io.com/sitemap-index.xml

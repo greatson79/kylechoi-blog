@@ -25,8 +25,8 @@ const canonical = new URL(Astro.url.pathname, Astro.site ?? Astro.url).toString(
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>{title}</title>
   <meta name="description" content={description} />
-  <!-- ★프리뷰 단계: 검색 색인 차단(noindex). 최종 공개(production)는 주인님 승인 후 이 줄 제거. -->
-  <meta name="robots" content="noindex, nofollow" />
+  <!-- ★완전공개(production): 검색 색인 허용 — 2026-06-26 주인님 승인. -->
+  <meta name="robots" content="index, follow" />
   <link rel="canonical" href={canonical} />
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
