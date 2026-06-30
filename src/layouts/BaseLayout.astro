@@ -16,7 +16,12 @@ const {
   channel,
   ogImage,
 } = Astro.props;
-const canonical = new URL(Astro.url.pathname, Astro.site ?? Astro.url).toString();
+const site = Astro.site ?? Astro.url;
+const canonical = new URL(Astro.url.pathname, site).toString();
+// og:image — 페이지가 ogImage(아티클 히어로 등)를 주면 그것을, 없으면 기본 OG 타이틀 카드.
+// 소셜 스크레이퍼는 절대 URL을 요구하므로 site 기준으로 해소한다(상대경로 폴백 방지).
+const DEFAULT_OG = '/og-cover.png';
+const ogImageUrl = new URL(ogImage ?? DEFAULT_OG, site).toString();
 ---
 <!doctype html>
 <html lang="ko" data-channel={channel}>
@@ -34,8 +39,12 @@ const canonical = new URL(Astro.url.pathname, Astro.site ?? Astro.url).toString(
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
   <meta property="og:url" content={canonical} />
-  {ogImage && <meta property="og:image" content={ogImage} />}
+  <meta property="og:image" content={ogImageUrl} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content={title} />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content={ogImageUrl} />
   <meta name="generator" content={Astro.generator} />
   <!-- Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4454801451324451" crossorigin="anonymous"></script>
