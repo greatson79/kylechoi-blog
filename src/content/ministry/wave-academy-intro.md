@@ -1,11 +1,11 @@
 ---
 title: WAVE Academy — AI를 분별하며 쓰는 법을 배우다
-description: 두려움도 맹신도 없이 AI를 다루는 법. 목회자 AI 교육, AI 리터러시, 컨설팅, 그리고 자격증 과정까지 — WAVE Academy를 소개합니다.
-category: 교육
+description: 두려움도 맹신도 없이 AI를 다루는 법. 목회자 AI 교육, AI 리터러시, 컨설팅까지 — 교회·기관 AI 교육 브랜드 WAVE Academy를 소개합니다.
+category: ministry
 pubDate: 2026-06-30
 author: Kyle Choi
-tags: [AI교육, WAVE Academy, AI리터러시, 컨설팅, 자격증]
-draft: true  # ★CEO HOLD (2026-06-30) — 발행 금지, 별도 승인까지 비공개
+tags: [AI교육, WAVE Academy, AI리터러시, 컨설팅]
+draft: false
 ---
 
 "설교문 써줘."
@@ -16,7 +16,7 @@ draft: true  # ★CEO HOLD (2026-06-30) — 발행 금지, 별도 승인까지 �
 
 **WAVE Academy**는 이 지점에서 시작합니다. AI에게 설교를 맡기는 것이 아니라, 목회자가 설계한 신학적 환경 안에서 AI가 조립하게 하는 법을 가르칩니다. 목회자가 AI를 부리는 법 — 그것이 WAVE Academy가 가르치는 것입니다.
 
-WAVE Academy는 DiA Ai Edu. Solution(교회·기관 AI 교육 전문)의 AI 교육 브랜드이며, 세 갈래로 운영됩니다.
+WAVE Academy는 DiA Ai Edu. Solution(교회·기관 AI 교육 전문)의 AI 교육 브랜드이며, 두 갈래로 운영됩니다(교육·컨설팅).
 
 ---
 
@@ -49,4 +49,4 @@ AI가 할 수 있는 것과 할 수 없는 것, 판단을 위임해서는 안 �
 
 AI를 잘 쓰는 사람이 아니라, AI를 분별하며 쓰는 사람을 길러내는 것 — WAVE Academy의 방향입니다.
 
-*일정·신청 등 구체적 안내는 추후 업데이트됩니다. 자격증 과정(AI 콘텐츠 크리에이터 2급·1급)은 준비 중입니다.*
+*일정·신청 등 구체적 안내는 추후 업데이트됩니다. AI 콘텐츠 크리에이터 2급·1급 과정을 향후 개설할 예정이며, 민간자격 등록을 준비 중입니다.*
