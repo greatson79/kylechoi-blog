@@ -9,7 +9,7 @@ import { getCollection } from 'astro:content';
 const posts = (await getCollection('ministry', ({ data }) => !data.draft && data.category === '교육'))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
-<BaseLayout title="교육 — DiA" description="AI 교육 — 목회자 AI 교육·AI 리터러시 교육." channel="ministry">
+<BaseLayout title="교육 — Kyle Choi Notes" description="AI 교육 — 목회자 AI 교육·AI 리터러시 교육." channel="ministry">
   <Header slot="header" />
   <section class="section">
     <div class="container">

@@ -12,7 +12,7 @@ interface Props {
 }
 const {
   title,
-  description = 'DiA Ai Edu. Solution — 목회·교육·시대분석·AI트렌드',
+  description = 'Kyle Choi Notes — Faith · AI · Learning · 신앙·AI·배움에 관한 기록',
   channel,
   ogImage,
 } = Astro.props;
@@ -30,6 +30,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site ?? Astro.url).toString(
   <link rel="canonical" href={canonical} />
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Kyle Choi Notes" />
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
   <meta property="og:url" content={canonical} />
