@@ -37,6 +37,8 @@ const canonical = new URL(Astro.url.pathname, Astro.site ?? Astro.url).toString(
   {ogImage && <meta property="og:image" content={ogImage} />}
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="generator" content={Astro.generator} />
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4454801451324451" crossorigin="anonymous"></script>
 </head>
 <body>
   <slot name="header" />
