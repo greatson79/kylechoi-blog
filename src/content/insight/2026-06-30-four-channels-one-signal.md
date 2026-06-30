@@ -5,7 +5,7 @@ category: 시대분석
 pubDate: 2026-06-30
 author: Kyle Choi
 tags: [시대분석, 시대흐름, AI, 반도체, 에너지, 거버넌스]
-draft: false
+draft: true
 disclaimerRequired: true
 notInvestmentAdvice: true
 factChecked: true
