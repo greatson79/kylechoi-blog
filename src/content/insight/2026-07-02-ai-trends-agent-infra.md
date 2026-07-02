@@ -10,7 +10,7 @@ draft: false
 disclaimerRequired: false
 factChecked: true
 heroImage:
-  src: /images/ai-trend/hero_agent_infra_0702.webp
+  src: /images/ai-trend/hero_agent_infra_0702.png
   alt: AI 에이전트가 자율적으로 작동하는 워크스페이스
 sourcePath: output/DiA/크리에이티브본부/AI트렌드/AI트렌드_아티클_0702.md
 ---
