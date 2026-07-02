@@ -29,7 +29,7 @@ const dateStr = pubDate
       </div>
     </header>
     {heroImage && (
-      <div class="article-hero container container-wide">
+      <div class="article-hero container">
         <img src={heroImage.src} alt={heroImage.alt} width="1200" height="630" fetchpriority="high" />
       </div>
     )}
@@ -47,5 +47,5 @@ const dateStr = pubDate
   .head-inner h1 { margin-top: 0.3em; }
   .meta { color: var(--muted); font-size: 0.9rem; margin-top: 0.6rem; }
   .article-hero { margin-block: var(--space-block); }
-  .article-hero img { width: 100%; height: auto; border-radius: var(--radius); aspect-ratio: 1200/630; object-fit: cover; }
+  .article-hero img { display: block; width: 100%; max-width: var(--measure); margin-inline: auto; height: auto; border-radius: var(--radius); aspect-ratio: 1200/630; object-fit: cover; }
 </style>

@@ -7,7 +7,7 @@ updatedDate: 2026-07-02
 author: Kyle Choi
 tags: [AI트렌드, Claude, Fable5, Sonnet5, Anthropic, 수출통제, 실전팁]
 draft: false
-disclaimerRequired: true
+disclaimerRequired: false
 factChecked: true
 heroImage:
   src: /images/ai-trend/hero_fable5_lineup_0702.webp

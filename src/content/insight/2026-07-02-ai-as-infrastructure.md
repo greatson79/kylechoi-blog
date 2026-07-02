@@ -1,7 +1,7 @@
 ---
 title: "AI를 우주에 두겠다는 주에, 코스피는 6% 급락했다"
 description: "머스크의 궤도 데이터센터 구상과 코스피 6% 급락이 같은 주에 나왔다. AI가 전력·반도체·입지 이야기로 바뀐 흐름을, 글로벌 기회론과 한국 제약론의 긴장으로 읽는다."
-category: AI트렌드
+category: 시대분석
 pubDate: 2026-07-02
 updatedDate: 2026-07-02
 author: Kyle Choi
