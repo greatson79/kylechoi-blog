@@ -1,0 +1,157 @@
+---
+// /newsletter — 뉴스레터 구독 페이지
+// 발송 인프라: Stibee(스티비) · 주소록: "기본 주소록" (Kyle Choi Notes 계정)
+// ★2026-07-01 실연결 완료: 리스트 ID 3VNd__fBUg9MQM1cPJ54Sc7VUqaRIQ==
+//   Stibee 공식 임베드 폼(HTML + stb_subscribe_form.js) 사용 → 구독 등록·동의처리·중복확인을 Stibee가 보장.
+//   사이트 브랜드(파랑 accent·Pretendard·여백)에 맞춰 아래 is:global 로 재스타일.
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/nav/Header.astro';
+import Footer from '../components/nav/Footer.astro';
+---
+<BaseLayout
+  title="뉴스레터 — Kyle Choi Notes"
+  description="신앙·AI·배움에 관한 기록을 이메일로. 매주 새 글과 인사이트를 정리해 보내드립니다. Stibee로 발송하며 언제든 구독 해지할 수 있습니다."
+>
+  <Header slot="header" />
+
+  <section class="newsletter-section section">
+    <div class="container narrow">
+      <p class="eyebrow">Newsletter</p>
+      <h1>이메일로 받아보기</h1>
+      <p class="lede">
+        <strong>신앙 · AI · 배움</strong>에 관한 새 글과 인사이트를 매주 한 통의 메일로 정리해 보내드립니다.
+        광고 없이, 읽을 만한 것만. 언제든 한 번의 클릭으로 구독을 해지할 수 있습니다.
+      </p>
+
+      <ul class="perks">
+        <li><span class="perk-k">Ministry</span> 목회·묵상 아티클</li>
+        <li><span class="perk-k">Education</span> AI 리터러시 교육 콘텐츠</li>
+        <li><span class="perk-k">AI Trend · Insight</span> 시대 흐름 분석</li>
+      </ul>
+
+      {/* ── Stibee 공식 구독 폼 (리스트: 기본 주소록) ── */}
+      <link rel="stylesheet" href="https://resource.stibee.com/subscribe/stb_subscribe_form_style.css" />
+      <div id="stb_subscribe">
+        <form
+          action="https://stibee.com/api/v1.0/lists/3VNd__fBUg9MQM1cPJ54Sc7VUqaRIQ==/public/subscribers"
+          method="POST"
+          target="_blank"
+          accept-charset="utf-8"
+          class="stb_form"
+          name="stb_subscribe_form"
+          id="stb_subscribe_form"
+          data-lang=""
+          novalidate
+        >
+          <h1 class="stb_form_title">기본 주소록 구독하기</h1>
+
+          <fieldset class="stb_form_set">
+            <label for="stb_email" class="stb_form_set_label">
+              이메일 주소<span class="stb_asterisk">*</span>
+            </label>
+            <input type="text" class="stb_form_set_input" id="stb_email" name="email" required="required" />
+            <div class="stb_form_msg_error" id="stb_email_error"></div>
+          </fieldset>
+
+          <div class="stb_form_policy">
+            <label>
+              <input type="checkbox" id="stb_policy" value="stb_policy_true" />
+              <span>(필수)</span>
+              <button id="stb_form_modal_open" data-modal="stb_form_policy_modal" class="stb_form_modal_open_btn" type="button">개인정보 수집 및 이용</button>에 동의합니다.
+            </label>
+            <div class="stb_form_msg_error" id="stb_policy_error"></div>
+            <div class="stb_form_modal stb_form_policy_text blind" id="stb_form_policy_modal">
+              <div class="stb_form_modal_body">
+                <h1 class="stb_form_modal_title">개인정보 수집 및 이용</h1>
+                <div class="stb_form_modal_text">뉴스레터 발송을 위한 최소한의 개인정보를 수집하고 이용합니다.
+수집된 정보는 발송 외 다른 목적으로 이용되지 않으며, 서비스가 종료되거나 구독을 해지할 경우 즉시 파기됩니다.</div>
+                <div class="stb_form_modal_btn">
+                  <button id="stb_form_modal_close" class="stb_form_modal_close_btn" data-modal="stb_form_policy_modal" type="button">닫기</button>
+                </div>
+              </div>
+              <div class="stb_form_modal_bg" id="stb_form_modal_bg"></div>
+            </div>
+          </div>
+
+          <div class="stb_form_result" id="stb_form_result"></div>
+
+          <fieldset class="stb_form_set_submit">
+            <button type="submit" class="stb_form_submit_button" id="stb_form_submit_button">구독하기</button>
+          </fieldset>
+        </form>
+      </div>
+      <script type="text/javascript" src="https://resource.stibee.com/subscribe/stb_subscribe_form.js" is:inline></script>
+
+      <p class="fine">스팸은 보내지 않습니다. 이메일은 뉴스레터 발송 목적으로만 사용되며, 발송은 Stibee를 통해 이루어집니다.</p>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<style>
+  .newsletter-section { padding-block: var(--space-section); }
+  .narrow { max-width: 56ch; }
+  .newsletter-section h1 { margin-top: 0.2em; }
+  .lede { color: var(--muted); line-height: 1.7; margin-bottom: 1.8rem; max-width: 52ch; }
+  .lede strong { color: var(--ink); }
+
+  .perks {
+    list-style: none; margin: 0 0 2.4rem; padding: 0;
+    display: flex; flex-direction: column; gap: 0.7rem;
+    border-left: 3px solid var(--accent);
+    padding-left: 1.1rem;
+  }
+  .perks li { font-size: 0.98rem; color: var(--ink); line-height: 1.4; }
+  .perk-k {
+    display: inline-block; min-width: 8.5rem;
+    font-size: 0.82rem; font-weight: 700; letter-spacing: 0.02em;
+    color: var(--accent-ink);
+  }
+
+  .fine { margin-top: 1.8rem; font-size: 0.82rem; color: var(--faint); line-height: 1.6; }
+</style>
+
+{/* ── Stibee 폼 브랜드 오버라이드(외부 DOM이라 is:global) ── */}
+<style is:global>
+  #stb_subscribe { max-width: 100%; margin: 0; font-family: inherit; }
+  #stb_subscribe .stb_form { font-family: inherit; }
+
+  /* 우리 페이지에 이미 h1이 있으므로 Stibee 기본 타이틀은 숨김 */
+  #stb_subscribe .stb_form_title { display: none; }
+
+  #stb_subscribe .stb_form_set { margin-bottom: 1rem; }
+  #stb_subscribe .stb_form_set_label {
+    font-size: 0.9rem; font-weight: 600; color: var(--ink);
+    letter-spacing: 0.01em; margin-bottom: 0.45rem; display: block;
+  }
+  #stb_subscribe .stb_form_set_input {
+    width: 100%; padding: 0.75rem 1rem;
+    border: 1px solid var(--line); border-radius: var(--radius);
+    background: var(--surface); color: var(--ink);
+    font-size: 1rem; font-family: inherit; line-height: 1.5;
+    transition: border-color var(--dur) var(--ease);
+  }
+  #stb_subscribe .stb_form_set_input:focus { outline: none; border-color: var(--accent); }
+
+  #stb_subscribe .stb_form_policy {
+    font-size: 0.88rem; color: var(--muted); line-height: 1.5; margin: 0.9rem 0 1.2rem;
+  }
+  #stb_subscribe .stb_form_policy input[type='checkbox'] { accent-color: var(--accent); }
+  #stb_subscribe .stb_form_modal_open_btn {
+    color: var(--accent-ink); text-decoration: underline;
+    background: none; border: none; padding: 0; cursor: pointer; font: inherit;
+  }
+
+  #stb_subscribe .stb_form_submit_button {
+    align-self: flex-start; padding: 0.75rem 2rem;
+    background-color: var(--accent) !important; color: #fff !important;
+    border: none; border-radius: var(--radius);
+    font-size: 1rem; font-weight: 600; font-family: inherit; cursor: pointer;
+    transition: opacity var(--dur) var(--ease);
+  }
+  #stb_subscribe .stb_form_submit_button:hover { opacity: 0.88; }
+
+  #stb_subscribe .stb_form_msg_error { color: #c0392b; font-size: 0.85rem; margin-top: 0.35rem; }
+  #stb_subscribe .stb_form_result { font-size: 0.95rem; line-height: 1.6; }
+</style>

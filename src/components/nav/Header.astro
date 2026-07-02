@@ -11,6 +11,7 @@ const links = [
   { href: '/education/', label: 'Education' },
   { href: '/ai-trend/', label: 'AI Trend' },
   { href: '/insight/', label: 'Insight' },
+  { href: '/newsletter/', label: 'Newsletter', cta: true },
 ];
 const path = Astro.url.pathname;
 ---
@@ -22,7 +23,7 @@ const path = Astro.url.pathname;
     </a>
     <nav class="nav" aria-label="주 메뉴">
       {links.map((l) => (
-        <a href={l.href} class:list={['nav-link', { active: path.startsWith(l.href.split('?')[0]) && l.href !== '/' }]}>{l.label}</a>
+        <a href={l.href} class:list={['nav-link', { active: path.startsWith(l.href.split('?')[0]) && l.href !== '/', 'nav-cta': l.cta }]}>{l.label}</a>
       ))}
     </nav>
   </div>
@@ -50,6 +51,15 @@ const path = Astro.url.pathname;
     content: ''; position: absolute; left: 0; right: 0; bottom: -2px; height: 2px; background: var(--accent); border-radius: 2px;
   }
 
+  /* ── Newsletter CTA(강조 필) ── */
+  .nav-link.nav-cta {
+    padding: 0.4rem 0.95rem; border-radius: 999px;
+    background: var(--accent); color: #fff;
+  }
+  .nav-link.nav-cta:hover { color: #fff; opacity: 0.9; }
+  .nav-link.nav-cta.active { color: #fff; }
+  .nav-link.nav-cta.active::after { display: none; }
+
   /* ── hero variant: 블루 히어로 위 투명 흰 네비 ── */
   .site-header.hero {
     position: absolute; top: 0; left: 0; right: 0;
@@ -62,6 +72,10 @@ const path = Astro.url.pathname;
   .site-header.hero .nav-link:hover,
   .site-header.hero .nav-link.active { color: #fff; }
   .site-header.hero .nav-link.active::after { background: #fff; }
+  /* 히어로(블루) 위에선 흰 필 + 블루 텍스트로 대비 확보 */
+  .site-header.hero .nav-link.nav-cta { background: #fff; color: var(--accent-ink); }
+  .site-header.hero .nav-link.nav-cta:hover,
+  .site-header.hero .nav-link.nav-cta.active { color: var(--accent-ink); opacity: 0.92; }
 
   @media (max-width: 480px) { .brand-sub { display: none; } }
 </style>

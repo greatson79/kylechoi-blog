@@ -8,6 +8,7 @@ dist/
 # ★시크릿·배포 자격증명 (CSO 보안 — 절대 커밋 금지)
 .env
 .env.*
+!.env.example
 .vercel
 *.pem
 *.key
