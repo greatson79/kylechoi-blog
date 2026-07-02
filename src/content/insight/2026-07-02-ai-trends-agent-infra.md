@@ -1,13 +1,17 @@
 ---
-title: "2026 하반기 실무를 바꾸는 5가지 핵심 AI 트렌드"
-description: "Sonnet 5 토크나이저 비용 구조, 에이전트 위임 실증 데이터, codebase-memory-mcp, 백그라운드 자동 커밋, GPT-5.6 프리뷰 — 이번 주 실무 인프라 5가지."
+title: "2026 하반기 실무를 바꾸는 5가지 핵심 AI 트렌드: 규제 속 터진 에이전트 폭발"
+description: "Claude Sonnet 5의 숨은 토큰 비용, OpenAI 에이전트 위임 데이터(80.6%), codebase-memory-mcp 급성장, Claude Code 백그라운드 커밋, GPT-5.6 제한 프리뷰까지 — 이번 주 실무를 바꾸는 AI 인프라 5가지."
 category: AI트렌드
 pubDate: 2026-07-02
+updatedDate: 2026-07-02
 author: Kyle Choi
-tags: [AI트렌드, Claude, Sonnet5, 에이전트, MCP, GPT-5.6, 실전팁]
+tags: [AI트렌드, Claude, Sonnet 5, OpenAI, 에이전트, MCP, GPT-5, 실전팁]
 draft: false
 disclaimerRequired: false
 factChecked: true
+heroImage:
+  src: /images/ai-trend/hero_agent_infra_0702.webp
+  alt: AI 에이전트가 자율적으로 작동하는 워크스페이스
 sourcePath: output/DiA/크리에이티브본부/AI트렌드/AI트렌드_아티클_0702.md
 ---
 
