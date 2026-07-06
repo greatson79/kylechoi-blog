@@ -5,7 +5,7 @@ category: 교육
 pubDate: 2026-07-01
 author: 디딤
 tags: [교육, AI활용, 클로드프로젝트, WAVE Academy, 초급]
-draft: true
+draft: false
 factChecked: false
 sourcePath: Notion/AI활용학습허브/초급3-클로드프로젝트
 ---
