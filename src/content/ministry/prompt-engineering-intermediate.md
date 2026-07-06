@@ -5,10 +5,15 @@ category: 교육
 pubDate: 2026-07-06
 author: 디딤
 tags: [교육, AI활용, 프롬프트엔지니어링, WAVE Academy, 중급]
-draft: true
+draft: false
 factChecked: false
+heroImage:
+  src: /images/education/hero_prompt-engineering_0707.png
+  alt: 손이 우드톤 책상 위에 인덱스카드 5장을 순서대로 배열하는 오버헤드 구도
 sourcePath: Notion/AI활용학습허브/중급1-프롬프트심화
 ---
+
+![손이 우드톤 책상 위에 인덱스카드 5장을 순서대로 배열하는 오버헤드 구도](/images/education/hero_prompt-engineering_0707.webp)
 
 > 초급에서 "구체적으로, 맥락과 함께, 형식을 정해 부탁하기"를 배웠습니다. 중급에서는 **AI의 추론을 설계하고, 출력을 구조화하고, 프롬프트를 체계적으로 개선하는** 기술로 넘어갑니다.
 
