@@ -72,4 +72,4 @@ sourcePath: Notion/AI활용학습허브/중급3-클로드프로젝트고급
 
 > 한 줄 정리: 중급 프로젝트는 **지식 큐레이션·RAG 이해·지시 고도화·스킬 조합·다중 공간 운영**의 시스템 설계입니다.
 
-ⓒ DiA AI Edu. Solution · WAVE AI Networks
+ⓒ DiA AI Edu. Solution · WAVE AI Networks — 중급 AI 활용 학습 시리즈
