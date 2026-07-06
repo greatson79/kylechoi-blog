@@ -13,6 +13,7 @@ const base = {
   heroImage: z.object({ src: z.string(), alt: z.string() }).optional(),
   draft: z.boolean().default(true),          // ★기본 비공개(승인 전 발행 방지)
   sourcePath: z.string().optional(),          // output/ 원본 추적(SOT)
+  factChecked: z.boolean().default(false),    // agy 게이트 통과 표식
 };
 
 // ── 사역(Ministry) 채널: ministry 단일·교육 (★주인님 지시: 설교·묵상 구분 폐지→ministry 통합, 청소년 제외) ──
@@ -35,7 +36,6 @@ const insight = defineCollection({
     // ★조건부 면책: 투자·시장을 다룰 때만 true(agy 법적 게이트가 강제). 기본 false.
     disclaimerRequired: z.boolean().default(false),
     notInvestmentAdvice: z.boolean().default(false),
-    factChecked: z.boolean().default(false),    // agy 게이트 통과 표식
   }),
 });
 
