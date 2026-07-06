@@ -5,7 +5,7 @@ category: 교육
 pubDate: 2026-07-07
 author: 디딤
 tags: [교육, AI활용, 컨텍스트엔지니어링, WAVE Academy, 중급]
-draft: true
+draft: false
 factChecked: false
 heroImage:
   src: /images/education/hero_context-engineering_0707.png
