@@ -5,10 +5,15 @@ category: 교육
 pubDate: 2026-07-07
 author: 디딤
 tags: [교육, AI활용, 클로드프로젝트, RAG, WAVE Academy, 중급]
-draft: true
+draft: false
 factChecked: false
+heroImage:
+  src: /images/education/hero_claude-projects-advanced_0707.png
+  alt: 손이 3개의 폴더 중 하나를 골라 앞으로 당기는 모습, 우드톤 책상 위 에디토리얼 구도
 sourcePath: Notion/AI활용학습허브/중급3-클로드프로젝트고급
 ---
+
+![손이 3개의 폴더 중 하나를 골라 앞으로 당기는 모습, 우드톤 책상 위 에디토리얼 구도](/images/education/hero_claude-projects-advanced_0707.webp)
 
 > 초급에서 "프로젝트를 만들고 지식·지시를 채우기"를 배웠습니다. 중급에선 프로젝트를 **하나의 운영 시스템**으로 다룹니다. 지식 큐레이션, RAG 원리, 스킬 조합, 다중 프로젝트 운영.
 > ⚠️ 화면·기능은 바뀔 수 있습니다. 2026년 6월 기준.
