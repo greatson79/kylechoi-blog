@@ -7,8 +7,13 @@ author: 디딤
 tags: [교육, AI활용, 컨텍스트엔지니어링, WAVE Academy, 중급]
 draft: true
 factChecked: false
+heroImage:
+  src: /images/education/hero_context-engineering_0707.png
+  alt: 최소한만 남기고 정리된 책상 위 열린 노트와 펜, 불필요한 서류 더미를 손으로 치우는 모습
 sourcePath: Notion/AI활용학습허브/중급2-컨텍스트심화
 ---
+
+![최소한만 남기고 정리된 책상 위 열린 노트와 펜, 불필요한 서류 더미를 손으로 치우는 모습](/images/education/hero_context-engineering_0707.webp)
 
 > 초급에서 "AI의 책상을 잘 차리기"를 배웠습니다. 중급은 그 책상이 **무한하지 않다는 사실**에서 출발합니다. 컨텍스트는 유한한 자원이고, 잘못 채우면 오히려 성능이 떨어집니다.
 
