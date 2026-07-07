@@ -7,7 +7,7 @@ author: 디딤
 tags: [AI트렌드, 실전팁, 프롬프트캐싱, 컨텍스트엔지니어링, 생산성, Claude, NotebookLM]
 draft: false
 disclaimerRequired: false
-factChecked: false
+factChecked: true
 heroImage:
   src: /images/ai-trend/hero_practical-tips-cost-workflow_0707.png
   alt: 책상 위 서류에 도장을 찍는 손 — 반복 업무 자동화와 비용 절감의 상징
