@@ -5,8 +5,8 @@ category: 교육
 pubDate: 2026-07-13
 author: 디딤
 tags: [교육, AI활용, 아티팩트, 라이브아티팩트, WAVE Academy, 중급]
-draft: true
-factChecked: false
+draft: false
+factChecked: true
 heroImage:
   src: /images/education/hero_artifact-live-intermediate_0713.webp
   alt: 모던한 책상 위 모니터에 컬러풀한 차트와 카드로 구성된 대시보드가 떠 있는 모습, 창가의 따뜻한 자연광과 화분, 에디토리얼 구도
