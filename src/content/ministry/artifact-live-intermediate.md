@@ -7,6 +7,9 @@ author: 디딤
 tags: [교육, AI활용, 아티팩트, 라이브아티팩트, WAVE Academy, 중급]
 draft: true
 factChecked: false
+heroImage:
+  src: /images/education/hero_artifact-live-intermediate_0713.png
+  alt: 모던한 책상 위 모니터에 컬러풀한 차트와 카드로 구성된 대시보드가 떠 있는 모습, 창가의 따뜻한 자연광과 화분, 에디토리얼 구도
 sourcePath: Notion/AI활용학습허브/중급4-아티팩트심화
 ---
 
@@ -30,6 +33,8 @@ sourcePath: Notion/AI활용학습허브/중급4-아티팩트심화
 한 번에 완성하려 말고 보면서 고치세요. "버튼을 위로", "색을 브랜드 색으로", "모바일에서도 잘 보이게". 큰 변경은 한 번에 하나씩.
 
 > 라이브 아티팩트는 수정할 때마다 버전이 저장되어 이전 버전과 비교·복원이 가능합니다.
+
+![태블릿 화면의 대시보드에서 손가락으로 슬라이더를 조정하는 모습, 따뜻한 조명의 책상, 실시간으로 갱신되는 차트](/images/education/body_artifact-live-intermediate_0713.png)
 
 ## 3. 좋은 설계 원칙
 
