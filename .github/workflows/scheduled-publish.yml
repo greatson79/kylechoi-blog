@@ -56,6 +56,12 @@ jobs:
         id: deploy
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          # ★agy 견고성검수 발견(2026-07-13): 로컬은 .vercel/project.json(gitignored, `vercel link`
+          # 결과)이 프로젝트를 알려주지만 CI 체크아웃엔 그 파일이 없어 토큰만으로는 어느
+          # 프로젝트에 배포할지 못 찾는다. org/project ID는 자격증명이 아니라 식별자라
+          # Repository Variables(비밀 아님)로 등록해 주입한다.
+          VERCEL_ORG_ID: ${{ vars.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ vars.VERCEL_PROJECT_ID }}
         run: |
           set -uo pipefail
           MAX_ATTEMPTS=3
