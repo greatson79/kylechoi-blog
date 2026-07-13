@@ -29,9 +29,9 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: blog
+    # ★codex R2 발견(2026-07-13): repo root가 이 워크플로 파일 기준 그대로다(로컬 클론 경로가
+    # 우연히 "wave-education/blog"일 뿐, repo 안에 "blog/" 서브디렉토리는 없음) —
+    # working-directory 지정 자체가 오류였다. 지정 없이 repo root 기준으로 실행한다.
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -48,7 +48,9 @@ jobs:
         run: npm run build
 
       - name: Install Vercel CLI
-        run: npm install --global vercel@latest
+        # ★codex R2 권고: @latest는 예약실행 중 예고없는 브레이킹체인지 리스크 — 오늘 로컬
+        # 검증에 실제 쓰인 버전(POC 2차실행 로그)으로 고정.
+        run: npm install --global vercel@55.0.0
 
       - name: Deploy to Vercel (production, with retry)
         id: deploy
