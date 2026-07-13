@@ -6,7 +6,7 @@ import Footer from '../../components/nav/Footer.astro';
 import ArticleCard from '../../components/article/ArticleCard.astro';
 import { getCollection } from 'astro:content';
 
-const posts = (await getCollection('insight', ({ data }) => !data.draft && data.category === 'AI트렌드' && data.factChecked))
+const posts = (await getCollection('insight', ({ data }) => !data.draft && data.pubDate <= new Date() && data.category === 'AI트렌드' && data.factChecked))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 <BaseLayout title="AI트렌드 — Kyle Choi Notes" description="AI의 흐름과 실천적 인사이트." channel="insight">

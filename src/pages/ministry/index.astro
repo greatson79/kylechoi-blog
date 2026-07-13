@@ -7,7 +7,7 @@ import ArticleCard from '../../components/article/ArticleCard.astro';
 import { getCollection } from 'astro:content';
 
 // ★ministry 카테고리(설교·묵상 통합 목회 아티클)
-const posts = (await getCollection('ministry', ({ data }) => !data.draft && data.category === 'ministry'))
+const posts = (await getCollection('ministry', ({ data }) => !data.draft && data.pubDate <= new Date() && data.category === 'ministry'))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 <BaseLayout title="Ministry — Kyle Choi Notes" description="설교·묵상을 아우르는 목회 아티클." channel="ministry">

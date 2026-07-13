@@ -7,14 +7,14 @@ import ArticleCard from '../components/article/ArticleCard.astro';
 import { getCollection } from 'astro:content';
 
 // Ministry 섹션 = category='ministry'(설교·묵상 통합). 교육은 /education 별도.
-const ministry = (await getCollection('ministry', ({ data }) => !data.draft && data.category === 'ministry'))
+const ministry = (await getCollection('ministry', ({ data }) => !data.draft && data.pubDate <= new Date() && data.category === 'ministry'))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 // AI트렌드(insight)
-const aitrend = (await getCollection('insight', ({ data }) => !data.draft && data.category === 'AI트렌드' && data.factChecked))
+const aitrend = (await getCollection('insight', ({ data }) => !data.draft && data.pubDate <= new Date() && data.category === 'AI트렌드' && data.factChecked))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 // ★시대분석(insight) — 격리→공개(주인님 2026-06-25 지시). 강면책 상시.
 // ★agy HOLD#1 반영: factChecked(사람 검증·승인)된 글만 공개 — 미검증 노출=자가당착·법적리스크 차단.
-const eraAnalysis = (await getCollection('insight', ({ data }) => !data.draft && data.category === '시대분석' && data.factChecked))
+const eraAnalysis = (await getCollection('insight', ({ data }) => !data.draft && data.pubDate <= new Date() && data.category === '시대분석' && data.factChecked))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
 // ministry 카테고리 → 트랙 namespace 라우트(상세 URL 분리 유지)

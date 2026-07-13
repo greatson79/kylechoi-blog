@@ -5,7 +5,7 @@ import InsightLayout from '../../layouts/InsightLayout.astro';
 
 export async function getStaticPaths() {
   // ★agy HOLD#1 반영: factChecked(사람 검증·승인)된 글만 상세 빌드 — 미검증 노출 차단.
-  const posts = await getCollection('insight', ({ data }) => !data.draft && data.category === '시대분석' && data.factChecked);
+  const posts = await getCollection('insight', ({ data }) => !data.draft && data.pubDate <= new Date() && data.category === '시대분석' && data.factChecked);
   return posts.map((post) => ({ params: { slug: post.id }, props: { post } }));
 }
 const { post } = Astro.props;
