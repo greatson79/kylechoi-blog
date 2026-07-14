@@ -8,7 +8,7 @@ tags: [AI트렌드, 하네스, 에이전트, 스캐폴딩, OpenAI, Google, ICML]
 draft: true
 disclaimerRequired: false
 factChecked: false
-sourcePath: output/AI트렌드/2026-07-13_trend_리서치소스.md
+sourcePath: "output/WaveAI/크리에이티브본부/_round/2026-07-13_trend_리서치소스.md"
 ---
 
 7월 8일 서울에서 열린 국제머신러닝학회(ICML) 2026 무대에서, 노엄 브라운 오픈AI 리서치 부사장이 AI 애플리케이션 개발자들을 향해 이렇게 말했다. "몇 달 안에 등장할 차세대 모델이 현재 사용되는 하네스 대부분을 쓸모없게 만들 가능성이 높다." 그가 붙인 조언은 하나였다. "하네스를 가능한 단순하게 유지해야 한다." (AITimes, 2026-07-13)
