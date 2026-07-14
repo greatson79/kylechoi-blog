@@ -83,7 +83,7 @@ claude --cloud "로거를 구조화된 출력으로 리팩터링해줘"
 - [원문 후기 — r/ClaudeAI](https://www.reddit.com/r/ClaudeAI/comments/1uvosli/i_was_using_claude_coworks_cloud_vms_free/) (u/invocation02, 2026-07-13) — §3 재현 절차의 실제 활용 사례 출처. 개인 사용 후기이며 조직 전체에 일반화된 결과가 아님을 밝혀둔다.
 - [Claude vs Claude Code vs Cowork — HatchWorks](https://hatchworks.com/blog/claude/claude-vs-claude-code-vs-cowork/) — Claude Code와 Cowork가 "동일 엔진·다른 포장"이라는 관계 교차 확인.
 - [Anthropic will make Claude Cowork available to users via the cloud — NBC News](https://www.nbcnews.com/tech/tech-news/anthropic-will-make-claude-cowork-available-users-cloud-rcna353218) — Cowork의 웹·모바일 확장(2026-07-07) 및 세션 90%가 비개발 용도라는 Anthropic 자체 데이터 교차 확인.
-- [Get started with Claude Cowork — Claude Help Center](https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork) — Cowork 공식 문서에 GitHub 저장소 클론·PR 관련 기능이 언급되지 않음을 확인(§1 식별 근거).
+- [Get started with Claude Cowork — Claude Help Center](https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork) — 검토한 이 Get started 페이지에는 GitHub 저장소 클론·PR 관련 기능이 언급되지 않음을 확인(§1 식별 정황 근거 — Cowork 공식 문서 전체를 전수조사한 결과는 아님).
 - [Claude Cowork architecture overview — Claude Help Center](https://support.claude.com/en/articles/14479288-claude-cowork-architecture-overview) — Cowork 원격 세션도 "Anthropic 관리 인프라의 격리된 샌드박스"에서 코드·셸을 실행한다는 사실 확인(§1에서 기능 유사성만으로 제품을 단정하지 않은 근거).
 
 **리서치 정본**: `/Users/kylechoi/Desktop/Ai_works/output/WaveAI/크리에이티브본부/_round/aitrend_claude_cloud_sessions_수집_2026-07-14.md` (2026-07-14 검색-우선·환각0 수집, 공식문서 교차확인 표 포함)
