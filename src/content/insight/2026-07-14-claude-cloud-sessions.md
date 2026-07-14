@@ -9,6 +9,9 @@ draft: false
 disclaimerRequired: false
 factChecked: true
 sourcePath: "output/WaveAI/크리에이티브본부/_round/aitrend_claude_cloud_sessions_수집_2026-07-14.md"
+heroImage:
+  src: /images/ai-trend/hero_claude-cloud-sessions_0714.jpg
+  alt: 밤의 어두운 책상 위 닫힌 노트북 틈새로 새어나오는 은은한 빛과 그 옆에서 코드 diff 화면이 켜진 스마트폰
 ---
 
 Claude 구독에 이미 포함된 기능인데, 한 사용자는 "한 번 돌려보고 탭을 닫는 데모용"으로만 쓰다가 활용법을 바꾼 뒤 워크플로우가 크게 달라졌다고 후기를 남겼습니다. 최근 r/ClaudeAI에 올라온 이 개인 후기가 클라우드 세션을 상시 백그라운드 워커로 재구성한 과정을 구체적으로 보여줬습니다. 이 글은 그 후기의 재현 절차를, Anthropic 공식 문서로 하나씩 대조 확인한 뒤 정리한 것입니다.
@@ -38,6 +41,8 @@ Cowork는 원래 데스크톱 앱 전용으로 나온 **별개의 제품**입니
 - **(참고로 추가 확인된 사실)** 세션 리소스 사양은 vCPU 4개, RAM 16GB, 디스크 30GB이며 "변동될 수 있다"고 명시돼 있습니다. 이보다 큰 빌드·메모리 작업은 실패하거나 중단될 수 있습니다.
 
 ## 3. 실전 재현 절차 — 공식 명령으로
+
+![하나의 작업이 아니라, 여러 대의 컴퓨터를 동시에 돌린다는 감각.](/images/ai-trend/body_claude-cloud-sessions_0714.jpg)
 
 후기의 핵심 아이디어는 "매번 세션에 내 작업 맥락을 다시 설명하지 않는 것"이었습니다. 이를 공식 CLI 문법으로 재구성하면 다음과 같습니다.
 

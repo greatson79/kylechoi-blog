@@ -9,6 +9,9 @@ draft: false
 disclaimerRequired: false
 factChecked: true
 sourcePath: "output/WaveAI/리서치본부/aitrend_codex_site_수집_2026-07-14.md"
+heroImage:
+  src: /images/ai-trend/hero_codex-sites_0714.jpg
+  alt: 어두운 책상 위 울트라와이드 모니터에 방금 생성된 사내 대시보드와 실제 배포 URL이 떠 있는 야간 워크스테이션
 ---
 
 프롬프트 한 줄로 사내 대시보드를 만들고, 그 자리에서 프로덕션 URL까지 받을 수 있다면 어떨까. OpenAI가 Codex에 붙인 **Sites 플러그인**이 그 이야기다. 이번 주는 이 기능이 정확히 무엇이고, 어떻게 쓰는지를 공식 문서와 실측 분석 기준으로 정리한다.
@@ -37,6 +40,8 @@ OpenAI는 발표문에서 이 기능을 더 폭넓게 이렇게도 소개했습�
 > Codex Sites는 **ChatGPT Business·Enterprise 워크스페이스 전용 프리뷰 기능**입니다. **개인 Plus·Pro나 무료 플랜에서는 이 시점 기준 쓸 수 없습니다.** 팀(Team) 플랜은 6월 4일부터 열렸고, 그 외 플랜은 순차 확대 중입니다. 회사 워크스페이스 계정이 없다면 아래 사용법을 그대로 따라 해도 화면에 `@Sites` 자체가 뜨지 않을 수 있습니다 — 먼저 소속 워크스페이스가 Business·Enterprise·Team 플랜인지, 관리자가 Sites를 켜뒀는지부터 확인하고 넘어가세요.
 
 ## 3. 실전 사용법 — 명령과 승인 게이트
+
+![손으로 그린 구상이, 대화 한 줄 뒤에는 실제로 돌아가는 화면이 된다.](/images/ai-trend/body_codex-sites_0714.jpg)
 
 먼저 분명히 해둘 것이 있습니다. **Sites는 CLI 명령이 아닙니다.** 터미널에서 쓰는 Codex CLI 공식 레퍼런스를 직접 확인했지만 `codex sites` 같은 서브커맨드는 존재하지 않습니다. Sites는 **Codex 에이전트(앱) 안의 플러그인**으로만 호출합니다.
 
