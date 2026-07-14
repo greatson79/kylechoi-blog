@@ -5,9 +5,9 @@ category: AI트렌드
 pubDate: 2026-07-14
 author: 디딤
 tags: [AI트렌드, 실전팁, Claude, ClaudeCode, Anthropic, 클라우드세션]
-draft: true
+draft: false
 disclaimerRequired: false
-factChecked: false
+factChecked: true
 sourcePath: "output/WaveAI/크리에이티브본부/_round/aitrend_claude_cloud_sessions_수집_2026-07-14.md"
 ---
 
