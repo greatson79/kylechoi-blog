@@ -106,6 +106,6 @@ Codex가 사이트 출력을 만들고, 검토용으로 배포 가능한 버전�
 - [Codex + ChatGPT + GPT-5.6: OpenAI's July 9 Release Deep Dive — kie.ai](https://kie.ai/blog/codex-chatgpt-work-gpt-5-6-analysis) — GPT-5.6 공개일·ChatGPT-Codex 데스크톱 앱 통합 사실 확인.
 - [GPT-5.6 rollout watch — Nitro Media Group](https://www.nitromediagroup.com/gpt-5-6-rollout-watch-openai-chatgpt-july-2026/) — GPT-5.6 롤아웃 타임라인 보조 확인.
 
-**리서치본부 정본**: `/Users/kylechoi/Desktop/Ai_works/output/WaveAI/리서치본부/aitrend_codex_site_수집_2026-07-14.md` (2026-07-14 검색-우선·환각0 수집, 이 원고의 §3·§4·§5 사실관계 정본).
+**리서치본부 정본**: `output/WaveAI/리서치본부/aitrend_codex_site_수집_2026-07-14.md` (2026-07-14 검색-우선·환각0 수집, 이 원고의 §3·§4·§5 사실관계 정본).
 
 **불확실 항목 명시**: ①개인 Plus/Pro 계정에서 Sites를 쓸 수 있는지는 출처마다 "개인/무료 불가"로 정리하지만 Plus/Pro를 명시적으로 별도 언급한 1차 출처는 확인하지 못했습니다. ②"링크 공유"가 워크스페이스 밖 사람에게도 열리는지는 공식 문서와 실측 분석 사이에 표현이 갈려 단정하지 않았습니다(§4 교차검증 메모).

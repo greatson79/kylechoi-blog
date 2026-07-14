@@ -86,6 +86,6 @@ claude --cloud "로거를 구조화된 출력으로 리팩터링해줘"
 - [Get started with Claude Cowork — Claude Help Center](https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork) — 검토한 이 Get started 페이지에는 GitHub 저장소 클론·PR 관련 기능이 언급되지 않음을 확인(§1 식별 정황 근거 — Cowork 공식 문서 전체를 전수조사한 결과는 아님).
 - [Claude Cowork architecture overview — Claude Help Center](https://support.claude.com/en/articles/14479288-claude-cowork-architecture-overview) — Cowork 원격 세션도 "Anthropic 관리 인프라의 격리된 샌드박스"에서 코드·셸을 실행한다는 사실 확인(§1에서 기능 유사성만으로 제품을 단정하지 않은 근거).
 
-**리서치 정본**: `/Users/kylechoi/Desktop/Ai_works/output/WaveAI/크리에이티브본부/_round/aitrend_claude_cloud_sessions_수집_2026-07-14.md` (2026-07-14 검색-우선·환각0 수집, 공식문서 교차확인 표 포함)
+**리서치 정본**: `output/WaveAI/크리에이티브본부/_round/aitrend_claude_cloud_sessions_수집_2026-07-14.md` (2026-07-14 검색-우선·환각0 수집, 공식문서 교차확인 표 포함)
 
 **불확실 항목 명시**: 클라우드 세션의 동시 실행 개수에 대한 공식 숫자 상한은 확인하지 못했다 — 문서는 "병렬 실행이 레이트리밋을 비례 소모한다"는 원칙만 명시한다. 이 글에서는 특정 숫자를 단정하지 않았다.
