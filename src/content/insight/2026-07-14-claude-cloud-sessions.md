@@ -1,0 +1,91 @@
+---
+title: "한 사용자가 Claude 클라우드 세션을 상시 워커로 바꾼 법"
+description: "Claude Code 클라우드 세션(연구 프리뷰)을 일회성 데모가 아니라 상시 백그라운드 워커로 재구성한 한 사용자의 사례. 공식 문서로 확인한 사실관계와 함께 정리한다."
+category: AI트렌드
+pubDate: 2026-07-14
+author: 디딤
+tags: [AI트렌드, 실전팁, Claude, ClaudeCode, Anthropic, 클라우드세션]
+draft: false
+disclaimerRequired: false
+factChecked: true
+sourcePath: "output/WaveAI/크리에이티브본부/_round/aitrend_claude_cloud_sessions_수집_2026-07-14.md"
+---
+
+Claude 구독에 이미 포함된 기능인데, 한 사용자는 "한 번 돌려보고 탭을 닫는 데모용"으로만 쓰다가 활용법을 바꾼 뒤 워크플로우가 크게 달라졌다고 후기를 남겼습니다. 최근 r/ClaudeAI에 올라온 이 개인 후기가 클라우드 세션을 상시 백그라운드 워커로 재구성한 과정을 구체적으로 보여줬습니다. 이 글은 그 후기의 재현 절차를, Anthropic 공식 문서로 하나씩 대조 확인한 뒤 정리한 것입니다.
+
+## 1. 먼저 이름부터 정확히 — 이 후기는 "Claude Code on the web"을 말할 가능성이 유력합니다
+
+해당 후기의 **제목**은 "Claude Cowork's cloud VMs"라고 되어 있습니다. 하지만 **본문 첫 문장**은 다르게 씁니다 — *"I think most people are using **Claude Code's cloud sessions** as a novelty."* 이후에도 "This has completely changed how I use **Claude Code/Cowork**"처럼 두 이름을 섞어 씁니다. 게다가 "**PR을 리뷰하고 머지했다**(reviewed and merged real PRs)"는 대목은 GitHub 저장소·풀리퀘스트를 다루는 개발 워크플로우를 전제하는 표현입니다.
+
+이 지점에서 기능 유사성만으로 제품을 단정하지 않도록 주의가 필요합니다 — Anthropic의 Cowork 공식 문서 역시 "Anthropic 서버의 격리된 환경에서 코드와 셸 명령을 실행한다"고 설명하므로, "원격 환경에서 코드를 실행한다"는 특징 자체는 두 제품에 공통입니다. 다만 검토한 Cowork "Get started" 공식 문서에는 **GitHub 저장소 연결·클론·PR** 관련 언급이 없는 반면(이 문서 한 페이지에 없다는 것이 해당 기능이 아예 없다는 증명은 아닙니다), 클라우드 세션(Claude Code on the web) 공식 문서는 GitHub 인증·저장소 클론·PR 생성을 핵심 기능으로 명시합니다. 그리고 결정적으로, 후기 작성자 본인이 본문 첫 문장에서 이 기능을 **"Claude Code's cloud sessions"**라고 직접 불렀습니다. 이 세 가지(본인의 명시적 표현·PR 워크플로우 언급·검토한 Cowork 문서에 없는 GitHub 클론 기능)를 종합하면, 이 후기가 실제로 쓴 것은 **클라우드 세션(Claude Code on the web)**일 가능성이 유력합니다 — 제목의 "Cowork"는 저자가 두 제품명을 섞어 쓴 것으로 보입니다. (다만 claude.ai/code 진입 화면이나 `--cloud` 실행 로그 같은 100% 확정적 직접 증거까지는 확인하지 못했습니다.)
+
+Cowork는 원래 데스크톱 앱 전용으로 나온 **별개의 제품**입니다. 코드보다 업무 전반(문서 작성·운영 프로세스 등)을 대상으로 하며, 2026년 7월 7일부터 웹·모바일로 확장됐습니다. Anthropic이 공개한 자체 데이터에 따르면 Cowork 세션의 90% 이상이 소프트웨어 개발과 무관한 용도였습니다. Claude Code와 Cowork는 "같은 모델·같은 에이전트 기반 위에 다른 워크플로우로 포장된" 제품이라는 것이 Anthropic의 설명입니다 — 완전히 다른 제품이 아니라 같은 엔진을 다른 사용자층에 맞춰 포장한 관계입니다.
+
+정리하면, 이 글은 후기가 다루는 기능을 **"클라우드 세션"(Claude Code on the web)**으로 해석해 아래 재현 절차를 구성했습니다 — 위에서 밝혔듯 이는 정황 증거 3가지에 기반한 개연성 판단이며, 100% 확정은 아닙니다.
+
+> **따라 해보기 전에 먼저 확인하세요**
+> 클라우드 세션은 **Pro·Max·Team 구독자, 그리고 Enterprise의 프리미엄 시트(또는 Chat + Claude Code 시트) 사용자**에게 연구 프리뷰로 제공됩니다. 아직 전 사용자 대상 정식 기능이 아니므로, 구독 플랜에 따라 화면에 아예 안 보일 수 있습니다.
+
+## 2. 공식 문서로 확인한 것 — 후기 주장 대조
+
+후기가 내세운 핵심 주장을 하나씩 Anthropic 공식 문서(`code.claude.com/docs/en/claude-code-on-the-web`)와 대조했습니다.
+
+- **"구독 포함, 별도 API 과금 없음"** → 공식 문서가 그대로 확인해줍니다: *"There is no separate compute charge for the cloud VM."* 다만 단서가 있습니다 — 클라우드 세션은 "계정의 다른 모든 Claude·Claude Code 사용량과 레이트리밋을 공유"합니다. 여러 세션을 동시에 돌리면 그만큼 계정의 기존 사용량 풀을 비례해서 소모합니다. "무과금"은 맞지만 "무제한"은 아닙니다.
+- **"비공개 저장소를 git 히스토리 통째로 클론"** → 확인됩니다. 공식 문서: 각 세션은 "저장소가 클론된 상태의 새 Anthropic 관리 VM"에서 실행됩니다. GitHub 미연동 저장소를 로컬 번들로 보내는 경로에서는 "전체 브랜치의 전체 저장소 히스토리"가 포함된다고 명시돼 있습니다.
+- **"의존성 설치·인터넷 접근·테스트 실행·코드 실행"** → 확인됩니다. Python/Node/Ruby/PHP/Java/Go/Rust/Docker/PostgreSQL/Redis가 기본 설치돼 있고, pytest·jest·cargo test 같은 테스트 러너도 별도 설정 없이 바로 동작합니다. 네트워크 접근은 4단계(None/Trusted/Full/Custom)로 세션별 설정 가능합니다.
+- **"여러 세션을 동시에 돌리고 휴대폰에서 관리"** → 확인됩니다. 공식 문서는 `claude --cloud` 명령을 연달아 세 번 실행해 각각 독립된 세션이 병렬로 도는 예시를 직접 보여줍니다. "브라우저를 닫아도 세션은 유지되며 Claude 모바일 앱에서 모니터링할 수 있다"는 문구도 그대로 있습니다.
+- **"동시 실행 가능한 세션 개수 상한"** → 이 부분은 **공식 문서에 구체적인 숫자 상한이 없습니다.** "병렬로 돌릴수록 레이트리밋을 비례해서 더 쓴다"는 원칙만 명시돼 있을 뿐, "최대 N개"라는 문구는 확인되지 않았습니다. 따라서 이 글에서도 특정 숫자를 단정하지 않습니다 — 실제로는 계정의 레이트리밋 여유분이 사실상의 상한입니다.
+- **(참고로 추가 확인된 사실)** 세션 리소스 사양은 vCPU 4개, RAM 16GB, 디스크 30GB이며 "변동될 수 있다"고 명시돼 있습니다. 이보다 큰 빌드·메모리 작업은 실패하거나 중단될 수 있습니다.
+
+## 3. 실전 재현 절차 — 공식 명령으로
+
+후기의 핵심 아이디어는 "매번 세션에 내 작업 맥락을 다시 설명하지 않는 것"이었습니다. 이를 공식 CLI 문법으로 재구성하면 다음과 같습니다.
+
+**① GitHub 연결부터**. 터미널에서 `/web-setup`을 실행하면 로컬 `gh` CLI 토큰을 Claude 계정에 동기화합니다(이미 `gh`를 쓰는 개발자에게 가장 빠른 방법). 브라우저로 시작한다면 웹 온보딩에서 Claude GitHub 앱을 승인하는 방법도 있습니다.
+
+**② 터미널에서 클라우드로 작업을 보낸다**:
+```bash
+claude --cloud "auth 모듈의 실패하는 테스트를 고쳐줘"
+```
+현재 디렉터리의 GitHub 원격 저장소를 현재 브랜치 기준으로 클론해 새 클라우드 세션을 만듭니다. 로컬에 커밋만 하고 푸시를 안 했다면 먼저 푸시해야 합니다 — VM은 내 컴퓨터가 아니라 GitHub에서 클론하기 때문입니다.
+
+**③ 여러 태스크를 동시에 굴린다**:
+```bash
+claude --cloud "auth.spec.ts의 불안정한 테스트를 고쳐줘"
+claude --cloud "API 문서를 최신화해줘"
+claude --cloud "로거를 구조화된 출력으로 리팩터링해줘"
+```
+각 명령이 독립된 세션을 만들어 동시에 실행됩니다. `claude` 터미널 안에서 `/tasks`를 실행하면 전체 진행 상황을 한눈에 볼 수 있습니다.
+
+**④ 로컬로 다시 가져오기(teleport)**: 클라우드에서 작업이 끝난 세션을 로컬 터미널로 이어받고 싶으면 `claude --teleport` 또는 세션 안에서 `/teleport`를 실행합니다. 단, 로컬 작업 디렉터리에 커밋 안 된 변경이 있으면 먼저 스태시하라는 안내가 뜹니다.
+
+**⑤ "컨텍스트를 미리 심어둔다"는 후기의 핵심 습관**: 후기 작성자가 강조한 것은, 매번 "내 프로젝트 구조가 이렇고..."를 설명하는 대신 저장소의 `CLAUDE.md`·`.claude/settings.json`·`.mcp.json`·`.claude/skills/` 같은 설정을 미리 커밋해두면, 클라우드 세션이 시작하자마자 그 맥락을 그대로 물려받는다는 점이었습니다. 공식 문서도 이 부분을 명확히 합니다 — 저장소에 커밋된 것은 세션에 그대로 넘어가지만, 내 컴퓨터에만 있는 사용자 수준 설정(`~/.claude/` 하위)은 넘어가지 않습니다. 즉 "이 프로젝트에서 항상 필요한 맥락"은 개인 설정이 아니라 저장소 설정으로 옮겨둬야 클라우드 세션에서도 재현됩니다.
+
+이 절차는 우리 조직이 이미 `.claude/skills/`·`.claude/rules/`·워크플로우 문서를 저장소에 커밋해 관리하는 방식과 원리가 같습니다 — 다른 점은 그 맥락이 로컬 터미널이 아니라 Anthropic이 관리하는 원격 VM에서 그대로 재현된다는 것입니다.
+
+## 4. 이 방식을 쓰기 전에 알아야 할 한계
+
+- **레이트리밋은 계정 전체와 공유**됩니다. 클라우드 세션을 여러 개 동시에 돌리면 평소 터미널·데스크톱에서 쓰는 사용량과 같은 풀에서 차감됩니다. "무한정 병렬로 돌려도 된다"는 뜻이 아닙니다.
+- **동시 세션 개수의 공식 상한 수치는 확인되지 않았습니다.** 실질적인 한계는 계정의 레이트리밋 여유분입니다.
+- **리소스 사양**은 vCPU 4개·RAM 16GB·디스크 30GB 수준이며, 대형 빌드나 메모리 집약적 테스트는 실패할 수 있습니다. 이보다 큰 작업은 자신의 하드웨어에서 Claude Code를 돌리는 Remote Control 쪽이 맞습니다.
+- **비밀값(시크릿) 전용 저장소가 아직 없습니다.** 환경변수·설정 스크립트는 그 환경을 편집할 수 있는 사람이라면 누구나 볼 수 있는 형태로 저장됩니다. 자격 증명을 넣을 때는 이 점을 감안해야 합니다.
+- **연구 프리뷰 단계**이므로 Pro·Max·Team·Enterprise(프리미엄 시트) 외에는 아직 접근할 수 없고, 조직에서 IP 허용목록을 쓰고 있다면 클라우드 세션은 Anthropic 관리 인프라에서 API를 호출하는 구조상 인증에 실패합니다.
+
+## 5. 마무리
+
+이 기능의 진짜 값어치는 "AI가 대신 코드를 짜준다"가 아니라, **노트북을 닫아도 작업이 계속되고, 여러 작업을 동시에 굴리다가 필요할 때만 로컬로 다시 가져올 수 있다**는 데 있습니다. 다만 이번 정리에서 확인했듯 이 기능이 어느 제품인지(정황상 유력한 것은 Claude Code on the web) 근거부터 따져보고 시작하는 것이 첫걸음입니다. 그리고 "무료·무제한"이 아니라 "구독에 포함되지만 기존 사용량 풀을 함께 쓴다"는 단서를 기억해두면, 이 기능을 실전에 들여올 때 기대치를 정확히 맞출 수 있습니다. 이 글은 한 사용자의 개인 사례를 근거로 재구성한 것이므로, 조직 전체에 그대로 일반화되는 결과는 아닙니다.
+
+---
+
+### 참고자료 (검증 출처)
+
+- [Use Claude Code on the web — Claude Code Docs](https://code.claude.com/docs/en/claude-code-on-the-web) — 클라우드 세션의 구독 요건·과금·git 클론·설치된 도구·네트워크 접근·리소스 사양·레이트리밋 공유 등 이 글의 §2·§3·§4 사실관계 1차 출처.
+- [원문 후기 — r/ClaudeAI](https://www.reddit.com/r/ClaudeAI/comments/1uvosli/i_was_using_claude_coworks_cloud_vms_free/) (u/invocation02, 2026-07-13) — §3 재현 절차의 실제 활용 사례 출처. 개인 사용 후기이며 조직 전체에 일반화된 결과가 아님을 밝혀둔다.
+- [Claude vs Claude Code vs Cowork — HatchWorks](https://hatchworks.com/blog/claude/claude-vs-claude-code-vs-cowork/) — Claude Code와 Cowork가 "동일 엔진·다른 포장"이라는 관계 교차 확인.
+- [Anthropic will make Claude Cowork available to users via the cloud — NBC News](https://www.nbcnews.com/tech/tech-news/anthropic-will-make-claude-cowork-available-users-cloud-rcna353218) — Cowork의 웹·모바일 확장(2026-07-07) 및 세션 90%가 비개발 용도라는 Anthropic 자체 데이터 교차 확인.
+- [Get started with Claude Cowork — Claude Help Center](https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork) — 검토한 이 Get started 페이지에는 GitHub 저장소 클론·PR 관련 기능이 언급되지 않음을 확인(§1 식별 정황 근거 — Cowork 공식 문서 전체를 전수조사한 결과는 아님).
+- [Claude Cowork architecture overview — Claude Help Center](https://support.claude.com/en/articles/14479288-claude-cowork-architecture-overview) — Cowork 원격 세션도 "Anthropic 관리 인프라의 격리된 샌드박스"에서 코드·셸을 실행한다는 사실 확인(§1에서 기능 유사성만으로 제품을 단정하지 않은 근거).
+
+**리서치 정본**: `output/WaveAI/크리에이티브본부/_round/aitrend_claude_cloud_sessions_수집_2026-07-14.md` (2026-07-14 검색-우선·환각0 수집, 공식문서 교차확인 표 포함)
+
+**불확실 항목 명시**: 클라우드 세션의 동시 실행 개수에 대한 공식 숫자 상한은 확인하지 못했다 — 문서는 "병렬 실행이 레이트리밋을 비례 소모한다"는 원칙만 명시한다. 이 글에서는 특정 숫자를 단정하지 않았다.

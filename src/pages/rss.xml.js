@@ -17,10 +17,10 @@ const ROUTE = {
 };
 
 export async function GET(context) {
-  const ministry = await getCollection('ministry', ({ data }) => !data.draft);
+  const ministry = await getCollection('ministry', ({ data }) => !data.draft && data.pubDate <= new Date());
   const insight = await getCollection(
     'insight',
-    ({ data }) => !data.draft && data.factChecked
+    ({ data }) => !data.draft && data.pubDate <= new Date() && data.factChecked
   );
 
   const items = [...ministry, ...insight]

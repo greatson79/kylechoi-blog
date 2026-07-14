@@ -2,4 +2,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://dia-io.com/sitemap-index.xml
+Sitemap: https://kylechoi.com/sitemap-index.xml
