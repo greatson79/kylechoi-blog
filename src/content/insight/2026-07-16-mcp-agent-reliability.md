@@ -9,6 +9,9 @@ tags: [AI트렌드, MCP, 에이전트, 보안, arXiv, 리서치, 거버넌스]
 draft: false
 disclaimerRequired: false
 factChecked: true
+heroImage:
+  src: /images/ai-trend/hero_mcp-agent-reliability_0716.png
+  alt: "관문을 지나는 여러 신호 블록 중 일부 골드 위협 신호가 걸러지지 않는 모습의 추상 일러스트 — MCP 보안 스캐너 오탐 문제의 은유"
 ---
 
 # 한 MCP 보안 감사, 경고 열 건 중 여덟이 오탐이었다 — 그런데도 에이전트는 계속 늘어난다
