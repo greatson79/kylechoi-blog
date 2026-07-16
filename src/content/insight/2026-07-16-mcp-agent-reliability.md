@@ -14,15 +14,6 @@ heroImage:
   alt: "관문을 지나는 여러 신호 블록 중 일부 골드 위협 신호가 걸러지지 않는 모습의 추상 일러스트 — MCP 보안 스캐너 오탐 문제의 은유"
 ---
 
-# 한 MCP 보안 감사, 경고 열 건 중 여덟이 오탐이었다 — 그런데도 에이전트는 계속 늘어난다
-
-> **분류**: AI Trend · 기술트렌드 통찰
-> **기준 자료**: 2026-07-13 arXiv 학술 프리프린트 3편(MCP 보안·SOP 런타임·다중 에이전트 탐색 실패) + 업계·기관 보강 검색
-> **작성일**: 2026-07-16
-> **면책**: 이 글은 AI 기술 흐름 관찰을 목적으로 합니다. 투자 조언·종목 추천·매매 신호를 포함하지 않습니다.
-
----
-
 7월 13일 하루, arXiv에는 서로 다른 저자군이 쓴 세 편의 논문이 거의 동시에 올라왔다. 하나는 "지금 배포된 MCP 서버들을 대규모로 조사해 보니 보안 스캐너들의 판정이 서로 어긋나고 실제 위험을 과소탐지한다"는 논문이었고(arXiv 2607.11086, cs.CR), 다른 하나는 "LLM 에이전트가 표준운영절차(SOP)를 안전하게 따르게 하려면 자연어 지시가 아니라 컴파일된 프로그램으로 실행시켜야 한다"는 논문이었으며(arXiv 2607.11346, cs.AI), 마지막은 "여러 LLM 에이전트를 한 공간에 두면 서로를 효과적으로 탐색하지 못하고 근시안적·양극화된 상호작용에 빠진다"는 논문이었다(arXiv 2607.11250, cs.MA). 세 편 모두 arXiv의 cs.CR·cs.AI·cs.MA 카테고리에서 같은 날 나온, 서로 무관해 보이지만 사실은 하나의 문제를 각기 다른 각도에서 겨눈 논문들이었다.
 
 같은 주, 업계 쪽에서는 다른 각도의 숫자가 나왔다. Gartner는 5월 26일자 보도자료에서 "AI 에이전트 전반에 획일적인 거버넌스를 적용하는 조직은 실패로 이어질 것"이라며, 2027년까지 기업의 40%가 프로덕션 사고 이후에야 드러난 거버넌스 공백 때문에 자율 AI 에이전트를 격하하거나 폐기하게 될 것이라고 전망했다(Gartner Newsroom, 2026-05-26). 같은 리서치 흐름을 보도한 다른 분석은 에이전트가 거버넌스 체계 구축 속도보다 7~8배 빠르게 프로덕션에 투입되고 있고, 고급 AI 보안 전략을 갖췄다고 답한 조직은 전체의 6%에 불과하다고 전한다(Synack, "Gartner SRM 2026: Cutting Through AI Noise in Cybersecurity").
@@ -32,6 +23,9 @@ heroImage:
 ---
 
 ## 신뢰할 수 없는 파수꾼
+
+![금이 간 돋보기 렌즈가 여러 도형 블록을 검사하지만 일부 골드 블록이 검사 범위를 벗어나 있는 플랫 일러스트](/images/ai-trend/sec1_scanner-blindspot_0716.png)
+*스캐너 자체에 금이 가 있다면, 무엇을 통과시켰는지 알 수 없다.*
 
 Model Context Protocol(MCP)은 2년이 채 안 되는 사이 LLM 에이전트가 외부 도구·데이터에 접근하는 사실상의 표준 인터페이스로 자리 잡았다. 문제는 MCP 서버가 파일 시스템 접근, API 호출, 데이터베이스 쓰기 같은 보안 민감 작업을 대신 수행하기 시작하면서, "이 서버가 안전한가"를 판단하는 도구 자체의 신뢰성이 시스템 리스크가 됐다는 점이다.
 
@@ -43,6 +37,9 @@ Model Context Protocol(MCP)은 2년이 채 안 되는 사이 LLM 에이전트가
 
 ## 프로그램 안에 LLM을 가두는 법
 
+![단단한 기하학적 격자 프레임 중앙의 좁은 원 안에만 유동적인 무늬가 담겨 있는 플랫 일러스트](/images/ai-trend/sec2_llm-in-program_0716.png)
+*결정론적 구조가 바깥을, 확률적 추론이 안쪽 좁은 틈을 차지하는 역전.*
+
 같은 날 올라온 두 번째 논문(arXiv 2607.11346)은 다른 각도에서 같은 문제를 겨눈다. 기업이 에이전트에 맡기려는 업무 상당수는 장기적이고 조건부이며 안전이 걸린 표준운영절차(SOP)를 따라야 한다. 지금까지는 이 SOP를 자연어 산문으로 써서 프롬프트에 넣는 방식이 일반적이었는데, 논문은 이를 실행 가능한 의사코드로 컴파일하고, LLM은 그 프로그램이 요구하는 지점에서만 "의미 실행(semantic execution)"을 수행하는 역량 게이팅(capability-gated) 런타임을 제안한다. 저자들의 표현을 빌리면 "LLM을 프로그램 안에 두는 것이지, 프로그램을 LLM 안에 두는 것이 아니다" — 결정론적 제어 구조가 바깥을, 확률적 추론이 안쪽 좁은 틈을 차지하는 역전이다.
 
 6개 모델을 3가지 조건으로 비교한 SOPBench 실험에서, 자연어 산문 방식의 성능이 부진했던 항목에 한해 컴파일된 SOP 방식이 최대 16.0점의 점수 향상을 보였다(arXiv 2607.11346). 향상 폭 자체보다 중요한 것은 방향성이다 — "LLM에게 더 잘 지시하는 법"이 아니라 "LLM이 지시를 어길 수 없는 구조를 만드는 법"으로 문제 설정이 옮겨가고 있다는 신호다. 앞 절의 MCP 보안 공백과 겹쳐 읽으면, 두 논문은 사실상 하나의 프런티어를 문제 제기(신뢰할 수 없는 도구 인터페이스)와 해법 시도(신뢰 가능한 실행 구조)로 나눠 다루고 있다.
@@ -50,6 +47,9 @@ Model Context Protocol(MCP)은 2년이 채 안 되는 사이 LLM 에이전트가
 ---
 
 ## 탐색하지 못하는 군집
+
+![어두운 배경 위에 서로 연결선 없이 각자 다른 방향을 향해 흩어져 고립된 육각형들의 플랫 일러스트](/images/ai-trend/sec3_agents-no-explore_0716.png)
+*같은 공간에 있어도, 서로를 탐색하지 않으면 군집이 아니라 고립이다.*
 
 세 번째 논문(arXiv 2607.11250)은 한 걸음 더 나아가 에이전트를 "여럿"으로 놓았을 때의 문제를 다룬다. 제목부터 직설적이다 — "다중 에이전트 LLM은 서로를 탐색하지 못한다(Multi-Agent LLMs Fail to Explore Each Other)". 논문은 이를 부분관측 확률게임(POSG)으로 형식화해, 현재의 LLM 에이전트 군집이 근시안적이고 양극화된 상호작용에 빠져 차선의 조율과 늘어나는 후회(regret)를 보인다는 것이 이 연구의 결론이다. "여러 에이전트를 풀어놓으면 알아서 효율적으로 조율할 것"이라는 가정 자체가 무너진다는 부정적 결과다(arXiv 2607.11250).
 
@@ -60,6 +60,9 @@ Model Context Protocol(MCP)은 2년이 채 안 되는 사이 LLM 에이전트가
 ---
 
 ## 소프트웨어 너머 — 하드웨어로 번지는 AI 물결
+
+![크림색 기판 위 중앙의 네이비 칩에서 사방으로 정갈한 회로 라인이 뻗어 나가는 플랫 일러스트](/images/ai-trend/sec4_hardware-frontier_0716.png)
+*하나의 칩이 상황에 따라 다른 센서가 되는, 소프트웨어로 정의되는 하드웨어.*
 
 에이전트 신뢰성 문제와는 결이 다르지만, 비슷한 시기 발표된 다른 기술 뉴스는 AI의 경계가 소프트웨어를 넘어 물리 인프라 쪽으로 계속 밀려나고 있다는 것을 보여준다.
 
@@ -83,6 +86,20 @@ KAIST 항공우주공학과 김현정 교수팀은 MIT 후젠 후(Juejun Hu) 교
 
 ---
 
-> **출처 근거**: 본문의 arXiv 논문 사실은 각 프리프린트 원문에 근거한다: [Rethinking MCP Security (arXiv 2607.11086)](https://arxiv.org/abs/2607.11086v1), [Compile, Then Page: SOP 런타임 (arXiv 2607.11346)](https://arxiv.org/abs/2607.11346v1), [Multi-Agent LLMs Fail to Explore Each Other (arXiv 2607.11250)](https://arxiv.org/abs/2607.11250v1), [HourGlass 기상 다운스케일러 (arXiv 2607.11457)](https://arxiv.org/abs/2607.11457v1), [Q²SAR 양자 신약개발 (arXiv 2607.11701)](https://arxiv.org/abs/2607.11701v1), [MCP at First Glance (arXiv 2506.13538)](https://arxiv.org/html/2506.13538v5). 보강 검색으로 확인한 업계·기관 출처: [Why Do Multi-Agent LLM Systems Fail? — MAST 원논문 (arXiv 2503.13657)](https://arxiv.org/abs/2503.13657), [MCP Server Security Audit 2026 (AppSecSanta — Cisco 스캐너·33개 로컬 MCP 서버 감사)](https://appsecsanta.com/research/mcp-server-security-audit-2026), [Gartner Newsroom, 2026-05-26](https://www.gartner.com/en/newsroom/press-releases/2026-05-26-gartner-says-applying-uniform-governance-across-ai-agents-will-lead-to-enterprise-ai-agent-failure), [Gartner SRM 2026 요약 (Synack)](https://www.synack.com/blog/gartner-2026-agentic-ai-what-security-leaders-asked/). KAIST-MIT 광학 칩 보도: [이뉴스투데이, 2026-07-14](https://www.enewstoday.co.kr/news/articleView.html?idxno=2448743) — 연구 원문은 Nature Communications(2026-07-07) 게재.
->
-> **면책**: 이 글은 AI 기술 흐름 관찰을 목적으로 하며, 투자 조언·종목 추천·매매 신호를 포함하지 않습니다. 인용된 arXiv 프리프린트는 대부분 동료심사 이전 단계이며, 본문에 표기한 수치·벤치마크는 각 논문 저자가 보고한 자체 실험 결과로 독립 재현이 확인된 것은 아닙니다.
+## 참고 자료
+
+본문의 arXiv 논문 사실은 각 프리프린트 원문에 근거합니다.
+
+- [Rethinking MCP Security (arXiv 2607.11086)](https://arxiv.org/abs/2607.11086v1)
+- [Compile, Then Page: SOP 런타임 (arXiv 2607.11346)](https://arxiv.org/abs/2607.11346v1)
+- [Multi-Agent LLMs Fail to Explore Each Other (arXiv 2607.11250)](https://arxiv.org/abs/2607.11250v1)
+- [Why Do Multi-Agent LLM Systems Fail? — MAST 원논문 (arXiv 2503.13657)](https://arxiv.org/abs/2503.13657)
+- [HourGlass 기상 다운스케일러 (arXiv 2607.11457)](https://arxiv.org/abs/2607.11457v1)
+- [Q²SAR 양자 신약개발 (arXiv 2607.11701)](https://arxiv.org/abs/2607.11701v1)
+- [MCP at First Glance (arXiv 2506.13538)](https://arxiv.org/html/2506.13538v5)
+- [MCP Server Security Audit 2026 (AppSecSanta — Cisco 스캐너·33개 로컬 MCP 서버 감사)](https://appsecsanta.com/research/mcp-server-security-audit-2026)
+- [Gartner Newsroom, 2026-05-26](https://www.gartner.com/en/newsroom/press-releases/2026-05-26-gartner-says-applying-uniform-governance-across-ai-agents-will-lead-to-enterprise-ai-agent-failure)
+- [Gartner SRM 2026 요약 (Synack)](https://www.synack.com/blog/gartner-2026-agentic-ai-what-security-leaders-asked/)
+- [KAIST-MIT 광학 칩 보도 — 이뉴스투데이, 2026-07-14](https://www.enewstoday.co.kr/news/articleView.html?idxno=2448743) (연구 원문은 Nature Communications, 2026-07-07 게재)
+
+이 글은 AI 기술 흐름 관찰을 목적으로 하며, 투자 조언·종목 추천·매매 신호를 포함하지 않습니다. 인용된 arXiv 프리프린트는 대부분 동료심사 이전 단계이며, 본문에 표기한 수치·벤치마크는 각 논문 저자가 보고한 자체 실험 결과로 독립 재현이 확인된 것은 아닙니다.
