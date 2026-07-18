@@ -10,6 +10,9 @@ disclaimerRequired: true
 notInvestmentAdvice: true
 factChecked: true
 sourcePath: output/DiA/리서치본부/환경스캐닝/2026-07-03/주간시대통찰_2026-W27_0703_v2.md
+heroImage:
+  src: /images/insight/hero_2026-07-03-weekly-ai-infrastructure_0718.png
+  alt: "중심 AI 코어가 전력·반도체·자본 공급선을 팽팽히 당기는 플랫 일러스트 — 인프라가 된 AI의 수요 견인"
 ---
 
 이 글은 2026년 6월 27일부터 7월 3일까지 한 주간 환경스캐닝이 포착한 시대 흐름을 정리한 것이다. 특정 하루의 사건이 아니라 한 주를 관통한 흐름의 방향을 읽는 글이며, 산업·에너지·자본시장·국제정세에 대한 정보 제공을 목적으로 한다. 등장하는 모든 수치와 서술은 시대 흐름의 관찰이며, 어떤 종목이나 자산의 매매를 권유하지 않는다.

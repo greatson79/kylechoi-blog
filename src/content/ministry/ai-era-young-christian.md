@@ -7,6 +7,9 @@ author: 최종학
 tags: [청년, AI시대, 신앙과진로, 소명, 하나님나라]
 draft: false
 sourcePath: "output/DiA/제작본부/콘텐츠팀/강의준비/영국_대학청년/AI시대청년크리스천_QnA/원고_AI시대청년크리스천_QnA_2026-06-18.md"
+heroImage:
+  src: /images/ministry/hero_ai-era-young-christian_0718.png
+  alt: "한 지점에서 세 갈래로 갈라지는 길과 중심을 잡는 작은 십자 표식의 플랫 일러스트 — AI 시대 청년의 세 질문과 조용한 닻"
 ---
 
 요즘 청년들의 고민을 들으면 공통된 무게가 느껴집니다.

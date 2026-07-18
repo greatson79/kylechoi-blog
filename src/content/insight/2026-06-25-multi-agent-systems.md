@@ -9,6 +9,9 @@ draft: false
 disclaimerRequired: false
 factChecked: true
 sourcePath: output/AI트렌드/2026-06-25_멀티에이전트_리서치소스.md
+heroImage:
+  src: /images/ai-trend/hero_2026-06-25-multi-agent-systems_0718.png
+  alt: "하나의 중심 노드가 연결된 여러 노드로 분화해 협업하는 격자 구조의 플랫 일러스트 — 멀티에이전트 시스템의 은유"
 ---
 
 2026년 5월, 마이크로소프트는 100개가 넘는 전문 AI 에이전트가 서로 토론하며 소프트웨어 취약점을 찾아내는 시스템을 공개했다. 코드명 **MDASH**(multi-model agentic scanning harness)다. 이 시스템은 실제 취약점 1,507개로 구성된 CyberGym 벤치마크에서 88.45%를 기록해 리더보드 1위에 올랐고, 2위를 약 5점 앞섰다(Microsoft Security Blog, 2026-05-12).

@@ -10,6 +10,9 @@ draft: false
 disclaimerRequired: false
 factChecked: true
 sourcePath: output/AI트렌드/2026-06-25_활용법_AI에이전트실무_리서치소스.md
+heroImage:
+  src: /images/ai-trend/hero_2026-06-25-ai-agent-howto_0718.png
+  alt: "제어 다이얼이 돌자 흩어진 블록들이 가이드선을 따라 정렬되는 플랫 일러스트 — 파라미터 하나가 만드는 질서의 은유"
 ---
 
 신입 직원에게 일을 맡긴다고 해보자. "고객 정보 좀 봐줘"라고만 하면 그는 어디서 무엇을 찾아야 할지 헤맨다. 하지만 "이 고객 ID로 최근 3개월 주문 내역을 조회해줘"라고 하면 정확히 움직인다. AI 에이전트도 똑같다.

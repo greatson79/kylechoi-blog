@@ -11,6 +11,9 @@ disclaimerRequired: true
 notInvestmentAdvice: true
 factChecked: true
 sourcePath: output/DiA/리서치본부/환경스캐닝/2026-07-02/AI트렌드흐름_블로그_draft_2026-07-02.md
+heroImage:
+  src: /images/insight/hero_2026-07-02-ai-as-infrastructure_0718.png
+  alt: "궤도 링 위 데이터블록 위성과 아래로 급락하는 계단선이 대비되는 플랫 일러스트 — 궤도 야망과 급락의 긴장"
 ---
 
 일론 머스크는 "AI를 두기에 가장 저렴한 곳은 우주가 될 것이며, 이는 2년, 늦어도 3년 안에 현실이 될 것"이라고 말했다 (IEEE Spectrum, 궤도 데이터센터 보도, 다보스 발언 인용, 2026-07-02).

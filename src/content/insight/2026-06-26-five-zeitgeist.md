@@ -10,6 +10,9 @@ disclaimerRequired: true
 notInvestmentAdvice: true
 factChecked: true
 sourcePath: wave-envscan/output-환경스캐닝/2026-06-26/integrated-scan-2026-06-26-ko.md
+heroImage:
+  src: /images/insight/hero_2026-06-26-five-zeitgeist_0718.png
+  alt: "공통 기점에서 다섯 갈래로 부채꼴처럼 뻗는 서로 다른 글리프의 플랫 일러스트 — 다섯 갈래 시대 흐름"
 ---
 
 폭염은 두 가지 일을 동시에 한다. 에어컨 수요를 끌어올리고, 동시에 강물로 식히는 발전소의 출력을 끌어내린다. 수요가 가장 클 때 공급이 줄어드는 이 역방향 상관이, 2026년 6월 26일 다섯 갈래 환경스캐닝이 포착한 하루의 한복판에 있었다. 프랑스는 44도를 넘겼고, 세계보건기구는 유럽이 지구 평균의 약 2배 속도로 온난화하고 있다고 밝혔다.

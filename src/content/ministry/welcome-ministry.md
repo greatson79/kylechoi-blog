@@ -8,6 +8,9 @@ author: 디딤
 tags: [설교, 요한복음, 섬김, 십자가]
 draft: false
 sourcePath: output/6월/4주차/설교/5_원고.md
+heroImage:
+  src: /images/ministry/hero_welcome-ministry_0718.png
+  alt: "닫힌 겉껍질에서 놓여나는 한 알의 밀알, 놓음으로 껍질이 열리는 플랫 일러스트 — 지킬수록 잃는 역설"
 ---
 
 손에 씨앗이 있습니다. 봄이 왔습니다.

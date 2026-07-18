@@ -7,6 +7,9 @@ author: 디딤
 tags: [AI교육, WAVE Academy, AI리터러시, 컨설팅, 자격증]
 draft: false
 sourcePath: output/강의준비
+heroImage:
+  src: /images/education/hero_wave-academy-ai-education_0718.png
+  alt: "파도 밴드가 세 단계 계단으로 상승하는 플랫 일러스트 — 교육·컨설팅·자격증으로 이어지는 WAVE Academy의 성장"
 ---
 
 AI를 대하는 태도는 보통 둘 중 하나로 갈립니다. 한쪽은 막연한 두려움입니다 — "이러다 다 대체되는 것 아닌가." 다른 한쪽은 맹신입니다 — "이제 AI한테 다 맡기면 된다." **WAVE Academy**는 그 둘 사이, **분별(discernment)** 의 자리에서 시작합니다.

@@ -10,6 +10,9 @@ disclaimerRequired: true
 notInvestmentAdvice: true
 factChecked: true
 sourcePath: wave-envscan/output-환경스캐닝/2026-06-25/integrated-scan-2026-06-25-ko.md
+heroImage:
+  src: /images/insight/hero_2026-06-25-grid-bottleneck_0718.png
+  alt: "세 갈래 흐름선이 하나의 좁은 전력망 노드로 수렴·병목되는 플랫 일러스트 — 전기화·AI·폭염이 만나는 지점"
 ---
 
 2035년까지 전 세계 에너지의 35%를 전기로 바꾸자는 서약과, 폭염에 발전소가 출력을 줄이는 현실. 이 둘이 같은 주에 나왔다. 야망과 물리 법칙이 정면으로 부딪히는 지점 — 그곳에 전력망이 있다.

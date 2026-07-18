@@ -8,6 +8,9 @@ tags: [교육, AI활용, 클로드프로젝트, WAVE Academy, 초급]
 draft: false
 factChecked: false
 sourcePath: Notion/AI활용학습허브/초급3-클로드프로젝트
+heroImage:
+  src: /images/education/hero_claude-projects-beginner_0718.png
+  alt: "재사용할 맥락 카드가 쌓인 서랍/폴더의 플랫 일러스트 — 맥락을 저장하는 클로드 프로젝트"
 ---
 
 > 2번에서 배운 '맥락'을 매번 다시 쓰지 않도록 저장해두는 도구가 클로드의 '프로젝트(Projects)'입니다. 한 번 차려두면, 그 안에서 나누는 모든 대화가 그 맥락을 기억합니다.
