@@ -130,4 +130,4 @@ AI가 무엇을 하든, 시장이 어떻게 움직이든 — 그 시민권은 �
 
 ---
 
-*최종학 목사 | DiA 대표 | WAVE AI Networks 대표*
+*최종학 목사 | WAVE AI Networks 대표*

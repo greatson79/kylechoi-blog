@@ -19,7 +19,7 @@ heroImage:
 
 **WAVE Academy**는 이 지점에서 시작합니다. AI에게 설교를 맡기는 것이 아니라, 목회자가 설계한 신학적 환경 안에서 AI가 조립하게 하는 법을 가르칩니다. 목회자가 AI를 부리는 법 — 그것이 WAVE Academy가 가르치는 것입니다.
 
-WAVE Academy는 DiA Ai Edu. Solution(교회·기관 AI 교육 전문)의 AI 교육 브랜드이며, 두 갈래로 운영됩니다(교육·컨설팅).
+WAVE Academy는 Wave AI Networks(교회·기관 AI 교육 전문)의 AI 교육 브랜드이며, 두 갈래로 운영됩니다(교육·컨설팅).
 
 ---
 
