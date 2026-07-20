@@ -89,4 +89,4 @@ heroImage:
 
 > 한 줄 정리: 프로젝트는 '맥락을 저장해두는 작업 공간'입니다. 자료를 지식에 올리고 규칙을 프로젝트 지시에 적어두면, 그 안의 모든 대화가 매번 설명 없이도 내 맥락대로 움직입니다.
 
-ⓒ DiA AI Edu. Solution · WAVE AI Networks
+ⓒ Wave AI Networks

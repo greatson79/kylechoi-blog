@@ -77,4 +77,4 @@ sourcePath: Notion/AI활용학습허브/중급4-아티팩트심화
 
 > 한 줄 정리: 중급 아티팩트는 **작동하는 도구를 만들고·반복 개선하고·설계 원칙으로 잘 만들고·데이터와 연결된 라이브 대시보드**로 확장하는 일입니다. 보여주는 것에서 쓰는 것으로.
 
-ⓒ DiA AI Edu. Solution · WAVE AI Networks — 중급 AI 활용 학습 시리즈
+ⓒ Wave AI Networks — 중급 AI 활용 학습 시리즈

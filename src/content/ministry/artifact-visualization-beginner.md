@@ -78,4 +78,4 @@ heroImage:
 
 > 한 줄 정리: 아티팩트는 클로드가 '옆 창에 띄워 주는 결과물'입니다. 보여주는 게 나은 것은 차트·다이어그램·표로, 매번 최신이 중요한 것은 라이브 아티팩트로 만들어 계속 재사용하세요.
 
-ⓒ DiA AI Edu. Solution · WAVE AI Networks
+ⓒ Wave AI Networks

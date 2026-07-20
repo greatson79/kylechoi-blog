@@ -106,4 +106,4 @@ heroImage:
 
 ---
 
-ⓒ **DiA Ai Edu. Solution** · WAVE AI Networks
+ⓒ Wave AI Networks

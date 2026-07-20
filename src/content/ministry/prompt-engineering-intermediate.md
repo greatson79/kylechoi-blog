@@ -87,4 +87,4 @@ sourcePath: Notion/AI활용학습허브/중급1-프롬프트심화
 
 > 한 줄 정리: 중급 프롬프트는 **추론을 설계(CoT)·입출력 구조화(태그)·대표 예시 큐레이션·체인 분할·실패 관찰 반복 개선**입니다.
 
-ⓒ DiA AI Edu. Solution · WAVE AI Networks — 중급 AI 활용 학습 시리즈
+ⓒ Wave AI Networks — 중급 AI 활용 학습 시리즈
