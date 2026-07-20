@@ -8,8 +8,8 @@ tags: [교육, AI활용, 프롬프트엔지니어링, WAVE Academy, 고급]
 draft: false
 factChecked: true
 heroImage:
-  src: /images/education/hero_prompt-engineering-advanced_0720.png
-  alt: 색인표가 보이도록 겹쳐 담긴 카드 보관함에서 채점 격자로 화살표가 이어지고, 격자 아래에서 다시 보관함으로 돌아오는 순환 화살표
+  src: /images/education/hero_prompt-engineering-advanced_0720_v2.png
+  alt: 색인표가 달린 카드가 가지런히 채워진 원목 카드 서랍이 열려 있고, 곁의 황동 격자 트레이에 크림색 타일 몇 개가 놓인 정물 사진
 sourcePath: Notion/AI활용학습허브/고급1-프롬프트자산화
 ---
 
