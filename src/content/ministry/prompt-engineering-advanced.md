@@ -5,8 +5,8 @@ category: 교육
 pubDate: 2026-07-20
 author: 디딤
 tags: [교육, AI활용, 프롬프트엔지니어링, WAVE Academy, 고급]
-draft: true
-factChecked: false
+draft: false
+factChecked: true
 heroImage:
   src: /images/education/hero_prompt-engineering-advanced_0720.png
   alt: 색인표가 보이도록 겹쳐 담긴 카드 보관함에서 채점 격자로 화살표가 이어지고, 격자 아래에서 다시 보관함으로 돌아오는 순환 화살표
@@ -70,4 +70,4 @@ sourcePath: Notion/AI활용학습허브/고급1-프롬프트자산화
 
 > 한 줄 정리: 고급 프롬프트는 <strong>자산화(라이브러리·버전) + 평가(기준·테스트·채점) + 최적화(A/B·회귀·메타프롬프팅)</strong>의 운영입니다.
 
-ⓒ DiA AI Edu. Solution · WAVE AI Networks — 고급 AI 활용 학습 시리즈 (비개발 파워유저)
+ⓒ Wave AI Networks — 고급 AI 활용 학습 시리즈 (비개발 파워유저)
