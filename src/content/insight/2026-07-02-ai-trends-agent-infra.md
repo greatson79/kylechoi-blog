@@ -44,8 +44,8 @@ Anthropic 공식 문서에 따르면, Sonnet 5는 새로운 토크나이저를 �
 규제 논쟁보다 더 중요한 숫자가 이번 주 나왔습니다.
 
 OpenAI가 6월 25일 발표한 보고서 *"How Agents Are Transforming Work"*에 따르면:
-- 표본 사용자 중 **80.6%**가 30분 이상 소요되는 작업으로 추정되는 Codex 요청을 1회 이상 생성했습니다.
-- OpenAI 사내에서 생성되는 출력 토큰의 **99.8%**가 Codex 에이전트를 경유합니다.
+- 표본 사용자 중 <strong>80.6%</strong>가 30분 이상 소요되는 작업으로 추정되는 Codex 요청을 1회 이상 생성했습니다.
+- OpenAI 사내에서 생성되는 출력 토큰의 <strong>99.8%</strong>가 Codex 에이전트를 경유합니다.
 
 ![표본 사용자 80.6%가 30분 이상 작업을 에이전트에 위임](/images/ai-trend/agent_delegation_data_0702.webp)
 

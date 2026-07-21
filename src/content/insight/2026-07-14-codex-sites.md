@@ -32,7 +32,7 @@ OpenAI는 발표문에서 이 기능을 더 폭넓게 이렇게도 소개했습�
 
 > "Sites are a new kind of canvas for your ideas. Codex can take your ideas, analysis, and plans and turn them [into] dashboards, planners, review workspaces, project boards, galleries, and lightweight tools."
 
-핵심은 두 문장을 합쳐서 봐야 정확합니다 — Codex가 사용자를 대신해 사이트를 **생성·저장·배포·검사(create, save, deploy, inspect)**하고, 그 결과가 곧바로 실행 가능한 프로덕션 URL이 된다는 것입니다. 별도의 배포 도구나 개발 리소스 요청 없이 대화 안에서 이 전체 과정이 끝납니다.
+핵심은 두 문장을 합쳐서 봐야 정확합니다 — Codex가 사용자를 대신해 사이트를 <strong>생성·저장·배포·검사(create, save, deploy, inspect)</strong>하고, 그 결과가 곧바로 실행 가능한 프로덕션 URL이 된다는 것입니다. 별도의 배포 도구나 개발 리소스 요청 없이 대화 안에서 이 전체 과정이 끝납니다.
 
 **만들 수 있는 것 예시**: 재무 시나리오 플래너, 운영팀 프로젝트 요청 대시보드, 작업 추적 도구, 경량 CRUD 애플리케이션, 내부 포털·리포트, 런치 캘린더, 프로토타입, 간단한 게임 등입니다.
 
