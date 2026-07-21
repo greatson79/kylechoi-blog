@@ -10,7 +10,7 @@ factChecked: true
 sourcePath: Notion/AI활용학습허브/초급2-컨텍스트엔지니어링
 heroImage:
   src: /images/education/hero_context-engineering-beginner_0718.png
-  alt: "열린 가방에 필요한 물건만 골라 담고 쓰지 않을 하나는 밖에 남겨둔 사진 — 무엇을 넣고 무엇을 뺄지 정하는 컨텍스트 설계"
+  alt: "여러 물건이 담긴 열린 가방과 그 옆 벤치에 놓인 공 하나를 담은 사진 — 무엇을 넣고 무엇을 뺄지 정하는 컨텍스트 설계"
 ---
 
 > 1번에서 "말을 잘 거는 법"을 배웠다면, 이번엔 AI가 일하는 '작업 환경' 전체를 설계하는 법을 배웁니다. 좋은 답은 좋은 질문에서 끝나지 않고, 좋은 맥락에서 완성됩니다.
