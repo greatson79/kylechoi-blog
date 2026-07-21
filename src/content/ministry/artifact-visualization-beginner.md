@@ -10,7 +10,7 @@ factChecked: false
 sourcePath: Notion/AI활용학습허브/초급4-아티팩트시각화
 heroImage:
   src: /images/education/hero_artifact-visualization-beginner_0718.png
-  alt: "차트와 작동 페이지 글리프를 담은 결과물 프레임의 플랫 일러스트 — AI가 만드는 아티팩트와 라이브 갱신"
+  alt: "실물 무드보드 옆 모니터에 도형과 곡선으로 된 시각화가 떠 있는 작업실 사진 — 손으로 고른 재료가 곧바로 결과물 화면이 되는 아티팩트"
 ---
 
 > 지금까지는 'AI가 글로 답하게' 했습니다. 이번엔 AI가 차트·다이어그램·표·작동하는 페이지 같은 '결과물 자체'를 만들게 하는 법을 배웁니다. 코딩을 몰라도, 말로 부탁하면 됩니다.

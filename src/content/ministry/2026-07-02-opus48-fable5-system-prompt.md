@@ -8,8 +8,8 @@ author: Kyle Choi
 tags: [교육, AI활용, Claude, 시스템프롬프트, Opus48, Fable5, 실전팁]
 draft: false
 heroImage:
-  src: /images/education/opus48_hero_0702.webp
-  alt: 시스템 프롬프트로 각성한 Opus 4.8 — 웹툰 스타일 일러스트
+  src: /images/education/opus48_hero_0721.png
+  alt: 어두운 작업실에서 두 화면 사이로 빛이 흐르고 손에 인쇄된 문서가 들린 사진 — 한쪽의 규범을 다른 쪽으로 옮겨 심는 시스템 프롬프트
 sourcePath: output/DiA/AI-Tech본부/opus48_fable5화_0702/Opus48_Fable5급_시스템프롬프트_v1.md
 ---
 

@@ -10,7 +10,7 @@ factChecked: true
 sourcePath: Notion/AI활용학습허브/초급1-프롬프트엔지니어링
 heroImage:
   src: /images/education/hero_prompt-engineering-beginner_0718.png
-  alt: "여섯 모듈 슬롯으로 구성된 입력 브래킷이 정돈된 출력 블록으로 이어지는 플랫 일러스트 — 프롬프트의 6요소"
+  alt: "목공 작업대에서 두 손이 여섯 개의 나무 부품을 하나로 맞물려 조립하는 사진 — 요청을 이루는 6요소의 결합"
 ---
 
 > AI에게 "말 거는 법"을 배우는 첫걸음입니다. 이 글을 끝까지 따라오시면, 같은 AI에게서 두세 배 더 좋은 답을 끌어낼 수 있습니다.
