@@ -7,7 +7,7 @@ author: Kyle Choi
 tags: [AI교육, WAVE Academy, AI리터러시, 컨설팅]
 draft: false
 heroImage:
-  src: /images/ministry/hero_wave-academy-intro_0718.png
+  src: /images/ministry/hero_wave-academy-intro_0721_v2.png
   alt: "하나의 정갈한 파도 밴드 위에 놓인 작은 나침반 바늘의 플랫 일러스트 — 분별하며 파도를 타는 WAVE Academy"
 ---
 

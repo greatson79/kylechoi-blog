@@ -9,7 +9,7 @@ tags: [설교, 요한복음, 성령, 보혜사, 위로]
 draft: false
 sourcePath: output/6월/보혜사_요14/blog_보혜사_요14.md
 heroImage:
-  src: /images/ministry/hero_sermon-boheasa-yo14_0718.png
+  src: /images/ministry/hero_sermon-boheasa-yo14_0721_v2.png
   alt: "작은 형상을 곁에서 감싸 받쳐주는 큰 보호 형태의 추상 플랫 일러스트 — 곁에 오시는 보혜사의 은유"
 ---
 
