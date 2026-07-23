@@ -4,11 +4,11 @@ import fs from 'node:fs';
 
 const article = fs.readFileSync('src/content/insight/2026-07-23-gpt56-sol-security-debt.md', 'utf8');
 const images = [
-  ['hero_gpt56-sol-security-debt_0723_1200x630.png', 'e6d5e69eae9a1608a8eea232e27663732aa4bbe1033effed40028df682dba718'],
-  ['sec1_sandbox-breach-defense_0723.png', 'ed91022fb32488059fde7bd7e1b13bbac5c5f5c4deba318fe83895c7a723c809'],
-  ['sec2_agent-security-debt_0723.png', 'cc254b91b7e25a01c10ce2f1b21c34a170234b0a18cdaab7571c5c8ac30baece'],
-  ['sec3_explainable-finance-ai_0723.png', 'd392cdb3ba88152f8b0daf7278841b4257b713672044669c59eb0cecb863f67e'],
-  ['sec4_compute-supply-chain_0723.png', '5344ae374669494a6d55284314647b2aa6642811ef2ba7994a276fca3b67a134'],
+  ['hero_gpt56-sol-security-debt_0723_1200x630.png', '6658792eaea92d83407d43aec495dd5fc95479237f0acb8ff754caa28acc40df'],
+  ['sec1_sandbox-breach-defense_0723.png', '40bc1182eae3d6df75cb6dff1016c72451ee198bb8a221d3bdd8438a2d69e498'],
+  ['sec2_agent-security-debt_0723.png', '385f20f6ae95f132765de710d654e4dd5be35759ba013580d69e0def9fc14481'],
+  ['sec3_explainable-finance-ai_0723.png', 'ff3683ae23b054b59572612c8fbb8691741c48c260c1d833d300282296b4fc43'],
+  ['sec4_compute-supply-chain_0723.png', 'e912d11c5d0e748ec27862a15d5fbe8bd8f96392ac2907e4992821ce2d52b7f2'],
 ];
 for (const [name, sha] of images) {
   const path = `public/images/ai-trend/${name}`;
