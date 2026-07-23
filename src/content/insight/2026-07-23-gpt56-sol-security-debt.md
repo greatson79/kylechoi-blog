@@ -9,7 +9,7 @@ draft: false
 factChecked: true
 sourcePath: output/WaveAI/크리에이티브본부/AI트렌드_기술동향_2026-07-23/원고_2026-07-23.md
 heroImage:
-  src: /images/ai-trend/hero_gpt56-sol-security-debt_0723.png
+  src: /images/ai-trend/hero_gpt56-sol-security-debt_0723_1200x630.png
   alt: 뉴럴코어 샌드박스 균열탈출·유리파편·서버실루엣
 ---
 
