@@ -11,6 +11,8 @@ const required = [
   'disclaimerRequired: true',
   'notInvestmentAdvice: true',
   'factChecked: true',
+  'src: /images/insight/hero_W30_2026-07-25.png',
+  'alt: 15GW 계획과 7,500억 원 확약의 간극 및 주간 신호 1,094개를 비교한 주간시대통찰 W30 데이터 시각화',
   '15GW',
   '7,500억 원',
   '232,270개',
@@ -26,6 +28,7 @@ const forbidden = [
   '비공개',
   '모델 티어',
   '서브에이전트',
+  '각 미주는 [매체',
 ];
 
 const errors = [];

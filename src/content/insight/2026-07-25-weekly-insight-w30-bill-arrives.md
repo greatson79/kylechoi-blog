@@ -9,6 +9,9 @@ draft: false
 disclaimerRequired: true
 notInvestmentAdvice: true
 factChecked: true
+heroImage:
+  src: /images/insight/hero_W30_2026-07-25.png
+  alt: 15GW 계획과 7,500억 원 확약의 간극 및 주간 신호 1,094개를 비교한 주간시대통찰 W30 데이터 시각화
 ---
 
 이 글은 2026년 7월 20일부터 23일까지 포착된 산업·기술·국제정세의 흐름을 분석합니다. 정보 제공용 시대분석이며, 어떤 종목이나 상품의 매매도 권유하지 않습니다. 환경스캐닝의 pSST는 시대 흐름의 현저성 지표이지 투자 매력도 점수가 아닙니다.
@@ -143,8 +146,6 @@ factChecked: true
 ---
 
 ## 미주
-
-> 각 미주는 [매체 · 워크플로우(WF) · 날짜 · (가용 시) URL]로 표기. WF1=일반 다출처, WF2=arXiv 학술, WF3=네이버 국내 뉴스, WF4=다국어 글로벌 뉴스. URL이 원 통합보고서에 기재되지 않은 항목은 "URL 원문 미기재"로 표기하며 임의로 보완하지 않았다.
 
 [1] SK텔레콤 SK하이퍼 설립, 2030년까지 7,500억 원 투입·2035년까지 최대 15GW 목표 — 헤럴드경제, WF3, 2026-07-23. https://n.news.naver.com/mnews/article/016/0002674247
 [2] 코스피 4.46% 하락 6,516 마감, 사이드카·서킷브레이커 발동, 레버리지 개별종목 ETF 거래대금 12조 원 돌파 — TV조선, WF3, 2026-07-20. https://n.news.naver.com/mnews/article/448/0000628081
