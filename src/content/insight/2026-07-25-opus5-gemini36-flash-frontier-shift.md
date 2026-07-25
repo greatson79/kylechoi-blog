@@ -38,6 +38,47 @@ Anthropic이 Opus 5를 소개하며 고른 핵심 표현은 '가장 똑똑하다
 
 가격은 100만 토큰 기준 입력 5달러, 출력 25달러로 이전 세대인 Opus 4.8과 동일합니다. 같은 비용으로 크게 개선된 성능을 낸다는 뜻입니다. 안전성 면에서도 Anthropic은 함께 공개한 시스템 카드에서 Opus 5를 지금까지 가장 잘 정렬된 모델로 평가하며, 자사 원칙을 이전 모델들보다 더 충실히 따른다고 밝혔습니다. 요컨대 Opus 5의 메시지는 '더 아는 모델'이 아니라 '자기 틀림을 잡아내는 모델'입니다.
 
+<div class="bench-compare">
+<style>
+.bench-compare{font-family:'Pretendard Variable',Pretendard,-apple-system,'Apple SD Gothic Neo',sans-serif;color:#1b1d24;margin:2.5rem 0}
+.bench-compare .lead{font-weight:800;font-size:1.15rem;letter-spacing:-.01em;margin:0 0 .35rem}
+.bench-compare .sub{font-size:.9rem;color:#565a66;line-height:1.6;margin:0 0 1.2rem}
+.bench-compare figure{margin:0 0 1.6rem}
+.bench-compare .scroll{overflow-x:auto}
+.bench-compare table{width:100%;border-collapse:collapse;font-size:.85rem;min-width:560px}
+.bench-compare th,.bench-compare td{padding:.45rem .4rem;text-align:right}
+.bench-compare th.l,.bench-compare td.l{text-align:left}
+.bench-compare thead tr{border-bottom:2px solid #1b1d24}
+.bench-compare tbody tr{border-bottom:1px solid #dcdde3}
+.bench-compare .win{font-weight:800;color:#123a8a;border-bottom:2px solid #123a8a}
+.bench-compare .dim{color:#565a66}
+.bench-compare .cap{font-size:.78rem;color:#565a66;line-height:1.5;margin:.7rem 0 0}
+</style>
+<p class="lead">영역마다 앞서는 모델이 다르다</p>
+<p class="sub">Anthropic이 공개한 비교표를 보면 모델마다 강점이 다른 영역에 놓여 있습니다. <strong style="color:#123a8a">파란 강조 = 해당 영역 1위.</strong></p>
+<figure>
+<div class="scroll"><table>
+<thead><tr><th class="l">영역 · 벤치마크</th><th>Claude Opus 5</th><th>Fable 5</th><th>Opus 4.8</th><th>GPT-5.6 Sol</th></tr></thead>
+<tbody>
+<tr><td class="l">에이전트 터미널 코딩 · Frontier-Bench v0.1</td><td class="win">43.3</td><td>33.7</td><td class="dim">21.1</td><td>34.4</td></tr>
+<tr><td class="l">지식 노동 · GDPval-AA v2</td><td class="win">1861</td><td>1747</td><td class="dim">1593</td><td>1736</td></tr>
+<tr><td class="l">새로운 문제해결 · ARC-AGI-3</td><td class="win">30.2</td><td class="dim">—</td><td class="dim">1.5</td><td>7.8</td></tr>
+<tr><td class="l">에이전트 검색 · BrowseComp</td><td class="win">90.8</td><td>87.4</td><td class="dim">84.3</td><td>90.4</td></tr>
+<tr><td class="l">다분야 추론 · HLE (도구 없음)</td><td>56.3</td><td class="win">56.5</td><td class="dim">49.8</td><td class="dim">—</td></tr>
+<tr><td class="l">다분야 추론 · HLE (도구 사용)</td><td class="win">64.7</td><td>63.9</td><td class="dim">57.9</td><td class="dim">—</td></tr>
+<tr><td class="l">컴퓨터 사용 · OSWorld 2.0</td><td class="win">70.6</td><td>66.1</td><td class="dim">55.7</td><td>62.6</td></tr>
+<tr><td class="l">에이전트 코딩 · DeepSWE v1.1</td><td>68.8</td><td>69.7</td><td class="dim">59.0</td><td class="win">72.7</td></tr>
+<tr><td class="l">에이전트 코딩 · FrontierCode v1.1 (Main)</td><td>53.4</td><td class="win">53.5</td><td class="dim">46.5</td><td>47.5</td></tr>
+<tr><td class="l">업무 워크플로 · AutomationBench</td><td class="win">26.0</td><td>17.4</td><td class="dim">17.0</td><td>18.1</td></tr>
+<tr><td class="l">법률 · Legal Agent Benchmark (Held-out)</td><td>11.7</td><td class="win">13.3</td><td class="dim">10.4</td><td>2.5</td></tr>
+<tr><td class="l">헬스 · HealthBench Professional</td><td>59.8</td><td class="win">66.0</td><td class="dim">57.4</td><td>60.5</td></tr>
+<tr><td class="l">생물학 · BioMysteryBench (hard)</td><td class="win">49.4</td><td>46.5</td><td class="dim">42.4</td><td class="dim">—</td></tr>
+<tr><td class="l">생물학 · BioMysteryBench (human-solved)</td><td class="win">90.1</td><td>89.0</td><td class="dim">88.5</td><td class="dim">—</td></tr>
+</tbody></table></div>
+<figcaption class="cap">출처: Anthropic 공식 발표(Claude Opus 5, 2026-07-24). Fable 5·Opus 4.8·GPT-5.6 Sol 수치는 동 발표의 비교 기준. "—"는 미공개. 값이 높을수록 우수하며 단위는 벤치마크별로 다릅니다.</figcaption>
+</figure>
+</div>
+
 <figure>
   <img src="/images/ai-trend/gemini36_evals_figure_0725.webp" width="2000" height="1125" loading="lazy" decoding="async" alt="Gemini 3.6 Flash와 이전 세대의 에이전트 벤치마크 비교. 장기 소프트웨어 엔지니어링, 머신러닝 엔지니어링, 지식 노동, 컴퓨터 사용 네 영역에서 3.6 Flash가 가장 높은 점수를 기록한다.">
   <figcaption>Gemini 3.6 Flash는 DeepSWE·MLE-Bench·GDPval-AA·OSWorld-Verified에서 이전 세대를 앞섰습니다. 출처: <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-6-flash-3-5-flash-lite-3-5-flash-cyber/" target="_blank" rel="noopener noreferrer">Google 공식 블로그</a>.</figcaption>
