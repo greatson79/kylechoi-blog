@@ -1,4 +1,7 @@
 # ★완전공개(production) — 검색 색인 허용 (2026-06-26 주인님 승인).
+User-agent: OAI-SearchBot
+Allow: /
+
 User-agent: *
 Allow: /
 
