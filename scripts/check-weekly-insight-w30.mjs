@@ -13,6 +13,9 @@ const required = [
   'factChecked: true',
   'src: /images/insight/hero_W30_2026-07-25.png',
   'alt: 15GW 계획과 7,500억 원 확약의 간극 및 주간 신호 1,094개를 비교한 주간시대통찰 W30 데이터 시각화',
+  '![자동화가 통제 표면을 앞질렀다 — 능력은 운영 환경에, 통제는 아직 평가 환경에](/images/insight/fig_control_gap.png)',
+  '![한국은 같은 주에 네 개의 스트레스를 동시에 받았다 — 자산시장·제도신뢰·AI기술압박·물류안전](/images/insight/fig_korea_stress.png)',
+  '![1,094개 신호의 형태 — WF별 분포와 출처 비대칭](/images/insight/fig_1094_signals.png)',
   '15GW',
   '7,500억 원',
   '232,270개',
@@ -42,6 +45,11 @@ for (const token of forbidden) {
 const citations = article.match(/^\[\d+\]/gm) ?? [];
 if (citations.length !== 45) {
   errors.push(`미주 수 불일치: expected=45 actual=${citations.length}`);
+}
+
+const missingUrlCount = (article.match(/URL 원문 미기재/g) ?? []).length;
+if (missingUrlCount !== 14) {
+  errors.push(`URL 원문 미기재 수 불일치: expected=14 actual=${missingUrlCount}`);
 }
 
 const h1Count = (article.match(/^# /gm) ?? []).length;
