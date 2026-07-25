@@ -79,11 +79,6 @@ Anthropic이 Opus 5를 소개하며 고른 핵심 표현은 '가장 똑똑하다
 </figure>
 </div>
 
-<figure>
-  <img src="/images/ai-trend/gemini36_evals_figure_0725.webp" width="2000" height="1125" loading="lazy" decoding="async" alt="Gemini 3.6 Flash와 이전 세대의 에이전트 벤치마크 비교. 장기 소프트웨어 엔지니어링, 머신러닝 엔지니어링, 지식 노동, 컴퓨터 사용 네 영역에서 3.6 Flash가 가장 높은 점수를 기록한다.">
-  <figcaption>Gemini 3.6 Flash는 DeepSWE·MLE-Bench·GDPval-AA·OSWorld-Verified에서 이전 세대를 앞섰습니다. 출처: <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-6-flash-3-5-flash-lite-3-5-flash-cyber/" target="_blank" rel="noopener noreferrer">Google 공식 블로그</a>.</figcaption>
-</figure>
-
 ## 3. Gemini 3.6 Flash — 지능의 정점 대신 효율과 통제를 택하다
 
 <figure>
@@ -94,6 +89,11 @@ Anthropic이 Opus 5를 소개하며 고른 핵심 표현은 '가장 똑똑하다
 Google의 선택은 대비를 이룹니다. 이번에 공개된 것은 최상위 등급이 아니라 **Flash 계층 세 종**이었습니다. 주력인 Gemini 3.6 Flash, 가장 빠르고 저렴한 3.5 Flash-Lite, 보안에 특화된 3.5 Flash Cyber입니다. 정작 최상위 등급인 Gemini 3.5 Pro는 "파트너들과 시험 중"이라며 이번에 내놓지 않았습니다. 이번 발표에는 최상위 모델이 빠지고, 널리 쓰이는 실무형 Flash 계층만 공개됐습니다.
 
 가장 눈에 띄는 지표는 토큰 효율입니다. Gemini 3.6 Flash는 이전 세대인 3.5 Flash보다 **출력 토큰을 17% 적게** 씁니다. 같은 답을 더 짧고 간결하게 내놓는다는 뜻에 가깝습니다. 특정 코딩 과제(DeepSWE)에서는 그 절감폭이 최대 65%까지 벌어졌습니다. 출력 토큰은 사용 요금에 직접 반영되므로, 이런 평가 조건에서는 출력 토큰 과금 부담을 낮출 수 있습니다. 다만 실제 총비용은 입력량과 사고 토큰, 작업 성격에 따라 달라집니다. 실제로 3.6 Flash의 출력 단가는 100만 토큰당 7.5달러로, 이전 세대의 9달러에서 내려갔습니다. 성능도 함께 올랐습니다. 코딩(DeepSWE 49% 대 37%), 기계학습 과제(MLE Bench 63.9% 대 49.7%), 컴퓨터 조작 과제(OSWorld-Verified 83.0% 대 78.4%)에서 이전 세대를 앞섰습니다.
+
+<figure>
+  <img src="/images/ai-trend/gemini36_evals_figure_0725.webp" width="2000" height="1125" loading="lazy" decoding="async" alt="Gemini 3.6 Flash와 이전 세대의 에이전트 벤치마크 비교. 장기 소프트웨어 엔지니어링, 머신러닝 엔지니어링, 지식 노동, 컴퓨터 사용 네 영역에서 3.6 Flash가 가장 높은 점수를 기록한다.">
+  <figcaption>Gemini 3.6 Flash는 DeepSWE·MLE-Bench·GDPval-AA·OSWorld-Verified에서 이전 세대를 앞섰습니다. 출처: <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-6-flash-3-5-flash-lite-3-5-flash-cyber/" target="_blank" rel="noopener noreferrer">Google 공식 블로그</a>.</figcaption>
+</figure>
 
 <figure>
   <img src="/images/ai-trend/gemini36_evals_quality_0725.webp" width="2000" height="1125" loading="lazy" decoding="async" alt="Gemini 3.5 Flash와 3.6 Flash의 작업당 평균 출력 토큰 비교. DeepSWE v1.1에서는 27만 6천에서 9만 7천으로, Artificial Analysis Intelligence Index에서는 2만 8천에서 2만 3천으로 줄었다.">
