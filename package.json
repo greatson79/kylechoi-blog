@@ -8,7 +8,10 @@
     "build": "astro build && node scripts/check-sitemap.mjs",
     "preview": "astro preview",
     "check": "astro check",
-    "digest": "node scripts/generate-digest.mjs"
+    "digest": "node scripts/generate-digest.mjs",
+    "test:indexnow": "node --test test/indexnow.test.mjs",
+    "indexnow": "node scripts/indexnow.mjs",
+    "deploy:prod": "node scripts/deploy-production.mjs"
   },
   "dependencies": {
     "@astrojs/mdx": "^7.0.0",
