@@ -38,11 +38,26 @@ Anthropic이 Opus 5를 소개하며 고른 핵심 표현은 '가장 똑똑하다
 
 가격은 100만 토큰 기준 입력 5달러, 출력 25달러로 이전 세대인 Opus 4.8과 동일합니다. 같은 비용으로 크게 개선된 성능을 낸다는 뜻입니다. 안전성 면에서도 Anthropic은 함께 공개한 시스템 카드에서 Opus 5를 지금까지 가장 잘 정렬된 모델로 평가하며, 자사 원칙을 이전 모델들보다 더 충실히 따른다고 밝혔습니다. 요컨대 Opus 5의 메시지는 '더 아는 모델'이 아니라 '자기 틀림을 잡아내는 모델'입니다.
 
+<figure>
+  <img src="/images/ai-trend/gemini36_evals_figure_0725.webp" width="2000" height="1125" loading="lazy" decoding="async" alt="Gemini 3.6 Flash와 이전 세대의 에이전트 벤치마크 비교. 장기 소프트웨어 엔지니어링, 머신러닝 엔지니어링, 지식 노동, 컴퓨터 사용 네 영역에서 3.6 Flash가 가장 높은 점수를 기록한다.">
+  <figcaption>Gemini 3.6 Flash는 DeepSWE·MLE-Bench·GDPval-AA·OSWorld-Verified에서 이전 세대를 앞섰습니다. 출처: <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-6-flash-3-5-flash-lite-3-5-flash-cyber/" target="_blank" rel="noopener noreferrer">Google 공식 블로그</a>.</figcaption>
+</figure>
+
 ## 3. Gemini 3.6 Flash — 지능의 정점 대신 효율과 통제를 택하다
+
+<figure>
+  <img src="/images/ai-trend/google_gemini_flash_key_art_0725.webp" width="1200" height="675" loading="lazy" decoding="async" alt="Gemini 3.6 Flash, 3.5 Flash-Lite, 3.5 Flash Cyber 공개를 알리는 Google 공식 키아트. 어두운 푸른 배경 위에 세 모델명이 흰 글자로 표시되어 있다.">
+  <figcaption>Google은 최상위 모델 하나가 아니라 효율·속도·보안에 초점을 둔 Flash 계열 세 모델을 함께 공개했습니다. 이미지: <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-6-flash-3-5-flash-lite-3-5-flash-cyber/" target="_blank" rel="noopener noreferrer">Google 공식 블로그</a>.</figcaption>
+</figure>
 
 Google의 선택은 대비를 이룹니다. 이번에 공개된 것은 최상위 등급이 아니라 **Flash 계층 세 종**이었습니다. 주력인 Gemini 3.6 Flash, 가장 빠르고 저렴한 3.5 Flash-Lite, 보안에 특화된 3.5 Flash Cyber입니다. 정작 최상위 등급인 Gemini 3.5 Pro는 "파트너들과 시험 중"이라며 이번에 내놓지 않았습니다. 이번 발표에는 최상위 모델이 빠지고, 널리 쓰이는 실무형 Flash 계층만 공개됐습니다.
 
 가장 눈에 띄는 지표는 토큰 효율입니다. Gemini 3.6 Flash는 이전 세대인 3.5 Flash보다 **출력 토큰을 17% 적게** 씁니다. 같은 답을 더 짧고 간결하게 내놓는다는 뜻에 가깝습니다. 특정 코딩 과제(DeepSWE)에서는 그 절감폭이 최대 65%까지 벌어졌습니다. 출력 토큰은 사용 요금에 직접 반영되므로, 이런 평가 조건에서는 출력 토큰 과금 부담을 낮출 수 있습니다. 다만 실제 총비용은 입력량과 사고 토큰, 작업 성격에 따라 달라집니다. 실제로 3.6 Flash의 출력 단가는 100만 토큰당 7.5달러로, 이전 세대의 9달러에서 내려갔습니다. 성능도 함께 올랐습니다. 코딩(DeepSWE 49% 대 37%), 기계학습 과제(MLE Bench 63.9% 대 49.7%), 컴퓨터 조작 과제(OSWorld-Verified 83.0% 대 78.4%)에서 이전 세대를 앞섰습니다.
+
+<figure>
+  <img src="/images/ai-trend/gemini36_evals_quality_0725.webp" width="2000" height="1125" loading="lazy" decoding="async" alt="Gemini 3.5 Flash와 3.6 Flash의 작업당 평균 출력 토큰 비교. DeepSWE v1.1에서는 27만 6천에서 9만 7천으로, Artificial Analysis Intelligence Index에서는 2만 8천에서 2만 3천으로 줄었다.">
+  <figcaption>3.6 Flash는 성능 향상과 함께 작업당 출력 토큰도 줄였습니다. DeepSWE 조건에서는 276K에서 97K로, Artificial Analysis Intelligence Index에서는 28K에서 23K로 감소했습니다. 출처: <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-6-flash-3-5-flash-lite-3-5-flash-cyber/" target="_blank" rel="noopener noreferrer">Google 공식 블로그</a>.</figcaption>
+</figure>
 
 또 하나 주목할 변화는 **사고량을 조절하는 방식**입니다. Gemini 3.6 Flash는 `thinking_level`이라는 설정으로 추론의 깊이를 minimal·low·medium·high 네 단계 중에서 고를 수 있고(기본값은 medium), 요청의 복잡도에 따라 추론량을 자동으로 조절하는 기능도 갖췄습니다. 쉬운 질문에는 얕게, 어려운 질문에는 깊게 생각하도록 개발자가 통제할 수 있다는 뜻입니다. 이는 앞서 본 Opus 5의 effort 설정과 같은 문제의식을 공유합니다. '얼마나 깊이 생각할지'를 이용자가 상황과 예산에 맞춰 정하도록 여는 것입니다. 참고로 3.6 Flash의 지식 기준 시점은 2026년 3월이며, 입력은 최대 100만 토큰까지 받아들입니다.
 
