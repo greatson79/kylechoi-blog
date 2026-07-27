@@ -9,8 +9,8 @@ draft: false
 factChecked: true
 sourcePath: output/WaveAI/크리에이티브본부/codex_sites_B시리즈_2026-07-27/본문_B1_v1_2026-07-27.md
 heroImage:
-  src: /images/education/codex-sites-b1/img1-hero-8-step-timeline.png
-  alt: "요구사항 이해부터 공유까지 8단계를 가로 타임라인으로 표현한 Codex Sites 제작 흐름"
+  src: /images/education/codex-sites-b1/hero-b1-realistic-2400x1260.webp
+  alt: "노트북 화면의 완성된 대시보드를 확인하는 학습자"
 ---
 
 > Codex Sites가 정확히 무엇이고, 왜 지금 쓸 만한지는 [「Codex Sites 완전정복」 개관 글](https://kylechoi.com/ai-trend/2026-07-27-codex-sites-complete-guide/)에서 다뤘습니다. 이 글은 그 개념을 바로 **손으로 만들어보는** 실습편입니다.
