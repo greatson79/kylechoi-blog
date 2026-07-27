@@ -17,10 +17,6 @@ heroImage:
 
 <img src="/images/education/codex-sites-b1/img1-hero-8-step-timeline.png" width="2400" height="1350" loading="eager" decoding="async" alt="요구사항 이해부터 공유까지 8단계를 가로 타임라인으로 표현한 Codex Sites 제작 흐름" />
 
-## TL;DR
-
-Codex Sites는 "이런 사이트를 만들어줘"라고 말하면 ChatGPT가 요구사항 정리부터 제작·미리보기·수정·배포까지 이어주는 기능입니다. 코드 조각이 아니라 **실제로 접속 가능한 결과물**이 나온다는 점이 가장 큰 차이입니다. 이 글에서는 ①일반 작업 방식과의 차이 ②만들 수 있는 것의 5단계 ③적합한 프로젝트 판별법 ④이용 환경 ⑤실습 프로젝트(Wave Academy 5주 강의 자료 허브) 기획 ⑥그대로 복사해 쓸 수 있는 첫 제작 프롬프트까지, 계정에 Sites가 이미 보인다면 오늘 바로 첫 사이트를 만들어볼 수 있는 순서대로 정리했습니다.
-
 ## 1. Codex Sites를 한 문장으로 이해하기
 
 Codex Sites는 원하는 웹사이트나 경량 웹앱을 자연어로 설명하면 ChatGPT가 **요구사항 이해 → 사이트 제작 → 미리보기 → 자연어 수정 → 테스트 → 버전 저장 → 배포 → 공유**의 전 과정을 연결해 주는 기능입니다.
