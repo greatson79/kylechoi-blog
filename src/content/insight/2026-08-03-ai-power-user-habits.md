@@ -12,6 +12,8 @@ factChecked: true
 sourcePath: "output/WaveAI/크리에이티브본부/_round/AI트렌드실전팁_아티클_2026-08-03.md"
 ---
 
+<img src="/images/ai-trend/hero_ai-power-user-habits_0803.png" alt="AI 실전 팁 신뢰도 래더 — 커뮤니티가 검증한 9가지와 걸러야 할 2가지" width="3200" height="1800" loading="eager" decoding="async" fetchpriority="high" />
+
 AI 활용 팁은 넘쳐납니다. 문제는 대부분이 "이렇게 하면 좋아요"에서 끝난다는 겁니다. 언제 그 방법이 **통하지 않는지**, 커뮤니티가 어디서 **반박했는지**까지 알려주는 글은 드뭅니다.
 
 그래서 이번엔 지난 한 주(2026년 7월 말~8월 초) Reddit의 r/ChatGPT·r/ClaudeAI·r/LocalLLaMA와 X(트위터)에서 실제로 가장 많이 회자된 활용법을 모으되, **각 팁에 달린 반론과 한계까지 함께** 담았습니다. 곧바로 쓸 수 있는 습관부터, 아직은 각자 검증이 필요한 주장까지 — 신뢰도 순으로 정리했습니다.
