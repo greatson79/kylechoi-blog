@@ -2,11 +2,11 @@
 title: "자동화·에이전트 워크플로우 — 커넥터·스케줄·서브에이전트로 업무 설계"
 description: "코딩 없이 클로드의 커넥터·멀티스텝 설계·스케줄·외부 메모리·서브에이전트로 반복 업무를 자동화하는 방법. WAVE Academy 고급 2편."
 category: 교육
-pubDate: 2026-07-27
+pubDate: 2026-08-04
 author: 디딤
 tags: [교육, AI활용, 자동화, 에이전트워크플로우, WAVE Academy, 고급]
-draft: true
-factChecked: false
+draft: false
+factChecked: true
 heroImage:
   src: /images/education/hero_automation-workflow-advanced_0804.png
   alt: 크림색 천공 종이 롤이 원목 상자 위 황동 자동연주 기계를 통해 물결치듯 풀려 나오고 곁에 작은 황동 스풀 두 개가 놓인, 딥네이비 배경의 에디토리얼 정물 사진
