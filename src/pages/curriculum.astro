@@ -1,0 +1,445 @@
+---
+/**
+ * /curriculum — 컨설팅·교육 커리큘럼 설명 페이지 (글이 아니라 페이지다).
+ *
+ * ★내용 정본(SOT) = Ai_works/output/WaveAI/Edu본부/_round/트랙구성_주인님보고_v1.3_2026-08-05.md
+ *   시수 SOT = 같은 본부 교육컨설팅_2트랙_2026-08-03/10_커리재설계_총시간기준_2026-08-04.md
+ *     - §5 총시간 요약표 = 과정별 총시수의 정본
+ *     - 블록·유닛 세부의 1차 정의 = §2-B(Solo B0~B6) · §3-B(Ensemble B0~B5) · §3-D(구축 워크샵)
+ *       · §3-E-3(옵션 O1~O3) · §4-A·§4-B(개인 U1~U8)
+ * ★수치는 SOT 직인용 — 창작 금지. ★가격 전항 미기재(마케팅 소관).
+ * ★정원 상한은 존재하지 않는다(주인님 확정) — 정원 수치를 쓰지 않는다. "소수정예" 류 표현도 쓰지 않는다.
+ * ★여백 주석(aside)은 SOT에 적힌 설계 근거만 옮긴 것이다 — 새 근거를 지어내지 않는다.
+ *
+ * ★드리프트 주의: 같은 커리 내용이 wave-homepage 의 Academy/Consulting 섹션에도 있다
+ *   (src/data/academyPrograms.ts 의 CURRICULUM_TRACKS · CONSULTING_TRACKS).
+ *   SOT 개정 시 ★두 표면을 함께 갱신한다. 상품 안내 정본 = wave-homepage, 이 페이지 = 설계 해설.
+ *
+ * 디자인 = B안(여백 주석·설계노트) — 주인님 확정.
+ */
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/nav/Header.astro';
+import Footer from '../components/nav/Footer.astro';
+
+type Track = {
+  kicker: string;
+  title: string;
+  hours: string;
+  schedule?: string;
+  lede: string;
+  items: string[];
+  note?: string;
+  optional?: boolean;
+  /** 개인 과정 진입 조건 — SOT §5 "단독 성립" 열 직인용 */
+  entry?: string;
+};
+
+const ORG_TRACKS: Track[] = [
+  {
+    kicker: 'Organization 01',
+    title: '컨설팅 · Solo',
+    hours: '12h · 2h × 6블록',
+    schedule: '일정 조율 가능',
+    lede: '조직 구성원이 자기 반복 업무에 AI를 붙여 스스로 수행하게 만드는 과정입니다.',
+    items: [
+      '사전 업무진단 — 업무 흐름과 반복작업을 인터뷰하고 적용 후보를 고릅니다',
+      'AI 기본 — 도구 지형과 환경 세팅, 프롬프팅 기본기',
+      'AI 활용 — 요약·작성·분석을 조직 실무에 적용',
+      '코워크 — 맥락 유지·되묻기·교정, 목표를 주고 맡기는 법',
+      '지식데이터 — 조직 자료로 지식베이스를 만들고 질의',
+      '에이전틱 자동화 — 자동화 1건을 설계하고 구현해 시연',
+      '정착·검증·윤리 — 환각 방지와 팩트체크, 병목 해소와 로드맵 확정',
+    ],
+    note: '남는 것은 수업 노트가 아니라 조직 자산입니다. 공용 프롬프트 라이브러리와, 실제 업무 흐름에 들어간 자동화 1건.',
+  },
+  {
+    kicker: 'Organization 02',
+    title: '컨설팅 · Ensemble',
+    hours: '30h · 2h × 15블록',
+    schedule: '일정 조율 가능',
+    lede: '한 사람이 AI를 쓰는 단계에서, 여러 역할이 함께 도는 체제를 조직 안에 세우는 단계로 넘어갑니다.',
+    items: [
+      '조직 진단·업무 매핑 — 역할 분해 대상을 정하고 현행 흐름을 도식화',
+      "왜 '팀'인가 · 역할 설계 · 위임과 통신",
+      '검수·품질 게이트 · 기억·연속성 · 도구·스킬 베이스',
+      '구축 워크샵 — 조직의 실제 시스템을 그 자리에서 구축',
+      '캡스톤 — 데모가 아니라 실업무 1건을 구동하며 현장 디버깅',
+      '정착·인수인계 — 운영 주체 이관, 장애 대응, 확장 가이드',
+    ],
+    note: '끝나는 지점이 인수인계입니다. 조직이 스스로 노드를 추가하고 교체할 수 있어야 이 과정이 끝난 것입니다.',
+  },
+  {
+    kicker: 'Organization · Option',
+    title: 'Ensemble 운영 정착 지원',
+    hours: '2h 유닛 구성 — 유닛 수가 총시수를 정합니다',
+    schedule: '일정 조율 가능',
+    lede: '구축한 시스템을 실제로 운영하고 넓혀가는 후속 지원입니다.',
+    items: [
+      '운영 실태 점검 — 얼마나 쓰이는지, 어디서 막히는지, 안 쓰는 노드는 무엇인지',
+      '노드 고도화·확장 — 새 업무 편입, 실패한 노드 교체, 규칙 개정',
+      '조직 내 전파 — 구축에 참여하지 않은 구성원이 쓰게 만들기',
+    ],
+    note: '이 과정 없이도 조직은 시스템을 운영할 수 있습니다. 본과정이 인수인계까지 책임지기 때문입니다. 이건 더 빨리, 더 넓게 정착시키고 싶을 때의 선택지입니다.',
+    optional: true,
+  },
+];
+
+const PERSONAL_TRACKS: Track[] = [
+  {
+    kicker: 'Claude · 1단',
+    title: '클로드 기초',
+    hours: '8h · 2h × 4회차 · 4주',
+    lede: '자기 반복 업무 3종 이상에 Claude를 붙여 혼자 재현할 수 있게 되는 지점까지.',
+    entry: '단독 수강 성립',
+    items: [
+      '도구 지형과 환경 세팅, 프롬프팅 기본기',
+      '반복 개선으로 다듬어 재현 가능한 패턴으로 정리',
+      '업무 적용 — 요약과 작성',
+      '업무 적용 — 분석·번역·아이디어',
+    ],
+  },
+  {
+    kicker: 'Claude · 2단',
+    title: '클로드 코워크 심화',
+    hours: '8h · 2h × 4회차 · 4주',
+    lede: 'Claude를 업무 동료로 상시 운용하고, 반복 업무 1건을 자동화해 정착시킵니다.',
+    entry: '「클로드 기초」 전제',
+    items: [
+      '에이전틱 협업 도구 — 목표를 주고 맡기는 법',
+      '지식베이스 — 긴 자료와 반복 맥락, 출처 추적',
+      '에이전틱 자동화 설계 — 맡길 단위로 분해',
+      '구현과 시연, 한계 관찰, 정착·검증·윤리',
+    ],
+  },
+  {
+    kicker: 'Agentic · 1단',
+    title: '에이전틱 설계와 첫 구동',
+    hours: '8h · 2h × 4회차 · 4주',
+    lede: '역할 분해를 끝내고, 2노드가 실제로 도는 것을 봅니다.',
+    entry: '단독 수강 성립',
+    items: [
+      "왜 '팀'인가 — 단일 에이전트의 한계를 직접 확인하고 목적을 한 문장으로",
+      '역할 설계 — 역할 분해, 경계, 지침',
+      '위임과 통신 — 위임 티켓, 보고선, 통신 규율',
+      '2노드 MVP 구동 — 설계도를 실제로 돌려봅니다',
+    ],
+  },
+  {
+    kicker: 'Agentic · 2단',
+    title: '에이전틱 확장과 운영',
+    hours: '8h · 2h × 4회차 · 4주',
+    lede: '3~5노드로 확장하고, 막힐 때 스스로 풀어 계속 운영합니다.',
+    entry: '「설계와 첫 구동」 전제',
+    items: [
+      '검수와 품질 게이트 — 빌더와 리뷰어를 나눕니다',
+      '기억과 연속성 — 세션 상태, 핸드오프, 컨텍스트 관리',
+      '도구·스킬 베이스와 3~5노드 확장',
+      '디버깅·확장·정착 — 막힘 해소, 노드 추가와 교체',
+    ],
+  },
+];
+---
+
+<BaseLayout
+  title="커리큘럼 — Kyle Choi Notes"
+  description="조직을 위한 AI 컨설팅 2과정과 개인을 위한 4과정. 시수와 구성, 그리고 왜 그렇게 설계했는지."
+  channel="ministry"
+>
+  <Header slot="header" />
+
+  <section class="curr-hero section">
+    <div class="container">
+      <p class="eyebrow">Curriculum</p>
+      <h1>배우고 끝나지 않게<br />설계했습니다</h1>
+      <p class="hero-lede">
+        조직을 위한 컨설팅 2과정과 개인을 위한 4과정입니다. 아래에는 구성과 시수를 적었고,
+        여백에는 <strong>왜 그렇게 짰는지</strong>를 적었습니다.
+      </p>
+    </div>
+  </section>
+
+  <section class="section curr-section">
+    <div class="container">
+      <div class="curr-row">
+        <div class="curr-main">
+          <p class="eyebrow">조직</p>
+          <h2>조직으로 도입할 때</h2>
+          <p class="curr-lede">
+            한 사람이 AI를 쓰는 단계(Solo)에서, 여러 역할이 함께 도는 체제를 세우는 단계(Ensemble)로
+            이어집니다. 그 뒤를 이어갈지는 선택입니다.
+          </p>
+        </div>
+        <aside class="curr-note">
+          <p class="curr-note__label">설계 노트</p>
+          <p>
+            세 과정 모두 <strong>2시간 블록</strong>으로 짰고, 요일과 기간은 고정하지 않았습니다.
+            조직마다 비울 수 있는 시간이 다르기 때문입니다.
+          </p>
+        </aside>
+      </div>
+
+      <ol class="track-list">
+        {ORG_TRACKS.map((t) => (
+          <li class:list={['track', t.optional && 'track--option']}>
+            <div class="track__meta">
+              <p class="track__kicker">{t.kicker}</p>
+              <h3 class="track__title">{t.title}</h3>
+              <p class="track__hours">{t.hours}</p>
+              {t.schedule && <p class="track__schedule">{t.schedule}</p>}
+              {t.optional && <p class="track__badge">선택 과정</p>}
+            </div>
+            <div class="track__body">
+              <p class="track__lede">{t.lede}</p>
+              <ul class="track__items">
+                {t.items.map((i) => <li>{i}</li>)}
+              </ul>
+              {t.note && (
+                <aside class="track__note">
+                  <p>{t.note}</p>
+                </aside>
+              )}
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="section curr-section curr-section--alt">
+    <div class="container">
+      <div class="curr-row">
+        <div class="curr-main">
+          <p class="eyebrow">개인</p>
+          <h2>혼자 배울 때</h2>
+          <p class="curr-lede">
+            두 갈래이고, 각 갈래는 2단으로 이어집니다. 한 단은 4주로 완결되고
+            <strong> 1단은 그 자체로 완결되는 독립 과정</strong>입니다.
+          </p>
+        </div>
+        <aside class="curr-note">
+          <p class="curr-note__label">설계 노트</p>
+          <p>
+            1단을 2단 광고용 미끼로 만들지 않으려고, 1단이 끝나는 지점에
+            <strong> 손에 남는 결과물</strong>을 두었습니다. 거기서 멈춰도 "쓸 수 있게 됐다"가 성립해야
+            단독 과정입니다.
+          </p>
+        </aside>
+      </div>
+
+      <ol class="track-list track-list--personal">
+        {PERSONAL_TRACKS.map((t) => (
+          <li class="track">
+            <div class="track__meta">
+              <p class="track__kicker">{t.kicker}</p>
+              <h3 class="track__title">{t.title}</h3>
+              <p class="track__hours">{t.hours}</p>
+              {t.entry && <p class="track__badge">{t.entry}</p>}
+            </div>
+            <div class="track__body">
+              <p class="track__lede">{t.lede}</p>
+              <ul class="track__items">
+                {t.items.map((i) => <li>{i}</li>)}
+              </ul>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="section curr-section">
+    <div class="container">
+      <div class="curr-row">
+        <div class="curr-main">
+          <p class="eyebrow">설계 원칙</p>
+          <h2>왜 이렇게 짰나</h2>
+          <div class="principles">
+            <article class="principle">
+              <h3>회차 구성이 인원 수에 기대지 않게</h3>
+              <p>
+                한 사람씩 봐주는 시간을 인원으로 나누는 방식이면, 인원이 늘 때 수업의 질이 조용히
+                떨어집니다. 그래서 회차 구성이 인원 수에 종속되지 않도록 설계했습니다.
+              </p>
+            </article>
+            <article class="principle">
+              <h3>한 벌을 잘 만들고, 전달만 바꾼다</h3>
+              <p>
+                과정마다 내용을 새로 짜는 대신 공통 코어 한 벌을 만들고, 조직용과 개인용은 그 코어의
+                전달 방식만 다르게 했습니다. 코어 자체는 판매 단위가 아닙니다.
+              </p>
+            </article>
+            <article class="principle">
+              <h3>수업 단위는 2시간, 내용 경계는 따로</h3>
+              <p>
+                2시간은 한 번 앉았을 때의 단위이지, 내용을 자르는 단위가 아닙니다. 한 세션 안에 성격이
+                다른 두 가지가 들어가는 편이 자연스러울 때가 많습니다.
+              </p>
+            </article>
+          </div>
+        </div>
+        <aside class="curr-note">
+          <p class="curr-note__label">덧붙임</p>
+          <p>
+            이 페이지에는 <strong>비용을 적지 않았습니다.</strong> 조직마다 범위가 달라서,
+            무엇을 어디까지 할지 먼저 이야기한 뒤에 정하는 편이 맞다고 봅니다.
+          </p>
+        </aside>
+      </div>
+
+      <div class="curr-cta">
+        <p>도입 범위와 일정은 함께 설계합니다.</p>
+        <a class="curr-cta__link" href="/contact/">문의하기 <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<style>
+  .curr-hero { padding-block: var(--space-section); }
+  .curr-hero h1 { margin-top: 0.2em; }
+  .hero-lede {
+    max-width: 48ch;
+    margin-top: 1.2rem;
+    font-size: var(--text-h3);
+    color: var(--muted);
+    line-height: 1.5;
+  }
+  .hero-lede strong { color: var(--ink); font-weight: 700; }
+
+  .curr-section { padding-block: var(--space-section); border-top: 1px solid var(--line); }
+  .curr-section--alt { background: var(--surface); }
+
+  /* 본문 + 여백 주석 2열 (B안의 뼈대) */
+  .curr-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 17rem);
+    gap: var(--space-block) var(--gap-grid);
+    align-items: start;
+  }
+
+  .curr-main h2 { margin-top: 0.25em; }
+  .curr-lede {
+    max-width: var(--measure);
+    margin-top: 0.9rem;
+    color: var(--muted);
+    line-height: var(--leading-body);
+  }
+  .curr-lede strong { color: var(--ink); font-weight: 700; }
+
+  .curr-note {
+    border-top: 2px solid var(--ink);
+    padding-top: 0.8rem;
+    font-size: var(--text-small);
+    line-height: 1.65;
+    color: var(--muted);
+  }
+  .curr-note__label {
+    margin-bottom: 0.4rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent-ink);
+  }
+  .curr-note strong { color: var(--ink); font-weight: 700; }
+
+  .track-list { margin-top: var(--space-block); border-top: 1px solid var(--line); }
+
+  .track {
+    display: grid;
+    grid-template-columns: minmax(10rem, 15rem) minmax(0, 1fr);
+    gap: 0.8rem var(--gap-grid);
+    padding-block: var(--space-block);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .track--option .track__meta { opacity: 0.95; }
+
+  .track__kicker {
+    font-size: var(--text-small);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent-ink);
+  }
+  .track__title { margin-top: 0.35rem; }
+  .track__hours {
+    margin-top: 0.6rem;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+  }
+  .track__schedule { margin-top: 0.15rem; font-size: var(--text-small); color: var(--muted); }
+  .track__badge {
+    display: inline-block;
+    margin-top: 0.7rem;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+    padding: 0.1rem 0.5rem;
+    font-size: var(--text-small);
+    font-weight: 700;
+    color: var(--muted);
+  }
+
+  .track__lede { max-width: var(--measure); color: var(--ink); line-height: var(--leading-body); }
+  .track__items { margin-top: 1rem; max-width: var(--measure); }
+  .track__items li {
+    padding: 0.45rem 0 0.45rem 1.1rem;
+    border-bottom: 1px solid var(--line);
+    position: relative;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+  .track__items li:last-child { border-bottom: 0; }
+  .track__items li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 1.05em;
+    width: 0.45rem;
+    height: 1px;
+    background: var(--faint);
+  }
+
+  .track__note {
+    margin-top: 1.1rem;
+    max-width: var(--measure);
+    border-left: 2px solid var(--accent);
+    padding-left: 0.9rem;
+    font-size: var(--text-small);
+    line-height: 1.65;
+    color: var(--muted);
+  }
+
+  .principles { margin-top: var(--space-block); display: grid; gap: var(--space-block); }
+  .principle { max-width: var(--measure); }
+  .principle h3 { font-size: var(--text-h3); }
+  .principle p { margin-top: 0.5rem; color: var(--muted); line-height: var(--leading-body); }
+
+  .curr-cta {
+    margin-top: var(--space-block);
+    padding-top: var(--space-block);
+    border-top: 1px solid var(--line);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.8rem 1.5rem;
+  }
+  .curr-cta p { color: var(--muted); }
+  .curr-cta__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    min-height: 44px;
+    font-weight: 700;
+    color: var(--accent-ink);
+    border-bottom: 1px solid currentColor;
+  }
+
+  @media (max-width: 860px) {
+    .curr-row { grid-template-columns: 1fr; }
+    .curr-note { max-width: var(--measure); }
+    .track { grid-template-columns: 1fr; }
+  }
+</style>

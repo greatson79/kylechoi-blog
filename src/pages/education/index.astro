@@ -16,6 +16,9 @@ const posts = (await getCollection('ministry', ({ data }) => !data.draft && data
       <p class="eyebrow">교육</p>
       <h1>교육</h1>
       <p class="sub">AI 교육 — AI를 분별 있게 배우고 활용하기.</p>
+      <p class="curr-link">
+        과정 구성과 시수는 <a href="/curriculum/">커리큘럼 페이지</a>에 정리해 두었습니다.
+      </p>
       {posts.length ? (
         <div class="card-grid" style="margin-top: var(--space-block)">
           {posts.map((p) => (
@@ -31,5 +34,7 @@ const posts = (await getCollection('ministry', ({ data }) => !data.draft && data
 
 <style>
   .sub { color: var(--muted); margin-top: 0.5rem; font-size: var(--text-h3); }
+  .curr-link { margin-top: 0.9rem; color: var(--muted); }
+  .curr-link a { color: var(--accent-ink); border-bottom: 1px solid currentColor; font-weight: 700; }
   .empty { color: var(--faint); margin-top: var(--space-block); }
 </style>
