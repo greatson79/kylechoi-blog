@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 338" role="img" aria-hidden="true">
+  <rect x="0" y="0" width="600" height="338" fill="#f7f7f8"/>
+  <rect x="56" y="56" width="6" height="6" fill="#33373e"/>
+  <line x1="60" y1="282" x2="540" y2="282" stroke="#dfe0e2" stroke-width="1"/>
+  <!-- same 4-node thread as claude-1, plus a feedback loop (recurring automation) -->
+  <line x1="150" y1="169" x2="450" y2="169" stroke="#3f6ea3" stroke-width="1.5"/>
+  <g fill="#f7f7f8" stroke="#33373e" stroke-width="1.5">
+    <circle cx="150" cy="169" r="7"/>
+    <circle cx="250" cy="169" r="7"/>
+    <circle cx="350" cy="169" r="7"/>
+    <circle cx="450" cy="169" r="7"/>
+  </g>
+  <path d="M 450 169 L 468 169 M 461 162 L 468 169 L 461 176" fill="none" stroke="#33373e" stroke-width="1.5"/>
+  <!-- loop arc from last node back to node 2, running underneath -->
+  <path d="M 450 176 C 450 232, 250 232, 250 176" fill="none" stroke="#82868d" stroke-width="1.5" stroke-dasharray="3 4"/>
+  <path d="M 250 176 L 244 165 M 250 176 L 258 168" fill="none" stroke="#82868d" stroke-width="1.5"/>
+</svg>
