@@ -42,7 +42,7 @@ const ORG_TRACKS: Track[] = [
   {
     kicker: 'Organization 01',
     title: '컨설팅 · Solo',
-    image: '/images/curriculum/solo.svg',
+    image: '/images/curriculum/solo.webp',
     hours: '12h · 2h × 6블록',
     schedule: '일정 조율 가능',
     lede: '조직 구성원이 자기 반복 업무에 AI를 붙여 스스로 수행하게 만드는 과정입니다.',
@@ -60,7 +60,7 @@ const ORG_TRACKS: Track[] = [
   {
     kicker: 'Organization 02',
     title: '컨설팅 · Ensemble',
-    image: '/images/curriculum/ensemble.svg',
+    image: '/images/curriculum/ensemble.webp',
     hours: '30h · 2h × 15블록',
     schedule: '일정 조율 가능',
     lede: '한 사람이 AI를 쓰는 단계에서, 여러 역할이 함께 도는 체제를 조직 안에 세우는 단계로 넘어갑니다.',
@@ -77,7 +77,7 @@ const ORG_TRACKS: Track[] = [
   {
     kicker: 'Organization · Option',
     title: 'Ensemble 운영 정착 지원',
-    image: '/images/curriculum/option.svg',
+    image: '/images/curriculum/option.webp',
     hours: '2h 유닛 구성 — 유닛 수가 총시수를 정합니다',
     schedule: '일정 조율 가능',
     lede: '구축한 시스템을 실제로 운영하고 넓혀가는 후속 지원입니다.',
@@ -95,7 +95,7 @@ const PERSONAL_TRACKS: Track[] = [
   {
     kicker: 'Claude · 1단',
     title: '클로드 기초',
-    image: '/images/curriculum/claude-1.svg',
+    image: '/images/curriculum/claude-1.webp',
     hours: '8h · 2h × 4회차 · 4주',
     lede: '자기 반복 업무 3종 이상에 Claude를 붙여 혼자 재현할 수 있게 되는 지점까지.',
     entry: '단독 수강 성립',
@@ -109,7 +109,7 @@ const PERSONAL_TRACKS: Track[] = [
   {
     kicker: 'Claude · 2단',
     title: '클로드 코워크 심화',
-    image: '/images/curriculum/claude-2.svg',
+    image: '/images/curriculum/claude-2.webp',
     hours: '8h · 2h × 4회차 · 4주',
     lede: 'Claude를 업무 동료로 상시 운용하고, 반복 업무 1건을 자동화해 정착시킵니다.',
     entry: '「클로드 기초」 전제',
@@ -123,7 +123,7 @@ const PERSONAL_TRACKS: Track[] = [
   {
     kicker: 'Agentic · 1단',
     title: '에이전틱 설계와 첫 구동',
-    image: '/images/curriculum/agentic-1.svg',
+    image: '/images/curriculum/agentic-1.webp',
     hours: '8h · 2h × 4회차 · 4주',
     lede: '역할 분해를 끝내고, 2노드가 실제로 도는 것을 봅니다.',
     entry: '단독 수강 성립',
@@ -137,7 +137,7 @@ const PERSONAL_TRACKS: Track[] = [
   {
     kicker: 'Agentic · 2단',
     title: '에이전틱 확장과 운영',
-    image: '/images/curriculum/agentic-2.svg',
+    image: '/images/curriculum/agentic-2.webp',
     hours: '8h · 2h × 4회차 · 4주',
     lede: '3~5노드로 확장하고, 막힐 때 스스로 풀어 계속 운영합니다.',
     entry: '「설계와 첫 구동」 전제',
@@ -245,7 +245,7 @@ const PERSONAL_TRACKS: Track[] = [
         {ORG_TRACKS.map((t) => (
           <li class:list={['track', t.optional && 'track--option']}>
             <div class="track__meta">
-              <img class="track__diagram" src={t.image} alt="" width="600" height="338" loading="lazy" decoding="async" />
+              <img class="track__diagram" src={t.image} alt="" width="960" height="540" loading="lazy" decoding="async" />
               <p class="track__kicker">{t.kicker}</p>
               <h3 class="track__title">{t.title}</h3>
               <p class="track__hours">{t.hours}</p>
@@ -287,7 +287,7 @@ const PERSONAL_TRACKS: Track[] = [
         {PERSONAL_TRACKS.map((t) => (
           <li class="track">
             <div class="track__meta">
-              <img class="track__diagram" src={t.image} alt="" width="600" height="338" loading="lazy" decoding="async" />
+              <img class="track__diagram" src={t.image} alt="" width="960" height="540" loading="lazy" decoding="async" />
               <p class="track__kicker">{t.kicker}</p>
               <h3 class="track__title">{t.title}</h3>
               <p class="track__hours">{t.hours}</p>
