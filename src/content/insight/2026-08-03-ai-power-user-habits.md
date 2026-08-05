@@ -10,6 +10,9 @@ disclaimerRequired: false
 notInvestmentAdvice: false
 factChecked: true
 sourcePath: "output/WaveAI/크리에이티브본부/_round/AI트렌드실전팁_아티클_2026-08-03.md"
+heroImage:
+  src: /images/ai-trend/hero_ai-power-user-habits_0803.png
+  alt: AI 실전 팁 신뢰도 래더 — 커뮤니티가 검증한 9가지와 걸러야 할 2가지
 ---
 
 <img src="/images/ai-trend/hero_ai-power-user-habits_0803.png" alt="AI 실전 팁 신뢰도 래더 — 커뮤니티가 검증한 9가지와 걸러야 할 2가지" width="3200" height="1800" loading="eager" decoding="async" fetchpriority="high" />
