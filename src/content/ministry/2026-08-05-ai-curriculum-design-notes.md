@@ -5,7 +5,7 @@ category: 교육
 pubDate: 2026-08-05
 author: Kyle Choi
 tags: [교육, AI교육, 커리큘럼설계, 교육컨설팅, 웨이브아카데미]
-draft: false
+draft: true
 sourcePath: output/WaveAI/Edu본부/_round/트랙구성_주인님보고_v1.3_2026-08-05.md
 ---
 
