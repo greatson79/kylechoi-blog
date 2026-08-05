@@ -6,7 +6,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/nav/Header.astro';
 import Footer from '../components/nav/Footer.astro';
 
-const email = 'greatson79@gmail.com';
+const email = 'greatson79@waveainetworks.com';
 const phone = '010-3094-8899';
 const inquiryTypes = ['강연 섭외', 'AI 교육 컨설팅', '워크숍 · 세미나', '기타 문의'];
 ---
@@ -208,7 +208,7 @@ const inquiryTypes = ['강연 섭외', 'AI 교육 컨설팅', '워크숍 · 세�
     if (!emailRe.test(email)) { showResult('올바른 이메일 주소를 입력해 주세요.', false); return; }
 
     // mailto: 로 메일 작성 창을 연다 — 외부 서비스·API 키 불필요.
-    const to = form.dataset.to || 'greatson79@gmail.com';
+    const to = form.dataset.to || 'greatson79@waveainetworks.com';
     const subject = `[강연·교육 문의] ${name}${inquiryType ? ` (${inquiryType})` : ''}`;
     const body = [
       `이름: ${name}`,
@@ -222,6 +222,6 @@ const inquiryTypes = ['강연 섭외', 'AI 교육 컨설팅', '워크숍 · 세�
     const mailto = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
     window.location.href = mailto;
-    showResult('메일 작성 창을 엽니다. 창이 열리지 않으면 greatson79@gmail.com 으로 직접 보내 주세요.', true);
+    showResult('메일 작성 창을 엽니다. 창이 열리지 않으면 greatson79@waveainetworks.com 으로 직접 보내 주세요.', true);
   });
 </script>
