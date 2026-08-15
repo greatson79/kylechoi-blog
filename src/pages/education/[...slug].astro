@@ -4,8 +4,12 @@ import { getCollection, render } from 'astro:content';
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
 
 export async function getStaticPaths() {
-  const posts = await getCollection('ministry', ({ data }) => !data.draft && data.pubDate <= new Date() && data.category === '교육');
-  return posts.map((post) => ({ params: { slug: post.id }, props: { post } }));
+  // education 컬렉션 + 미이관 ministry(category=교육) 병존. 같은 id면 education 우선.
+  const live = ({ data }) => !data.draft && data.pubDate <= new Date();
+  const eduPosts = await getCollection('education', live);
+  const legacyPosts = (await getCollection('ministry', (p) => live(p) && p.data.category === '교육'))
+    .filter((p) => !eduPosts.some((e) => e.id === p.id));
+  return [...eduPosts, ...legacyPosts].map((post) => ({ params: { slug: post.id }, props: { post } }));
 }
 const { post } = Astro.props;
 const { Content } = await render(post);

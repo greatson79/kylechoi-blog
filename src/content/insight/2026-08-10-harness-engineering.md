@@ -5,7 +5,7 @@ category: AI트렌드
 pubDate: 2026-08-10
 author: Kyle Choi
 tags: ["AI트렌드", "하네스엔지니어링", "AI에이전트", "에이전트설계", "AI거버넌스", "검증", "워크플로우"]
-draft: false
+draft: true
 disclaimerRequired: false
 factChecked: true
 heroImage:
@@ -74,7 +74,7 @@ OpenAI는 2026년 2월 「하네스 엔지니어링: 에이전트 우선 세계�
 
 Anthropic이 장기 실행 에이전트를 다룬 엔지니어링 글의 패턴도 이 다섯 안에 들어온다. 새 세션은 기억 없이 시작하므로 **환경을 구성하는 초기화 에이전트**와 **한 번에 기능 하나를 맡고 종료 시 커밋·진행 기록을 남기는 코딩 에이전트**를 나누라는 것이다. 조기 완료 선언을 막는 구조화된 기능 목록, "사용자가 실제로 하는 방식"의 검증, 테스트·QA·정리를 나눈 다중 에이전트 권고도 함께 제시된다.
 
-2026년 5월 Anthropic이 공개한 기능 목록도 같은 축이다(업계 정리 자료 기준). **조언자와 실행자 분리**, 기획 후의 **내부 비평자**, 파괴적 행동을 막는 **안전 분류기**, 브랜치 격리, 스케줄 루틴. 이름만 소프트웨어일 뿐 전부 **사람 조직의 결재 구조**다.
+Claude Code가 2026년 5월에 공개한 기능들도 같은 축이다(공식 릴리즈 노트 기준). 한 스크립트에서 **수십~수백 개의 서브에이전트를 편성하는 동적 워크플로**(5월 25~29일), 작업 중 변경분을 **취약점 관점으로 되짚는 보안 점검 플러그인**(같은 주), 권한 확인 창을 **백그라운드 안전 점검으로 대체하는 auto 모드**(5월 18~22일), 새 작업을 **별도 워크트리로 분기**시키는 설정(5월 4~8일). 스케줄로 클라우드 에이전트를 띄우는 **루틴**은 같은 흐름이지만 시점이 다르다 — **4월 13~17일 공개분**이다. 이름만 소프트웨어일 뿐 전부 **사람 조직의 결재 구조**다.
 
 ## 5. 냉정한 절반 — 과장하지 않기
 
@@ -106,7 +106,7 @@ Anthropic이 장기 실행 에이전트를 다룬 엔지니어링 글의 패턴�
 
 *작게 시작해 앞의 것을 품으며 쌓인다.*
 
-업계 정리 자료에 따르면 2026년 들어 검증 도구가 **대기업 대시보드에서 작은 팀이 노트북에서 돌리는 파일 형태로 내려오고 있다.** 그래서 이 이야기는 큰 조직만의 것이 아니다.
+업계 정리 자료에 따르면 2026년 들어 검증 도구가 **대기업 대시보드에서 작은 팀이 노트북에서 돌리는 파일 형태로 내려오고 있다**(이 추세 서술은 정리 자료 귀속이며, 같은 취지의 1차 출처는 찾지 못했다). 다만 Anthropic이 에이전트 평가를 다룬 엔지니어링 글에서 "많은 팀이 여러 도구를 조합하거나, 자체 평가 프레임워크를 만들거나, 단순한 평가 스크립트로 시작한다"고 적은 것은 원문에서 확인했다. 그래서 이 이야기는 큰 조직만의 것이 아니다.
 
 - **지침 파일 한 장.** 메모장을 열고 "이건 하지 마라"를 다섯 줄 적는다. 일을 시킬 때마다 그 다섯 줄을 맨 앞에 붙인다.
 - **검사는 다른 쪽에.** 만든 모델 말고 다른 모델이나 옆 사람에게 준다. 질문은 하나면 된다. "이 글에서 사실과 다를 수 있는 문장 세 개만 짚어 달라."
@@ -129,14 +129,19 @@ Anthropic이 장기 실행 에이전트를 다룬 엔지니어링 글의 패턴�
 - [Anthropic — Effective harnesses for long-running agents](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents) — 초기화/코딩 에이전트 분리, 조기 완료 선언 방지, 다중 에이전트 분업 패턴을 확인했다.
 - [Workday — Deploying Agents Without Onboarding Them Is A Critical Mistake](https://www.workday.com/en-us/perspectives/ai/onboarding-ai-agents.html) — 직무기술서·보고선·고유 서비스 계정·샌드박스/섀도 모드 권고를 원문에서 확인했다.
 - [A-LIGN — AI Agents Are Running in Your Business](https://www.a-lign.com/articles/ai-agents-what-governing-them-looks-like) — **원문 확인**: "직무기술서가 명시적으로 금지하지 않았다는 이유로 신입에게 건물 전 시스템의 마스터키를 주지는 않는다"는 권한 최소화 비유.
-- [Reinventing.ai — AI Agents Are Moving Toward Open Eval Harnesses Small Teams Can Run (2026-06-29)](https://insights.reinventing.ai/articles/ai-agents-open-eval-harnesses-2026-06-29) — OpenAI의 용어 채택과 사내 실적, 2026년 5월 Anthropic 공개 기능 목록, 평가 도구의 오픈화 흐름을 이 정리 자료로 확인했다.
+- [Claude Code — What's new (주간 릴리즈 다이제스트)](https://code.claude.com/docs/en/whats-new) — **원문 확인**: 동적 워크플로·보안 점검 플러그인(Week 22, 5월 25~29일), auto 모드의 백그라운드 안전 점검(Week 21, 5월 18~22일), `worktree.baseRef`(Week 19, 5월 4~8일), Routines(Week 16, **4월** 13~17일). 본문 §2의 기능 목록을 이 1차 출처로 교체했다.
+- [Anthropic — Demystifying evals for AI agents (2026-01-09)](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents) — **원문 확인**: "많은 팀이 여러 도구를 조합하거나, 자체 평가 프레임워크를 만들거나, 단순한 평가 스크립트로 시작한다"는 서술. 단 **"대기업 대시보드에서 소규모 팀으로 내려온다"는 추세 서술 자체는 이 글에 없다**.
+- [Reinventing.ai — AI Agents Are Moving Toward Open Eval Harnesses Small Teams Can Run (2026-06-29)](https://insights.reinventing.ai/articles/ai-agents-open-eval-harnesses-2026-06-29) — 2차 정리 자료. OpenAI 사내 실적과 5월 기능 목록은 위 1차 출처로 승격했고, **평가 도구 오픈화 추세 서술만 이 자료 귀속으로 남는다**(1차 출처 미확보).
 - [삼성SDS — 금융 분야 AI Agent 전략](https://www.samsungsds.com/kr/insights/navigate-ai-agents-in-finance.html) — 메이커-체커가 금융권 통제 원칙이라는 사실을 원문 확인. 글로벌 사례만 다루며 국내 사례는 없다.
-- 하네스를 주제로 한 2026년 문헌 3편([Survey, OpenReview](https://openreview.net/pdf?id=eONq7FdiHa) · [Auditing Agent Harness Safety, arXiv](https://arxiv.org/pdf/2605.14271) · [HarnessX, arXiv](https://arxiv.org/pdf/2606.14249)) — **제목과 게재처만 확인했고 본문은 정독하지 않았다.**
+- [Auditing Agent Harness Safety, arXiv:2605.14271](https://arxiv.org/abs/2605.14271) — **초록까지 확인**(2026-05-14 제출·05-16 개정). 최종 출력만 보는 기존 안전 평가와 달리 **실행 궤적 전체**를 보는 HarnessAudit 프레임워크와 8개 도메인 210과제 벤치마크를 제시하며, 과제를 완수했다고 실행이 안전한 것은 아니고 궤적이 길어질수록 위반이 누적된다고 보고한다. **본문 전체는 정독하지 않았다.**
+- [HarnessX: A Composable, Adaptive, and Evolvable Agent Harness Foundry, arXiv:2606.14249](https://arxiv.org/abs/2606.14249) — **초록까지 확인**(2026-06-12 제출·07-23 개정). 프롬프트·도구·기억·제어 흐름이라는 런타임 인터페이스를 실행 피드백으로 진화시켜 5개 벤치마크에서 평균 +14.5%(최대 +44.0%) 향상을 보고한다. **본문 전체는 정독하지 않았다.**
+- 하네스 서베이 1편([OpenReview, eONq7FdiHa](https://openreview.net/pdf?id=eONq7FdiHa)) — ★**재시도했으나 봇 검증 화면이 반환되어 제목·게재처 이상은 확인하지 못했다.** 확인 실패이지 **문헌 부재가 아니다.**
 
 ### 불확실 항목 명시
 
 - ★초판은 "긴 규칙 목록 대 불가능한 구조"의 대비를 한 기고에 귀속했으나, **재조사에서 해당 원문에 그 표현이 없음을 확인**해 출처를 떼고 필자의 정리로 고쳤다(주장 자체는 유지). 마스터키 비유는 이번에 **원문에서 직접 확인**했다.
 - 국내 도입 사례는 **보도의 제목·요지까지만 확인**했고 기사 원문은 정독하지 않았다. 초판에서 "희소하다"고 쓴 것은 국내 채널 미조회에 따른 **미탐**이었고, 재스캔 후 이 문장으로 보정했다.
-- 본문 §3의 커뮤니티·학계 동향은 **2026-08-10 당일 스캔**(HN 프론트 60건 · arXiv cs.AI 12건 · Reddit 3개 질의) 기준이며 **개별 도구·논문 본문은 정독하지 않았다**(제목·게재처·요지까지). **X(트위터)는 백엔드 장애로 미수집** — 보지 못한 것이지 부재 증명이 아니다.
+- 본문 §3의 커뮤니티·학계 동향은 **2026-08-10 당일 스캔**(HN 프론트 60건 · arXiv cs.AI 12건 · Reddit 3개 질의) 기준이며 **개별 도구 본문은 정독하지 않았다**. 논문은 **2026-08-13 재조회**로 arXiv 2편을 초록까지 확인했고(본문 전체는 미정독), **서베이 1편은 재조회에서도 열지 못했다**. **X(트위터)는 백엔드 장애로 미수집** — 둘 다 보지 못한 것이지 부재 증명이 아니다.
+- 본문 §2의 "2026년 5월 Anthropic 공개 기능 목록"은 초판에서 2차 정리 자료에 귀속했으나, **2026-08-13 1차 출처(Claude Code 주간 릴리즈 노트) 대조에서 스케줄 루틴(Routines)이 5월이 아니라 4월 공개분임을 확인**해 본문을 고쳤다. 이는 자료 현행화가 아니라 **오류 정정**이다. 나머지 4종은 5월 공개분이 맞았고 출처만 1차로 승격했다(현행화).
 
 *본 글은 공개 자료와 필자의 운영 경험을 기반으로 하며 정보 제공·교육 목적입니다. 확인하지 못한 내용은 미확인으로 표기했습니다.*

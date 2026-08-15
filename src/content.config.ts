@@ -27,6 +27,17 @@ const ministry = defineCollection({
   }),
 });
 
+// ── 교육(Education) 채널: 일반 AI 교육 (★2026-08-13 신설 — 목회 층과 분리) ──
+// ministry의 category='교육'은 이관 승인 전까지 병존한다(/education 라우트가 양쪽을 합쳐 노출).
+const education = defineCollection({
+  loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: './src/content/education' }),
+  schema: z.object({
+    ...base,
+    category: z.literal('교육'),
+    level: z.enum(['beginner', 'intermediate', 'advanced']).optional(), // 난이도(선택)
+  }),
+});
+
 // ── 분석 섹션: 시대분석·AI트렌드 (★조건부 면책) ─────────────────
 const insight = defineCollection({
   loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: './src/content/insight' }),
@@ -39,4 +50,4 @@ const insight = defineCollection({
   }),
 });
 
-export const collections = { ministry, insight };
+export const collections = { ministry, insight, education };

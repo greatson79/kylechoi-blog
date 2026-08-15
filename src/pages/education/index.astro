@@ -6,7 +6,13 @@ import Footer from '../../components/nav/Footer.astro';
 import ArticleCard from '../../components/article/ArticleCard.astro';
 import { getCollection } from 'astro:content';
 
-const posts = (await getCollection('ministry', ({ data }) => !data.draft && data.pubDate <= new Date() && data.category === '교육'))
+// education 컬렉션 + 미이관 ministry(category=교육)를 합쳐 노출한다.
+// ★이관 승인 전까지 병존 — 같은 id면 education이 이긴다(이관 중 URL 중복 방지).
+const live = ({ data }) => !data.draft && data.pubDate <= new Date();
+const eduPosts = await getCollection('education', live);
+const legacyPosts = (await getCollection('ministry', (p) => live(p) && p.data.category === '교육'))
+  .filter((p) => !eduPosts.some((e) => e.id === p.id));
+const posts = [...eduPosts, ...legacyPosts]
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 <BaseLayout title="교육 — Kyle Choi Notes" description="AI 교육 — 목회자 AI 교육·AI 리터러시 교육." channel="ministry">

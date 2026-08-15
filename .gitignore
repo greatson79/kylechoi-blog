@@ -16,3 +16,8 @@ dist/
 # 검증 스크린샷(임시)
 _v_*.png
 _shots_build_*.png
+
+# 도구·작업 부산물 (COO 승인 2026-08-15)
+.moai/
+.serena/
+_round/
