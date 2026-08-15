@@ -13,7 +13,9 @@ const base = {
   heroImage: z.object({ src: z.string(), alt: z.string() }).optional(),
   draft: z.boolean().default(true),          // ★기본 비공개(승인 전 발행 방지)
   sourcePath: z.string().optional(),          // output/ 원본 추적(SOT)
-  factChecked: z.boolean().default(false),    // agy 게이트 통과 표식
+  // ★factChecked는 base에서 제거됐다 — default(false)가 "기재 누락"을 조용히 삼켜
+  //   미검수 원고가 통과하던 근인. insight·education 스키마에 각각 필수로 선언한다.
+  //   ministry는 의도적 제외(9건 미보유 · RSS도 ministry엔 게이트를 쓰지 않음).
 };
 
 // ── 사역(Ministry) 채널: ministry 단일·교육 (★주인님 지시: 설교·묵상 구분 폐지→ministry 통합, 청소년 제외) ──
@@ -34,6 +36,13 @@ const education = defineCollection({
   schema: z.object({
     ...base,
     category: z.literal('교육'),
+    // ★TODO(교육11 R2 재검수 통과 후 1줄 주석해제): education도 insight와 동일하게 필수화한다.
+    //   보류 사유 — 교육11(2026-08-13-choosing-what-to-automate.md)이 factChecked 미보유라
+    //   필수화하면 빌드가 InvalidContentEntryDataError로 깨진다(실측).
+    //   ★해당 원고는 노아 REVISE major 3건 미해소로 CEO 결재상 draft:true 복귀 + R2 재검수 대상이며,
+    //   draft여도 스키마 검증은 걸리므로 factChecked 기재는 R2 통과 전까지 들어오지 않는다.
+    //   R2 통과로 기재가 들어오는 시점에 아래 줄을 살리면 된다.
+    // factChecked: z.boolean(), // ★필수·기본값 없음 — 기재 누락 시 빌드 실패
     level: z.enum(['beginner', 'intermediate', 'advanced']).optional(), // 난이도(선택)
   }),
 });
@@ -44,6 +53,7 @@ const insight = defineCollection({
   schema: z.object({
     ...base,
     category: z.enum(['시대분석', 'AI트렌드']), // 주인님 확정 4분류 中 분석 2
+    factChecked: z.boolean(), // ★필수·기본값 없음 — 기재 누락 시 빌드 실패
     // ★조건부 면책: 투자·시장을 다룰 때만 true(agy 법적 게이트가 강제). 기본 false.
     disclaimerRequired: z.boolean().default(false),
     notInvestmentAdvice: z.boolean().default(false),
