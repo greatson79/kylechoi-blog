@@ -11,6 +11,16 @@
       "permanent": true
     },
     {
+      "source": "/ai-trend/2026-08-10-harness-engineering",
+      "destination": "/ai-trend/",
+      "permanent": false
+    },
+    {
+      "source": "/ai-trend/2026-08-10-harness-engineering/",
+      "destination": "/ai-trend/",
+      "permanent": false
+    },
+    {
       "source": "/:path*",
       "has": [{ "type": "host", "value": "www.kylechoi.com" }],
       "destination": "https://kylechoi.com/:path*",
