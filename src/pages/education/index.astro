@@ -8,8 +8,9 @@ import { getCollection } from 'astro:content';
 
 // education 컬렉션 + 미이관 ministry(category=교육)를 합쳐 노출한다.
 // ★이관 승인 전까지 병존 — 같은 id면 education이 이긴다(이관 중 URL 중복 방지).
+// ★education 컬렉션만 factChecked 게이트(ai-trend 라우트 패턴 준용) — ministry(legacy)엔 해당 필드 없어 미적용.
 const live = ({ data }) => !data.draft && data.pubDate <= new Date();
-const eduPosts = await getCollection('education', live);
+const eduPosts = await getCollection('education', (p) => live(p) && p.data.factChecked);
 const legacyPosts = (await getCollection('ministry', (p) => live(p) && p.data.category === '교육'))
   .filter((p) => !eduPosts.some((e) => e.id === p.id));
 const posts = [...eduPosts, ...legacyPosts]

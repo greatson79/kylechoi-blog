@@ -6,7 +6,7 @@ import { getCollection } from 'astro:content';
 //
 // ★공개 규칙과 일치:
 //   - ministry 컬렉션: !draft (ministry/education 목록 페이지와 동일)
-//   - education 컬렉션: !draft (/education 목록 페이지와 동일 — 목록도 factChecked를 안 건다)
+//   - education 컬렉션: !draft && factChecked (/education 목록·상세 라우트와 동일 게이트)
 //     같은 id의 미이관 ministry(category=교육)는 education이 이긴다(URL 중복 방지 — 목록 페이지와 동일).
 //   - insight 컬렉션: !draft && factChecked (agy 법적 게이트 통과분만 — 미검증 노출 차단)
 
@@ -20,7 +20,7 @@ const ROUTE = {
 
 export async function GET(context) {
   const live = ({ data }) => !data.draft && data.pubDate <= new Date();
-  const education = await getCollection('education', live);
+  const education = await getCollection('education', (p) => live(p) && p.data.factChecked);
   const ministry = (await getCollection('ministry', live)).filter(
     (p) => !education.some((e) => e.id === p.id)
   );

@@ -36,13 +36,7 @@ const education = defineCollection({
   schema: z.object({
     ...base,
     category: z.literal('교육'),
-    // ★TODO(교육11 R2 재검수 통과 후 1줄 주석해제): education도 insight와 동일하게 필수화한다.
-    //   보류 사유 — 교육11(2026-08-13-choosing-what-to-automate.md)이 factChecked 미보유라
-    //   필수화하면 빌드가 InvalidContentEntryDataError로 깨진다(실측).
-    //   ★해당 원고는 노아 REVISE major 3건 미해소로 CEO 결재상 draft:true 복귀 + R2 재검수 대상이며,
-    //   draft여도 스키마 검증은 걸리므로 factChecked 기재는 R2 통과 전까지 들어오지 않는다.
-    //   R2 통과로 기재가 들어오는 시점에 아래 줄을 살리면 된다.
-    // factChecked: z.boolean(), // ★필수·기본값 없음 — 기재 누락 시 빌드 실패
+    factChecked: z.boolean(), // ★필수·기본값 없음 — 기재 누락 시 빌드 실패(교육11 R2 통과로 선행조건 해소)
     level: z.enum(['beginner', 'intermediate', 'advanced']).optional(), // 난이도(선택)
   }),
 });
