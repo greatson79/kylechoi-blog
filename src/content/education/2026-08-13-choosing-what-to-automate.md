@@ -5,7 +5,8 @@ category: 교육
 pubDate: 2026-08-13
 author: 디딤
 tags: [교육, AI활용, 자동화, 업무자동화, WAVE Academy, 입문]
-draft: true
+draft: false
+factChecked: true
 heroImage:
   src: /images/education/hero_choosing-what-to-automate_0813.png
   alt: 크림색 책상 위에 놓인 네 개의 작은 나무 저울과 그 위에 각각 다르게 기울어진 서류 더미를 수채화로 그린, 따뜻한 베이지 톤의 정물화
@@ -165,13 +166,9 @@ level: beginner
 
 ---
 
-## 불확실 항목
-
-- 원문 상단에 표기된 발행일·"3일 전" 등 메타데이터는 도구(WebFetch) 요약 산출값으로, 페이지 실제 표기와 정확히 일치하는지는 재확인하지 못했다. 본문 인용은 전부 원문 문자열과 대조했으나, 이 메타 표기 자체는 [확인 필요]로 남긴다.
-- 저자 "아이엠조차장"이 개인 필명인지 요즘IT 소속 필자명인지는 원문에 명시되지 않아 [확인 필요].
-
 ## 참고자료
 
 - 아이엠조차장, 「자동화할 일을 고르는 것도 실력이다」, 요즘IT, 2026-08-10.
   https://yozm.wishket.com/magazine/detail/3890
+  (외부 기고자 글이며, 원문 말미에 AI의 도움을 받아 작성했다는 표기가 있습니다.)
 
