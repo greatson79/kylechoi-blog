@@ -8,6 +8,9 @@ tags: [AI트렌드, ClaudeCode, Skills, 업무자동화, 에이전트]
 draft: false
 disclaimerRequired: false
 factChecked: true
+heroImage:
+  src: /images/ai-trend/hero_claude-code-custom-skills_0820.png
+  alt: 저녁 무렵 어두운 책상 위에서 스탠드 불빛을 받으며 나무 색인 카드함에 카드 한 장을 꽂아 넣는 손, 옆에는 화면이 켜진 노트북이 놓인 장면
 sourcePath: output/AI트렌드/2026-08-20_howto_리서치소스.md
 ---
 
@@ -26,6 +29,8 @@ Skill의 실체는 `SKILL.md` 하나다. YAML frontmatter(언제 쓸지 알려�
 - Plugin: 플러그인 배포용
 
 같은 이름이 여러 위치에 있으면 enterprise > personal > project 순으로 덮어쓴다. 프로젝트 스킬이 `/code-review`처럼 번들 스킬과 이름이 같으면 프로젝트 쪽이 우선한다.
+
+![SKILL.md 저장 위치 세 가지와 적용 범위를 비교한 도식 — Personal은 모든 프로젝트, Project는 해당 저장소에서만, Plugin은 배포용이며 이름이 겹치면 Enterprise, Personal, Project 순으로 덮어쓴다](/images/ai-trend/body1_skill-locations_0820.png)
 
 기존에 쓰던 `.claude/commands/deploy.md` 같은 커맨드 파일도 사실상 스킬과 동일하게 작동한다(둘 다 `/deploy`를 만든다). 다만 스킬은 지원 파일 디렉토리, 호출 권한 제어, 동적 데이터 주입 같은 기능을 추가로 지원한다.
 
