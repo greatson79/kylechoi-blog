@@ -5,9 +5,9 @@ category: AI트렌드
 pubDate: 2026-08-20
 author: 디딤
 tags: [AI트렌드, ClaudeCode, Skills, 업무자동화, 에이전트]
-draft: true
+draft: false
 disclaimerRequired: false
-factChecked: false
+factChecked: true
 sourcePath: output/AI트렌드/2026-08-20_howto_리서치소스.md
 ---
 
