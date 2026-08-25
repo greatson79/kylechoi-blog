@@ -9,6 +9,7 @@
     "preview": "astro preview",
     "check": "astro check",
     "digest": "node scripts/generate-digest.mjs",
+    "test:learning-room": "node --test test/learning-room.test.mjs",
     "test:indexnow": "node --test test/indexnow.test.mjs",
     "indexnow": "node scripts/indexnow.mjs",
     "deploy:prod": "node scripts/deploy-production.mjs"
