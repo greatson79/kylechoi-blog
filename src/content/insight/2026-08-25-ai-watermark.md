@@ -8,6 +8,9 @@ tags: [AI트렌드, 워터마킹, AI기본법, EUAIAct, Anthropic]
 draft: false
 disclaimerRequired: false
 factChecked: true
+heroImage:
+  src: /images/ai-trend/hero_ai-watermark_0825.png
+  alt: 종이 표면에 빛이 스치며 보이지 않던 미세한 결이 드러나는 장면
 sourcePath: output/WaveAI/크리에이티브본부/_round/발행본_AI트렌드_워터마킹_2026-08-25.md
 ---
 
