@@ -17,6 +17,7 @@
 - Modify `src/components/nav/Header.astro`: 글로벌 메뉴에 `Learning` 추가.
 - Modify `src/components/nav/Footer.astro`: 푸터 메뉴에 `Learning` 추가.
 - Create `test/learning-room.test.mjs`: 링크 무결성·중복·도메인·페이지 배선 계약.
+- Create `test/learning-room-built.test.mjs`: 빌드된 DOM의 링크·보안 속성·canonical·글로벌 진입점 계약.
 - Modify `package.json`: 학습자료실 전용 테스트 명령 추가.
 
 ### Task 1: Lock the resource data contract
@@ -161,14 +162,14 @@ Expected: 4 tests, 4 pass, 0 fail.
 - [ ] **Step 1: Add the test script**
 
 ```json
-"test:learning-room": "node --test test/learning-room.test.mjs"
+"test:learning-room": "npm run build && node --test test/learning-room.test.mjs test/learning-room-built.test.mjs"
 ```
 
 - [ ] **Step 2: Run all relevant deterministic gates**
 
 Run: `npm run test:learning-room && npm run test:indexnow && npm run build`
 
-Expected: learning-room 4/4 pass; indexnow 5/5 pass; Astro build completes and emits `/learn/index.html`; sitemap contract PASS.
+Expected: learning-room source 4건+build DOM 2건 pass; indexnow 5/5 pass; Astro build completes and emits `/learn/index.html`; sitemap contract PASS.
 
 - [ ] **Step 3: Inspect built link and navigation contracts**
 
@@ -189,4 +190,3 @@ Read the built DOM and compare its five external href values byte-for-byte with 
 Run: `git diff --check && git status --short && git diff -- src/data/learning-resources.mjs src/pages/learn.astro src/components/nav/Header.astro src/components/nav/Footer.astro test/learning-room.test.mjs package.json`
 
 Expected: only the six planned files plus the two plan documents are changed; no unrelated education drafts or generated artifacts are present.
-
