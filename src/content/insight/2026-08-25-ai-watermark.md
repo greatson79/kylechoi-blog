@@ -11,7 +11,7 @@ factChecked: true
 heroImage:
   src: /images/ai-trend/hero_ai-watermark_0825.png
   alt: 종이 위 보이지 않는 무늬를 확대경으로 살펴보는 장면
-sourcePath: output/WaveAI/크리에이티브본부/_round/아티클초안_AI트렌드_워터마킹_2026-08-25.md
+sourcePath: output/WaveAI/크리에이티브본부/_round/발행본_AI트렌드_워터마킹_2026-08-25.md
 ---
 
 한 온라인 창작 커뮤니티에 올라온 글 하나가 **추천 점수 4천 가까이를 기록했습니다.** 요지는 이랬습니다. **"AI를 쓰고도 밝히지 않은 '작가'들이 줄줄이 적발되고 있다."**
@@ -28,7 +28,7 @@ sourcePath: output/WaveAI/크리에이티브본부/_round/아티클초안_AI트�
 
 ---
 
-## 1. 유럽이 8월에 켰습니다
+### 1. 유럽이 8월에 켰습니다
 
 **EU AI Act 50조(투명성 의무)가 2026년 8월 2일 발효했습니다.** AI가 만든 텍스트·이미지·음성·영상을 **기계가 판독할 수 있는 형태로 표시**하라는 의무입니다. 어기면 최대 1,500만 유로 또는 전 세계 매출의 3%까지 제재받을 수 있습니다.
 
@@ -44,7 +44,7 @@ sourcePath: output/WaveAI/크리에이티브본부/_round/아티클초안_AI트�
 
 ---
 
-## 2. 그런데 한국은 1월에 이미 켰습니다
+### 2. 그런데 한국은 1월에 이미 켰습니다
 
 여기서 첫 번째 반전입니다. 이 소식을 "유럽 규제 소식"으로 읽으면 완전히 틀립니다.
 
@@ -67,7 +67,7 @@ sourcePath: output/WaveAI/크리에이티브본부/_round/아티클초안_AI트�
 
 ---
 
-## 3. 그런데 정작 확인할 방법을 안 알려줬습니다
+### 3. 그런데 정작 확인할 방법을 안 알려줬습니다
 
 두 번째 반전입니다. **표시 의무는 켜졌는데, 정작 표시를 심겠다는 회사가 그 확인 방법을 아직 공개하지 않았습니다.**
 
@@ -83,7 +83,7 @@ Anthropic 고객센터 문서를 그대로 옮깁니다.
 
 **심겠다고 발표한 회사가, 그것을 어떻게 확인하는지는 아직 알려주지 않았습니다.** 자기 마크의 확인 방법을 자기가 공개하지 않은 상태입니다. 누가 "너 AI 썼지"라고 지목했을 때, 그 마크를 근거로 반박하거나 확인할 수단을 Anthropic은 아직 내놓지 않았습니다.
 
-★한 가지는 분명히 해둡니다. 이 글이 말하는 것은 **Anthropic이 뉴스룸·고객지원 문서·API 개발자 문서(platform.claude.com) 등 공식 경로에서 아직 공개하지 않았다**는 사실까지입니다. 세상의 모든 AI 탐지 도구가 존재하지 않는다는 뜻이 아닙니다 — 시중에는 여러 판정 서비스가 있고, **그 정확도는 이 글에서 검증하지 않았습니다.**
+한 가지는 분명히 해둡니다. 이 글이 말하는 것은 **Anthropic이 뉴스룸·고객지원 문서·API 개발자 문서(platform.claude.com) 등 공식 경로에서 아직 공개하지 않았다**는 사실까지입니다. 세상의 모든 AI 탐지 도구가 존재하지 않는다는 뜻이 아닙니다 — 시중에는 여러 판정 서비스가 있고, **그 정확도는 이 글에서 검증하지 않았습니다.**
 
 반대편은 훨씬 빨랐습니다. 계획이 언론에 먼저 알려진 **8월 11일**, 바로 **다음 날** 이 워터마크를 역산·제거하겠다는 공개 코드 저장소 **두 건**이 GitHub에 올라왔습니다. Anthropic의 **공식 발표(8월 14일)보다 이틀 빨랐습니다.** 16일에는 **네 건**이 더 올라왔습니다. (GitHub 저장소 6건 직접 열람·분류 확인 — §6 출처대장 #5)
 
@@ -95,7 +95,7 @@ Anthropic 고객센터 문서를 그대로 옮깁니다.
 
 ---
 
-## 4. 진짜 문제 — 그 마크는 「썼다」가 아니라 「거쳤다」만 증명합니다
+### 4. 진짜 문제 — 그 마크는 「썼다」가 아니라 「거쳤다」만 증명합니다
 
 3장까지가 **시점**의 문제였다면, 여기서부터는 **구조**의 문제입니다. 시점 문제는 회사가 문서를 내는 순간 달라집니다. **구조 문제는 문서를 내도 달라지지 않습니다.**
 
@@ -122,7 +122,7 @@ Anthropic 문서에는 이런 문장이 있습니다.
 
 ---
 
-## 5. 그래서 무엇을 해야 하나 — 표시가 아니라 기록
+### 5. 그래서 무엇을 해야 하나 — 표시가 아니라 기록
 
 이 상황이 실제로 요구하는 변화는 하나입니다. **증명의 무게중심이 결과물에서 과정으로 옮겨갑니다.**
 
@@ -154,12 +154,12 @@ AI에게 일을 맡길 때 좋은 사용자가 되는 세 가지 — **목표·�
 
 ---
 
-## 한계 고지
+### 한계 고지
 
 정직하게 남깁니다.
 
 - 이 글의 핵심 인용문(마킹 적용 시점 · 탐지 도구 미출시 · "거쳤을 수 있다")은 **Anthropic 1차 문서에서 직접 대조**했습니다.
-- ★**이 글이 말하는 "확인 방법이 없다"는 「Anthropic이 뉴스룸·고객지원 문서·API 개발자 문서(platform.claude.com) 등 5개 공식 경로에서 자사 마크의 탐지 방법을 아직 공개하지 않았다」까지입니다.** 세상의 모든 AI 탐지 도구가 없다는 뜻이 아닙니다 — 시중 판정 서비스 전반의 존재 여부·정확도는 이 글의 조사 범위가 아니고, 검증하지 않았습니다.
+- **이 글이 말하는 "확인 방법이 없다"는 「Anthropic이 뉴스룸·고객지원 문서·API 개발자 문서(platform.claude.com) 등 5개 공식 경로에서 자사 마크의 탐지 방법을 아직 공개하지 않았다」까지입니다.** 세상의 모든 AI 탐지 도구가 없다는 뜻이 아닙니다 — 시중 판정 서비스 전반의 존재 여부·정확도는 이 글의 조사 범위가 아니고, 검증하지 않았습니다.
 - **Anthropic의 탐지 방법 미공개와 구모델 미적용은 2026년 8월 25일 기준입니다.** 바뀔 수 있고, 바뀌면 3장의 결론이 바뀝니다. **다만 4장은 바뀌지 않습니다** — 그건 시점이 아니라 구조의 문제이기 때문입니다.
 - EU AI Act 50조에는 **보조적 편집 기능처럼 입력 데이터나 그 의미를 실질적으로 바꾸지 않는 경우 마킹 의무가 적용되지 않는다**는 예외가 있습니다. 다만 이건 **법적 의무**의 범위이고, 4장에서 말한 번역·교정 문제는 **Anthropic의 워터마크가 기술적으로 붙는 방식**에 관한 것입니다. 두 층은 다릅니다 — 섞어 읽지 마시기 바랍니다.
 - 계도기간의 정확한 종료 시점은 **"최소 1년"이라는 방침만 확인**했습니다. 특정 날짜로 단정하지 않았습니다.
@@ -167,3 +167,30 @@ AI에게 일을 맡길 때 좋은 사용자가 되는 세 가지 — **목표·�
 - 커뮤니티 반응 수치는 2026년 8월 25일 실측이며, 계속 변합니다.
 
 **이 글은 AI의 도움을 받아 작성했습니다.** 자료 조사와 초고 정리에 AI를 사용했고, 사실 확인과 최종 판단은 사람이 했습니다.
+
+---
+
+## 출처
+
+- Anthropic, "Watermarking to identify AI-generated text" — https://www.anthropic.com/news/claude-text-watermark (조회 2026-08-25)
+- Anthropic 고객지원, "How Claude marks AI-generated content" — https://support.claude.com/en/articles/16266773-how-claude-marks-ai-generated-content (조회 2026-08-25)
+- EU AI Act 제50조(투명성 의무) 원문 — https://artificialintelligenceact.eu/article/50/ (조회 2026-08-25)
+- EU AI Act 제99조(제재 조항) 원문 — https://artificialintelligenceact.eu/article/99/ (조회 2026-08-25)
+- artificialintelligenceact.eu, "Transparency rules (Article 50)" — https://artificialintelligenceact.eu/transparency-rules-article-50/ (조회 2026-08-25)
+- Cooley, "EU AI Act transparency obligations take effect 2 August 2026" — https://www.cooley.com/news/insight/2026/2026-08-03-eu-ai-act-transparency-obligations-take-effect-2-august-2026 (조회 2026-08-25)
+- 유럽연합 집행위원회, "Code of Practice on AI-generated content" — https://digital-strategy.ec.europa.eu/en/policies/code-practice-ai-generated-content (조회 2026-08-25)
+- 국가법령정보센터, 인공지능 기본법(법률 제20676호) — https://www.law.go.kr/lsInfoP.do?lsiSeq=268543 (조회 2026-08-25)
+- 대한민국 정책브리핑, AI 기본법 시행·계도기간·표시의무 안내 — https://www.korea.kr/news/policyNewsView.do?newsId=148958380 (조회 2026-08-25)
+- 법무법인 신·김, 뉴스레터 — https://www.shinkim.com/kor/media/newsletter/3114 (조회 2026-08-25)
+- 법무법인 린, 뉴스레터 — https://www.law-lin.com/ko/newsletter/1348 (조회 2026-08-25)
+- datalaw, "AI 기본법상 사업자 의무" — https://datalaw.kr/posts/ai-basic-law-business-duties/ (조회 2026-08-25)
+- 머니투데이, 「모두의 AI」 5개사 PT심사 8월 27일 예정 보도 — https://www.mt.co.kr/tech/2026/08/24/2026082418120172145 (2026-08-24)
+- 전자신문, 「모두의 AI」 사업자 선정 관련 보도 — https://www.etnews.com/20260818000443 (2026-08-18)
+- 데이터경제신문, 계도기간 관련 해설 — https://www.dataeconomy.co.kr/news/articleView.html?idxno=40286 (조회 2026-08-25)
+- SK AX 인사이트, 계도기간 관련 해설 — https://www.skax.co.kr/insight/trend/3666 (조회 2026-08-25)
+- TechCrunch, "Anthropic says it will watermark text generated by its AI models" — https://techcrunch.com/2026/08/11/anthropic-says-it-will-watermark-text-generated-by-its-ai-models/ (2026-08-11)
+- InfoQ, EU AI 콘텐츠 워터마킹 관련 보도 — https://www.infoq.com/news/2026/08/eu-ai-content-watermark/ (조회 2026-08-25)
+- GitHub 공개 저장소 조사(Claude 워터마크를 대상으로 한 제거·우회·탐지 목적 저장소, 6건 직접 열람·분류 확인) — 조회 2026-08-25
+- Reddit 커뮤니티 반응 게시물 3건(r/AO3, r/technology, r/europe) — 조회 2026-08-25
+
+이 조사는 위 목록의 조회 범위에서 확인된 것까지를 사실로 다룬다.
