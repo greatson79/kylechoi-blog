@@ -36,6 +36,11 @@ test('/learn/ 페이지는 카드 전체 외부 링크와 안전 속성을 제�
   assert.match(source, /class="resource-grid"/);
 });
 
+test('학습 카드 제목은 한국어 단어 중간 줄바꿈을 막는다', async () => {
+  const source = await readFile(new URL('../src/pages/learn.astro', import.meta.url), 'utf8');
+  assert.match(source, /\.card-copy h3\s*\{[^}]*word-break:\s*keep-all;/s);
+});
+
 test('Header와 Footer가 /learn/ 진입점을 각각 한 번 제공한다', async () => {
   const header = await readFile(new URL('../src/components/nav/Header.astro', import.meta.url), 'utf8');
   const footer = await readFile(new URL('../src/components/nav/Footer.astro', import.meta.url), 'utf8');
