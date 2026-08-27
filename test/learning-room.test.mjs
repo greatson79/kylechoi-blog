@@ -49,3 +49,43 @@ test('Header와 Footer가 /learn/ 진입점을 각각 한 번 제공한다', asy
   assert.match(header, /label: 'Learning'/);
   assert.match(footer, /label: 'Learning'/);
 });
+
+test('Header는 Learning을 Curriculum 바로 앞에 배치한다', async () => {
+  const header = await readFile(new URL('../src/components/nav/Header.astro', import.meta.url), 'utf8');
+  const uncommentedHeader = header.replace(/\/\*[\s\S]*?\*\//g, '');
+  const linksBlock = uncommentedHeader.match(
+    /^[ \t]*const[ \t]+links[ \t]*=[ \t]*\[([\s\S]*?)^[ \t]*\];[ \t]*(?:\/\/.*)?$/m,
+  )?.[1];
+
+  assert.ok(linksBlock);
+
+  const links = [...linksBlock.matchAll(
+    /^[ \t]*\{[ \t]*href:[ \t]*'([^']+)'[ \t]*,[ \t]*label:[ \t]*'([^']+)'(?:[ \t]*,[^}\r\n]*)?[ \t]*\},?[ \t]*(?:\/\/.*)?$/gm,
+  )].map(([, href, label]) => ({ href, label }));
+  const learningIndex = links.findIndex(({ href, label }) => href === '/learn/' && label === 'Learning');
+  const curriculumIndex = links.findIndex(
+    ({ href, label }) => href === '/curriculum/' && label === 'Curriculum',
+  );
+
+  assert.notEqual(learningIndex, -1);
+  assert.notEqual(curriculumIndex, -1);
+  assert.equal(learningIndex + 1, curriculumIndex);
+});
+
+test('Learning Room H1은 다른 섹션과 같은 제목 크기 토큰을 사용한다', async () => {
+  const source = await readFile(new URL('../src/pages/learn.astro', import.meta.url), 'utf8');
+  const styles = [...source.matchAll(/<style(?:\s[^>]*)?>([\s\S]*?)<\/style>/g)]
+    .map(([, css]) => css)
+    .join('\n')
+    .replace(/\/\*[\s\S]*?\*\//g, '');
+  const h1Blocks = [...styles.matchAll(
+    /(?:(?<=^)|(?<=[{}]))[ \t\r\n]*h1[ \t\r\n]*\{([^{}]*)\}/g,
+  )];
+
+  assert.equal(h1Blocks.length, 1);
+
+  const fontSizes = [...h1Blocks[0][1].matchAll(/(?:^|;)[ \t\r\n]*font-size[ \t]*:[ \t]*([^;]+);/g)]
+    .map(([, value]) => value.trim());
+
+  assert.deepEqual(fontSizes, ['var(--text-hero)']);
+});
