@@ -1,6 +1,11 @@
 {
   "redirects": [
     {
+      "source": "/education/2026-09-01-pick-one-task",
+      "destination": "/education/2026-08-31-pick-one-task/",
+      "permanent": true
+    },
+    {
       "source": "/ai-trend/2026-07-02-ai-as-infrastructure",
       "destination": "/insight/2026-07-02-ai-as-infrastructure/",
       "permanent": true
@@ -22,7 +27,12 @@
     },
     {
       "source": "/:path*",
-      "has": [{ "type": "host", "value": "www.kylechoi.com" }],
+      "has": [
+        {
+          "type": "host",
+          "value": "www.kylechoi.com"
+        }
+      ],
       "destination": "https://kylechoi.com/:path*",
       "permanent": true
     }
