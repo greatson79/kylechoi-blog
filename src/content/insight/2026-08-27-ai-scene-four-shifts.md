@@ -80,5 +80,3 @@ sourcePath: output/WaveAI/크리에이티브본부/AI트렌드_2026-08-27/02_아
 8. [Anthropic Will Embed Watermarks in AI Outputs — Artificial Lawyer](https://www.artificiallawyer.com/2026/08/13/anthropic-will-embed-watermarks-in-ai-outputs/)
 9. [AI Agents Hit 70% Enterprise Adoption in 2026 — AI Automation Global](https://aiautomationglobal.com/blog/google-cloud-ai-agent-adoption-2026)
 10. [AI Agent Adoption 2026: 120+ Enterprise Data Points — Digital Applied](https://www.digitalapplied.com/blog/ai-agent-adoption-2026-enterprise-data-points)
-
-> 저자: 교육 설계자 축(주제가 목회 콘텐츠가 아니므로 목회자 정체성 미표기 — 협의 §1-3 반영). 브랜드 표기(WAVE 등)는 게시 채널 확정 후 결정(협의 §5 보류 항목).
