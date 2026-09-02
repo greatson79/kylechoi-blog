@@ -79,7 +79,17 @@ const isActive = (href: string) => path.startsWith(href.split('?')[0]) && href !
       if (isOpen) close(); else open();
     });
     wrap.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') { close(); btn.focus(); }
+      if (e.key === 'Escape') {
+        close();
+        // 노아 REVISE major#2(판정_내비_Escape잔류_2026-09-02.md): aria-expanded=false로도
+        // 포인터가 트리거 위에 남아 있으면 CSS :hover가 패널을 계속 열어 접근성 트리와
+        // 화면이 어긋난다 — Escape 직후엔 포인터가 실제로 벗어날 때까지 hover 재개방을 억제.
+        wrap.classList.add('escaped');
+        btn.focus();
+      }
+    });
+    wrap.addEventListener('mouseleave', () => {
+      wrap.classList.remove('escaped');
     });
     wrap.addEventListener('focusout', (e) => {
       const next = e.relatedTarget as Node | null;
@@ -137,6 +147,9 @@ const isActive = (href: string) => path.startsWith(href.split('?')[0]) && href !
     .has-dropdown:hover .dropdown-panel { display: flex; }
   }
   .has-dropdown.open .dropdown-panel { display: flex; }
+  /* Escape 직후: 포인터가 트리거 위에 남아 있어도 hover로 재개방되지 않도록 억제
+     (mouseleave에서 해제 — :hover 규칙 자체는 지우지 않는다, 동일 특이도라 소스 순서로 우선) */
+  .has-dropdown.escaped .dropdown-panel { display: none; }
 
   /* ── 모바일: 아코디언(인라인 확장, 호버 없음) ── */
   @media (max-width: 640px) {
