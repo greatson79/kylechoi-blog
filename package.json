@@ -11,6 +11,7 @@
     "digest": "node scripts/generate-digest.mjs",
     "test:learning-room": "npm run build && node --test test/learning-room.test.mjs test/learning-room-built.test.mjs",
     "test:indexnow": "node --test test/indexnow.test.mjs",
+    "test:nav-dropdown": "npm run build && node --test test/nav-dropdown.test.mjs",
     "indexnow": "node scripts/indexnow.mjs",
     "deploy:prod": "node scripts/deploy-production.mjs"
   },
@@ -20,5 +21,8 @@
     "@astrojs/sitemap": "^3.7.3",
     "astro": "^7.0.2",
     "pretendard": "^1.3.9"
+  },
+  "devDependencies": {
+    "playwright": "1.62.1"
   }
 }
