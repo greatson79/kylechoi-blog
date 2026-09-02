@@ -1,22 +1,37 @@
 ---
-// 글로벌 헤더 — 미니멀 네비(영문). variant='hero'면 히어로(블루) 위 투명·흰 네비.
-// ★주인님 지시: 라벨 전부 영문(About·Ministry·Education·AI Trend·Insight), href 유지.
+// 글로벌 헤더 — 미니멀 네비(영문 기준·일부 한글 라벨). variant='hero'면 히어로(블루) 위 투명·흰 네비.
+// ★주인님 지시(2026-09-02): 라벨 3건 변경 + AI 교육 드롭다운 신설 + Books 신설.
+//   근거 = 브리프_블로그내비개편_2026-09-02.md §1. URL은 전부 유지(신설 /books/ 제외).
+//   「AI 교육」 하위 Learning은 기존 /learn/ 재사용 — /learning/ 신규 생성 안 함
+//   (사유는 완료 보고서 참조: /learn/ 이 이미 학습자료실로 구축·운영 중).
 interface Props {
   variant?: 'solid' | 'hero';
 }
 const { variant = 'solid' } = Astro.props;
-const links = [
+
+type NavChild = { href: string; label: string };
+type NavItem = { href: string; label: string; cta?: boolean; children?: NavChild[] };
+
+const links: NavItem[] = [
   { href: '/about/', label: 'About' },
-  { href: '/ministry/', label: 'Ministry' },
-  { href: '/education/', label: 'Education' },
+  { href: '/ministry/', label: 'AI × Ministry' },
+  {
+    href: '/education/',
+    label: 'AI 교육',
+    children: [
+      { href: '/education/', label: 'Education' },
+      { href: '/curriculum/', label: 'Curriculum' },
+      { href: '/learn/', label: 'Learning' },
+    ],
+  },
   { href: '/ai-trend/', label: 'AI Trend' },
-  { href: '/insight/', label: 'Insight' },
-  { href: '/learn/', label: 'Learning' },
-  { href: '/curriculum/', label: 'Curriculum' },
+  { href: '/insight/', label: 'AI 시대통찰' },
+  { href: '/books/', label: 'Books' },
   { href: '/contact/', label: 'Contact' },
   { href: '/newsletter/', label: 'Newsletter', cta: true },
 ];
 const path = Astro.url.pathname;
+const isActive = (href: string) => path.startsWith(href.split('?')[0]) && href !== '/';
 ---
 <header class:list={['site-header', { hero: variant === 'hero' }]}>
   <div class="container bar">
@@ -25,12 +40,56 @@ const path = Astro.url.pathname;
       <span class="brand-sub">Faith · AI · Learning</span>
     </a>
     <nav class="nav" aria-label="주 메뉴">
-      {links.map((l) => (
-        <a href={l.href} class:list={['nav-link', { active: path.startsWith(l.href.split('?')[0]) && l.href !== '/', 'nav-cta': l.cta }]}>{l.label}</a>
+      {links.map((item) => (
+        item.children ? (
+          <div class="nav-item has-dropdown" data-dropdown>
+            <button
+              type="button"
+              class:list={['nav-link', 'nav-trigger', { active: item.children.some((c) => isActive(c.href)) }]}
+              aria-expanded="false"
+              aria-controls="dropdown-ai-edu"
+            >
+              {item.label}
+              <span class="chevron" aria-hidden="true">▾</span>
+            </button>
+            <div class="dropdown-panel" id="dropdown-ai-edu">
+              {item.children.map((c) => (
+                <a href={c.href} class:list={['dropdown-link', { active: isActive(c.href) }]}>{c.label}</a>
+              ))}
+            </div>
+          </div>
+        ) : (
+          <a href={item.href} class:list={['nav-link', { active: isActive(item.href), 'nav-cta': item.cta }]}>{item.label}</a>
+        )
       ))}
     </nav>
   </div>
 </header>
+
+<script>
+  const dropdowns = document.querySelectorAll<HTMLElement>('[data-dropdown]');
+  dropdowns.forEach((wrap) => {
+    const btn = wrap.querySelector<HTMLButtonElement>('.nav-trigger');
+    if (!btn) return;
+    const close = () => { btn.setAttribute('aria-expanded', 'false'); wrap.classList.remove('open'); };
+    const open = () => { btn.setAttribute('aria-expanded', 'true'); wrap.classList.add('open'); };
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = btn.getAttribute('aria-expanded') === 'true';
+      if (isOpen) close(); else open();
+    });
+    wrap.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') { close(); btn.focus(); }
+    });
+    wrap.addEventListener('focusout', (e) => {
+      const next = e.relatedTarget as Node | null;
+      if (!next || !wrap.contains(next)) close();
+    });
+    document.addEventListener('click', (e) => {
+      if (!wrap.contains(e.target as Node)) close();
+    });
+  });
+</script>
 
 <style>
   .site-header {
@@ -43,15 +102,52 @@ const path = Astro.url.pathname;
   .brand { display: flex; align-items: baseline; gap: 0.5rem; }
   .brand-mark { font-weight: 800; font-size: 1.35rem; letter-spacing: -0.03em; color: var(--ink); }
   .brand-sub { font-size: 0.78rem; color: var(--muted); }
-  .nav { display: flex; flex-wrap: wrap; gap: clamp(0.6rem, 0.3rem + 1.2vw, 1.6rem); }
+  .nav { display: flex; flex-wrap: wrap; align-items: center; gap: clamp(0.6rem, 0.3rem + 1.2vw, 1.6rem); }
   .nav-link {
     font-size: 0.95rem; font-weight: 600; color: var(--muted); letter-spacing: 0.01em;
     padding: 0.3rem 0; position: relative; transition: color var(--dur) var(--ease);
+    background: none; border: 0; font-family: inherit; display: inline-flex; align-items: center; gap: 0.2rem;
   }
   .nav-link:hover { color: var(--ink); }
   .nav-link.active { color: var(--accent-ink); }
   .nav-link.active::after {
     content: ''; position: absolute; left: 0; right: 0; bottom: -2px; height: 2px; background: var(--accent); border-radius: 2px;
+  }
+
+  /* ── 드롭다운(AI 교육) ── */
+  .nav-item.has-dropdown { position: relative; }
+  .nav-trigger { cursor: pointer; }
+  .chevron { font-size: 0.7em; transition: transform var(--dur) var(--ease); }
+  .nav-trigger[aria-expanded='true'] .chevron { transform: rotate(180deg); }
+  .dropdown-panel {
+    display: none;
+    position: absolute; top: calc(100% + 0.6rem); left: 0; min-width: 168px;
+    background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-card); padding: 0.4rem; flex-direction: column; gap: 0.15rem;
+  }
+  .dropdown-link {
+    display: block; padding: 0.55rem 0.7rem; border-radius: 7px;
+    font-size: 0.92rem; font-weight: 600; color: var(--muted); white-space: nowrap;
+    transition: background var(--dur) var(--ease), color var(--dur) var(--ease);
+  }
+  .dropdown-link:hover { background: var(--surface); color: var(--ink); }
+  .dropdown-link.active { color: var(--accent-ink); background: var(--surface); }
+
+  @media (hover: hover) {
+    .has-dropdown:hover .dropdown-panel { display: flex; }
+  }
+  .has-dropdown.open .dropdown-panel { display: flex; }
+
+  /* ── 모바일: 아코디언(인라인 확장, 호버 없음) ── */
+  @media (max-width: 640px) {
+    .dropdown-panel {
+      position: static; box-shadow: none; border: 0; padding: 0.2rem 0 0 0.9rem;
+      min-width: 0;
+    }
+    .has-dropdown {
+      display: flex; flex-direction: column; align-items: flex-start;
+      flex: 1 1 100%; /* 자기 줄 전체 차지 — 옆 항목과 겹치지 않고 아코디언처럼 아래로 확장 */
+    }
   }
 
   /* ── Newsletter CTA(강조 필) ── */
