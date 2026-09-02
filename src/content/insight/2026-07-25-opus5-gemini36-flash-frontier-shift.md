@@ -14,10 +14,6 @@ heroImage:
   alt: "프런티어 AI 모델 경쟁의 축 이동을 요약한 데이터 비주얼. 헤드라인은 '경쟁이 지능 절대치가 아니라 검증가능한 신뢰성과 효율·비용에서 갈린다'. 우측 비교 카드 — 축 A 신뢰성: Claude Opus 5(2026-07-24)는 Frontier-Bench에서 Opus 4.8 대비 2배 이상, 가격 100만 토큰당 입력 5달러·출력 25달러, 자기검증·반복 능력. 축 B 효율·비용: Gemini 3.6 Flash(2026-07-21)는 출력 토큰 17% 절감, 가격 입력 1.5달러·출력 7.5달러, DeepSWE 49%·OSWorld-Verified 83.0%·컨텍스트 100만 토큰·통제 가능한 thinking."
 ---
 
-<!-- 발동 스킬(제작): article-content, copywriting, longform-journalism, content-optimization, meta-description -->
-<!-- 발동 스킬(팩트검증·본부장 1차): insane-search, agent-reach — 전 팩트 1차 출처 독립 교차검증(2-cycle). Terminal-Bench 오귀속 정정 반영 -->
-<!-- 소스 정본: 크리에이티브본부 팩트시트(01) + agent-reach 교차검증(02) — 1차 출처 anthropic.com·System Card·blog.google·ai.google.dev·deepmind 모델카드 -->
-
 지난 몇 년간 새 AI 모델의 발표는 늘 같은 문장으로 요약되곤 했습니다. "역대 가장 똑똑한 모델." 그런데 이번 주 하루 간격으로 나온 두 발표를 나란히 놓고 보면, 경쟁의 문장이 조용히 바뀌고 있음을 느끼게 됩니다. 두 회사는 더 이상 '누가 더 똑똑한가'만을 말하지 않았습니다. 그렇다면 이들은 무엇을 자랑하기 시작한 걸까요.
 
 ## 1. 두 발표를 하나로 묶어 읽어야 하는 이유
@@ -121,4 +117,4 @@ Google의 선택은 대비를 이룹니다. 이번에 공개된 것은 최상위
 2. **Gemini 3.6 Flash 발표** (2026-07-21): [Google 공식 블로그](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-6-flash-3-5-flash-lite-3-5-flash-cyber/)
 3. **Gemini API — thinking / 가격** : [thinking 문서](https://ai.google.dev/gemini-api/docs/thinking) · [pricing 문서](https://ai.google.dev/gemini-api/docs/pricing)
 4. **Gemini 3.6 Flash 모델카드** (지식 컷오프·컨텍스트·벤치마크): [DeepMind 모델카드](https://deepmind.google/models/model-cards/gemini-3-6-flash/)
-5. **기반 검증**: WaveAI 크리에이티브본부 팩트시트 + agent-reach·insane-search 웹 독립 교차검증(2-cycle) — 전 수치를 1차 출처와 대조
+5. **기반 검증**: 본 기사의 모든 수치는 1차 출처와 대조한 독립 교차검증을 거쳤다.

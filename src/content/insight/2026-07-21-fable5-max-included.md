@@ -14,8 +14,6 @@ heroImage:
   alt: 어두운 프리미엄 워크스페이스에서 긴 문서가 열린 모니터를 보며 키보드로 작업하는 사람의 손
 ---
 
-<!-- 발동 스킬: search-first, insane-search, agent-search(agent-reach), research, article-content, copywriting -->
-
 구독료는 이미 내고 있는데, 정작 가장 좋은 모델은 아껴 쓰고 있지 않으셨습니까.
 
 7월 20일부터 그럴 이유가 하나 사라졌습니다. **Claude Fable 5가 모든 Max·Team Premium 플랜에 포함**됩니다. 그전까지는 별도 크레딧을 사서 써야 했던 모델입니다. 다만 **Pro(월 20달러)는 여전히 포함되지 않습니다** — 이 구분이 이 글에서 가장 먼저 확인해야 할 부분입니다.
