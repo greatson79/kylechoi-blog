@@ -1,0 +1,75 @@
+---
+/**
+ * /books — 저서 목록(시리즈 대비). ★신설(2026-09-02, 브리프_블로그내비개편_2026-09-02.md).
+ * 현재 1권만 확정 출간 — 2~4권은 시리즈 자리만 예약(내용 창작 금지, 카드로 노출 안 함).
+ * 값 출처: output/WaveAI/마케팅본부/1권_제목확정_2026-09-01.md,
+ *   .../04_상세페이지/01_상세페이지_초안_v2.md §3(서점 링크·판매가).
+ */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/nav/Header.astro';
+import Footer from '../../components/nav/Footer.astro';
+---
+<BaseLayout title="Books — Kyle Choi Notes" description="AI를 제대로 배우는 법을 정리한 책들. 도구가 바뀌어도 남는 원리만 다룹니다.">
+  <Header slot="header" />
+
+  <section class="books-hero section">
+    <div class="container">
+      <p class="eyebrow">Books</p>
+      <h1>도구가 아니라<br />원리를 남기는 책</h1>
+      <p class="hero-lede">활용법 목록이 아니라, 도구가 바뀌어도 그대로 쓰는 원리만 골라 정리합니다.</p>
+    </div>
+  </section>
+
+  <section class="section book-list">
+    <div class="container">
+      <a class="book-card" href="/books/ai-learning/">
+        <div class="book-cover" aria-hidden="true">
+          <span class="cover-badge">1권</span>
+          <span class="cover-title">AI를 제대로<br />배우는 법</span>
+        </div>
+        <div class="book-copy">
+          <p class="eyebrow">1권 · 전자책</p>
+          <h2>AI를 제대로 배우는 법</h2>
+          <p class="book-sub">어떤 도구를 쓰든 통하는 8가지 원리</p>
+          <p class="book-price">정가 10,000원</p>
+          <span class="book-cta">자세히 보기 →</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<style>
+  .books-hero { padding-block: var(--space-section); }
+  .books-hero h1 { margin-top: 0.2em; }
+  .hero-lede { max-width: 48ch; margin-top: 1.2rem; font-size: var(--text-h3); color: var(--muted); line-height: 1.5; }
+
+  .book-list { padding-top: 0; }
+  .book-card {
+    display: grid; grid-template-columns: 200px 1fr; gap: clamp(1.25rem, 1rem + 1vw, 2.5rem);
+    align-items: center; padding: clamp(1.25rem, 1rem + 1vw, 2rem);
+    border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface);
+    transition: box-shadow var(--dur) var(--ease), transform var(--dur) var(--ease);
+  }
+  .book-card:hover { box-shadow: var(--shadow-card); transform: translateY(-2px); }
+
+  .book-cover {
+    aspect-ratio: 5 / 8; border-radius: var(--radius-sm); background: var(--accent);
+    display: flex; flex-direction: column; justify-content: space-between; padding: 1rem;
+    color: #fff;
+  }
+  .cover-badge { font-size: 0.8rem; font-weight: 700; opacity: 0.85; }
+  .cover-title { font-size: 1.15rem; font-weight: 800; line-height: 1.3; }
+
+  .book-copy h2 { margin-top: 0.3rem; font-size: var(--text-h2); letter-spacing: -0.02em; }
+  .book-sub { margin-top: 0.4rem; color: var(--muted); }
+  .book-price { margin-top: 0.8rem; font-weight: 700; }
+  .book-cta { display: inline-block; margin-top: 1rem; font-weight: 700; color: var(--accent-ink); }
+
+  @media (max-width: 560px) {
+    .book-card { grid-template-columns: 1fr; }
+    .book-cover { max-width: 160px; }
+  }
+</style>

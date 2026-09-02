@@ -1,0 +1,217 @@
+---
+/**
+ * /books/ai-learning — 1권 상세페이지. ★신설(2026-09-02, 브리프_블로그내비개편_2026-09-02.md).
+ *
+ * ★모든 문안은 정본 파일에서 그대로 옮겼다(창작 금지 준수). 출처:
+ *   - 제목·가격: output/WaveAI/마케팅본부/1권_제목확정_2026-09-01.md,
+ *     .../04_상세페이지/01_상세페이지_초안_v2.md 상단(정가 10,000원, 서점 실측 반영)
+ *   - 후킹 리드(①): 01_상세페이지_초안_v2.md §1-①(v2 개정판)
+ *   - 문제 제기(②)·이 책이 주는 것(③): 상세페이지_서점메타_초안.md §1-②③ (v2가 "8/22 판 유지"로 확정)
+ *   - 목차(④)·대상 독자(⑤): 상세페이지_서점메타_초안.md §1-④⑤ (원고 실측 기반, v2도 동일 유지)
+ *   - 저자 소개(⑦): 저자소개3종_CEO작성_2026-09-02.md §①②③ (v2의 자리표시자 문안을 대체하는 최신 확정본)
+ *   - 서점 링크: 01_상세페이지_초안_v2.md §3(2026-09-01 실측, 판매 중)
+ *
+ * ★부록 3종(⑥)은 접근 통제 방식이 미확정이라 게이트 잠금 상태 — 싣지 않는다(정본 규율 그대로 준수).
+ * ★표지 이미지 = [표지 대기]. 기존 파일(1권_표지_확정A_1600x2560.jpg)은 구제목("8가지만 알면...")이
+ *   박힌 구판이라 쓰지 않았다 — 신제목 표지(에코 카드뉴스 v2)는 설계 문서만 있고 아직 착지 전이다.
+ * ★출간일은 정본에 명시된 값이 없어 표기하지 않았다(추측 금지).
+ */
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Header from '../../../components/nav/Header.astro';
+import Footer from '../../../components/nav/Footer.astro';
+
+const toc = [
+  'AI는 무엇이고, 무엇이 아닌가',
+  '어떤 AI를 쓰든 똑같은 것 (LLM 기본기)',
+  '원하는 답을 끌어내는 법 (프롬프트 6요소 · 바로 쓰는 7가지 기법)',
+  '프롬프트를 다듬는 법 (태그로 이름표 붙이기 · 근거와 결론 나눠 받기 · 예시 묶기 · 큰 일 쪼개기)',
+  'AI의 책상을 정리하는 법 (컨텍스트 + 개인맞춤설정)',
+  'AI가 틀렸을 때 알아채는 법 (오류·환각·검증)',
+  '내 자료로 답하게 하는 법 (제미나이 노트북)',
+  '나와 AI의 관계를 정하는 법',
+];
+
+const bookstores = [
+  { name: '교보문고', href: 'https://ebook-product.kyobobook.co.kr/dig/epd/ebook/E000013488807' },
+  { name: '예스24', href: 'https://www.yes24.com/product/goods/195485506' },
+  { name: '알라딘', href: 'https://aladin.kr/p/nSkvP' },
+];
+---
+<BaseLayout
+  title="AI를 제대로 배우는 법 — Kyle Choi Notes"
+  description="활용법을 100개 배웠는데, 왜 내 결과만 그대로일까. 도구가 바뀌어도 그대로 남는 여덟 가지 원리만 골랐습니다."
+>
+  <Header slot="header" />
+
+  <section class="detail-hero section">
+    <div class="container hero-grid">
+      <div class="cover-placeholder" aria-hidden="true">
+        <span class="ph-badge">[표지 대기]</span>
+        <span class="ph-title">AI를 제대로<br />배우는 법</span>
+        <span class="ph-sub">어떤 도구를 쓰든 통하는<br />8가지 원리</span>
+      </div>
+      <div class="hero-copy">
+        <p class="eyebrow">1권 · 전자책</p>
+        <h1>AI를 제대로 배우는 법</h1>
+        <p class="hero-sub">어떤 도구를 쓰든 통하는 8가지 원리</p>
+        <p class="hero-hook">
+          활용법을 100개 배웠는데, 왜 내 결과만 그대로일까.<br />
+          챗GPT 활용법 71제. 제미나이 81제. 목록은 매달 길어지는데,
+          도구가 하나 바뀌면 애써 익힌 자리가 통째로 없어집니다.
+          그래서 이 책은 목록을 하나 더 얹지 않습니다. 도구가 바뀌어도 그대로 남는 여덟 가지만 골랐습니다.
+        </p>
+        <div class="hero-buy">
+          <p class="price">정가 10,000원</p>
+          <div class="stores">
+            {bookstores.map((s) => (
+              <a class="store-link" href={s.href} target="_blank" rel="noopener noreferrer">{s.name}에서 보기</a>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section problem-section">
+    <div class="container narrow">
+      <h2>이런 적 있으신가요</h2>
+      <ul class="problem-list">
+        <li>프롬프트를 길게 썼는데 엉뚱한 답이 옵니다.</li>
+        <li>어제 잘 되던 방식이 오늘은 안 됩니다.</li>
+        <li>AI가 그럴듯하게 틀렸는데, 틀린 줄 몰랐습니다.</li>
+        <li>새 모델이 나올 때마다 다시 배웁니다. 배운 게 쌓이지 않습니다.</li>
+      </ul>
+      <p class="problem-note">
+        문제는 도구를 덜 알아서가 아닙니다. 도구 아래에서 공통으로 작동하는 원리를
+        한 번도 배우지 않아서입니다. 기능은 매달 바뀌지만 원리는 그 자리에 있습니다.
+      </p>
+    </div>
+  </section>
+
+  <section class="section benefit-section">
+    <div class="container narrow">
+      <h2>이 책이 주는 것</h2>
+      <ul class="benefit-list">
+        <li><strong>도구가 바뀌어도 그대로 쓰는 8가지 원리</strong> — 챗GPT·클로드·제미나이 어디서든 같습니다.</li>
+        <li><strong>AI가 틀렸을 때 알아채는 법</strong> — 공식 문서 근거를 가장 두껍게 붙인 장입니다.</li>
+        <li><strong>내 자료로 답하게 만드는 법</strong> — 검색이 아니라 내 문서 위에서 답하게 합니다.</li>
+        <li><strong>바로 복사해 쓰는 실습 자료</strong> — 읽고 끝나지 않게 부록과 함께 드립니다.</li>
+        <li><strong>89쪽 · 도해 32컷</strong> — 개념을 글로만 설명하지 않습니다.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section toc-section">
+    <div class="container narrow">
+      <h2>목차</h2>
+      <ol class="toc-list">
+        {toc.map((chapter) => <li>{chapter}</li>)}
+      </ol>
+    </div>
+  </section>
+
+  <section class="section reader-section">
+    <div class="container narrow reader-grid">
+      <div>
+        <h2>이런 분께 맞습니다</h2>
+        <ul class="reader-list">
+          <li>AI를 써봤지만 "이게 맞나" 싶은 채로 쓰고 계신 분</li>
+          <li>도구가 바뀔 때마다 다시 배우는 게 지치신 분</li>
+          <li>업무·연구·사역에 AI를 들이고 싶은데 어디서부터인지 모르겠는 분</li>
+          <li>8장을 다 읽고 다음 권(클로드 실전)으로 이어가고 싶은 분</li>
+        </ul>
+      </div>
+      <div>
+        <h2>이런 분께는 맞지 않습니다</h2>
+        <ul class="reader-list muted">
+          <li>특정 도구의 기능 목록·단축키 사전이 필요한 분</li>
+          <li>모델을 직접 만들거나 파인튜닝하려는 개발자</li>
+          <li>이미 프롬프트 원리를 체계적으로 익힌 분</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section author-section">
+    <div class="container narrow">
+      <h2>저자 소개</h2>
+      <p class="author-name">최종학</p>
+      <p class="author-oneline">
+        개발자가 아닙니다. 코드를 한 줄도 쓸 줄 모르던 사람이 AI로 일하는 방식을 통째로 바꿔
+        직접 자동화 시스템을 만들었고, 그래서 개발자가 아닌 사람에게 AI를 어떻게 가르쳐야
+        하는지 아는 AI 교육 설계자입니다.
+      </p>
+      <p class="author-why">
+        저는 개발자가 아닙니다. 코드를 모르는 채로 AI를 배우기 시작했고, 그 상태로 제 일을
+        대신해 주는 자동화 시스템을 직접 만들어 지금도 매일 쓰고 있습니다.
+        그러면서 강의를 다니다 보니 같은 질문을 계속 받았습니다. "이건 알겠는데, 다음 도구가
+        나오면 또 어떻게 하죠." 활용법을 하나 더 알려 드리는 것으로는 그 질문에 답이 되지
+        않았습니다. 그래서 도구가 바뀌어도 그대로 남는 것 여덟 가지만 골랐습니다. 개발자가
+        아닌 제가 실제로 그 여덟 가지로 여기까지 왔기 때문에, 처음 시작하는 분도 따라올 수
+        있다고 믿습니다.
+      </p>
+      <p class="author-channel">글은 kylechoi.com에 씁니다.</p>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<style>
+  .detail-hero { padding-block: var(--space-section); }
+  .hero-grid { display: grid; grid-template-columns: 260px 1fr; gap: clamp(1.5rem, 1rem + 2vw, 3rem); align-items: start; }
+
+  .cover-placeholder {
+    aspect-ratio: 5 / 8; border-radius: var(--radius); background: var(--accent);
+    color: #fff; display: flex; flex-direction: column; justify-content: space-between;
+    padding: 1.2rem; position: relative; overflow: hidden;
+  }
+  .ph-badge {
+    align-self: flex-start; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.04em;
+    background: rgba(255,255,255,0.18); padding: 0.25rem 0.55rem; border-radius: 999px;
+  }
+  .ph-title { font-size: 1.3rem; font-weight: 800; line-height: 1.3; }
+  .ph-sub { font-size: 0.85rem; opacity: 0.85; line-height: 1.4; }
+
+  .eyebrow { font-size: 0.85rem; font-weight: 700; color: var(--accent-ink); letter-spacing: 0.04em; }
+  .hero-copy h1 { margin-top: 0.3rem; font-size: var(--text-hero); letter-spacing: -0.02em; line-height: 1.15; }
+  .hero-sub { margin-top: 0.5rem; font-size: var(--text-h3); color: var(--muted); }
+  .hero-hook { margin-top: 1.3rem; max-width: var(--measure); font-size: var(--text-body); line-height: 1.7; }
+  .hero-buy { margin-top: 1.6rem; display: flex; flex-wrap: wrap; align-items: center; gap: 1.2rem; }
+  .price { font-size: 1.25rem; font-weight: 800; }
+  .stores { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+  .store-link {
+    font-size: 0.9rem; font-weight: 700; padding: 0.5rem 0.9rem; border-radius: 999px;
+    border: 1px solid var(--line); color: var(--ink); transition: background var(--dur) var(--ease);
+  }
+  .store-link:hover { background: var(--surface); }
+
+  .container.narrow { max-width: 760px; }
+  .problem-section, .benefit-section, .toc-section, .reader-section, .author-section { border-top: 1px solid var(--line); }
+  .problem-section h2, .benefit-section h2, .toc-section h2, .reader-section h2, .author-section h2 {
+    font-size: var(--text-h2); letter-spacing: -0.02em; margin-bottom: 1.2rem;
+  }
+  .problem-list, .benefit-list, .reader-list { display: grid; gap: 0.7rem; padding-left: 1.1rem; }
+  .problem-note { margin-top: 1.4rem; color: var(--muted); line-height: 1.7; }
+
+  .toc-list { display: grid; gap: 0.6rem; counter-reset: toc; padding-left: 0; }
+  .toc-list li { list-style: none; padding-left: 2.4rem; position: relative; line-height: 1.5; }
+  .toc-list li::before {
+    counter-increment: toc; content: counter(toc) '장';
+    position: absolute; left: 0; top: 0; font-weight: 800; color: var(--accent-ink); font-size: 0.85rem;
+  }
+
+  .reader-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1.5rem, 1rem + 2vw, 3rem); }
+  .reader-list.muted { color: var(--muted); }
+
+  .author-name { font-weight: 800; font-size: 1.1rem; margin-top: 0.2rem; }
+  .author-oneline { margin-top: 0.8rem; font-weight: 600; line-height: 1.7; max-width: var(--measure); }
+  .author-why { margin-top: 1rem; color: var(--muted); line-height: 1.7; max-width: var(--measure); }
+  .author-channel { margin-top: 1rem; font-size: 0.9rem; color: var(--faint); }
+
+  @media (max-width: 720px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .cover-placeholder { max-width: 220px; }
+    .reader-grid { grid-template-columns: 1fr; }
+  }
+</style>
