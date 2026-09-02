@@ -77,21 +77,32 @@ const isActive = (href: string) => path.startsWith(href.split('?')[0]) && href !
   const hoverCapable = window.matchMedia('(hover: hover)').matches;
   dropdowns.forEach((wrap) => {
     const btn = wrap.querySelector<HTMLButtonElement>('.nav-trigger');
-    if (!btn) return;
+    const panel = wrap.querySelector<HTMLElement>('.dropdown-panel');
+    if (!btn || !panel) return;
 
     const isVisible = () =>
       wrap.classList.contains('open') ||
       (hoverCapable && wrap.matches(':hover') && !wrap.classList.contains('suppress-hover'));
-    const syncAria = () => { btn.setAttribute('aria-expanded', String(isVisible())); };
+    // ★핫픽스(티켓_핫픽스_내비_재개방_2026-09-02): 재개방 시 'open'과 'suppress-hover'가
+    // 동시에 남으면 CSS 클래스 특이도·소스순서 경쟁으로 표시가 aria와 어긋날 수 있었다.
+    // 단일 진실원으로 통합 — aria-expanded와 panel.style.display를 항상 같은 호출에서
+    // 같은 계산값(isVisible())으로 함께 쓴다. 두 클래스가 동시에 남아도 표시는 이 값
+    // 하나로만 정해지므로 어긋난 상태 자체가 구조적으로 나올 수 없다(검사가 아니라 표현
+    // 불가능하게 — CSS는 :hover 무자바스크립트 폴백만 유지, 활성 시엔 이 함수가 덮어쓴다).
+    const sync = () => {
+      const visible = isVisible();
+      btn.setAttribute('aria-expanded', String(visible));
+      panel.style.display = visible ? 'flex' : 'none';
+    };
 
-    const open = () => { wrap.classList.add('open'); syncAria(); };
+    const open = () => { wrap.classList.add('open'); sync(); };
     const close = () => {
       wrap.classList.remove('open');
       // 닫는 순간 포인터가 여전히 트리거 위에 있으면(재토글 클릭·Escape 등) 포인터가 실제로
       // 벗어나기 전까지 hover 재개방을 억제 — 안 그러면 :hover가 바로 다시 열어 "닫았는데
       // 화면은 그대로"인 불일치가 재발한다.
       if (hoverCapable && wrap.matches(':hover')) wrap.classList.add('suppress-hover');
-      syncAria();
+      sync();
     };
 
     btn.addEventListener('click', (e) => {
@@ -102,10 +113,10 @@ const isActive = (href: string) => path.startsWith(href.split('?')[0]) && href !
       if (e.key === 'Escape') { close(); btn.focus(); }
     });
     if (hoverCapable) {
-      wrap.addEventListener('mouseenter', syncAria);
+      wrap.addEventListener('mouseenter', sync);
       wrap.addEventListener('mouseleave', () => {
         wrap.classList.remove('suppress-hover');
-        syncAria();
+        sync();
       });
     }
     wrap.addEventListener('focusout', (e) => {
@@ -115,6 +126,7 @@ const isActive = (href: string) => path.startsWith(href.split('?')[0]) && href !
     document.addEventListener('click', (e) => {
       if (!wrap.contains(e.target as Node)) close();
     });
+    sync();
   });
 </script>
 
@@ -160,14 +172,14 @@ const isActive = (href: string) => path.startsWith(href.split('?')[0]) && href !
   .dropdown-link:hover { background: var(--surface); color: var(--ink); }
   .dropdown-link.active { color: var(--accent-ink); background: var(--surface); }
 
+  /* 무자바스크립트 폴백 전용 — 스크립트가 살아 있으면 sync()가 매 이벤트마다
+     panel.style.display를 인라인으로 직접 써서 이 규칙을 덮어쓴다(특이도 최상위).
+     'open'·'suppress-hover' 두 클래스는 이제 표시를 결정하지 않는다(JS 내부 판정
+     입력일 뿐) — 두 클래스가 동시에 남아도 표시가 aria와 어긋나는 상태 자체가 CSS
+     경쟁으로는 나올 수 없다(핫픽스_내비_재개방_2026-09-02). */
   @media (hover: hover) {
     .has-dropdown:hover .dropdown-panel { display: flex; }
   }
-  .has-dropdown.open .dropdown-panel { display: flex; }
-  /* 명시적으로 닫은 직후(재토글 클릭·Escape 등) 포인터가 트리거 위에 남아 있어도 hover로
-     재개방되지 않도록 억제(mouseleave에서 해제) — :hover 규칙 자체는 지우지 않는다,
-     동일 특이도라 소스 순서로 우선한다. */
-  .has-dropdown.suppress-hover .dropdown-panel { display: none; }
 
   /* ── 모바일: 아코디언(인라인 확장, 호버 없음) ── */
   @media (max-width: 640px) {
