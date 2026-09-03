@@ -22,10 +22,11 @@ const ministryHref = (cat, id) =>
   cat === '교육' ? `/education/${id}/` : `/ministry/${id}/`;
 
 // ★4분류(주인님 확정): 목회(설교+묵상 병합)·교육·AI트렌드·시대분석
-// ★표시 라벨만 영문(네비 일치). 필터값(data.category)·href는 불변.
+// ★표시 라벨은 네비와 문자 일치시킨다(2026-09-03 라벨 규칙 갱신 — 교육 섹션은 「AI 활용법」).
+//   필터값(data.category)·href는 불변.
 const categories = [
   { label: 'Ministry', href: '/ministry/', desc: '설교·묵상 등 목회 콘텐츠.' },
-  { label: 'Education', href: '/education/', desc: 'AI 교육 — AI를 분별 있게 배우고 활용하기.' },
+  { label: 'AI 활용법', href: '/education/', desc: 'AI 교육 — AI를 분별 있게 배우고 활용하기.' },
   { label: 'AI Trend', href: '/ai-trend/', desc: 'AI의 흐름과 실천적 인사이트.' },
   { label: 'Insight', href: '/insight/', desc: '거시·사회·기술 등 시대 흐름을 정보 제공 목적으로 정리.' },
 ];
