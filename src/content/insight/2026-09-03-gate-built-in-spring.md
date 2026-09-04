@@ -16,13 +16,13 @@ heroImage:
 
 지난 며칠 사이 AI 소식을 훑어보신 분이라면 비슷한 인상을 받으셨을 겁니다. 9월 1일과 2일, 큰 회사들이 사이버보안과 생명과학 같은 위험 도메인의 모델을 나란히 "심사받은 곳만 쓰도록" 잠갔다는 소식입니다. 하루 이틀 사이에 업계가 갑자기 갈라선 것처럼 보입니다.
 
-그런데 발표 날짜를 하나씩 되짚어 보면 그림이 달라집니다. **9월에 갑자기 갈라진 게 아닙니다.** 문은 봄부터 지어지고 있었고, 9월에 도착한 것은 문이 아니라 거기 태울 모델이었습니다.
+그런데 발표 날짜를 하나씩 되짚어 보면 그림이 달라집니다. **9월에 갑자기 갈라진 게 아닙니다.** 문은 그 전부터 하나씩 지어지고 있었고, 9월에 도착한 것은 문이 아니라 거기 태울 모델이었습니다.
 
 **이번 주에 새로 생긴 것은 접근 게이트가 아니라 그 게이트에 올라탄 최신 모델입니다. Anthropic의 게이트는 4월 7일, Google의 파일럿은 7월 21일에 이미 열려 있었습니다. OpenAI는 프로그램 자체(Daybreak)는 5월부터 언급되지만 이번에 쓰인 이름의 게이트는 8월 10일에 만들어졌습니다. 더 중요한 것은 그 게이트들이 세워지는 간격이 330일에서 95일, 다시 42일로 좁아져 왔다는 사실이고, 그 이유는 남의 평가가 아니라 벤더 자신이 공개한 위험 측정 안에 있습니다. 다만 이 글이 확인한 범위는 세 곳의 게이트와 또 한 곳의 정책 문서까지이고, 반대 방향으로 대응한 예외도 함께 확인됐습니다.**
 
 ## 올해 모델들이 갈라지고 있다는 말, 사실일까요?
 
-**갈라진 것은 사실입니다. 다만 9월이 처음이 아닙니다.** 위험 도메인 모델을 심사받은 사용자에게만 여는 방식은 이미 봄부터 각자 자리를 잡고 있었습니다.
+**갈라진 것은 사실입니다. 다만 9월이 처음이 아닙니다.** 위험 도메인 모델을 심사받은 사용자에게만 여는 방식은 그 전부터 회사마다 다른 속도로 자리를 잡고 있었습니다.
 
 Anthropic의 Project Glasswing은 [4월 7일에 개설됐습니다](https://www.anthropic.com/glasswing). 공식 발표문은 "April 7, 2026 - Today we're announcing Project Glasswing"이라고 시작합니다. 그때 이 문에 태워져 있던 것은 지금의 Mythos 5.1이 아니라 그 미리보기판이었고, [6월 2일 확장 발표](https://www.anthropic.com/news/expanding-project-glasswing)에서 참여 조직이 약 200곳으로 늘었습니다(벤더 자체 발표치 · 독립 검증 아님).
 
@@ -38,7 +38,7 @@ Google은 7월 21일 [Gemini 3.5 Flash Cyber 발표](https://deepmind.google/blo
 
 Anthropic의 [Mythos 5.1 공식 모델 문서](https://platform.claude.com/docs/en/models/mythos-5-1/overview)는 한 줄로 정리해 둡니다. "the same model as Claude Fable 5.1, offered by invitation only through Project Glasswing." 4월부터 있던 문에 9월 1일 새 모델이 올라탔다는 뜻입니다.
 
-OpenAI도 같은 모양입니다. [Path to Astra 발표](https://openai.com/index/path-to-astra/)는 "Access to Astra for advanced cybersecurity workflows will initially be available to a small group of alpha testers, with access through Daybreak Blue expanding afterward to support defensive use"라고 적었습니다. 5월부터 있던 Daybreak 체계 안으로 신모델이 편입된 것입니다.
+OpenAI도 같은 모양입니다. [Path to Astra 발표](https://openai.com/index/path-to-astra/)는 "Access to Astra for advanced cybersecurity workflows will initially be available to a small group of alpha testers, with access through Daybreak Blue expanding afterward to support defensive use"라고 적었습니다. 5월부터 언급되던 Daybreak 체계 안으로 신모델이 편입된 것입니다.
 
 이름을 새로 붙인 것은 Google만이 아니었습니다. OpenAI도 8월에 Daybreak Blue·Red를 붙였고, Anthropic은 9월 1일 자사 신모델을 내놓던 바로 그날 생명과학 쪽 프로그램에 "Life Sciences Verification Program"이라는 이름을 붙였습니다. 눈에 띄는 것은 오히려 이쪽입니다 — 개념은 오래전부터 있었는데 이름은 모델이 도착할 즈음에 붙습니다. 저희가 확인한 다섯 갈래 중 넷이 그랬고, Anthropic의 사이버 게이트만 개념과 이름이 같은 날 함께 시작됐습니다. Google의 경우를 보겠습니다. [Fairwind Program](https://blog.google/innovation-and-ai/technology/safety-security/fairwind-program/)이라는 이름 자체가 9월 2일에 새로 붙었고, "limited access program for governments and trusted partners"라는 설명과 함께 650곳이 넘는 파트너 규모가 공개됐습니다(벤더 자체 발표치 · 독립 검증 아님). 다만 접근을 제한하는 실질은 7월 파일럿부터 이미 작동하고 있었습니다. 여기에 한 가지 유보를 답니다 — Fairwind가 7월 파일럿의 공식 후속이라고 Google 스스로 명문화한 문장은 이번 조사로 찾지 못했습니다.
 
@@ -96,7 +96,7 @@ OpenAI는 둘을 함께 씁니다. 사이버보안 전용으로 따로 만든 �
 
 실무적으로는 두 가지만 챙기면 충분합니다. 도구를 고를 때 "이 기능을 우리가 쓸 수 있는가"를 성능보다 먼저 확인하는 것, 그리고 접근 조건과 함께 따라오는 데이터 조건을 확인하는 것입니다. 앞서 본 것처럼 신뢰 접근에는 데이터를 더 오래 보관하는 조건이 붙기도 합니다. 교인이나 학생의 이야기가 담긴 자료를 다룰 때는 이 조건이 성능보다 중요합니다.
 
-마지막으로 이 글의 한계를 분명히 해 둡니다. 여기서 확인한 것은 문서에 적힌 날짜와 문장들이고, 이 흐름이 계속 좁아질지 다시 열릴지는 말할 수 없습니다. 다만 "9월에 갑자기 무슨 일이 일어났다"는 인상만큼은 사실이 아니었습니다. 문은 봄부터 지어지고 있었습니다.
+마지막으로 이 글의 한계를 분명히 해 둡니다. 여기서 확인한 것은 문서에 적힌 날짜와 문장들이고, 이 흐름이 계속 좁아질지 다시 열릴지는 말할 수 없습니다. 다만 "9월에 갑자기 무슨 일이 일어났다"는 인상만큼은 사실이 아니었습니다. 문은 그 전부터 하나씩 지어지고 있었고, 언제 지어졌는지는 회사마다 달랐습니다.
 
 ---
 
