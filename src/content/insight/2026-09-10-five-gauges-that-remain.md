@@ -99,3 +99,28 @@ Anthropic은 반대로 갔습니다. 같은 도입가를 붙였다가 인상을 
 8. [Fairwind 프로그램 안내 — Google 공식(1차, 열람 2026-09-08)](https://blog.google/innovation-and-ai/technology/safety-security/fairwind-program/)
 9. 영상 제목 실측(2026-09-08, yt-dlp): [Flash Cyber Is Gated!](https://www.youtube.com/watch?v=0J8uzNQRUKk) · [But There's a Catch](https://www.youtube.com/watch?v=JXJPrKzgZHg) · [INSANE](https://www.youtube.com/watch?v=Qtn9JyCHYdg)
 10. [접근 대상을 "보안 연구자"로 옮겨 적은 커뮤니티 요약(2차, 2026-09-03)](https://www.reddit.com/r/AIToolsTipsNews/comments/1w65z5w/ai_roundup_sep_03_nvidia_beats_top_human_coders/)
+
+### X 20계정 필수확인 패스 (2026-09-09, agent-reach twitter-cli 직접 열람)
+
+- [@karpathy](https://x.com/karpathy/status/2094839756329041984) — 확인(2026-09-01) · 해당 없음
+- [@steipete](https://x.com/steipete/status/2097377692966633952) — 확인(2026-09-08) · 해당 없음
+- [@gregisenberg](https://x.com/gregisenberg/status/2097381384608166057) — 확인(2026-09-08) · 해당 없음
+- [@rileybrown](https://x.com/rileybrown/status/2097557251804278795) — 확인(2026-09-09) · 해당 없음
+- [@corbin_braun](https://x.com/corbin_braun/status/2097425054988730516) — 확인(2026-09-08) · 해당 없음
+- [@jackfriks](https://x.com/jackfriks/status/2097505660845936761) — 확인(2026-09-09) · 해당 없음
+- [@levelsio](https://x.com/levelsio/status/2097459291661746610) — 확인(2026-09-08) · 해당 없음
+- [@marclou](https://x.com/marclou/status/2097599893875380506) — 확인(2026-09-09) · 해당 없음
+- [@EXM7777](https://x.com/EXM7777/status/2097343153737236688) — 확인(2026-09-08) · 해당 없음
+- [@eptwts](https://x.com/eptwts/status/2097477534057128376) — 확인(2026-09-09) · 해당 없음
+- [@alex_prompter](https://x.com/alex_prompter/status/2097622289600962959) — 확인(2026-09-09) · 해당 없음
+- [@mardehaym](https://x.com/mardehaym/status/2097616226595864648) — 확인(2026-09-09) · 해당 없음
+- [@vasuman](https://x.com/vasuman/status/2097339176006172962) — 확인(2026-09-08) · 해당 없음
+- [@AmirMushich](https://x.com/AmirMushich/status/2097331875459031302) — 확인(2026-09-08) · 해당 없음
+- [@0xROAS](https://x.com/0xROAS/status/2097401017260179603) — 확인(2026-09-08) · 해당 없음
+- [@AndrewYNg](https://x.com/AndrewYNg/status/2095890279865721217) — 확인(2026-09-04) · 해당 없음
+- [@kloss_xyz](https://x.com/kloss_xyz/status/2097466005857677429) — 확인(2026-09-08) · 해당 없음
+- [@emollick](https://x.com/emollick/status/2097485934686015916) — 확인(2026-09-09) · 해당 없음
+- [@Hesamation](https://x.com/Hesamation/status/2097620785426788602) — 확인(2026-09-09) · 해당 없음
+- [@claudeskills101](https://x.com/claudeskills101/status/2097339258575167623) — 확인(2026-09-08) · 해당 없음
+
+20계정 전부 확인 완료(미확인 0건) — 이 글이 다루는 다섯 사례와 직접 관련된 게시물 없음.
