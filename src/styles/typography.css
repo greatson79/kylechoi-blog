@@ -6,6 +6,9 @@ h1, h2, h3, h4 {
   letter-spacing: -0.02em;
   font-weight: 700;
   color: var(--ink);
+  /* 한글 제목은 어절 단위로만 줄바꿈 — 글자 중간 절단 금지(주인님 지적 2026-09-11) */
+  word-break: keep-all;
+  overflow-wrap: anywhere;
 }
 h1 { font-size: var(--text-hero); font-weight: 800; }
 h2 { font-size: var(--text-h2); }
