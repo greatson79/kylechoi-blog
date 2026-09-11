@@ -11,7 +11,7 @@ notInvestmentAdvice: false
 factChecked: true
 heroImage:
   src: /images/ai-trend/threat-report-20260911-og.png
-  alt: 어두운 네이비 배경 위에 골드 라인으로 그려진 방패형 레이더 — 왼쪽에서 다가오는 신호들을 가운데 방패가 탐지해 가두고, 오른쪽으로는 정리된 신호만 갈라져 나가는 장면
+  alt: 오후 빛이 드는 나무 책상 위, 모래가 거의 다 내려온 모래시계와 열린 회중시계 옆에 봉인이 뜯긴 서류 다발과 놋쇠 열쇠 세 개가 놓인 정물 — 이번 보고서가 새로 적은 것은 사례 수가 아니라 걸린 시간이었다는 논지를 나타냄
 sourcePath: output/WaveAI/프로젝트/AI트렌드/2026-09-11/03a_초고A_현행형식_2026-09-11.md
 ---
 
