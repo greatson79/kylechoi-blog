@@ -25,7 +25,7 @@ const dateStr = pubDate
       <div class="head-inner">
         {category && <span class="eyebrow">{category}</span>}
         <h1>{title}</h1>
-        <p class="meta">{author}{dateStr && <span> · {dateStr}</span>}</p>
+        <p class="meta">{author}{dateStr && <span>{author ? ' · ' : ''}{dateStr}</span>}</p>
       </div>
     </header>
     {heroImage && (
