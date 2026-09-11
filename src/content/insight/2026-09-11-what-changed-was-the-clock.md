@@ -80,28 +80,3 @@ GTG-50020으로 분류된 러시아발 사례는 호텔 체인을 먼저 뚫은 
 1. [AI 오용 탐지 및 대응: 2026년 9월 — Anthropic 공식(1차, 2026-09-10)](https://www.anthropic.com/threat-intelligence-report-september-2026)
 2. [Hacker News 토론 스레드 — "Detecting and countering misuse of AI: September 2026"(커뮤니티 반응 참고용, 1차 출처 아님 · 점수·댓글수는 실시간 변동값, 2026-09-11 16:2x 확인 시 118pt·186comments)](https://news.ycombinator.com/item?id=49647300)
 3. [GTG-34007 절 — Anthropic 공식 원문(1차 출처, 동일 페이지) 내 이란 관련 사례 서술](https://www.anthropic.com/threat-intelligence-report-september-2026) — raw HTML 직접 확보(curl) 후 문자열 검색으로 재확인(2026-09-11 검수 과정).
-
-### X(트위터) 필수확인 20계정 확인 기록
-이번 주 리서치 단계에서 아래 20계정을 전부 확인했습니다(범위 2026-09-04~09-11). 이번 글의 소재(Anthropic 9월 위협 정보 보고서)에 직접 인용된 계정은 없어 전부 "조사했으나 미인용"으로 표기합니다.
-4. [@karpathy](https://x.com/karpathy) — LLM · 조사했으나 미인용
-5. [@steipete](https://x.com/steipete) — openclaw · 조사했으나 미인용
-6. [@gregisenberg](https://x.com/gregisenberg) — 스타트업 아이디어 · 조사했으나 미인용
-7. [@rileybrown](https://x.com/rileybrown) — 바이브코딩 · 조사했으나 미인용
-8. [@corbin_braun](https://x.com/corbin_braun) — Cursor · 조사했으나 미인용
-9. [@jackfriks](https://x.com/jackfriks) — 1인 앱 · 조사했으나 미인용
-10. [@levelsio](https://x.com/levelsio) — 1인 스타트업 · 조사했으나 미인용
-11. [@marclou](https://x.com/marclou) — 1인 스타트업 · 조사했으나 미인용
-12. [@EXM7777](https://x.com/EXM7777) — AI 운영·시스템 · 조사했으나 미인용
-13. [@eptwts](https://x.com/eptwts) — AI로 돈 벌기 · 조사했으나 미인용
-14. [@alex_prompter](https://x.com/alex_prompter) — 프롬프팅 · 조사했으나 미인용
-15. [@mardehaym](https://x.com/mardehaym) — 엔터프라이즈 AI · 조사했으나 미인용
-16. [@vasuman](https://x.com/vasuman) — AI 에이전트 · 조사했으나 미인용
-17. [@AmirMushich](https://x.com/AmirMushich) — AI 광고 · 조사했으나 미인용
-18. [@0xROAS](https://x.com/0xROAS) — AI UGC · 조사했으나 미인용
-19. [@AndrewYNg](https://x.com/AndrewYNg) — AI 엔지니어링 · 조사했으나 미인용
-20. [@kloss_xyz](https://x.com/kloss_xyz) — 시스템 아키텍처 · 조사했으나 미인용
-21. [@emollick](https://x.com/emollick) — AI 과학·연구 · 조사했으나 미인용
-22. [@Hesamation](https://x.com/Hesamation) — AI/ML · 조사했으나 미인용(이란 관련 언급은 확인했으나 본문 GTG-34007 서술은 1차 출처 직접 대조로 별도 확정함)
-23. [@claudeskills101](https://x.com/claudeskills101) — Claude 활용 · 조사했으나 미인용
-
-전수 확인 원장: `output/WaveAI/프로젝트/AI트렌드/2026-09-11/01_X계정20종_리서치_2026-09-11.md`(결 s532 독립재검증 반영 최종본, 2026-09-11 16:27).
