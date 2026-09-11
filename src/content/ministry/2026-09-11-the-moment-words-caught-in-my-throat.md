@@ -6,7 +6,7 @@ scripture: 사도행전 4:13-22
 pubDate: 2026-09-13T09:00:00+09:00
 author: ""
 tags: [신앙에세이, 사도행전, 증인, 은혜]
-draft: true
+draft: false
 sourcePath: output/WaveAI/프로젝트/신앙에세이/2026-09-11_37주차/신앙에세이_말이목에걸렸던순간_advisory-fix_2026-09-11.md
 heroImage:
   src: /images/ministry/hero_the-moment-words-caught_0913.png
