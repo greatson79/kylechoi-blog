@@ -3,7 +3,7 @@ title: "말이 목에 걸렸던 순간"
 description: "이번 주 설교를 준비하다가, 제 안에도 아직 넘지 못한 문턱이 있다는 걸 알았습니다."
 category: ministry
 scripture: 사도행전 4:13-22
-pubDate: 2026-09-13T09:00:00+09:00
+pubDate: 2026-09-11T21:16:00+09:00
 author: ""
 tags: [신앙에세이, 사도행전, 증인, 은혜]
 draft: false
