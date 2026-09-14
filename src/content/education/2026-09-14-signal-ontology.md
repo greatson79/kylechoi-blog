@@ -1,7 +1,7 @@
 ---
 title: "뉴스 30건을 읽어도 남는 게 없다면 — 신호를 구조로 읽는 법: 약한 신호에서 조기 경보까지"
 description: "하루 30건씩 모이는 신호가 다음 날이면 흐릿한 인상만 남기고 사라집니다. 목록을 관계망으로 바꾸는 틀을 실제 신호 사례로 풀어봤습니다."
-pubDate: 2026-09-15
+pubDate: 2026-09-14
 author: Kyle Choi
 category: 교육
 factChecked: true
