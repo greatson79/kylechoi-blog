@@ -146,7 +146,6 @@ function serializeFrontmatter(fm: NormalizedFrontmatter): string {
     lines.push(`  alt: ${serializeScalar(fm.heroImage.alt)}`);
   }
   lines.push(`draft: ${fm.draft}`);
-  lines.push(`sourcePath: ${serializeScalar(fm.sourcePath)}`);
   if (fm.disclaimerRequired !== undefined) {
     lines.push(`disclaimerRequired: ${fm.disclaimerRequired}`);
     lines.push(`notInvestmentAdvice: ${fm.notInvestmentAdvice ?? false}`);

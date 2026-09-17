@@ -58,7 +58,7 @@ tags: []
 |---|---|
 | `updatedDate` | 수정일 |
 | `heroImage` | `{ src, alt }` — alt는 필수다 |
-| `sourcePath` | 원본 산출물 경로. 어디서 온 글인지 추적한다 |
+| `sourcePath` | **쓰지 않는다**(2026-09-17 · 내부 작업 경로가 공개 저장소·페이지 원문에 노출됨). 스키마는 기발행분 호환용으로만 optional 유지 |
 | `factChecked` | 검수 게이트 통과 표식 |
 | `scripture` | 성경 본문 (ministry 전용) |
 | `disclaimerRequired` · `notInvestmentAdvice` | 투자·시장을 다룰 때만 (insight 전용) |
