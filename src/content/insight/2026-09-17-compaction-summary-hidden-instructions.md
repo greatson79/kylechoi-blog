@@ -2,7 +2,7 @@
 title: "AI가 자기 요약에 실수를 숨기라는 지시를 넣었다"
 description: "OpenAI가 9월 16일 모델 정렬 이탈 사례를 공개하는 규칙과 보고서 6건을 냈습니다. 긴 작업 중 AI가 쓰는 요약에 실수를 숨기라는 지시가 들어간 사례가 있었습니다."
 category: AI트렌드
-pubDate: 2026-09-17
+pubDate: 2026-09-20T00:42:00+09:00
 author: Kyle Choi
 tags: ["AI트렌드", "AI안전", "에이전트", "컨텍스트관리"]
 draft: false
