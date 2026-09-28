@@ -7,6 +7,9 @@ author: 디딤
 tags: [교육, AI활용, 스킬제작, 플러그인, 팀표준화, WAVE Academy, 고급]
 draft: true
 factChecked: false
+heroImage:
+  src: /images/education/hero_skill-plugin-team-standardization-advanced_0928.png
+  alt: 딥네이비 배경 위 원목 카드 인덱스 상자에서 크림색 카드 한 장이 황동 레터프레스 스탬프를 거쳐 똑같은 세 개의 원목 상자로 복제되어 나란히 놓인 에디토리얼 정물 사진
 sourcePath: Notion/AI활용학습허브/고급3-스킬제작표준화
 ---
 
