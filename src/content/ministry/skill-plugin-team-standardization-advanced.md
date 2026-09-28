@@ -14,7 +14,7 @@ sourcePath: Notion/AI활용학습허브/고급3-스킬제작표준화
 ---
 
 > 대상: 비개발 파워유저. **코딩 없이** 마크다운만으로 나만의 스킬을 만듭니다.
-> ⚠️ 스킬은 무료·Pro·Max·Team·Enterprise에서 사용 가능하며 **코드 실행(파일 생성) 기능이 켜져 있어야** 합니다. 대화 창 하나에서 채팅·리서치·문서 작업이 함께 처리되는 최신 클로드 환경(Haiku 4.5·Sonnet 5·Opus 5.5·Fable 5.1 등 어떤 모델을 쓰든)에서도 스킬 사용법은 동일합니다. 2026년 9월 기준.
+> ⚠️ 스킬은 무료·Pro·Max·Team·Enterprise에서 사용 가능하며 **코드 실행(파일 생성) 기능이 켜져 있어야** 합니다. 대화 창 하나에서 채팅·리서치·문서 작업이 함께 처리되는 최신 클로드 환경(경제형 Haiku 4.5부터 최고성능 Fable 5.1까지 4단계 요금제 어떤 모델을 쓰든)에서도 스킬 사용법은 동일합니다. 2026년 9월 기준.
 
 ## 0. 왜 스킬인가
 
@@ -67,7 +67,7 @@ description: 외부용 문서·발표자료에 우리 브랜드 톤·색·로고
 - 조합성: 스킬끼리 직접 호출은 못 하지만 클로드가 여러 스킬을 자동으로 함께 쓴다 — 이게 가장 강력.
 - 개방 표준(agentskills.io)을 따르면 다른 플랫폼에서도 동작.
 
-## 5. 플러그인 — 스킬·커넥터·서브에이전트 묶음
+## 5. 플러그인 — 스킬·커넥터 패키징
 
 **플러그인(Plugin)**은 **MCP 커넥터, 스킬, 또는 둘 다**를 역할·팀·회사에 맞게 한 패키지로 묶은 것(Claude Code에서는 서브에이전트도 함께 묶을 수 있습니다). `/` 또는 `+` 버튼 → 플러그인 확인 → Install. Anthropic이 제공하는 역할별 플러그인(영업·제품 등)이 있고, **클로드 마켓플레이스**에서 다른 개발자가 만든 플러그인을 찾아 쓸 수도 있습니다. 개발자용 제출 포털도 열려 있어, 내가 만든 스킬·커넥터 묶음을 심사받아 마켓플레이스에 올릴 수도 있습니다.
 
@@ -97,5 +97,6 @@ description: 외부용 문서·발표자료에 우리 브랜드 톤·색·로고
 - [Projects redesigned: from folder to conversation](https://claude.com/blog/projects-redesigned) — 프로젝트 개편 베타(2026-09-17)
 - [Build plugins for Claude](https://claude.com/blog/build-plugins-for-claude) — 플러그인 디렉토리·마켓플레이스(2026-09-25)
 - [How to create custom Skills](https://support.claude.com/en/articles/12512198-how-to-create-custom-skills) · [Use Skills in Claude](https://support.claude.com/en/articles/12512180-use-skills-in-claude) — 스킬 작성법·가용 플랜
+- [Claude Pricing](https://claude.com/pricing) — 모델·요금제(Haiku 4.5·Sonnet 5·Opus 5.5·Fable 5.1)
 
 ⓒ Wave AI Networks — 고급 AI 활용 학습 시리즈 (비개발 파워유저)
