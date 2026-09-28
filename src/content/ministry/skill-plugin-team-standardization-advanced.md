@@ -2,11 +2,11 @@
 title: "스킬 제작·플러그인·팀 표준화 — 코딩 없이 skill.md로 만드는 재사용 자산"
 description: "코딩 없이 마크다운 skill.md로 나만의 스킬을 만들고, 패키징·테스트·반복 개선을 거쳐 플러그인과 팀 표준화까지 확장하는 방법. WAVE Academy 고급 3편."
 category: 교육
-pubDate: 2026-08-10
+pubDate: 2026-09-28
 author: 디딤
 tags: [교육, AI활용, 스킬제작, 플러그인, 팀표준화, WAVE Academy, 고급]
-draft: true
-factChecked: false
+draft: false
+factChecked: true
 heroImage:
   src: /images/education/hero_skill-plugin-team-standardization-advanced_0928.png
   alt: 딥네이비 배경 위에 원목 카드 인덱스 상자 네 개가 나란히 놓여 있고, 왼쪽 열린 상자와 세 개의 서랍형 상자 각각에 크림색 카드가 꽂혀 있으며 중앙 뒤편에 황동 레터프레스 스탬프가 놓인 에디토리얼 정물 사진
@@ -14,7 +14,7 @@ sourcePath: Notion/AI활용학습허브/고급3-스킬제작표준화
 ---
 
 > 대상: 비개발 파워유저. **코딩 없이** 마크다운만으로 나만의 스킬을 만듭니다.
-> ⚠️ 스킬은 무료·Pro·Max·Team·Enterprise에서 사용 가능하며 **코드 실행(파일 생성) 기능이 켜져 있어야** 합니다. 대화 창 하나에서 채팅·리서치·문서 작업이 함께 처리되는 최신 클로드 환경(경제형 Haiku 4.5부터 최고성능 Fable 5.1까지 4단계 요금제 어떤 모델을 쓰든)에서도 스킬 사용법은 동일합니다. 2026년 9월 기준.
+> ⚠️ 스킬은 무료·Pro·Max·Team·Enterprise에서 사용 가능하며 **코드 실행(파일 생성) 기능이 켜져 있어야** 합니다. 대화 창 하나에서 채팅·리서치·문서 작업이 함께 처리되는 최신 클로드 환경에서도 스킬 사용법은 동일합니다. 2026년 9월 기준.
 
 ## 0. 왜 스킬인가
 
@@ -97,6 +97,5 @@ description: 외부용 문서·발표자료에 우리 브랜드 톤·색·로고
 - [Projects redesigned: from folder to conversation](https://claude.com/blog/projects-redesigned) — 프로젝트 개편 베타(2026-09-17)
 - [Build plugins for Claude](https://claude.com/blog/build-plugins-for-claude) — 플러그인 디렉토리·마켓플레이스(2026-09-25)
 - [How to create custom Skills](https://support.claude.com/en/articles/12512198-how-to-create-custom-skills) · [Use Skills in Claude](https://support.claude.com/en/articles/12512180-use-skills-in-claude) — 스킬 작성법·가용 플랜
-- [Claude Pricing](https://claude.com/pricing) — 모델·요금제(Haiku 4.5·Sonnet 5·Opus 5.5·Fable 5.1)
 
 ⓒ Wave AI Networks — 고급 AI 활용 학습 시리즈 (비개발 파워유저)
