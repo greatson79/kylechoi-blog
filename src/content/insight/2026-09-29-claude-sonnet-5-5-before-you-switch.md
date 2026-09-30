@@ -9,8 +9,8 @@ draft: false
 disclaimerRequired: false
 factChecked: true
 heroImage:
-  src: /images/ai-trend/hero_ai-trend_0929.png
-  alt: "크림색 바탕에 끌 세 자루가 나란히 서 있고 가운데 한 자루만 짙은 남색으로 새로 벼려져 빛난다 — 같은 자리의 도구가 새 판으로 나왔음을 나타낸다"
+  src: /images/ai-trend/hero_ai-trend_0929_c.png
+  alt: "어두운 청록빛 공간에 비스듬히 내려오는 빛줄기 속에 끌 한 자루가 떠 있고, 새로 벼린 날만 차갑게 빛난다"
 ---
 
 2026년 9월 28일(미국 발표 기준), Anthropic이 Claude Sonnet 5.5를 공개했습니다. 발표문은 Sonnet 5보다 30% 이상 빠르고, 대부분의 작업에서 최대 30% 낮은 비용으로 쓸 수 있다고 설명합니다. 여기서 가격표의 토큰 단가와 작업 하나를 끝내는 비용은 구분해야 합니다. Sonnet 5.5의 입력·출력 토큰 가격은 Sonnet 5와 같지만, 같은 일을 할 때 더 적은 토큰을 쓰는 경우가 많다는 것이 회사의 설명입니다.[^1][^4]
