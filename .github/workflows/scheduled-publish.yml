@@ -1,116 +1,86 @@
 name: Scheduled Publish
 
-# 예약발행 정식 배포 파이프라인 (2026-07-13, POC 실증 반영 견고화).
+# 예약발행 트리거 (2026-10-01 개정 — CLI 배포 → git push 연동 배포).
 #
-# ★로컬 launchd를 안 쓰는 이유(실측 근거): POC 1차 무인실행에서 vercel CLI가 fnm의 세션전용
-# 임시 심링크 PATH로만 해석돼 launchd 환경에서 "command not found"로 조용히 실패했다
-# (output/WaveAI/AI-Tech본부/_round/예약발행_POC_실측보고_2026-07-13.md §4). GitHub Actions
-# 컨테이너는 매 실행마다 Node/vercel을 새로 설치하므로 이 함정 자체가 구조적으로 없다.
-#
-# 콘텐츠 노출 게이트(pubDate<=now, 13개 getCollection 호출부·RSS 포함)는 이미 main에 있다
-# (커밋 ad4fe7d) — 이 워크플로는 "게이트를 통과한 콘텐츠를 실제로 세상에 내보내는" 배포만
-# 담당한다. 멱등이라 콘텐츠 변경이 없는 날 실행돼도 무해(동일 산출물 재배포).
+# ★개정 사유: 9/16 이후 vercel CLI 배포가 "Your Team exceeded our fair use limits and has been blocked."로
+# 34회 연속 실패했다. 같은 기간 git push 연동 배포(vercel[bot])는 정상(Production success)이었다.
+# 그래서 이 워크플로는 CLI를 쓰지 않는다 — "마지막 Production 배포 이후 pubDate가 지난 글"이 있을 때만
+# 빈 커밋을 main에 push해 Vercel git 연동 빌드를 깨운다(빌드 시점에 pubDate<=now 필터가 적용되므로).
+# 멱등: 마지막 배포 이후 새로 도래한 글이 없으면 아무것도 하지 않는다.
 
 on:
   schedule:
-    # 21:15 UTC = 06:15 KST(다음날) — 한국 오전 목표, 자정 UTC(00:00) 혼잡 시간대 회피,
-    # 매 시각 정각(:00/:30)도 GitHub 큐 혼잡 시간대라 비정각 분(:15)으로 배치.
-    #
-    # ★2026-07-13 실증 경과: 12:30 UTC 임시설정으로 발화 대기했으나 1시간+ 지연으로 세션 내
-    # 관측 불가(GitHub status=operational — 장애 아님, 신규 워크플로/저활동 리포의 schedule
-    # 지연은 GitHub 자체 문서화된 "best-effort" 특성). CEO 판정: dispatch run 29249442961로
-    # 무인 파이프라인 작동은 이미 실증됐으므로, 이 값을 정식 목표로 원복하고 "다음날 자연 발화
-    # 여부"를 사후 1회 확인하는 것으로 스케줄 실증을 완결한다(수동 발행은 그 확인 전까지 병행).
     - cron: '15 21 * * *'
-    # ★2차 발화 00:15 UTC = 09:15 KST — pubDate 는 z.coerce.date() 로 UTC 자정 파싱이라
-    #   pubDate: YYYY-MM-DD 인 글은 그날 00:00Z(= KST 09:00)가 지나야 pubDate<=now 를 통과한다.
-    #   21:15 UTC(= 다음날 06:15 KST) 발화는 그 시점보다 앞서서, 당일자 pubDate 글을 하루 늦게 집는다.
-    #   (실측 2026-09-08: pubDate 9/9·9/10 글이 로컬 빌드에서 라우트 미생성 · 9/8 글만 생성)
-    #   테오 결재 2026-09-08 19:1x — 당일 아침 발행을 위해 2차 cron 추가.
-    - cron: '15 0 * * *'
-  workflow_dispatch: {}  # 실증(수동 1회 발화)·긴급 재배포용
+    - cron: '15 0 * * *'   # pubDate 날짜-only = UTC 자정 → KST 09:00 직후 2차 발화
+  workflow_dispatch: {}
 
 permissions:
-  contents: read
-  issues: write  # 실패 시 이슈 생성용(아래 notify-on-failure)
+  contents: write   # 빈 커밋 push
+  issues: write     # 실패 시 이슈 생성
+  deployments: read
 
 concurrency:
   group: scheduled-publish
-  cancel-in-progress: false  # 겹쳐 실행되면 배포 순서가 꼬일 수 있어 대기시킨다(취소 안 함)
+  cancel-in-progress: false
 
 jobs:
-  deploy:
+  trigger:
     runs-on: ubuntu-latest
-    # ★codex R2 발견(2026-07-13): repo root가 이 워크플로 파일 기준 그대로다(로컬 클론 경로가
-    # 우연히 "wave-education/blog"일 뿐, repo 안에 "blog/" 서브디렉토리는 없음) —
-    # working-directory 지정 자체가 오류였다. 지정 없이 repo root 기준으로 실행한다.
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
         with:
-          node-version: '24'
+          ref: main
 
-      - name: Install deps
-        run: npm ci
-
-      - name: Build
-        run: npm run build
-
-      - name: Install Vercel CLI
-        # ★codex R2 권고: @latest는 예약실행 중 예고없는 브레이킹체인지 리스크 — 오늘 로컬
-        # 검증에 실제 쓰인 버전(POC 2차실행 로그)으로 고정.
-        run: npm install --global vercel@55.0.0
-
-      - name: Deploy to Vercel (production, with retry)
-        id: deploy
+      - name: Find posts that became due since last production deploy
+        id: due
         env:
-          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-          # ★agy 견고성검수 발견(2026-07-13): 로컬은 .vercel/project.json(gitignored, `vercel link`
-          # 결과)이 프로젝트를 알려주지만 CI 체크아웃엔 그 파일이 없어 토큰만으로는 어느
-          # 프로젝트에 배포할지 못 찾는다. org/project ID는 자격증명이 아니라 식별자라
-          # Repository Variables(비밀 아님)로 등록해 주입한다.
-          VERCEL_ORG_ID: ${{ vars.VERCEL_ORG_ID }}
-          VERCEL_PROJECT_ID: ${{ vars.VERCEL_PROJECT_ID }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 - <<'PY' >> "$GITHUB_OUTPUT"
+          import os,re,json,subprocess,datetime as dt
+          utc=dt.timezone.utc
+          now=dt.datetime.now(utc)
+          dep=json.loads(subprocess.check_output(['gh','api','repos/${{ github.repository }}/deployments?environment=Production&per_page=1']))
+          last=dt.datetime.fromisoformat(dep[0]['created_at'].replace('Z','+00:00'))
+          def pd(s):
+              s=s.strip().strip('"\'')
+              d=dt.datetime.fromisoformat(s.replace('Z','+00:00'))
+              return d if d.tzinfo else d.replace(tzinfo=utc)
+          due=[]
+          for dp,_,fs in os.walk('src/content'):
+              for f in fs:
+                  if f.startswith('_') or not f.endswith(('.md','.mdx')): continue
+                  m=re.match(r'^---\n(.*?)\n---',open(os.path.join(dp,f),encoding='utf-8').read(),re.S)
+                  if not m: continue
+                  fm=dict(re.findall(r'^([A-Za-z]+):\s*(.*)$',m.group(1),re.M))
+                  if fm.get('draft','true').strip()!='false' or 'pubDate' not in fm: continue
+                  if last < pd(fm['pubDate']) <= now: due.append(re.sub(r'\.mdx?$','',f))
+          print('due='+','.join(sorted(due)))
+          print('last_deploy='+last.isoformat())
+          PY
+
+      - name: Trigger Vercel git-integration build (empty commit)
+        if: steps.due.outputs.due != ''
+        run: |
+          git config user.name  "scheduled-publish[bot]"
+          git config user.email "scheduled-publish@users.noreply.github.com"
+          git commit --allow-empty -m "chore(deploy): scheduled publish trigger — ${{ steps.due.outputs.due }}"
+          git push origin HEAD:main
+
+      - name: Verify live (each due slug appears in sitemap)
+        if: steps.due.outputs.due != ''
         run: |
           set -uo pipefail
-          MAX_ATTEMPTS=3
-          for attempt in $(seq 1 "$MAX_ATTEMPTS"); do
-            echo "::group::배포 시도 ${attempt}/${MAX_ATTEMPTS}"
-            if vercel --prod --token="$VERCEL_TOKEN" --yes; then
-              echo "::endgroup::"
-              echo "배포 성공 (시도 ${attempt}회째)"
-              exit 0
-            fi
-            echo "::endgroup::"
-            echo "::warning::배포 시도 ${attempt} 실패"
-            if [ "$attempt" -lt "$MAX_ATTEMPTS" ]; then
-              sleep $((attempt * 15))
-            fi
+          for slug in $(echo "${{ steps.due.outputs.due }}" | tr ',' ' '); do
+            ok=0
+            for i in $(seq 1 16); do
+              if curl -s "https://kylechoi.com/sitemap-0.xml" | grep -q "$slug"; then ok=1; break; fi
+              sleep 15
+            done
+            [ "$ok" = 1 ] && echo "live: $slug" || { echo "::error::not live: $slug"; exit 1; }
           done
-          echo "::error::배포 ${MAX_ATTEMPTS}회 전부 실패"
-          exit 1
 
-      - name: Verify live (post-deploy HTTP check)
-        if: success()
-        run: |
-          set -uo pipefail
-          URL="https://kylechoi.com/"
-          for i in 1 2 3 4 5; do
-            CODE=$(curl -s -o /dev/null -w "%{http_code}" "$URL")
-            echo "확인 ${i}/5 — ${URL} = HTTP ${CODE}"
-            if [ "$CODE" = "200" ]; then
-              echo "verify 통과"
-              exit 0
-            fi
-            sleep 10
-          done
-          echo "::error::verify 실패 — ${URL} 이 5회 시도 후에도 200이 아님"
-          exit 1
-
-      - name: Notify on failure (GitHub Issue — 조용한 실패 차단)
+      - name: Notify on failure (GitHub Issue)
         if: failure()
         uses: actions/github-script@v7
         with:
@@ -124,8 +94,5 @@ jobs:
                 `워크플로 run: ${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`,
                 `트리거: ${context.eventName}`,
                 `시각(UTC): ${new Date().toISOString()}`,
-                '',
-                '재시도 3회(배포) 또는 verify 5회(HTTP 200 확인) 전부 실패했습니다.',
-                'GitHub 실패 이메일과 별개로, 조용한 실패를 막기 위해 이 이슈가 자동 생성됩니다.',
               ].join('\n'),
             })
