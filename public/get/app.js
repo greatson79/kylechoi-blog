@@ -1,33 +1,32 @@
 (() => {
   "use strict";
 
-  // S3의 steps.json이 배포 루트에 도착하면 원격 정본을 우선 사용합니다.
-  // 현재 S4 staging에는 S3 파일을 복제하지 않으므로 로컬 렌더용 fixture를 둡니다.
+  // 같은 폴더의 steps.json을 먼저 읽고, 못 읽을 때만 아래 기본 목록을 보여 줍니다.
   const fallbackSteps = {
     schema_version: "1.0",
     total: 10,
     steps: [
-      { id: 0, title: "OS·셸·디스크·권한 검사", command: "환경 검사", pass_conditions: ["지원 OS", "사용자 폴더 쓰기 가능"], failure_guidance: "OS_UNSUPPORTED 또는 PERMISSION_DENIED" },
-      { id: 1, title: "Claude Code 설치", command: "없으면 설치 · 낮으면 claude update", pass_conditions: ["Claude Code 2.1.278 이상"], failure_guidance: "설치 로그의 오류 ID를 확인하세요." },
-      { id: 2, title: "Claude 로그인", command: "설치 창에서 claude auth login", pass_conditions: ["유료 계정 인증 완료"], failure_guidance: "CLAUDE_LOGIN_REQUIRED" },
-      { id: 3, title: "Wave Terminal 내려받기·검증", command: "Release + 고정 SHA256 + codesign", pass_conditions: ["해시 일치", "codesign 통과"], failure_guidance: "CHECKSUM_MISMATCH 또는 CODESIGN_INVALID" },
-      { id: 4, title: "설치·cys 셸 연결", command: "사용자 폴더 설치", pass_conditions: ["cys 실행", "셸 연결"], failure_guidance: "SHELL_NOT_CONNECTED" },
-      { id: 5, title: "데몬 등록", command: "선택 · 기본 on", pass_conditions: ["데몬 상태 확인"], failure_guidance: "DAEMON_START_FAILED" },
-      { id: 6, title: "wave-pack 배치", command: "~/.cys/pack에 배치", pass_conditions: ["팩 파일 존재", "SHA256 확인"], failure_guidance: "PACK_DEPLOY_FAILED" },
-      { id: 7, title: "초기 편성 정의 확인", command: "마스터 + 부서 1", pass_conditions: ["좌석 수 2 확인 · roles.json 기준", "실제 기동 미검증"], failure_guidance: "ROSTER_START_FAILED" },
-      { id: 8, title: "확인 · 주입량 미측정(후속)", command: "cys identify", pass_conditions: ["cys identify 성공", "좌석 수 2 확인", "주입량 — 미측정(후속)"], failure_guidance: "VERIFY_FALSE_GREEN" },
-      { id: 9, title: "완료 화면", command: "START-HERE로 이동", pass_conditions: ["단계별 exit·시각·버전·예외 저장"], failure_guidance: "INSTALL_STATE_INCOMPLETE" }
+      { id: 0, title: "컴퓨터·저장 공간·권한 검사", command: "설치 창이 자동으로 진행합니다", pass_conditions: ["설치 창에 단계 완료가 표시됩니다"], failure_guidance: "화면 사진과 함께 문의해 주세요." },
+      { id: 1, title: "Claude Code 설치·버전 확인", command: "설치 창이 자동으로 진행합니다", pass_conditions: ["설치 창에 단계 완료가 표시됩니다"], failure_guidance: "화면 사진과 함께 문의해 주세요." },
+      { id: 2, title: "Claude 로그인(설치 창에서 진행)", command: "설치 창이 자동으로 진행합니다", pass_conditions: ["설치 창에 단계 완료가 표시됩니다"], failure_guidance: "화면 사진과 함께 문의해 주세요." },
+      { id: 3, title: "Wave Terminal 내려받기·지문 확인", command: "설치 창이 자동으로 진행합니다", pass_conditions: ["설치 창에 단계 완료가 표시됩니다"], failure_guidance: "화면 사진과 함께 문의해 주세요." },
+      { id: 4, title: "사용자 폴더에 설치·명령 연결", command: "설치 창이 자동으로 진행합니다", pass_conditions: ["설치 창에 단계 완료가 표시됩니다"], failure_guidance: "화면 사진과 함께 문의해 주세요." },
+      { id: 5, title: "지침 팩 설치·지문 확인", command: "설치 창이 자동으로 진행합니다", pass_conditions: ["설치 창에 단계 완료가 표시됩니다"], failure_guidance: "화면 사진과 함께 문의해 주세요." },
+      { id: 6, title: "백그라운드 서비스 등록", command: "설치 창이 자동으로 진행합니다", pass_conditions: ["설치 창에 단계 완료가 표시됩니다"], failure_guidance: "화면 사진과 함께 문의해 주세요." },
+      { id: 7, title: "세 칸(master·cso·worker) 자동으로 깨우기", command: "설치 창이 자동으로 진행합니다", pass_conditions: ["설치 창에 단계 완료가 표시됩니다"], failure_guidance: "화면 사진과 함께 문의해 주세요." },
+      { id: 8, title: "세 칸·지침 다시 확인", command: "설치 창이 자동으로 진행합니다", pass_conditions: ["설치 창에 단계 완료가 표시됩니다"], failure_guidance: "화면 사진과 함께 문의해 주세요." },
+      { id: 9, title: "마무리·안내", command: "설치 창이 자동으로 진행합니다", pass_conditions: ["설치 창에 단계 완료가 표시됩니다"], failure_guidance: "화면 사진과 함께 문의해 주세요." }
     ]
   };
 
   const commands = {
     mac: {
       label: "Mac · 터미널에 붙여넣기",
-      command: 'curl -fsSL https://github.com/greatson79/wave-install/releases/download/v0.2.3/bootstrap.sh -o \"$HOME/install-wave.sh\" && bash \"$HOME/install-wave.sh\"'
+      command: 'curl -fsSL https://waveainetworks.com/mac | bash'
     },
     windows: {
       label: "Windows · PowerShell에 붙여넣기",
-      command: 'powershell -NoProfile -ExecutionPolicy Bypass -Command "irm https://github.com/greatson79/wave-install/releases/download/v0.2.3/bootstrap.ps1 -OutFile ([Environment]::GetFolderPath(\'UserProfile\')+\'\\install-wave.ps1\'); powershell -NoProfile -ExecutionPolicy Bypass -File ([Environment]::GetFolderPath(\'UserProfile\')+\'\\install-wave.ps1\')"'
+      command: 'irm https://waveainetworks.com/win | iex'
     }
   };
 
@@ -152,8 +151,8 @@
       }
     }
     renderSteps(fallbackSteps);
-    sourceStatus.textContent = "S3 steps.json 대기 · 로컬 스키마 fixture 표시";
-    sourceStatus.dataset.source = "fixture";
+    sourceStatus.textContent = "단계 목록을 불러오지 못해 기본 목록을 보여 드립니다.";
+    sourceStatus.dataset.source = "default";
   }
 
   document.querySelectorAll(".os-tab").forEach((button) => {
