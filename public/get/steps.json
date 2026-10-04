@@ -1,46 +1,53 @@
 {
   "schema": "wave-install.steps.v1",
   "product": "Wave Terminal",
-  "version": "0.2.3",
+  "version": "0.3.0",
   "platforms": ["macos", "windows"],
   "release": {
-    "repository": "greatson79/wave-terminal",
-    "macos_version": "0.1.1",
-    "version": "0.1.0",
+    "repository": "greatson79/wave-install",
+    "macos_version": "0.2.0",
+    "version": "0.2.0",
     "asset_name": {
-      "macos_arm64": "wave-terminal-0.1.1-macos-arm64.dmg",
-      "macos_x64": "wave-terminal-0.1.1-macos-x64.dmg",
-      "windows_x64": "wave-terminal-0.1.0-windows-x64-setup.exe"
+      "macos_arm64": "wave-terminal-0.2.0-macos-arm64.dmg",
+      "macos_x64": "wave-terminal-0.2.0-macos-arm64.dmg",
+      "windows_x64": "wave-terminal-0.2.0-windows-x64-setup.exe"
     },
     "asset_url": {
-      "macos_arm64": "https://github.com/greatson79/wave-terminal/releases/download/v0.1.1/wave-terminal-0.1.1-macos-arm64.dmg",
-      "macos_x64": "https://github.com/greatson79/wave-terminal/releases/download/v0.1.1/wave-terminal-0.1.1-macos-x64.dmg",
-      "windows_x64": "https://github.com/greatson79/wave-terminal/releases/download/v0.1.0/wave-terminal-0.1.0-windows-x64-setup.exe"
+      "macos_arm64": "https://github.com/greatson79/wave-install/releases/download/v0.3.0-rc.4/wave-terminal-0.2.0-macos-arm64.dmg",
+      "macos_x64": "https://github.com/greatson79/wave-install/releases/download/v0.3.0-rc.4/wave-terminal-0.2.0-macos-arm64.dmg",
+      "windows_x64": "https://github.com/greatson79/wave-install/releases/download/v0.3.0-rc.4/wave-terminal-0.2.0-windows-x64-setup.exe"
     },
+    "bytes": {"windows_x64": 128895805},
     "sha256": {
-      "macos_arm64": "c46aac889c1dfb84827a580f83cb2098eceba30c85b98c961dd74cff6fc0cadc",
-      "macos_x64": "aaee7fb8745e16e02e64f95bb698e7695742e7db906fdf1a53c99d88134cbf48",
-      "windows_x64": "733a595c1270d62e9ca83e82cda143d8ec223985b857f648939541d20ba12fc3"
+      "macos_arm64": "599e406c4ba11e6f6de2eb4e03f87d7e786ddb0453e298ed0f16d4e08a3d7897",
+      "macos_x64": "599e406c4ba11e6f6de2eb4e03f87d7e786ddb0453e298ed0f16d4e08a3d7897",
+      "windows_x64": "f6ec20b05a96a68fc8202cb7af378efb88e977669d764607546c6e16cd014c99"
     },
-    "sha256sums_url": "https://github.com/greatson79/wave-terminal/releases/download/v0.1.0/SHA256SUMS",
-    "windows_sha256sums_url": "https://github.com/greatson79/wave-terminal/releases/download/v0.1.0/SHA256SUMS",
+    "sha256sums_url": "https://github.com/greatson79/wave-install/releases/download/v0.3.0-rc.4/SHA256SUMS",
+    "windows_sha256sums_url": "https://github.com/greatson79/wave-install/releases/download/v0.3.0-rc.4/SHA256SUMS",
     "windows_publisher_subject": "",
     "minisig_url": {
-      "macos_arm64": "https://github.com/greatson79/wave-terminal/releases/download/v0.1.0/wave-terminal-0.1.0-macos-arm64.dmg.minisig",
-      "macos_x64": "https://github.com/greatson79/wave-terminal/releases/download/v0.1.0/wave-terminal-0.1.0-macos-x64.dmg.minisig",
-      "windows_x64": "https://github.com/greatson79/wave-terminal/releases/download/v0.1.0/wave-terminal-0.1.0-windows-x64-setup.exe.minisig"
+      "macos_arm64": null,
+      "macos_x64": null,
+      "windows_x64": null
     },
     "minisign_public_key": "RWShBLhu6xe+AnzdLhOKUuXyZb6FPjuBSWG0s7SPacy3v9o4Qt8Y9mqI",
     "cdhash": {
-      "macos_arm64": "86bdbce54748b3fabeecd4cfa22a73648867e23d",
-      "macos_x64": "2bdc189e25310de485de8639412b96e9aa68280b"
+      "macos_arm64": "24fc341cd7c075bcca0526912550519fbf0b50a4",
+      "macos_x64": "24fc341cd7c075bcca0526912550519fbf0b50a4"
     }
+  },
+  "reinstall": {
+    "command": {
+      "macos": "curl -fsSL https://github.com/greatson79/wave-install/releases/download/v0.3.0/bootstrap.sh -o \"$HOME/install-wave.sh\" && bash \"$HOME/install-wave.sh\" --reinstall",
+      "windows": "powershell -NoProfile -ExecutionPolicy Bypass -Command \"irm https://github.com/greatson79/wave-install/releases/download/v0.3.0/bootstrap.ps1 -OutFile ([Environment]::GetFolderPath('UserProfile')+'\\install-wave.ps1'); powershell -NoProfile -ExecutionPolicy Bypass -File ([Environment]::GetFolderPath('UserProfile')+'\\install-wave.ps1') -Reinstall\""
+    },
+    "description": "설치 상태를 백업하고 처음부터 다시 실행합니다. 앱·팩·사용자 파일 전체 삭제는 하지 않습니다."
   },
   "tooling": {
     "claude_code_version": "2.1.278",
     "claude_code_min_version": "2.1.278",
-    "min_free_bytes": 5368709120,
-    "max_injected_bytes_per_seat": 20480
+    "min_free_bytes": 5368709120
   },
   "steps": [
     {
@@ -147,33 +154,13 @@
       "optional": false
     },
     {
-      "id": "S05_DAEMON_REGISTER",
+      "id": "S06_PACK_INSTALL",
       "index": 5,
       "total": 10,
-      "title": "데몬 등록(선택·기본 on)",
+      "title": "앱 원본 팩 설치·임베드 지침 지문 검증",
       "command": {
-        "macos": "launchctl bootstrap gui/$(id -u) ~/.wave/install/com.waveainetworks.cysd.plist && launchctl print gui/$(id -u)/com.waveainetworks.cysd",
-        "windows": "HKCU Run: WaveTerminal-cysd = quoted user cysd.exe path; read back exact value"
-      },
-      "pass": [
-        {"kind": "exit_code", "equals": 0},
-        {"kind": "file_exists", "path": "~/.wave/install/daemon-register-result"}
-      ],
-      "on_fail": {
-        "error_id": "WT-S05-DAEMON",
-        "message": "데몬 등록 결과를 확인하지 못했습니다. 선택을 해제했는지 또는 사용자 권한 오류인지 확인하세요.",
-        "next": "retry"
-      },
-      "optional": true
-    },
-    {
-      "id": "S06_PACK_INSTALL",
-      "index": 6,
-      "total": 10,
-      "title": "wave-pack 배치·manifest/SHA256 검증",
-      "command": {
-        "macos": "cp -R wave-pack/. ~/.cys/pack/ && (cd ~/.cys/pack && shasum -a 256 -c SHA256SUMS)",
-        "windows": "Copy-Item wave-pack\\* $env:USERPROFILE\\.cys\\pack -Recurse -Force; Get-FileHash .\\manifest.json -Algorithm SHA256"
+        "macos": "cys init-pack && cys pack-manifest (지침 SHA256 대조)",
+        "windows": "cys init-pack; cys pack-manifest (지침 SHA256 대조)"
       },
       "pass": [
         {"kind": "exit_code", "equals": 0},
@@ -188,22 +175,63 @@
       "optional": false
     },
     {
-      "id": "S07_INITIAL_FLEET",
-      "index": 7,
+      "id": "S05_DAEMON_REGISTER",
+      "index": 6,
       "total": 10,
-      "title": "초기 편성 정의 확인(마스터 1+부서 1 · 기동 미검증)",
+      "title": "데몬 등록·응답 확인(실패 시 이유 기록 후 계속)",
       "command": {
-        "macos": "~/.wave/bin/wave fleet bootstrap --roles-file ~/.cys/pack/roles.json",
-        "windows": "$env:USERPROFILE\\.wave\\bin\\wave.ps1 fleet bootstrap --roles-file $env:USERPROFILE\\.cys\\pack\\roles.json"
+        "macos": "cys daemon install; cys ping (최대 3회, 명령마다 시간 상한); 응답이 없으면 Wave Terminal 앱을 열어 데몬을 띄운 뒤 cys ping 재확인; 결과는 ~/.wave/install/daemon-register-result",
+        "windows": "cys daemon install; cys ping (최대 5회, 명령마다 시간 상한); 응답이 없으면 cysd.exe 직접 실행 후, 그래도 없으면 Wave Terminal 앱 실행 후 cys ping 재확인"
       },
       "pass": [
         {"kind": "exit_code", "equals": 0},
-        {"kind": "file_exists", "path": "~/.wave/fleet/initial-fleet.ok"},
-        {"kind": "count", "path": "~/.wave/fleet/status.json", "json_path": "seats", "equals": 2, "message": "좌석 수 2 확인 · roles.json 기준, 실제 기동 미검증"}
+        {"kind": "file_exists", "path": "~/.wave/install/daemon-register-result"}
+      ],
+      "on_fail": {
+        "error_id": "WT-S05-DAEMON",
+        "message": "데몬 등록(cys daemon install) 또는 응답(cys ping)을 확인하지 못했습니다. 이유를 기록하고 다음 단계로 계속합니다. 각성 단계에서 데몬을 다시 확인하며, 사용자 권한 오류인지 install.log 를 확인하세요.",
+        "next": "retry"
+      },
+      "optional": true
+    },
+    {
+      "id": "S07_INITIAL_FLEET",
+      "index": 7,
+      "total": 10,
+      "title": "자동 각성: master 표지·cso·worker 생존 확인(상한 7분)",
+      "command": {
+        "macos": "cys launch-agent --role master --agent claude; cys status --json",
+        "windows": "cys launch-agent --role master --agent claude; cys status --json"
+      },
+      "pass": [
+        {
+          "kind": "exit_code",
+          "equals": 0
+        },
+        {
+          "kind": "file_exists",
+          "path": "~/.cys/.master-bootstrapped"
+        },
+        {
+          "kind": "json_path",
+          "path": "~/.wave/install-state.json",
+          "json_path": "steps.S07_INITIAL_FLEET.observed.roles",
+          "equals": [
+            "master",
+            "cso",
+            "worker"
+          ]
+        },
+        {
+          "kind": "json_path",
+          "path": "~/.wave/install-state.json",
+          "json_path": "steps.S07_INITIAL_FLEET.observed.fleet_started",
+          "equals": true
+        }
       ],
       "on_fail": {
         "error_id": "WT-S07-FLEET",
-        "message": "roles.json 기준 마스터 1+부서 1 편성을 2석으로 확인하지 못했습니다.",
+        "message": "420초 안에 master 표지와 cso·worker 생존을 확인하지 못했습니다. 리뷰어는 기다리지 않습니다.",
         "next": "stop"
       },
       "optional": false
@@ -212,20 +240,32 @@
       "id": "S08_VERIFY",
       "index": 8,
       "total": 10,
-      "title": "identify·좌석 수 2 확인 · 주입량 미측정(후속)",
+      "title": "master·cso·worker 재확인 · 주입=팩 원본/.new 0",
       "command": {
-        "macos": "~/.wave/bin/cys identify && ~/.wave/bin/wave doctor --json",
-        "windows": "$env:USERPROFILE\\.wave\\bin\\cys.exe identify; $env:USERPROFILE\\.wave\\bin\\wave.ps1 doctor --json"
+        "macos": "cys status --json; master 부트 표지 대조",
+        "windows": "cys status --json; master 부트 표지 대조"
       },
       "pass": [
-        {"kind": "exit_code", "equals": 0},
-        {"kind": "json_path", "path": "~/.wave/verify/doctor.json", "json_path": "identify_exit", "equals": 0},
-        {"kind": "count", "path": "~/.wave/verify/doctor.json", "json_path": "seats", "equals": 2},
-        {"kind": "bytes_lte", "path": "~/.wave/verify/doctor.json", "json_path": "max_injected_bytes", "max": 20480, "message": "주입량 — 미측정(후속) · 측정 시 기준 20KB 이하"}
+        {
+          "kind": "exit_code",
+          "equals": 0
+        },
+        {
+          "kind": "json_path",
+          "path": "~/.wave/install-state.json",
+          "json_path": "steps.S08_VERIFY.observed.original_match",
+          "equals": true
+        },
+        {
+          "kind": "json_path",
+          "path": "~/.wave/install-state.json",
+          "json_path": "steps.S08_VERIFY.observed.new_file_count",
+          "equals": 0
+        }
       ],
       "on_fail": {
         "error_id": "WT-S08-VERIFY",
-        "message": "identify·좌석 수 확인 실패 또는 실측 주입량 초과 시 중단합니다. 주입량 미측정은 예외에 기록하고 진행합니다.",
+        "message": "주입 지침과 앱 원본 불일치 또는 .new 잔여는 실패입니다. 실제 주입 증거가 없으면 미측정으로 기록합니다.",
         "next": "stop"
       },
       "optional": false
