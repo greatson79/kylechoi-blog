@@ -5,7 +5,7 @@ category: AI트렌드
 pubDate: 2026-10-15
 author: Kyle Choi
 tags: ["AI 에이전트", "스킬", "AI 도구 선택"]
-draft: false
+draft: true
 factChecked: true
 heroImage:
   src: /images/ai-trend/choosing-skills-at-scale-1015-og.png
