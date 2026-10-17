@@ -1,6 +1,6 @@
 ---
 title: "AI 시대통찰 — Gemini 4 Argon 앱 도착, 챗봇에서 에이전트로 옮겨 가는 한 주 (10/11~10/16)"
-description: "2026년 10월 11일부터 16일까지(한국 시각) 나온 AI 소식을 정리했습니다. Gemini 앱에 Gemini 4 Argon과 tasks 토글이 들어왔고, Meta Muse Wonder, Anthropic의 에이전트 추적 도구, Grok Bot의 메일·결제 기능이 같은 주에 나왔습니다."
+description: "10월 11일부터 16일까지(한국 시각) AI 소식입니다. Gemini 앱에 Gemini 4 Argon의 tasks 토글이 들어왔고, Meta Muse Wonder, Anthropic의 에이전트 추적, Grok Bot의 메일·결제 기능이 같은 주에 나왔습니다."
 category: "시대분석"
 pubDate: 2026-10-17T09:49:00+09:00
 author: "Kyle Choi"
