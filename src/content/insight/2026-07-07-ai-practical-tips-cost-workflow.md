@@ -3,7 +3,7 @@ title: "AI 실전팁 — 캐싱으로 비용 90% 줄이고, 회의록까지 자�
 description: "프롬프트 캐싱 90% 할인, 배치 API 50% 할인, 컨텍스트 로트 회피부터 Claude+NotebookLM 세컨드 브레인 조합, AI 회의록 도구 채택률 75%까지 — 2026년 실무에서 검증된 AI 활용 실전팁 5가지."
 category: AI트렌드
 pubDate: 2026-07-07
-author: 디딤
+author: "최종학 | Kyle Choi"
 tags: [AI트렌드, 실전팁, 프롬프트캐싱, 컨텍스트엔지니어링, 생산성, Claude, NotebookLM]
 draft: false
 disclaimerRequired: false

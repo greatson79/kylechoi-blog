@@ -4,7 +4,7 @@ description: "Fable 5 프로모션이 끝나도 방법은 있다. Anthropic 공�
 category: 교육
 pubDate: 2026-07-02
 updatedDate: 2026-07-02
-author: Kyle Choi
+author: "최종학 | Kyle Choi"
 tags: [교육, AI활용, Claude, 시스템프롬프트, Opus48, Fable5, 실전팁]
 draft: false
 heroImage:

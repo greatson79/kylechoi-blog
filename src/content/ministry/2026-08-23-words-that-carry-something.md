@@ -4,7 +4,7 @@ description: "누군가 힘들다고 할 때 우리는 기도할게요, 라고 �
 category: ministry
 scripture: 야고보서 2:14-17
 pubDate: 2026-08-22T00:00:00+09:00
-author: 디딤
+author: "최종학 | Kyle Choi"
 tags: [신앙에세이, 야고보서, 믿음, 행함, 복음, 디딤교회]
 draft: false
 heroImage:

@@ -4,7 +4,7 @@ description: 요한복음 12:24-26을 통해, 자기를 지키려 할수록 더 
 category: ministry
 scripture: 요한복음 12:24-26
 pubDate: 2026-06-28
-author: 디딤
+author: "최종학 | Kyle Choi"
 tags: [설교, 요한복음, 섬김, 십자가]
 draft: false
 sourcePath: output/6월/4주차/설교/5_원고.md

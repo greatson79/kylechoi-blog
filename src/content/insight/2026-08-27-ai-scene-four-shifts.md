@@ -3,7 +3,7 @@ title: "2026년 8월, AI 씬에서 놓치면 안 되는 4가지"
 description: "2026년 8월 AI 씬을 가른 네 가지 사건 — 모델 출시 속도, EU AI Act 투명성 규제 시행, Anthropic의 워터마크 대응, AI 에이전트의 인프라화 흐름을 정리했습니다."
 category: AI트렌드
 pubDate: 2026-08-27
-author: 디딤
+author: "최종학 | Kyle Choi"
 tags: ["AI트렌드", "AI모델", "AI규제", "AI에이전트"]
 draft: false
 disclaimerRequired: false

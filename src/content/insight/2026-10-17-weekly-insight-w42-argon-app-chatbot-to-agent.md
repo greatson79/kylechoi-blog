@@ -3,7 +3,7 @@ title: "AI 시대통찰 — Gemini 4 Argon 앱 도착, 챗봇에서 에이전트
 description: "10월 11일부터 16일까지(한국 시각) AI 소식입니다. Gemini 앱에 Gemini 4 Argon의 tasks 토글이 들어왔고, Meta Muse Wonder, Anthropic의 에이전트 추적, Grok Bot의 메일·결제 기능이 같은 주에 나왔습니다."
 category: "시대분석"
 pubDate: 2026-10-17T09:49:00+09:00
-author: "Kyle Choi"
+author: "최종학 | Kyle Choi"
 tags: ["시대분석", "시대통찰", "주간", "AI뉴스", "AI에이전트"]
 draft: false
 disclaimerRequired: false

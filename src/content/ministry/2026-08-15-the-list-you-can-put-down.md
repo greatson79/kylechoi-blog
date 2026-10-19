@@ -4,7 +4,7 @@ description: 이 정도 하면 되겠지, 하고 우리는 목록을 셉니다. 
 category: ministry
 scripture: 미가 6:6-8
 pubDate: 2026-08-15
-author: 디딤
+author: "최종학 | Kyle Choi"
 tags: [신앙에세이, 미가서, 은혜, 복음, 디딤교회]
 draft: false
 heroImage:

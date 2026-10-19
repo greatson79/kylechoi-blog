@@ -3,7 +3,7 @@ title: "AI트렌드 — Claude Code에 나만의 스킬 만드는 법"
 description: "구글 클라우드 보고서가 보여준 에이전트 자동화 효과, 그리고 Claude Code SKILL.md로 반복 업무를 직접 스킬로 만드는 실전 절차."
 category: AI트렌드
 pubDate: 2026-08-20
-author: 디딤
+author: "최종학 | Kyle Choi"
 tags: [AI트렌드, ClaudeCode, Skills, 업무자동화, 에이전트]
 draft: false
 disclaimerRequired: false

@@ -3,7 +3,7 @@ title: "AI가 160년 된 수학 난제를 25%p 밀어냈다 — 그런데 놀라
 description: "2026년 8월 10일 Anthropic이 공개한 리만 제타 함수 하한 개선. 41.6% → 67.2%. 정작 눈여겨볼 것은 결과가 아니라 그 결과가 나온 방식과, 회사가 스스로 붙인 단서들이다."
 category: AI트렌드
 pubDate: 2026-08-13
-author: Kyle Choi
+author: "최종학 | Kyle Choi"
 tags: ["AI트렌드", "AI에이전트", "서브에이전트", "AI수학", "리만가설", "AI검증", "Anthropic"]
 draft: false
 disclaimerRequired: false

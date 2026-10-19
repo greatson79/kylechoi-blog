@@ -3,7 +3,7 @@ title: "자동화·에이전트 워크플로우 — 커넥터·스케줄·서브
 description: "코딩 없이 클로드의 커넥터·멀티스텝 설계·스케줄·외부 메모리·서브에이전트로 반복 업무를 자동화하는 방법. WAVE Academy 고급 2편."
 category: 교육
 pubDate: 2026-08-04
-author: 디딤
+author: "최종학 | Kyle Choi"
 tags: [교육, AI활용, 자동화, 에이전트워크플로우, WAVE Academy, 고급]
 draft: false
 factChecked: true

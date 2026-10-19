@@ -3,7 +3,7 @@ title: "결론을 먼저 말하고 물었을 때"
 description: "내 결론을 함께 적어 AI에게 물으면 답은 어디서 시작할까요? 같은 안건을 두 방향으로 직접 물어 본 기록과, 결정 전에 반대편을 한 번 시켜 보는 습관을 적었습니다."
 category: 교육
 pubDate: 2026-10-13
-author: 디딤
+author: "최종학 | Kyle Choi"
 tags: [교육, AI활용, 업무설계, 판단, 사고력]
 draft: false
 factChecked: true

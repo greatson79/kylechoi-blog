@@ -3,7 +3,7 @@ title: "한 사용자가 Claude 클라우드 세션을 상시 워커로 바꾼 �
 description: "Claude Code 클라우드 세션(연구 프리뷰)을 일회성 데모가 아니라 상시 백그라운드 워커로 재구성한 한 사용자의 사례. 공식 문서로 확인한 사실관계와 함께 정리한다."
 category: AI트렌드
 pubDate: 2026-07-14
-author: 디딤
+author: "최종학 | Kyle Choi"
 tags: [AI트렌드, 실전팁, Claude, ClaudeCode, Anthropic, 클라우드세션]
 draft: false
 disclaimerRequired: false

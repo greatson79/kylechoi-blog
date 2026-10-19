@@ -4,7 +4,7 @@ description: "Claude Sonnet 5의 숨은 토큰 비용, OpenAI 에이전트 위�
 category: AI트렌드
 pubDate: 2026-07-02
 updatedDate: 2026-07-02
-author: Kyle Choi
+author: "최종학 | Kyle Choi"
 tags: [AI트렌드, Claude, Sonnet 5, OpenAI, 에이전트, MCP, GPT-5, 실전팁]
 draft: false
 disclaimerRequired: false

@@ -3,7 +3,7 @@ title: "이번 보고서에서 새로 쓰인 것은 사례 숫자가 아니라 �
 description: "Anthropic이 9월 위협 정보 보고서에서 공개한 사건들을 1차 출처로 짚었습니다. 러시아 첩보 작전부터 34시간 만에 벌어진 대규모 탈취까지, 벤더가 스스로 적어 둔 '비용 역전'이라는 문장이 무엇을 뜻하는지 정리했습니다."
 category: AI트렌드
 pubDate: 2026-09-11
-author: Kyle Choi
+author: "최종학 | Kyle Choi"
 tags: ["AI트렌드", "AI안전", "사이버보안", "위협인텔리전스"]
 draft: false
 disclaimerRequired: false

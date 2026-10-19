@@ -3,7 +3,7 @@ title: "AI트렌드 — 모델이 하네스를 먹는다? 오픈AI·구글발 '�
 description: "노엄 브라운 오픈AI 리서치 부사장이 서울 ICML 2026에서 '차세대 모델이 하네스 대부분을 쓸모없게 만들 것'이라 말했다. 구글의 12개월 소멸론, '하네스는 오히려 커졌다'는 반론과 +14.5% 실증 데이터까지 양쪽을 검증했다."
 category: AI트렌드
 pubDate: 2026-07-13
-author: 디딤
+author: "최종학 | Kyle Choi"
 tags: [AI트렌드, 하네스, 에이전트, 스캐폴딩, OpenAI, Google, ICML]
 draft: true
 disclaimerRequired: false

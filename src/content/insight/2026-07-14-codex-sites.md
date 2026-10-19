@@ -3,7 +3,7 @@ title: "Codex Sites — @Sites 한 줄로 사내 대시보드를 만들고 프�
 description: "GPT-5.6 세대 Codex에서 쓸 수 있는 'Sites' 플러그인이 무엇인지, @Sites 명령으로 어떻게 생성·승인·배포하는지, 어떤 제약이 있는지 공식 문서와 리서치본부 검증 자료를 근거로 정리한다."
 category: AI트렌드
 pubDate: 2026-07-14
-author: 디딤
+author: "최종학 | Kyle Choi"
 tags: [AI트렌드, 실전팁, Codex, OpenAI, ChatGPT, Sites, GPT-5.6]
 draft: false
 disclaimerRequired: false

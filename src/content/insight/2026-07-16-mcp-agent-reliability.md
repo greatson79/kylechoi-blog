@@ -4,7 +4,7 @@ description: "7월 13일 arXiv에 동시에 오른 세 논문(MCP 보안, SOP �
 category: AI트렌드
 pubDate: 2026-07-16
 updatedDate: 2026-07-16
-author: Kyle Choi
+author: "최종학 | Kyle Choi"
 tags: [AI트렌드, MCP, 에이전트, 보안, arXiv, 리서치, 거버넌스]
 draft: false
 disclaimerRequired: false

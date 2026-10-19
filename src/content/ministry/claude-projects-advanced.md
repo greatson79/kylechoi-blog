@@ -3,7 +3,7 @@ title: "클로드 프로젝트 고급 활용 — 지식 큐레이션·RAG·스�
 description: "프로젝트를 하나의 운영 시스템으로 다루는 법. 지식 베이스 큐레이션, RAG 작동 원리, 지시 고도화, 스킬과의 조합, 다중 프로젝트 운영까지. WAVE Academy 중급 3편."
 category: 교육
 pubDate: 2026-07-07
-author: 디딤
+author: "최종학 | Kyle Choi"
 tags: [교육, AI활용, 클로드프로젝트, RAG, WAVE Academy, 중급]
 draft: false
 factChecked: false

@@ -3,7 +3,7 @@ title: "클로드 프로젝트 설정과 사용법"
 description: "2번에서 배운 '맥락'을 매번 다시 쓰지 않도록 저장하는 도구, 클로드 프로젝트. 만들기·지식 추가·프로젝트 지시 작성법과 실전 시나리오, 실습 미션까지. WAVE Academy 초급 3편."
 category: 교육
 pubDate: 2026-07-01
-author: 디딤
+author: "최종학 | Kyle Choi"
 tags: [교육, AI활용, 클로드프로젝트, WAVE Academy, 초급]
 draft: false
 factChecked: false

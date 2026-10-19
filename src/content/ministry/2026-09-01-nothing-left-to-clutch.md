@@ -4,7 +4,7 @@ description: "여행 간 이웃의 화분을 맡아 키우다 보면 어느 순�
 category: ministry
 scripture: 사도행전 20:28-35
 pubDate: 2026-09-01T09:00:00+09:00
-author: 디딤
+author: "최종학 | Kyle Choi"
 tags: [신앙에세이, 사도행전, 섬김, 은혜, 복음, 디딤교회]
 draft: false
 heroImage:

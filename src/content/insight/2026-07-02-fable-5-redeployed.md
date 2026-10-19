@@ -4,7 +4,7 @@ description: "19일간 중단됐던 Claude Fable 5가 7월 1일 새 사이버보
 category: AI트렌드
 pubDate: 2026-07-02
 updatedDate: 2026-07-02
-author: Kyle Choi
+author: "최종학 | Kyle Choi"
 tags: [AI트렌드, Claude, Fable5, Sonnet5, Anthropic, 수출통제, 실전팁]
 draft: false
 disclaimerRequired: false

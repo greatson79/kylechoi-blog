@@ -3,7 +3,7 @@ title: "AI 시대통찰 — 멈춤과 맡김, 점수와 체감 사이의 한 주
 description: "2026년 9월 26일부터 10월 2일까지 공개된 AI 소식과 반응을 정리했습니다. 안전 대응, 업무 위임, 성능 평가와 실제 사용 사이의 간격을 살펴봅니다."
 category: "시대분석"
 pubDate: 2026-10-03T03:53:00+09:00
-author: "Kyle Choi"
+author: "최종학 | Kyle Choi"
 tags: ["시대분석", "시대통찰", "주간", "AI뉴스", "AI안전"]
 draft: false
 disclaimerRequired: false

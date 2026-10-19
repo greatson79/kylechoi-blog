@@ -3,7 +3,7 @@ title: 오늘의 5대 시대정신 — 기후·AI·지정학·인도주의·학�
 description: 2026년 6월 26일 환경스캐닝이 포착한 다섯 갈래 시대 흐름. 유럽 폭염부터 칩플레이션, 베네수엘라 지진, 에이전트 AI까지. 정보 제공용 시대분석이며 투자자문이 아니다.
 category: 시대분석
 pubDate: 2026-06-26
-author: 디딤
+author: "최종학 | Kyle Choi"
 tags: [시대분석, 시대흐름, 기후, AI, 지정학, 인도주의]
 draft: false
 disclaimerRequired: true

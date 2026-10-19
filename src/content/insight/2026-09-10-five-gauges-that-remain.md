@@ -2,7 +2,7 @@
 title: "AI 소식을 읽는 다섯 개의 눈금 — 목록이 바뀌어도 남는 것"
 description: "소식은 다음 달이면 갈아엎게 되지만 읽는 눈금은 남습니다. 문이 열렸는지, 발표의 동사가 무엇인지, 숫자를 무엇으로 쟀는지 다섯 자리를 1차 출처와 함께 정리했습니다."
 pubDate: 2026-09-10
-author: Kyle Choi
+author: "최종학 | Kyle Choi"
 category: AI트렌드
 factChecked: true
 draft: false

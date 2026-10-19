@@ -3,7 +3,7 @@ title: "하네스 엔지니어링 — 2026년의 질문은 '어떤 AI가 똑똑�
 description: "프롬프트(2023) → 컨텍스트(2024-25) → 하네스(2026). AI를 똑똑하게 만드는 대신 실패를 구조적으로 불가능하게 만드는 설계가 2026년의 중심이 됐다."
 category: AI트렌드
 pubDate: 2026-08-10
-author: Kyle Choi
+author: "최종학 | Kyle Choi"
 tags: ["AI트렌드", "하네스엔지니어링", "AI에이전트", "에이전트설계", "AI거버넌스", "검증", "워크플로우"]
 draft: true
 disclaimerRequired: false

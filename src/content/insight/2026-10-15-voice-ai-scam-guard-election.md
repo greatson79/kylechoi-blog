@@ -3,7 +3,7 @@ title: "값은 그대로인 새 음성 AI, 사기 문자를 걸러 줄 AI"
 description: "xAI가 이전 판과 같은 가격이라고 밝힌 음성 모델 Grok Voice 3.0, 앞으로 몇 주에 걸쳐 배포될 Google 메시지 사기 방지 모드, 미국 중간선거를 앞둔 Anthropic의 발표를 10월 14일(미국 시각) 소식으로 정리했습니다."
 category: AI트렌드
 pubDate: 2026-10-15
-author: Kyle Choi
+author: "최종학 | Kyle Choi"
 tags: ["AI트렌드", "음성 AI", "스마트폰 보안", "생성형 AI"]
 draft: false
 disclaimerRequired: false

@@ -4,7 +4,7 @@ description: "명절을 보내고 돌아온 자리에서 붙든 질문 하나가
 category: ministry
 scripture: 고린도후서 5:18-20
 pubDate: 2026-09-28T14:01:43+09:00
-author: ""
+author: "최종학 | Kyle Choi"
 tags: [신앙에세이, 고린도후서, 화목, 은혜]
 draft: false
 heroImage:

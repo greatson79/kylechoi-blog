@@ -3,7 +3,7 @@ title: "Codex Sites 실전 입문 ①: 개념부터 첫 제작 프롬프트까�
 description: "Codex Sites는 \"이런 사이트를 만들어줘\"라고 말하면 ChatGPT가 요구사항 정리부터 제작·미리보기·수정·배포까지 이어주는 기능입니다."
 category: 교육
 pubDate: 2026-07-27
-author: 디딤
+author: "최종학 | Kyle Choi"
 tags: [Codex Sites, ChatGPT, AI교육, WAVE Academy, 웹사이트 제작]
 draft: false
 factChecked: true

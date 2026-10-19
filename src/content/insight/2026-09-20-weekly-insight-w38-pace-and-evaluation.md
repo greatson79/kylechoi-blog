@@ -3,7 +3,7 @@ title: "AI 시대통찰 — 속도 조절 논쟁, 외부 평가 파트너십이 
 description: "AI 개발 속도를 늦추자는 논쟁이 측정과 외부 평가로 옮겨 갔습니다. 2026년 9월 38주차 AI 소식 13항목을 5개 절로 정리했습니다."
 category: 시대분석
 pubDate: 2026-09-20T02:29:35+09:00
-author: Kyle Choi
+author: "최종학 | Kyle Choi"
 tags: ["시대분석", "시대통찰", "주간", "AI뉴스", "AI모델"]
 draft: false
 disclaimerRequired: false

@@ -4,7 +4,7 @@ description: "이번 주 설교를 준비하다가, 제 안에도 아직 넘지 
 category: ministry
 scripture: 사도행전 4:13-22
 pubDate: 2026-09-11T21:16:00+09:00
-author: ""
+author: "최종학 | Kyle Choi"
 tags: [신앙에세이, 사도행전, 증인, 은혜]
 draft: false
 sourcePath: output/WaveAI/프로젝트/신앙에세이/2026-09-11_37주차/신앙에세이_말이목에걸렸던순간_advisory-fix_2026-09-11.md

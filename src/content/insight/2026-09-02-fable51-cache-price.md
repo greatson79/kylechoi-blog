@@ -3,7 +3,7 @@ title: "Claude Fable 5.1, 성능보다 캐시 값이 뉴스다"
 description: "Claude Fable 5.1은 기본가는 그대로지만 캐시 읽기 단가만 내려가 캐시를 반복해서 맞히는 워크로드의 비용이 줄었습니다. 벤치마크는 축마다 오른 폭이 다르고, OpenAI·Anthropic이 같은 날 사이버보안 경계 수위를 올린 배경까지 1차 출처로 정리했습니다."
 category: AI트렌드
 pubDate: 2026-09-02
-author: 디딤
+author: "최종학 | Kyle Choi"
 tags: ["AI트렌드", "AI가격", "Claude", "AI안전"]
 draft: false
 disclaimerRequired: false

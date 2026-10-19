@@ -3,7 +3,7 @@ title: 이번 주 시대흐름 — 전력망·표준·다극 배관, 세 가지 
 description: 2026년 6월 넷째 주 환경스캐닝이 포착한 세 가지 시대 흐름 — 전력망 병목, 거버넌스의 표준 전환, 세계 질서의 조용한 재배관. 정보 제공용 시대분석.
 category: 시대분석
 pubDate: 2026-06-25
-author: 디딤
+author: "최종학 | Kyle Choi"
 tags: [시대분석, 시대흐름, 에너지, AI, 거버넌스, 지정학]
 draft: false
 disclaimerRequired: true

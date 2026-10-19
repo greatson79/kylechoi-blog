@@ -3,7 +3,7 @@ title: 반도체가 주권의 언어가 되고, AI는 대신 일하는 주체가
 description: 2026년 7월 둘째 주의 시대 흐름. 반도체가 산업의 언어에서 주권의 언어로 넘어가고, AI는 답하는 도구에서 대신 일하는 주체로 문지방을 넘었다. 그 첨단 경쟁의 그늘에서 가장 약한 고리들이 무너진다. 정보 제공용 시대분석이며 투자자문이 아니다.
 category: 시대분석
 pubDate: 2026-07-11
-author: 디딤
+author: "최종학 | Kyle Choi"
 tags: [시대분석, 시대통찰, 주간, 반도체, AI에이전트, 지정학, 인도주의]
 draft: false
 disclaimerRequired: true

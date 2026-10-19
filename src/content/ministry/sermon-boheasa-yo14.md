@@ -4,7 +4,7 @@ description: 요한복음 14:15-27, 보혜사 파라클레토스. 고아의 두�
 category: ministry
 scripture: 요한복음 14:15-27
 pubDate: 2026-06-21
-author: 디딤
+author: "최종학 | Kyle Choi"
 tags: [설교, 요한복음, 성령, 보혜사, 위로]
 draft: false
 sourcePath: output/6월/보혜사_요14/blog_보혜사_요14.md

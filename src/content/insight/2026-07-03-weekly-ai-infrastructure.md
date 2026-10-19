@@ -3,7 +3,7 @@ title: 인프라가 된 AI, 전선을 당기다 — 호남에서 영남으로, �
 description: 한 주간 환경스캐닝이 포착한 시대 흐름. AI가 반도체·전력·자본을 빨아들이는 인프라가 되고, 그 수요가 전력망과 증시, 국제정세를 동시에 흔들었다. 정보 제공용 시대분석이며 투자자문이 아니다.
 category: 시대분석
 pubDate: 2026-07-03
-author: 디딤
+author: "최종학 | Kyle Choi"
 tags: [시대분석, 시대통찰, 주간, AI, 전력망, 반도체, 증시, 지정학]
 draft: false
 disclaimerRequired: true

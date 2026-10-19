@@ -4,7 +4,7 @@ description: "지난주 설교를 준비하다가, 제가 한 일을 너무 정�
 category: ministry
 scripture: 마태복음 25:31-46
 pubDate: 2026-09-21T19:43:01+09:00
-author: ""
+author: "최종학 | Kyle Choi"
 tags: [신앙에세이, 마태복음, 은혜, 섬김]
 draft: false
 heroImage:

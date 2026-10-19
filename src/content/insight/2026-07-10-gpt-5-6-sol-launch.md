@@ -3,7 +3,7 @@ title: "GPT-5.6 Sol 출시: AI는 이제 답변이 아니라 결과물을 만든
 description: "OpenAI가 7월 9일 공개한 GPT-5.6 Sol·Terra·Luna — 실제 벤치마크와 Programmatic Tool Calling·Multi-agent 기능으로 보는 AI의 다음 단계, '대화 상대'에서 '작업 실행자'로의 전환을 정리했다."
 category: AI트렌드
 pubDate: 2026-07-10
-author: Kyle Choi
+author: "최종학 | Kyle Choi"
 tags: [AI트렌드, GPT-5.6, OpenAI, 에이전트, 벤치마크, Sol]
 draft: false
 disclaimerRequired: false

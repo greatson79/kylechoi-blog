@@ -3,7 +3,7 @@ title: "청구서가 도착한 주 — 15기가와트의 계획과 7,500억의 �
 description: "2026년 30주차 시대 흐름. AI 인프라의 전력·물 비용, 자동화 통제 위험, 비확산 기준선 이동과 한국의 복합 스트레스를 1,094개 신호로 읽습니다."
 category: 시대분석
 pubDate: 2026-07-25
-author: Kyle Choi
+author: "최종학 | Kyle Choi"
 tags: [시대분석, 시대통찰, 주간, AI인프라, AI보안, 비확산, 한국경제, 기후]
 draft: false
 disclaimerRequired: true

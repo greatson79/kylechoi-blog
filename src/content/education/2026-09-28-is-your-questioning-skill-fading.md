@@ -3,7 +3,7 @@ title: "질문하는 능력이 무뎌지고 있을까"
 description: "AI의 답을 검토하기에 앞서, 무엇을 물을지 먼저 정하는 습관을 돌아봅니다."
 category: 교육
 pubDate: 2026-09-28
-author: 디딤
+author: "최종학 | Kyle Choi"
 tags: [교육, AI활용, 업무설계, 판단, 사고력]
 draft: false
 factChecked: true

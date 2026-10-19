@@ -3,7 +3,7 @@ title: "토큰 단가 20배 차이, 가벼운 사무 일에선 결과가 비슷�
 description: "Claude Opus 5.5·GPT-6 Sol·Luna·Grok 4.7의 발표 내용과 사용 경로, 가격, 간단한 비교 실험을 살펴봅니다."
 category: AI트렌드
 pubDate: 2026-09-23
-author: Kyle Choi
+author: "최종학 | Kyle Choi"
 tags: ["AI트렌드", "생성형 AI", "모델 비교", "업무 자동화"]
 draft: false
 disclaimerRequired: false

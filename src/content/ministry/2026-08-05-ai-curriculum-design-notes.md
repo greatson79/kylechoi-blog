@@ -3,7 +3,7 @@ title: "AI 교육 커리큘럼을 2시간 블록으로 다시 짠 이유"
 description: "조직 컨설팅과 개인 과정을 한 커리로 묶으면서 시간 단위·완결 구조·공통 코어를 어떻게 정했는지, 설계 과정에서 실제로 걸렸던 지점들을 남긴 기록."
 category: 교육
 pubDate: 2026-08-05
-author: Kyle Choi
+author: "최종학 | Kyle Choi"
 tags: [교육, AI교육, 커리큘럼설계, 교육컨설팅, 웨이브아카데미]
 draft: true
 sourcePath: output/WaveAI/Edu본부/_round/트랙구성_주인님보고_v1.3_2026-08-05.md

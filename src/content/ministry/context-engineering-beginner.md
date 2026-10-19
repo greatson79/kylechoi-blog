@@ -3,7 +3,7 @@ title: "컨텍스트 엔지니어링 — AI의 '책상 전체'를 설계하는 �
 description: "좋은 답은 좋은 질문에서 끝나지 않고 좋은 맥락에서 완성됩니다. 맥락의 5가지 재료(배·참·예·규·정), 넣을 것과 뺄 것, 실전 도구 3가지와 Before/After 예시. WAVE Academy 초급 2편."
 category: 교육
 pubDate: 2026-06-30
-author: 디딤
+author: "최종학 | Kyle Choi"
 tags: [AI교육, 컨텍스트엔지니어링, WAVE Academy, AI리터러시, 초급]
 draft: false
 factChecked: true

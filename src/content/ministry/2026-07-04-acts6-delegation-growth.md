@@ -4,7 +4,7 @@ description: 사도행전 6:1-7. 빠르게 자라던 교회에 갈등이 터졌�
 category: ministry
 scripture: 사도행전 6:1-7
 pubDate: 2026-07-04
-author: 디딤
+author: "최종학 | Kyle Choi"
 tags: [설교, 사도행전, 섬김, 리더십, 교회]
 draft: false
 heroImage:

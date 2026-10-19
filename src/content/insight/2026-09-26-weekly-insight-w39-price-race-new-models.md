@@ -3,7 +3,7 @@ title: "AI 시대통찰 — 세 회사가 가격으로 맞붙고, 새 모델이 
 description: "같은 주, 세 회사가 가격으로 맞붙었습니다. Opus 5.5, GPT-6 Sol·Luna, Grok 4.7이 나온 한 주입니다. 2026년 39주차 AI 소식 16항목을 5개 절로 정리했습니다."
 category: 시대분석
 pubDate: 2026-09-25T21:09:56+09:00
-author: Kyle Choi
+author: "최종학 | Kyle Choi"
 tags: ["시대분석", "시대통찰", "주간", "AI뉴스", "AI모델"]
 draft: false
 disclaimerRequired: false

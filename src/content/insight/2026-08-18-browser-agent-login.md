@@ -3,7 +3,7 @@ title: "AI가 당신의 로그인 상태로 들어왔습니다 — 브라우저 
 description: "7월 30일 Gemini Spark가 당신의 Chrome 로그인과 저장된 비밀번호를 쓰기 시작했습니다. 그 직후 다섯 개 AI 브라우저의 무클릭 탈취 연구가 공개됐고요. 무엇이 달라졌고 무엇을 점검해야 하는지 정리했습니다."
 category: AI트렌드
 pubDate: 2026-08-18
-author: Kyle Choi
+author: "최종학 | Kyle Choi"
 tags: ["AI트렌드", "브라우저에이전트", "AI보안", "프롬프트인젝션", "AI활용", "실전팁"]
 draft: false
 disclaimerRequired: false

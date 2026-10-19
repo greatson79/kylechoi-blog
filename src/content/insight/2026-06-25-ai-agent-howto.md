@@ -4,7 +4,7 @@ description: 파라미터 이름 하나를 바꾸자 성능이 올랐다. AI 에
 category: AI트렌드
 pubDate: 2026-06-25
 updatedDate: 2026-06-25
-author: 디딤
+author: "최종학 | Kyle Choi"
 tags: [AI트렌드, AI에이전트, 활용법, 컨텍스트엔지니어링, 프롬프트, AGENTS.md]
 draft: false
 disclaimerRequired: false

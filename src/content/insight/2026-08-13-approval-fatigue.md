@@ -3,7 +3,7 @@ title: "매번 '확인' 누르다 지치셨나요 — 승인 피로를 다루는
 description: "Claude Code 사용자는 권한 확인창의 93%를 승인합니다. 다 막기와 다 열기 사이에서 실제로 쓸 수 있는 제3안과, 오늘 바로 바꿀 설정 세 가지를 정리했습니다."
 category: AI트렌드
 pubDate: 2026-08-13
-author: Kyle Choi
+author: "최종학 | Kyle Choi"
 tags: ["AI트렌드", "실전팁", "AI에이전트", "권한관리", "업무자동화", "AI안전"]
 draft: true
 disclaimerRequired: false

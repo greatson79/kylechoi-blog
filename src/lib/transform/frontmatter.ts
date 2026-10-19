@@ -2,7 +2,7 @@
  * frontmatter.ts — frontmatter 정규화(순수 함수, 불변).
  *
  * content.config.ts base 스키마의 필수 필드를 보장한다:
- * title, description(<=160), pubDate, author(default '디딤'),
+ * title, description(<=160), pubDate, author(default '최종학 | Kyle Choi'),
  * tags[], draft(default true), sourcePath, category.
  */
 
@@ -10,7 +10,7 @@ import type { Category, Channel, NormalizedFrontmatter } from '../ingest/types.j
 import { MAX_DESCRIPTION_LENGTH, truncate } from './seo.js';
 
 /** 기본 저자. */
-export const DEFAULT_AUTHOR = '디딤';
+export const DEFAULT_AUTHOR = '최종학 | Kyle Choi';
 
 /** title 최대 길이(content.config.ts 와 일치). */
 export const MAX_TITLE_LENGTH = 80;

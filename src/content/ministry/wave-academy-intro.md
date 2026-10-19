@@ -3,7 +3,7 @@ title: WAVE Academy — AI를 분별하며 쓰는 법을 배우다
 description: 두려움도 맹신도 없이 AI를 다루는 법. 목회자 AI 교육, AI 리터러시, 컨설팅까지 — 교회·기관 AI 교육 브랜드 WAVE Academy를 소개합니다.
 category: ministry
 pubDate: 2026-06-30
-author: Kyle Choi
+author: "최종학 | Kyle Choi"
 tags: [AI교육, WAVE Academy, AI리터러시, 컨설팅]
 draft: false
 heroImage:

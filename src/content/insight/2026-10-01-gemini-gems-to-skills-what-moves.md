@@ -3,7 +3,7 @@ title: "개인 계정 Gemini Gems, 11월부터 skills로: 옮겨지는 것과 �
 description: "구글이 Gemini에 skills를 내놓고 Gems를 계정 유형별로 종료합니다. 개인 계정은 2026년 11월부터입니다. 자동으로 옮겨지는 것과 옮겨지지 않는 것, 지금 챙겨 둘 것을 정리합니다."
 category: AI트렌드
 pubDate: 2026-10-01
-author: Kyle Choi
+author: "최종학 | Kyle Choi"
 tags: ["AI트렌드", "Gemini", "Gems", "생성형 AI"]
 draft: false
 factChecked: true

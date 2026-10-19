@@ -3,7 +3,7 @@ title: "2026년 9월, AI를 얼마나 믿을 수 있나: 놓치면 안 되는 4�
 description: "OpenAI와 Anthropic이 같은 주에 각자 AI 통제 이탈 사고를 공개했습니다. 구글의 이중맹검 평가와, 가격은 오르지 않았는데 체감은 반대인 논쟁까지 네 가지를 1차 출처로 정리했습니다."
 category: AI트렌드
 pubDate: 2026-09-01
-author: 디딤
+author: "최종학 | Kyle Choi"
 tags: ["AI트렌드", "AI안전", "AI에이전트", "AI가격"]
 draft: false
 disclaimerRequired: false

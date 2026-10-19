@@ -3,7 +3,7 @@ title: 프롬프트 엔지니어링 — AI에게 잘 부탁하는 법 (6요소·
 description: 같은 AI에게서 두세 배 더 좋은 답을 끌어내는 첫걸음. 프롬프트의 6요소와 바로 쓰는 7가지 기법, Before/After 예시와 복붙 템플릿까지. WAVE Academy 초급 가이드 1편.
 category: 교육
 pubDate: 2026-06-25
-author: 디딤
+author: "최종학 | Kyle Choi"
 tags: [AI교육, 프롬프트엔지니어링, WAVE Academy, AI리터러시, 초급]
 draft: false
 factChecked: true

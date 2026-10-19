@@ -3,7 +3,7 @@ title: "Codex Sites 완전 정복 — 프롬프트 한 줄로 만드는 사내 �
 description: "Codex Sites 완전 정복 — 프롬프트 한 줄로 만드는 사내 웹앱, 지금 알아야 할 것"
 category: AI트렌드
 pubDate: 2026-07-27
-author: 디딤
+author: "최종학 | Kyle Choi"
 tags: [AI트렌드, 교육콘텐츠, Codex, OpenAI, ChatGPT, Sites]
 draft: false
 disclaimerRequired: false

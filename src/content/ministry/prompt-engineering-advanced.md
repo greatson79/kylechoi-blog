@@ -3,7 +3,7 @@ title: "프롬프트 자산화·평가·최적화 — 고급 프롬프트 운영
 description: "잘 된 프롬프트를 라이브러리로 쌓고, 테스트 세트로 평가하고, A/B·회귀·메타프롬프팅으로 지속 최적화하는 운영법. WAVE Academy 고급 1편."
 category: 교육
 pubDate: 2026-07-20
-author: 디딤
+author: "최종학 | Kyle Choi"
 tags: [교육, AI활용, 프롬프트엔지니어링, WAVE Academy, 고급]
 draft: false
 factChecked: true

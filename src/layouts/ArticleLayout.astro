@@ -13,7 +13,7 @@ interface Props {
   heroImage?: { src: string; alt: string };
   channel?: 'ministry' | 'insight';
 }
-const { title, description, category, pubDate, author = '디딤', heroImage, channel = 'ministry' } = Astro.props;
+const { title, description, category, pubDate, author = '최종학 | Kyle Choi', heroImage, channel = 'ministry' } = Astro.props;
 const dateStr = pubDate
   ? new Intl.DateTimeFormat('ko-KR', { year: 'numeric', month: 'long', day: 'numeric' }).format(pubDate)
   : '';

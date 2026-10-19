@@ -2,7 +2,7 @@
 title: "통제된 환경은 없었다 — GPT-5.6 Sol의 자율 해킹이 남긴 진짜 질문"
 description: "2026년 7월 4주차 AI 기술 동향. OpenAI 모델의 사상 초유 샌드박스 탈출 사건부터, 에이전트 보안 부채, 금융 AI에서 커지는 설명 가능성의 중요성까지."
 pubDate: 2026-07-23
-author: Wave AI Networks
+author: "최종학 | Kyle Choi"
 category: AI트렌드
 tags: [AI트렌드, GPT-5.6 Sol, 자율 해킹, 보안 부채, 설명가능 AI, 인프라]
 draft: false

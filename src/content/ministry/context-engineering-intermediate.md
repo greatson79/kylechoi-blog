@@ -3,7 +3,7 @@ title: "컨텍스트 엔지니어링(심화) — 유한한 자원을 설계하�
 description: "초급의 '책상 차리기'를 넘어, 컨텍스트가 유한한 주의 예산이라는 관점에서 구조화·사전적재 vs JIT·압축·메모·작업분할·오염 방지까지 다루는 WAVE Academy 중급 2편."
 category: 교육
 pubDate: 2026-07-07
-author: 디딤
+author: "최종학 | Kyle Choi"
 tags: [교육, AI활용, 컨텍스트엔지니어링, WAVE Academy, 중급]
 draft: false
 factChecked: false

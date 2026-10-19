@@ -4,7 +4,7 @@ description: 앤트로픽이 AI 지시문을 80% 줄였는데 성능은 그대�
 category: 교육
 level: intermediate
 pubDate: 2026-08-13
-author: 디딤
+author: "최종학 | Kyle Choi"
 tags: [AI교육, 프롬프트엔지니어링, 컨텍스트엔지니어링, WAVE Academy, 중급]
 draft: false
 factChecked: true

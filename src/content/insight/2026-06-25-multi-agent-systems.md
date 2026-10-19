@@ -3,7 +3,7 @@ title: AI트렌드 — 멀티에이전트 시스템의 부상
 description: 한 개의 똑똑한 모델에서 역할을 나눈 여러 에이전트의 협업으로. 2026년 멀티에이전트 시스템이 실험을 넘어 인프라가 된 흐름을 실제 사례와 수치로 정리한다.
 category: AI트렌드
 pubDate: 2026-06-25
-author: 디딤
+author: "최종학 | Kyle Choi"
 tags: [AI트렌드, 멀티에이전트, AI에이전트, MCP, 오케스트레이션]
 draft: false
 disclaimerRequired: false

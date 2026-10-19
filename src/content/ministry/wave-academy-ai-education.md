@@ -3,7 +3,7 @@ title: WAVE Academy — 두려움도 맹신도 없이, AI를 분별하다
 description: WAVE Academy의 AI 교육·컨설팅·자격증 과정. 목회자 AI 교육과 AI 리터러시 교육, AI 자동화·교육 컨설팅, 그리고 AI 콘텐츠 크리에이터 자격증 과정까지.
 category: 교육
 pubDate: 2026-06-25
-author: 디딤
+author: "최종학 | Kyle Choi"
 tags: [AI교육, WAVE Academy, AI리터러시, 컨설팅, 자격증]
 draft: false
 sourcePath: output/강의준비

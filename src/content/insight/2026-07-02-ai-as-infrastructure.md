@@ -4,7 +4,7 @@ description: "머스크의 궤도 데이터센터 구상과 코스피 6% 급락�
 category: 시대분석
 pubDate: 2026-07-02
 updatedDate: 2026-07-02
-author: Kyle Choi
+author: "최종학 | Kyle Choi"
 tags: [AI트렌드, 흐름통찰, 환경스캐닝, AI인프라, 전력망, 양자, 거버넌스]
 draft: false
 disclaimerRequired: true

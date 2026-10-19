@@ -3,7 +3,7 @@ title: "AI 시대, 청년 크리스천으로 산다는 것"
 description: "취업 불안, 외로움, 진로 혼란 — AI 시대 청년 크리스천에게 던져진 세 가지 질문을 성경과 현실 사이에서 함께 걷는다."
 category: ministry
 pubDate: 2026-06-27
-author: 최종학
+author: "최종학 | Kyle Choi"
 tags: [청년, AI시대, 신앙과진로, 소명, 하나님나라]
 draft: false
 sourcePath: "output/DiA/제작본부/콘텐츠팀/강의준비/영국_대학청년/AI시대청년크리스천_QnA/원고_AI시대청년크리스천_QnA_2026-06-18.md"

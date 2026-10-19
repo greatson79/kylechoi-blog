@@ -3,7 +3,7 @@ title: 같은 신호가 네 곳에서 동시에 울렸다 — 2026년 6월 말, 
 description: 2026-06-29 환경스캐닝이 포착한 시대 흐름 — AI 메모리 슈퍼사이클, 전력 수요 압박, 그리고 속도와 사회적 허가의 충돌. 1,421개 신호를 일반스캔·학술·한국언론·글로벌언론 네 갈래에서 교차 확인한 정보 제공용 시대분석.
 category: 시대분석
 pubDate: 2026-06-30
-author: Kyle Choi
+author: "최종학 | Kyle Choi"
 tags: [시대분석, 시대흐름, AI, 반도체, 에너지, 거버넌스]
 draft: true
 disclaimerRequired: true

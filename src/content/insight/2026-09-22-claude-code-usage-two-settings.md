@@ -3,7 +3,7 @@ title: "Claude Code 한도가 빨리 닳을 때 바꿀 설정 두 줄"
 description: "Claude Code 서브에이전트 캐시는 구독 요금제에서도 5분입니다. 1시간으로 늘리는 설정과 회색 제안 끄기를 공식 문서와 사용자 계측으로 나눠 담았습니다."
 category: AI트렌드
 pubDate: 2026-09-22
-author: Kyle Choi
+author: "최종학 | Kyle Choi"
 tags: ["AI트렌드", "실전팁", "Claude Code", "프롬프트캐싱", "사용량"]
 draft: false
 disclaimerRequired: false

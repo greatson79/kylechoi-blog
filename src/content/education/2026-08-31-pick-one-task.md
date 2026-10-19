@@ -3,7 +3,7 @@ title: "업무 하나만 정하세요 — 도구 고르기부터 점검까지"
 description: "코드를 쓰지 않는 실무자를 위한 실습형 교육자료입니다. 반복적으로 오는 문의 답장 하나를 예로 삼아, 도구 고르기·지시 쓰기·업무에 붙이기·점검까지 네 단계를 같은 업무 한 건으로 관통합니다. 읽는 데 15분, 실습에 85분이 걸립니다."
 category: 교육
 pubDate: 2026-08-31
-author: 디딤
+author: "최종학 | Kyle Choi"
 tags: [교육, AI활용, 업무적용, 실습, 입문]
 draft: false
 factChecked: true

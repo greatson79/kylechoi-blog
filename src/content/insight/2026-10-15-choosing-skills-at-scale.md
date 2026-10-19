@@ -3,7 +3,7 @@ title: "관련 없는 스킬 1,000개 옆에서, 필요한 스킬은 불렸을�
 description: "정답 스킬은 그대로 두고 관련 없는 스킬만 늘린 v1 연구 한 편에서, 가중치를 공개한 모델 세 종이 필요한 스킬을 불러온 비율이 어떻게 달라졌는지 살펴보고, Anthropic의 Scion 사례를 함께 읽었습니다."
 category: AI트렌드
 pubDate: 2026-10-15
-author: Kyle Choi
+author: "최종학 | Kyle Choi"
 tags: ["AI 에이전트", "스킬", "AI 도구 선택"]
 draft: true
 factChecked: true

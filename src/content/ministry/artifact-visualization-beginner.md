@@ -3,7 +3,7 @@ title: "아티팩트 시각화 & 라이브 아티팩트 — AI가 '결과물 자
 description: "차트·다이어그램·표·작동하는 페이지를 말로 부탁해 만드는 법. 아티팩트 개념, 시각화 요청 요령, 열 때마다 갱신되는 라이브 아티팩트와 실습 미션 3가지. WAVE Academy 초급 4편."
 category: 교육
 pubDate: 2026-07-06
-author: 디딤
+author: "최종학 | Kyle Choi"
 tags: [교육, AI활용, 아티팩트, WAVE Academy, AI리터러시, 초급]
 draft: false
 factChecked: false

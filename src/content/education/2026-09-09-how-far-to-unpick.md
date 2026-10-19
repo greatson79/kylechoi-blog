@@ -2,7 +2,7 @@
 title: "어디까지 뜯을 것인가 — AI가 틀렸을 때 되돌리는 순서"
 description: "AI가 틀린 결과를 냈을 때 어디까지 되돌려야 하는지, 손을 멈추는 것부터 전달된 사본과 잘못된 기억을 정정하는 것까지 다섯 단계로 정리했습니다."
 pubDate: 2026-09-09
-author: Kyle Choi
+author: "최종학 | Kyle Choi"
 category: 교육
 factChecked: true
 draft: false

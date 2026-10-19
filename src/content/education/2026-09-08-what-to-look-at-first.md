@@ -2,7 +2,7 @@
 title: "검토했다는 착각 — AI의 답에서 무엇을 볼지 먼저 정하는 법"
 description: "읽었는데 못 봤다면 더 오래 보는 게 답은 아닙니다. AI의 답을 받을 때마다 볼 자리를 미리 정해 두는 세 가지를 1차 출처와 함께 정리했습니다."
 pubDate: 2026-09-08
-author: Kyle Choi
+author: "최종학 | Kyle Choi"
 category: 교육
 factChecked: true
 draft: false

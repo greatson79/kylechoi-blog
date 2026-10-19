@@ -3,7 +3,7 @@ title: "AI 시대통찰 — 위협 리포트가 '시간'을 재기 시작하고,
 description: "2026년 9월 37주차 한 주간 AI 소식을 5개 절 16항목으로 정리했습니다. Anthropic 위협 리포트의 실측 대응 시간, 오픈AI 수학 신뢰 논쟁, GPT-6 Astra 요금표, Agents API 공개 베타까지."
 category: 시대분석
 pubDate: 2026-09-11T19:15:00+09:00
-author: Kyle Choi
+author: "최종학 | Kyle Choi"
 tags: ["시대분석", "시대통찰", "주간", "AI뉴스", "AI모델"]
 draft: false
 disclaimerRequired: false

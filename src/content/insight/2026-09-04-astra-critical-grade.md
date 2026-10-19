@@ -3,7 +3,7 @@ title: "GPT-6 Astra 발표에서 새로 쓰인 것은 점수가 아니라 등급
 description: "OpenAI가 자기 기준으로 사이버보안 Critical을 처음 매긴 모델을 내놨습니다. 등급의 뜻, 서로 다른 두 개의 문, 오른 가격, 그리고 벤더가 스스로 적어 둔 하락까지 1차 출처로 정리했습니다."
 category: AI트렌드
 pubDate: 2026-09-04
-author: 디딤
+author: "최종학 | Kyle Choi"
 tags: ["AI트렌드", "AI안전", "신뢰접근", "프런티어모델"]
 draft: false
 disclaimerRequired: false

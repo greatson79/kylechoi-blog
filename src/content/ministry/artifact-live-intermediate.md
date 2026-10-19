@@ -3,7 +3,7 @@ title: "아티팩트·라이브 아티팩트(심화) — 인터랙티브 도구�
 description: "차트를 보여주는 것을 넘어 작동하는 도구를 만들고, 반복 개선하고, 데이터와 연결된 라이브 대시보드를 설계하는 WAVE Academy 중급 4편. 정적 vs 라이브 판단 기준과 커넥터 안전 수칙까지."
 category: 교육
 pubDate: 2026-07-13
-author: 디딤
+author: "최종학 | Kyle Choi"
 tags: [교육, AI활용, 아티팩트, 라이브아티팩트, WAVE Academy, 중급]
 draft: false
 factChecked: true

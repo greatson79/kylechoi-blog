@@ -3,7 +3,7 @@ title: "AI 워터마크 — 유럽은 8월에 켰고, 한국은 1월에 이미 �
 description: "AI 워터마크 표시 의무의 한국·유럽 시행 시점, Anthropic 탐지 방식 미공개, 그리고 ‘AI가 썼다’와 ‘AI를 거쳤다’의 차이를 짚습니다."
 category: AI트렌드
 pubDate: 2026-08-25T00:00:00+09:00
-author: 디딤
+author: "최종학 | Kyle Choi"
 tags: [AI트렌드, 워터마킹, AI기본법, EUAIAct, Anthropic]
 draft: false
 disclaimerRequired: false

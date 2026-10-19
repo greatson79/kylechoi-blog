@@ -3,7 +3,7 @@ title: "새 Sonnet이 나왔다고 바로 갈아타지 마세요 — Claude Sonn
 description: "Claude Sonnet 5.5의 발표 내용을 Sonnet 5·Opus 5.5와 비교하고, 옮기기 전에 확인할 변경 사항과 고르는 기준을 정리합니다."
 category: AI트렌드
 pubDate: 2026-09-29
-author: Kyle Choi
+author: "최종학 | Kyle Choi"
 tags: ["AI트렌드", "생성형 AI", "Claude", "모델 비교"]
 draft: false
 disclaimerRequired: false

@@ -3,7 +3,7 @@ title: 성장의 청구서가 금리로 도착한 한 주 — 증시 균열·에
 description: 2026년 7월 셋째 주 시대 흐름. 반도체·AI의 광채 아래 드러난 바닥의 균열이 한국은행의 3년 반 만의 금리 인상으로 청구된 한 주. 코스피 8% 급락과 검은 금요일, AI 에이전트의 보안 부채, 유가로 이어진 호르무즈를 읽는다. 정보 제공용 시대분석이며 투자자문이 아니다.
 category: 시대분석
 pubDate: 2026-07-17
-author: Kyle Choi
+author: "최종학 | Kyle Choi"
 tags: [시대분석, 시대통찰, 주간, 증시, AI에이전트, 에너지안보, 기후]
 draft: false
 disclaimerRequired: true

@@ -3,7 +3,7 @@ title: "무엇을 자동화할지 고르는 법 — 비개발자를 위한 네 �
 description: "코딩보다 먼저 필요한 건 고르는 눈. 빈도·소요시간·위험·재사용성, 네 가지 질문으로 반복 업무 중 오늘 손댈 일 하나를 찾는 법. WAVE 교육 11편."
 category: 교육
 pubDate: 2026-08-13
-author: 디딤
+author: "최종학 | Kyle Choi"
 tags: [교육, AI활용, 자동화, 업무자동화, WAVE Academy, 입문]
 draft: false
 factChecked: true

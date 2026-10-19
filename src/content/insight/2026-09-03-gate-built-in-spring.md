@@ -3,7 +3,7 @@ title: "9월에 갑자기 갈라진 게 아닙니다 — AI 모델의 문은 몇
 description: "9월에 갑자기 갈라진 게 아닙니다. 위험 도메인 모델의 접근 게이트는 4월·7월·8월부터 지어지고 있었고, 9월에 새로 온 것은 문이 아니라 거기 태운 모델이었습니다."
 category: AI트렌드
 pubDate: 2026-09-03
-author: 디딤
+author: "최종학 | Kyle Choi"
 tags: ["AI트렌드", "AI안전", "신뢰접근", "프런티어모델"]
 draft: false
 disclaimerRequired: false

@@ -3,7 +3,7 @@ title: "프롬프트 엔지니어링(심화) — 추론 설계·구조화·반�
 description: "초급의 '구체적으로 부탁하기'를 넘어, AI의 추론을 설계하고 출력을 구조화하고 프롬프트를 체계적으로 개선하는 법. 태그·CoT·Few-shot·체이닝·환각 줄이기까지. WAVE Academy 중급 1편."
 category: 교육
 pubDate: 2026-07-06
-author: 디딤
+author: "최종학 | Kyle Choi"
 tags: [교육, AI활용, 프롬프트엔지니어링, WAVE Academy, 중급]
 draft: false
 factChecked: false

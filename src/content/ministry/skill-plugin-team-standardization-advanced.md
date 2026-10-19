@@ -3,7 +3,7 @@ title: "스킬 제작·플러그인·팀 표준화 — 코딩 없이 skill.md로
 description: "코딩 없이 마크다운 skill.md로 나만의 스킬을 만들고, 패키징·테스트·반복 개선을 거쳐 플러그인과 팀 표준화까지 확장하는 방법. WAVE Academy 고급 3편."
 category: 교육
 pubDate: 2026-09-28
-author: 디딤
+author: "최종학 | Kyle Choi"
 tags: [교육, AI활용, 스킬제작, 플러그인, 팀표준화, WAVE Academy, 고급]
 draft: false
 factChecked: true

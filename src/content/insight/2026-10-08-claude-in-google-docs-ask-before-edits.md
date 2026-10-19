@@ -3,7 +3,7 @@ title: "구글 문서 안의 Claude, 기본값은 「수정 전 승인」입니�
 description: "Anthropic이 2026년 10월 6일 공개 베타로 내놓은 Claude for Google Workspace를 공식 발표문과 도움말로 확인했습니다. 설치 순서, 승인 모드 두 가지, 되돌리는 방법, 아직 안 되는 것을 정리했습니다."
 category: AI트렌드
 pubDate: 2026-10-08T11:48:56+09:00
-author: Kyle Choi
+author: "최종학 | Kyle Choi"
 tags: ["AI트렌드", "생성형 AI", "Claude", "구글 문서", "실전팁"]
 draft: false
 disclaimerRequired: false

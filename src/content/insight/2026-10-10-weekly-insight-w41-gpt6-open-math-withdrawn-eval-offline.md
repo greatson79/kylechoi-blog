@@ -3,7 +3,7 @@ title: "AI 시대통찰 — GPT-6 전체 공개, 수학 결과 철회와 평가 
 description: "2026년 10월 3일부터 10일까지(한국 시각) 나온 AI 소식을 정리했습니다. OpenAI의 GPT-6 전체 공개와 수학 원고 3편 철회, Anthropic의 내부 평가 인터넷 차단 확대, 새 모델과 도구를 다룹니다."
 category: "시대분석"
 pubDate: 2026-10-10T21:25:00+09:00
-author: "Kyle Choi"
+author: "최종학 | Kyle Choi"
 tags: ["시대분석", "시대통찰", "주간", "AI뉴스", "AI안전"]
 draft: false
 disclaimerRequired: false

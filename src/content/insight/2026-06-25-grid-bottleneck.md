@@ -3,7 +3,7 @@ title: 전력망이라는 병목 — 전기화·AI·폭염이 한 점에서 만�
 description: 전기화 정치, AI 연산 부하, 폭염발 발전 저하가 모두 전력망 한 곳으로 수렴한다. 2026년 6월 환경스캐닝이 읽은 에너지 시대의 핵심 제약. 정보 제공용 시대분석.
 category: 시대분석
 pubDate: 2026-06-25
-author: 디딤
+author: "최종학 | Kyle Choi"
 tags: [시대분석, 에너지, 전력망, AI인프라, 기후]
 draft: false
 disclaimerRequired: true

@@ -2,7 +2,7 @@
 title: "'더 똑똑한 모델' 경쟁이 저무는 자리 — Opus 5와 Gemini 3.6 Flash가 바꾼 축"
 description: "2026년 7월 4주차 AI 기술 동향. Claude Opus 5의 '스스로 검증하는 능력'과 Gemini 3.6 Flash의 '효율·통제·비용'을 하나의 논지로 읽습니다. 프런티어 경쟁의 무게중심은 지능 절대치에서 신뢰성과 경제성으로 옮겨가고 있습니다."
 pubDate: 2026-07-25
-author: Wave AI Networks
+author: "최종학 | Kyle Choi"
 category: AI트렌드
 tags: [AI트렌드, Claude Opus 5, Gemini 3.6 Flash, 에이전트, thinking, 모델비용]
 draft: false

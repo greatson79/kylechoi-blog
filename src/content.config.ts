@@ -8,7 +8,7 @@ const base = {
   description: z.string().max(160),          // SEO meta description
   pubDate: z.coerce.date(),
   updatedDate: z.coerce.date().optional(),
-  author: z.string().default('디딤'),
+  author: z.string().default('최종학 | Kyle Choi'),
   tags: z.array(z.string()).default([]),
   heroImage: z.object({ src: z.string(), alt: z.string() }).optional(),
   draft: z.boolean().default(true),          // ★기본 비공개(승인 전 발행 방지)

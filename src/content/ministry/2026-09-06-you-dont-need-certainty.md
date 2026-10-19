@@ -4,7 +4,7 @@ description: "예전엔 가까웠는데 어느새 멀어진 사람. 마음이 �
 category: ministry
 scripture: 마태복음 28:16-20
 pubDate: 2026-09-05T15:41:00+09:00
-author: 디딤
+author: "최종학 | Kyle Choi"
 tags: [신앙에세이, 마태복음, 은혜, 동행, 복음, 디딤교회]
 draft: false
 heroImage:

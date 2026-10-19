@@ -3,7 +3,7 @@ title: "떼는 데는 두 가지가 있다 — 판단과 포기를 구별하는 
 description: "배운 AI가 왜 남지 않는지, 그리고 남았는지를 무엇으로 확인할 수 있는지. 가장 많이 인용되는 '10%' 통계가 근거 없는 수사였다는 것부터 짚고, 실측 감쇠 곡선과 자기평가의 한계를 근거와 함께 정리했습니다."
 category: 교육
 pubDate: 2026-08-31
-author: 디딤
+author: "최종학 | Kyle Choi"
 tags: [교육, AI활용, 업무설계, 판단, 측정, 입문]
 draft: false
 factChecked: true

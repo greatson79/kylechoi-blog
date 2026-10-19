@@ -2,7 +2,7 @@
 title: "구독료를 이미 내고 있다면, 오늘 확인할 것 하나 — Fable 5가 Max에 상시 포함됐다"
 description: "7월 20일부터 Claude Fable 5가 모든 Max·Team Premium 플랜에 한도 50%로 포함됩니다. 코드를 모르는 사람이 오늘 바로 확인하고 바꿀 것을 플랜별로 정리했습니다."
 pubDate: 2026-07-21
-author: Kyle Choi
+author: "최종학 | Kyle Choi"
 category: AI트렌드
 tags: [AI트렌드, Claude, Fable 5, AI 활용, 비개발자, 구독, 실전팁]
 draft: false

@@ -4,7 +4,7 @@ description: "연휴 첫날 새벽까지 염려에 관한 설교를 붙들고 �
 category: ministry
 scripture: 빌립보서 4:4-7
 pubDate: 2026-10-05T22:55:17+09:00
-author: ""
+author: "최종학 | Kyle Choi"
 tags: [신앙에세이, 빌립보서, 평강, 기도]
 draft: false
 sourcePath: output/WaveAI/목회사역본부/신앙에세이/2026-10-04_40주차/신앙에세이_걱정을쥔새벽_검수반영v2_2026-10-03.md

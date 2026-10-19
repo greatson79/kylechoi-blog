@@ -3,7 +3,7 @@ title: "AI의 답이 길고 어렵다면 내용보다 모양을 먼저 바꿔 �
 description: "AI의 답을 읽다가 지칠 때 쓸 수 있는 요청 방법 세 가지를 정리했습니다. 안드레 카파시의 제안과 Anthropic·OpenAI 공식 안내를 대조하고, 따라 하는 순서와 한계를 함께 적었습니다."
 category: AI트렌드
 pubDate: 2026-10-06T18:52:38+09:00
-author: Kyle Choi
+author: "최종학 | Kyle Choi"
 tags: ["AI트렌드", "생성형 AI", "Claude", "프롬프트", "실전팁"]
 draft: false
 disclaimerRequired: false

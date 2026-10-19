@@ -23,7 +23,7 @@ export interface NormalizedFrontmatter {
   readonly description: string; // <=160
   readonly pubDate: string; // ISO 8601
   readonly updatedDate?: string;
-  readonly author: string; // default '디딤'
+  readonly author: string; // default '최종학 | Kyle Choi'
   readonly tags: ReadonlyArray<string>;
   readonly heroImage?: { readonly src: string; readonly alt: string };
   readonly draft: boolean; // default true

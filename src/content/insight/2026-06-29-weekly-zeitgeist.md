@@ -3,7 +3,7 @@ title: 이번 주 시대통찰 — 전력망이라는 한 점으로 모이는 �
 description: 2026년 6월 넷째 주 환경스캐닝이 포착한 시대 흐름. 기후·AI 컴퓨트·지정학이 전력망이라는 한 점에서 만나고, 그 아래로 사회의 단층선이 드러난다. 정보 제공용 시대분석이며 투자자문이 아니다.
 category: 시대분석
 pubDate: 2026-06-29
-author: 디딤
+author: "최종학 | Kyle Choi"
 tags: [시대분석, 시대통찰, 주간, 전력망, AI, 지정학, 기후]
 draft: false
 disclaimerRequired: true

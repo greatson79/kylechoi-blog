@@ -3,7 +3,7 @@ title: "교회·비영리 AI 할인, 무료와 할인은 다릅니다"
 description: "구글·Claude·ChatGPT·Microsoft의 비영리 할인을 공식 페이지로 다시 대조했습니다. 우리 단체가 대상인지 보는 법, 무료와 할인의 차이, 신청 중 실제로 걸린 자리를 순서대로 적었습니다."
 category: AI트렌드
 pubDate: 2026-10-13
-author: Kyle Choi
+author: "최종학 | Kyle Choi"
 tags: ["AI트렌드", "생성형 AI", "비영리", "교회", "실전팁"]
 draft: false
 disclaimerRequired: false

@@ -3,7 +3,7 @@ title: "AI를 제대로 쓰는 사람들이 실제로 하는 습관 9가지 — 
 description: "지난 한 주 Reddit·X에서 가장 많이 공유된 AI 활용 팁을, 커뮤니티가 반박한 한계까지 함께 정리했습니다. 곧바로 쓸 수 있는 팁 9가지와 아직 믿기 이른 주장 2가지."
 category: AI트렌드
 pubDate: 2026-08-03
-author: 디딤
+author: "최종학 | Kyle Choi"
 tags: [AI트렌드, 실전팁, ChatGPT, Claude, 에이전트, 생산성]
 draft: false
 disclaimerRequired: false
