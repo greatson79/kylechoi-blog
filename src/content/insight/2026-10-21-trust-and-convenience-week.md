@@ -1,6 +1,6 @@
 ---
 title: "믿게 하려는 장치, 편하게 하려는 기능이 같은 주에"
-description: "Anthropic은 주주 승인을 전제로 지분 5%를 공익 기금에 내놓겠다고 밝혔고, 외부 평가기관 METR에 사내 접근을 열었습니다. Google은 미국에서 여러 판매처 상품을 한 장바구니에 담는 기능을 내놓고 차 안 Gemini를 전 세계로 넓혔습니다. 같은 주에 나온 신뢰 장치와 편의 기능을 정리했습니다."
+description: "Anthropic의 지분 5% 공익 기금 계획과 METR 외부 평가, Google의 여러 판매처 장바구니와 차 안 Gemini 확대까지, 같은 주에 나온 신뢰 장치와 편의 기능을 정리했습니다."
 category: AI트렌드
 pubDate: 2026-10-21
 author: "최종학 | Kyle Choi"
